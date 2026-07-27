@@ -125,6 +125,14 @@ const COLUMNS = evalObj('const COLUMNS = {');
 // Falls back to auto-derived body text when a key is absent.
 let SEO_DESC = {};
 try { SEO_DESC = evalObj('const SEO_DESC = {'); } catch (e) { /* not pinned yet */ }
+// Optional SEO overrides, same kb:/market:/col: key shape. SEO_TITLE replaces the
+// <title> and og:title only — the on-page H1 and the schema headline stay as the
+// article's own heading, which is the usual "SEO title ≠ H1" split. SEO_SLUG pins
+// a column's URL instead of deriving it from the title (columns only; knowledge
+// and market URLs already come from their object key).
+let SEO_TITLE = {}, SEO_SLUG = {};
+try { SEO_TITLE = evalObj('const SEO_TITLE = {'); } catch (e) { /* none pinned */ }
+try { SEO_SLUG = evalObj('const SEO_SLUG = {'); } catch (e) { /* none pinned */ }
 
 /* ------------------------------------------------------------ column parsing */
 const columns = [];
@@ -148,12 +156,13 @@ for (const [id, rawInner] of Object.entries(COLUMNS)) {
   const afterByline = inner.split(/Written by[\s\S]*?<\/div>/)[1] || inner;
   const firstP = (afterByline.match(/<p\b[^>]*>([\s\S]*?)<\/p>/) || [, ''])[1];
   columns.push({ id, num, title, inner, desc: SEO_DESC['col:' + id] || clip(stripTags(firstP), 155),
+                 seoTitle: SEO_TITLE['col:' + id] || '',
                  published, updated, sectionName, image });
 }
-// unique slugs from titles
+// unique slugs from titles, unless pinned in SEO_SLUG
 const seen = {};
 for (const c of columns) {
-  let s = slugify(c.title) || c.id;
+  let s = SEO_SLUG['col:' + c.id] || slugify(c.title) || c.id;
   if (seen[s]) s = s + '-' + c.num;
   seen[s] = 1;
   c.slug = s;
@@ -312,7 +321,7 @@ const urls = [];   // for sitemap: {loc, priority}
 const ORG = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE };
 const PUBLISHER = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE,
                     logo: { '@type': 'ImageObject', url: SITE + LOGO } };
-function renderEntry({ depth, url, title, titleZh, titleKo, desc, ogImage, bodyHtml,
+function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogImage, bodyHtml,
                        published, updated, tags, crumb, deeplink, section,
                        schemaType, articleSection, suppressHeader, track }) {
   let ld;
@@ -363,7 +372,8 @@ function renderEntry({ depth, url, title, titleZh, titleKo, desc, ogImage, bodyH
   <div class="kbp-body">${rewriteAssets(rewriteNav(bodyHtml))}</div>
   ${tagHtml}`;
   emit(url.replace(SITE, ''), url.replace(SITE, ''),
-    pageShell({ depth, url, title, desc, ogImage: ogImage || SITE + LOGO, ld, crumb, main, track }));
+    pageShell({ depth, url, title: seoTitle || title, desc,
+                ogImage: ogImage || SITE + LOGO, ld, crumb, main, track }));
   urls.push({ loc: url, priority: '0.8', lastmod: updated || published || TODAY });
 }
 
@@ -379,7 +389,8 @@ for (const [key, item] of Object.entries(KB)) {
     item.body_ko ? `<section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>${item.body_ko}</section>` : ''
   ].join('');
   renderEntry({
-    depth: 2, url, title: item.title, titleZh: item.title_zh, titleKo: item.title_ko,
+    depth: 2, url, title: item.title, seoTitle: SEO_TITLE['kb:' + key],
+    titleZh: item.title_zh, titleKo: item.title_ko,
     desc, ogImage: absImg(ogImg), bodyHtml,
     published: item.published, updated: item.updated, tags: item.tags,
     schemaType: 'TechArticle', articleSection: item.articleSection || (item.tags && item.tags[0]) || 'Knowledge',
@@ -403,7 +414,8 @@ for (const [key, item] of Object.entries(MARKETS)) {
     item.body_ko ? `<section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>${item.body_ko}</section>` : ''
   ].join('');
   renderEntry({
-    depth: 2, url, title: item.title, titleZh: item.title_zh, titleKo: item.title_ko,
+    depth: 2, url, title: item.title, seoTitle: SEO_TITLE['market:' + key],
+    titleZh: item.title_zh, titleKo: item.title_ko,
     desc, ogImage: '', bodyHtml,
     published: item.published, updated: item.updated, tags: item.tags || ['Market', key],
     schemaType: 'WebPage',
@@ -423,7 +435,7 @@ for (const c of columns) {
   // promote the column's own <h2> title to <h1> for a proper article heading
   const colBody = c.inner.replace(/<h2\b([^>]*)>([\s\S]*?)<\/h2>/, '<h1$1>$2</h1>');
   renderEntry({
-    depth: 2, url, title: c.title, titleZh: '', titleKo: '',
+    depth: 2, url, title: c.title, seoTitle: c.seoTitle, titleZh: '', titleKo: '',
     desc: c.desc, ogImage: c.image, bodyHtml: colBody, suppressHeader: true,
     published: c.published, updated: c.updated,
     tags: ['Expert Column', ...(c.sectionName ? [c.sectionName] : [])],
