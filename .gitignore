@@ -1,51 +1,49 @@
-# 本地圖片原始備份，不需上傳 GitHub Pages
-photo/_original/
+# This file is served publicly by GitHub Pages, so it stays generic: it says
+# which shapes of file never belong in the deploy, not what any of them are.
+# Working documents themselves live outside this folder entirely — the ignore
+# rules below are only a second line of defence, not the primary one.
 
 # macOS
 .DS_Store
 
-# ── 內部商業文件，請勿公開到 GitHub Pages ──
+# Local-only image masters
+photo/_original/
+
+# Document formats — nothing in these formats is ever part of the site
 *.pdf
 *.xls
 *.xlsx
+*.doc
 *.docx
 *.DOCX
-_proposal_text.txt
+*.ppt
+*.pptx
+*.csv
 
-# ── 開發暫存 / 工作檔，不屬於網站 ──
+# Editor / working scratch
 *.bak
-*.bak3
-*.bak4
-tmp_*.json
-tmp_*.txt
-fix*.py
-fix*_output.txt
-fix*_out.txt
-fix*.txt
-_servo_drive.svg
-header_section.txt
-nav_section.txt
-main_content_css.txt
-show_page_fn.txt
-switch_lang_fn.txt
-lang_switch.txt
-detail_panel.txt
+*.bak[0-9]
+*.orig
+*.tmp
+tmp_*
+fix*
+*.skill
+_*.txt
+_*.svg
 
-# Claude Code 本地設定
+# Local tooling config
 .claude/
 
-# 打包的 skill 備份，非網站檔案
-*.skill
-
-# ── 非網站用的本地資產（不上 GitHub Pages）──
+# Local assets that are not part of the deployed site
 logo.png
 ZZ_website_QRcode.png
 newsletter-template.html
 QR CODE/
 social/
-gemini-code-1779858838685.html
+gemini-code-*.html
 
-# scripts/ 刻意「不」忽略：gen-pages.js 是 knowledge/ column/ markets/ 底下
-# 73 個頁面和 sitemap.xml 的產生來源。忽略它的話，換一台電腦重跑產生器就會
-# 把 GA 追蹤碼等內容全部洗掉。deploy.sh 也會 git add 這個目錄，被忽略時
-# 因為 set -e 會整支中止。
+# scripts/ is deliberately NOT ignored. gen-pages.js is the source for the 76
+# generated pages under knowledge/ column/ markets/ and for sitemap.xml, so
+# ignoring it means a fresh clone regenerates them without the analytics and
+# privacy blocks. deploy.sh also git-adds this directory and would abort under
+# set -e if the path were ignored.

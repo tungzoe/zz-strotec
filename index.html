@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window — that way a stripped or failed script
+     leaves a framed copy blank rather than visible. <noscript> restores the
+     page for visitors and crawlers running without JS.
+     Residual gap: a frame sandboxed without allow-scripts kills the script
+     and applies the <noscript> rule. Closing that needs a real header,
+     which this host does not offer.
+     Keep in sync with the same block in scripts/gen-pages.js. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the browser blocks the escape, so the
+                 page simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Analytics storage defaults to denied in the EEA, the UK and Switzerland,
+     where prior consent is required, and to granted in the markets where it
+     is not (TW, KR, BR, AR …) so reporting there is unaffected. The banner
+     at the foot of <body> can move either default, and the visitor's choice
+     is remembered. This must run before gtag.js loads.
+     Keep in sync with the same block in scripts/gen-pages.js. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  // A stored choice overrides both defaults, in either direction.
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-LR7TGXJLS9');
 </script>
@@ -2261,6 +2318,15 @@
               <textarea class="form-textarea" id="f-message" placeholder="Please describe what you're looking for — product type, specs, quantity, application, or any questions..."></textarea>
             </div>
           </div>
+
+          <!-- Honeypot. Off-screen rather than display:none, because some bots
+               skip hidden fields but almost all of them fill every input they
+               can see in the DOM. A real visitor never reaches it: it is out of
+               the tab order and hidden from screen readers. The name _gotcha is
+               the one Formspree itself recognises and silently discards. -->
+          <input type="text" id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"
+                 aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
           <button class="form-submit" id="submit-btn" onclick="submitInquiry()" data-i18n="btn_send">SEND INQUIRY →</button>
 
@@ -11778,6 +11844,11 @@ function submitInquiry() {
   const country = document.getElementById('f-country').value;
   const message = document.getElementById('f-message').value.trim();
 
+  // Honeypot: only a bot fills this. Show the same success screen rather than
+  // an error, so the sender learns nothing about why nothing arrived.
+  const gotcha = document.getElementById('f-gotcha');
+  if (gotcha && gotcha.value) { showSuccess(); return; }
+
   if (!name || !company || !email || !country || !inquiryType || !message) {
     alert('Please fill in all required fields (*).');
     return;
@@ -11951,6 +12022,28 @@ function closeDetail() {
 }
 
 // ─── Search ───────────────────────────────────────────────────────
+// A visitor's query is arbitrary text, and in this industry it routinely
+// contains regex metacharacters — "M8*1.25", "1/2\"", "R(0.4)". So it is
+// never spliced into a RegExp raw (a lone "(" or "*" throws SyntaxError and
+// kills the search) and never dropped into innerHTML raw.
+function _escRe(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Escape the title and wrap the matched runs, working on the raw text so the
+// match offsets stay valid, then escaping each piece as it is emitted.
+function _highlight(text, q) {
+  const re = new RegExp(_escRe(q), 'gi');
+  let out = '', last = 0, m;
+  while ((m = re.exec(text)) !== null) {
+    if (!m[0]) { re.lastIndex++; continue; }
+    out += _esc(text.slice(last, m.index))
+         + '<span class="result-match">' + _esc(m[0]) + '</span>';
+    last = m.index + m[0].length;
+  }
+  return out + _esc(text.slice(last));
+}
+
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   if (!q) return;
@@ -11974,12 +12067,12 @@ function doSearch() {
   const wrap = document.getElementById('search-results');
 
   if (results.length === 0) {
-    container.innerHTML = `<div class="loading">No results for "<span class="result-match">${q}</span>" in local knowledge base.</div>`;
+    container.innerHTML = `<div class="loading">No results for "<span class="result-match">${_esc(q)}</span>" in local knowledge base.</div>`;
   } else {
     container.innerHTML = results.map(r => `
       <div class="result-item" onclick="${r.type === 'market' ? 'openMarket' : 'openKnowledge'}('${r.key}')">
-        <div class="card-tag">${r.tags.join(' · ')}</div>
-        <div class="card-title">${r.title.replace(new RegExp(q, 'gi'), m => `<span class="result-match">${m}</span>`)}</div>
+        <div class="card-tag">${_esc(r.tags.join(' · '))}</div>
+        <div class="card-title">${_highlight(r.title, q)}</div>
       </div>
     `).join('');
   }
@@ -13082,6 +13175,74 @@ function zzTrack(name, params) {
       link_url: a.getAttribute('href'), site_language: lang()
     });
   }, true);
+})();
+</script>
+
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Shown until the visitor decides, then never again. Declining is a real
+     choice: it pushes analytics_storage to denied everywhere, including the
+     markets where the default above is granted.
+     Keep in sync with the same block in scripts/gen-pages.js. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
 })();
 </script>
 </body>

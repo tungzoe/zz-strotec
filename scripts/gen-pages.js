@@ -188,7 +188,16 @@ function rewriteNav(s) {
 }
 
 /* -------------------------------------------------------------- style bundle */
-const styleBlock = (html.match(/<style>([\s\S]*?)<\/style>/) || [, ''])[1];
+// The site stylesheet is by far the biggest <style> in index.html. Match on
+// size rather than position: the frame guard puts two one-line <style> blocks
+// in <head> ahead of it, and "first block wins" silently shipped one of those
+// as the entire stylesheet for every generated page.
+const styleBlock = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)]
+  .map(m => m[1])
+  .reduce((longest, s) => (s.length > longest.length ? s : longest), '');
+if (styleBlock.length < 10000) {
+  throw new Error(`Stylesheet extraction looks wrong — got ${styleBlock.length} chars. Aborting rather than writing a broken kb-pages.css.`);
+}
 fs.mkdirSync(path.join(ROOT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'assets', 'kb-pages.css'), styleBlock.trim() + '\n');
 
@@ -238,6 +247,129 @@ const CSS_HREF = d => `${'../'.repeat(d)}assets/kb-pages.css`;
 
 function jsonld(o) { return JSON.stringify(o).replace(/</g, '\\u003c'); }
 
+/* ------------------------------------------------- shared security / privacy
+ * These three blocks are byte-for-byte the same as the ones in index.html.
+ * They live here too because the generated pages are real landing pages —
+ * organic traffic arrives on them directly, so they need the same frame
+ * refusal and the same consent gate as the front page. If you change one
+ * side, change the other.
+ */
+const FRAME_GUARD = `<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>`;
+
+const CONSENT_DEFAULTS = `<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>`;
+
+const CONSENT_BANNER = `<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>`;
+
 function pageShell({ depth, url, title, desc, ogImage, ld, crumb, main, track }) {
   const t = attrEsc(title), d = attrEsc(desc);
   // A content event alongside the page_view, so a landing on this static page
@@ -248,12 +380,14 @@ function pageShell({ depth, url, title, desc, ogImage, ld, crumb, main, track })
   return `<!doctype html>
 <html lang="en">
 <head>
+${FRAME_GUARD}
+
+${CONSENT_DEFAULTS}
+
 <!-- Google tag (gtag.js) — same property as index.html, so organic landings
      on these static pages show up instead of being invisible to Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-LR7TGXJLS9');${trackJs}
 </script>
@@ -297,6 +431,7 @@ function pageShell({ depth, url, title, desc, ogImage, ld, crumb, main, track })
     <a href="${BASE}markets/">Markets</a>
   </div>
 </footer>
+${CONSENT_BANNER}
 </body>
 </html>
 `;
