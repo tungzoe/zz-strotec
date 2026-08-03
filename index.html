@@ -1261,6 +1261,7 @@
   <div class="header-nav" id="header-nav" style="flex-wrap:wrap;justify-content:flex-end;row-gap:6px">
     <button class="nav-btn active" onclick="showPage('home')" data-i18n="nav_overview">Overview</button>
     <button class="nav-btn" onclick="showPage('knowledge')" data-i18n="nav_knowledge">Knowledge</button>
+    <button class="nav-btn" onclick="showPage('column')" data-i18n="nav_column">Expert Column</button>
     <button class="nav-btn" onclick="showPage('incoterms')" data-i18n="nav_incoterms">Incoterms</button>
     <button class="nav-btn" onclick="showPage('markets')" data-i18n="nav_markets">Markets</button>
     <button class="nav-btn" onclick="showPage('news')" data-i18n="nav_news">News</button>
@@ -1284,6 +1285,7 @@
       <span class="sidebar-label" data-i18n="sidebar_main">Main Pages · 主頁面</span>
       <div class="sidebar-item" onclick="showPage('home');closeSidebar()"><span class="icon">🏠</span><span data-i18n="nav_overview"> Overview</span></div>
       <div class="sidebar-item" onclick="showPage('knowledge');closeSidebar()"><span class="icon">📚</span><span data-i18n="nav_knowledge"> Knowledge</span></div>
+      <div class="sidebar-item" onclick="showPage('column');closeSidebar()"><span class="icon">✍</span><span data-i18n="nav_column"> Expert Column</span></div>
       <div class="sidebar-item" onclick="showPage('incoterms');closeSidebar()"><span class="icon">📑</span><span data-i18n="nav_incoterms"> Incoterms</span></div>
       <div class="sidebar-item" onclick="showPage('markets');closeSidebar()"><span class="icon">🌐</span><span data-i18n="nav_markets"> Markets</span></div>
       <div class="sidebar-item" onclick="showPage('news');closeSidebar()"><span class="icon">📰</span><span data-i18n="nav_news"> News</span></div>
@@ -1584,16 +1586,6 @@
           <div class="card-title" data-zh-title="CNC 車床基礎" data-ko-title="CNC 선반 기초">CNC Lathe Fundamentals</div>
           <div class="card-desc" data-zh-desc="關鍵規格評估：主軸轉速、刀塔類型、棒料容量及控制系統相容性。" data-ko-desc="평가할 핵심 사양: 주축 속도, 터렛 유형, 봉재 용량, 컨트롤러 호환성.">Key specifications to evaluate: spindle speed, turret type, bar capacity, and control system compatibility.</div>
         </div>
-        <div class="card" onclick="openKnowledge('export-docs')">
-          <div class="card-tag" data-zh-tag="出口" data-ko-tag="수출">Export</div>
-          <div class="card-title" data-zh-title="出口文件清單" data-ko-title="수출 서류 체크리스트">Export Document Checklist</div>
-          <div class="card-desc" data-zh-desc="台灣出口文件完整需求：發票、裝箱單、提單、海關申報及輸出許可證。" data-ko-desc="대만 수출 서류 완전 요건: 송장, 포장 명세서, B/L, 세관 신고서 및 수출 허가증.">Complete Taiwan export document requirements: Invoice, Packing List, B/L, customs declarations and export license.</div>
-        </div>
-        <div class="card" onclick="showPage('incoterms')">
-          <div class="card-tag" data-zh-tag="貿易條件" data-ko-tag="무역 조건">Trade Terms</div>
-          <div class="card-title" data-zh-title="Incoterms 2020 指南" data-ko-title="인코텀즈 2020 가이드">Incoterms 2020 Guide</div>
-          <div class="card-desc" data-zh-desc="FOB、CIF、EXW、DAP — 了解風險轉移、費用分擔，以及哪種條件最適合您的出貨。" data-ko-desc="FOB, CIF, EXW, DAP — 위험 이전, 비용 분담, 최적 조건 이해.">FOB, CIF, EXW, DAP — understand risk transfer, cost division, and which term fits your shipment.</div>
-        </div>
         <div class="card" onclick="openKnowledge('live-tool')">
           <div class="card-tag" data-zh-tag="刀具" data-ko-tag="공구">Tooling</div>
           <div class="card-title" data-zh-title="動力刀座" data-ko-title="라이브 툴 홀더">Live Tool Holders</div>
@@ -1606,15 +1598,15 @@
         </div>
       </div>
 
+      <div class="section-title" style="margin-top:28px">EXPERT COLUMN &nbsp;／&nbsp; 專家專欄 &nbsp;／&nbsp; 전문가 칼럼</div>
+      <!-- Top expert columns; populated on load by renderFeaturedColumn() from the newest cards in #page-column -->
+      <div id="home-columns"></div>
+      <div style="margin-bottom:28px"><span onclick="showPage('column')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600" data-i18n="home_all_columns">View all expert columns / 看全部專欄 →</span></div>
+
       <div class="section-title" style="margin-top:28px">WHAT'S NEW ／ 最新消息 ／ 최신 소식</div>
       <!-- Latest updates; populated on load by renderHomeWhatsNew() from #page-whatsnew -->
       <div id="home-whatsnew"></div>
       <div style="margin-bottom:28px"><span onclick="showPage('whatsnew')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600" data-i18n="home_all_news">View all updates / 看全部消息 →</span></div>
-
-      <div class="section-title" style="margin-top:28px">EXPERT COLUMN &nbsp;／&nbsp; 專家專欄</div>
-      <!-- Top expert columns; populated on load by renderFeaturedColumn() from the newest cards in #page-column -->
-      <div id="home-columns"></div>
-      <div style="margin-bottom:28px"><span onclick="showPage('column')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600" data-i18n="home_all_columns">View all expert columns / 看全部專欄 →</span></div>
 
       <div class="section-title" data-i18n="section_news">TAIWAN INDUSTRY NEWS</div>
       <div class="news-list" id="home-news">
@@ -12468,7 +12460,7 @@ async function loadNews() {
 const LANG = {
   en: {
     home_tooltip: 'Back to Home',
-    nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_incoterms: 'Incoterms',
+    nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_column: 'Expert Column', nav_incoterms: 'Incoterms',
     nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry', nav_terminology: 'Terminology', nav_services: 'Services', nav_about: 'About Us', sidebar_main: 'Main Pages · 主頁面',
     section_services: 'SERVICES ／ 貿易服務', section_about: 'ABOUT US ／ 關於我們',
     svc_cta_quote: '→ Request a quote', svc_cta_incoterms: '→ Trade terms guide', svc_cta_visit: '→ Learn more', svc_cta_about: '→ About us', svc_cta_main: 'Get a Quote · 立即詢價 →',
@@ -12530,7 +12522,7 @@ const LANG = {
   },
   zh: {
     home_tooltip: '回到首頁',
-    nav_overview: '首頁', nav_knowledge: '知識庫', nav_incoterms: '貿易條件',
+    nav_overview: '首頁', nav_knowledge: '知識庫', nav_column: '專家專欄', nav_incoterms: '貿易條件',
     nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價', nav_terminology: '術語對照', nav_services: '服務', nav_about: '關於我們', sidebar_main: '主頁面',
     section_services: '貿易服務', section_about: '關於我們',
     svc_cta_quote: '→ 前往詢價', svc_cta_incoterms: '→ 了解貿易條件', svc_cta_visit: '→ 了解更多', svc_cta_about: '→ 關於我們', svc_cta_main: '立即詢價 →',
@@ -12592,7 +12584,7 @@ const LANG = {
   },
   ko: {
     home_tooltip: '홈으로',
-    nav_overview: '홈', nav_knowledge: '지식 라이브러리', nav_incoterms: '인코텀즈',
+    nav_overview: '홈', nav_knowledge: '지식 라이브러리', nav_column: '전문가 칼럼', nav_incoterms: '인코텀즈',
     nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의', nav_terminology: '용어 대조', nav_services: '서비스', nav_about: '회사 소개', sidebar_main: '메인 페이지',
     section_services: '서비스', section_about: '회사 소개',
     svc_cta_quote: '→ 견적 문의', svc_cta_incoterms: '→ 인코텀즈 안내', svc_cta_visit: '→ 자세히 보기', svc_cta_about: '→ 회사 소개', svc_cta_main: '견적 요청 →',
