@@ -1,0 +1,12 @@
+# Security contact for zz-strotec.com (Z&Z STROTEC CO., LTD. / 萬洋國際有限公司)
+# https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: mailto:info@zz-strotec.com
+Expires: 2027-08-03T00:00:00.000Z
+Preferred-Languages: en, zh-Hant, ko
+Canonical: https://zz-strotec.com/.well-known/security.txt
+
+# This is a static marketing and knowledge site: no accounts, no database, no
+# user-supplied content is stored. Reports about the site itself, or about
+# email claiming to come from @zz-strotec.com, are both welcome at the address
+# above.

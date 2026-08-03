@@ -10,7 +10,7 @@ echo "→ Regenerating SEO pages from index.html…"
 node scripts/gen-pages.js
 
 echo "→ Staging changes…"
-git add index.html knowledge column markets assets sitemap.xml scripts/gen-pages.js scripts/deploy.sh
+git add index.html knowledge column markets assets sitemap.xml scripts/gen-pages.js scripts/deploy.sh .well-known robots.txt
 
 if git diff --cached --quiet; then
   echo "Nothing to commit."
