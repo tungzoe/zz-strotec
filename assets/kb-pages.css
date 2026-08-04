@@ -390,6 +390,46 @@
     margin-bottom: 4px;
   }
 
+  /* Standalone SEO pages (knowledge / column / markets).
+     The reset at the top of this sheet zeroes every margin, and .kbp-body had
+     no typographic rules of its own, so headings and paragraphs rendered flush
+     against each other — a wall of text on every generated page. These give it
+     a reading rhythm. Column bodies carry inline margins, which still win, so
+     those pages are unaffected. */
+  .kbp-body {
+    line-height: 1.85;
+  }
+
+  .kbp-body h2,
+  .kbp-body h3,
+  .kbp-body h4 {
+    color: var(--text);
+    line-height: 1.45;
+    font-weight: 600;
+  }
+
+  .kbp-body h2 { font-size: 1.25rem; margin: 40px 0 14px; }
+  .kbp-body h3 { font-size: 1.1rem;  margin: 34px 0 12px; }
+  .kbp-body h4 { font-size: 1.02rem; margin: 30px 0 10px; }
+
+  .kbp-body > :first-child,
+  .kbp-body section > :first-child {
+    margin-top: 0;
+  }
+
+  .kbp-body p { margin: 0 0 14px; }
+
+  .kbp-body ul,
+  .kbp-body ol {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+
+  .kbp-body li { margin-bottom: 7px; }
+  .kbp-body li:last-child { margin-bottom: 0; }
+
+  .kbp-body img { margin: 20px 0; }
+
   .tag-pill {
     display: inline-block;
     background: var(--surface2);

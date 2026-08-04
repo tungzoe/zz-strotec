@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_knowledge", {"item_key":"chuck-replacement","item_title":"How to Identify a Replacement Chuck or Collet Chuck","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Identify a Replacement Chuck or Collet Chuck | Z&amp;Z STROTEC</title>
+<meta name="description" content="A 10-point checklist for identifying a replacement lathe chuck: spindle nose, through-hole, rotating cylinder, jaw serration pitch, collet type, workpiece data and how speed cuts gripping force.">
+<link rel="canonical" href="https://zz-strotec.com/knowledge/chuck-replacement/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Identify a Replacement Chuck or Collet Chuck">
+<meta property="og:description" content="A 10-point checklist for identifying a replacement lathe chuck: spindle nose, through-hole, rotating cylinder, jaw serration pitch, collet type, workpiece data and how speed cuts gripping force.">
+<meta property="og:url" content="https://zz-strotec.com/knowledge/chuck-replacement/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to Identify a Replacement Chuck or Collet Chuck","description":"A 10-point checklist for identifying a replacement lathe chuck: spindle nose, through-hole, rotating cylinder, jaw serration pitch, collet type, workpiece data and how speed cuts gripping force.","inLanguage":["en","zh-Hant","ko"],"articleSection":"Chuck & Collet Replacement","datePublished":"2026-08-04","dateModified":"2026-08-04","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/knowledge/chuck-replacement/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/knowledge/">Knowledge</a> › How to Identify a Replacement Chuck or Collet Chuck</div>
+  
+  <h1 class="kbp-h1">How to Identify a Replacement Chuck or Collet Chuck</h1>
+  <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">夾頭與筒夾更換辨識指南</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">교체용 척·콜릿 척 식별 가이드</span></p>
+  <p class="kbp-byline">Published: 2026-08-04 · Written by Z&amp;Z STROTEC</p>
+  <a class="kbp-cta" href="/#kb-chuck-replacement">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body"><section lang="en">
+<p>When a chuck is damaged, loses gripping force or accuracy, or the original model is discontinued, a replacement cannot be chosen from appearance or machine brand alone. Two chucks that look alike may differ in spindle nose, through-hole, cylinder interface, jaw serration pitch or permitted speed — differences that prevent mounting, or allow mounting but not reliable clamping or accuracy.</p>
+<p>Before requesting a quotation, please prepare the 10 items below. The more complete the information, the shorter the confirmation time and the lower the risk of selecting the wrong specification.</p>
+
+      <h4>The 10-point checklist for identifying a replacement chuck</h4>
+      <h4>1. Lathe brand, full model and year</h4>
+      <p>Give the full model, not just the brand — spindle specification and workholding configuration differ between models from the same builder. State the machine type as well: fixed-headstock lathe, Swiss-type, twin-spindle or vertical. Swiss-type machines clamp mainly with collets at the spindle, which is a different system from the hydraulic chuck on a conventional lathe. Include the serial number or year if the nameplate shows one.</p>
+      <h4>2. Spindle nose designation</h4>
+      <p>This is the first condition that decides whether a chuck will mount at all. Common standards are the A2 series (A2-4, A2-5, A2-6, A2-8, A2-11), located on a short taper and bolted, and the D1 camlock series (D1-4, D1-6, D1-8); some machines use a proprietary nose. Confirm which series and which number, and photograph the spindle face. The taper number and bolt pattern are what identify it — "an 8-inch spindle" is not enough.</p>
+      <h4>3. Brand, model and serial of the existing chuck</h4>
+      <p>Photograph the complete nameplate rather than sending a partial or blurred image. It normally carries the brand, model, size, maximum permitted speed and maximum hydraulic pressure. The original model number matters, but some numbers have been revised, discontinued, or coded differently between markets, so it cannot be the sole basis for identification.</p>
+      <h4>4. Chuck type and size</h4>
+      <p>State what is fitted now and what is intended: through-hole (hollow) for bar work, solid for individual blanks, a collet chuck where concentricity and a short clamping length matter, or a face plate or special fixture for irregular parts. Note also whether the action is draw-back or push-out, since it changes how the part is located axially. Size is given in inches — 5", 6", 8", 10", 12" are common — and is independent of the spindle nose number.</p>
+      <h4>5. Through-hole diameter</h4>
+      <p>For continuous bar work, confirm three diameters: the spindle bore, the draw tube inner diameter and the chuck through-hole. <strong>The smallest of the three is the real bar capacity</strong>, and in practice the draw tube is frequently the limit rather than the spindle bore. Individual-blank work is not bound by this, but it still applies if the part is long enough to enter the spindle.</p>
+      <h4>6. Rotating cylinder and draw tube interface</h4>
+      <p>The chuck does not generate the clamping force; it comes from the rotating hydraulic cylinder at the rear of the spindle, and that cylinder is tied tightly to the spindle itself. It has to match the draw tube thread, the spindle bore and the bearing bore exactly — different lathes differ in both nose designation and bore, for example A2-6 against A2-8, or a bore of ∅81&nbsp;mm against ∅91&nbsp;mm. Confirm the cylinder brand and model, hollow or solid, stroke, maximum draw force and working pressure, and the thread and length of the draw tube or draw bar. <strong>Thrust, stroke and permitted maximum speed must be checked against the machine's own hydraulic circuit and system pressure setting.</strong> A wrong model may simply not fit; worse, it can leave gripping force short — and insufficient grip can throw the workpiece during machining. The rotating cylinder sits close to the machine side, so its specification usually has to be confirmed with the builder and its lead time is longer than the chuck itself. Raise it early and send a photograph of the current arrangement.</p>
+      <h4>7. Jaw specification</h4>
+      <p>Confirm the number of jaws (2, 3 or 4), soft or hard, and the serration pitch — commonly 1.5&nbsp;mm × 60°, 3&nbsp;mm × 60° or 1/16" × 90°. <strong>Pitch is the item most often overlooked and most often wrong: jaws of a different pitch will not interchange even when the chuck size matches.</strong> But pitch alone is not the whole interface: the slot width, the locating hole spacing and the bolt specification on the mating face are also part of it, and each chuck brand has its own patented or proprietary arrangement. Photograph the serrations close up, ideally against a rule, and give measured dimensions if the nameplate is worn. <strong>Where a gantry loader or robot is fitted, jaw outside diameter, height and clamping range have to match the machine's travel limits and the loader's path</strong>, or geometric interference and a crash become likely at speed. Say as well whether one-piece hard jaws, exchangeable carriers, or special forms for thin-walled, irregular or internally gripped parts are needed. Soft jaws are consumable and bored to suit the part; jaws and carriers are mostly specific to the chuck brand, so the model has to be confirmed with the manufacturer before ordering.</p>
+      <h4>8. Collet type and clamping range</h4>
+      <p>For a collet chuck, confirm the type and range. Spindle collets are commonly 5C, 16C, 22C or R8, plus machine-specific designs. Each collet covers a limited effective range — going outside it reduces gripping force and concentricity — so give the workpiece diameter and tolerance range.</p>
+      <h4>8b. Swiss-type collets and guide bushings</h4>
+      <p>Workholding on a Swiss-type lathe (Citizen Cincom, STAR, TSUGAMI, Miyano and Taiwanese sliding-headstock models) is fundamentally different from a conventional lathe. The collets used at the main and sub spindle, and the guide bushing that supports the bar at the cutting point, are made to the machine model: <strong>taper angle, outside diameter, length and the rear draw thread pitch are all proprietary.</strong> The machining mode changes the specification too — whether the machine is built with a removable guide bushing or runs guide-bushing-less directly alters the bushing specification and its mounting length. Without the complete model and serial number it is easy to receive a collet of the wrong length or taper, which shows up as poor bar feeding, chatter, or severe runout on the finished part. <strong>Note that ER collets (ER16, ER20, ER25, ER32 and so on) belong to the tool side</strong>, holding cutting tools in live and static holders — a different system from the spindle collets that grip the workpiece, so state which side you mean.</p>
+      <h4>9. Workpiece data</h4>
+      <p>The workholding solution is ultimately decided by the part, so provide the outside diameter range and the length of the clamped section, the material and weight, whether the part is thin-walled, deformable or already finished, whether the clamped section is raw, cast or machined, whether a second clamping for finishing is involved, and the concentricity or runout requirement. Thin-walled parts and finished surfaces usually need lower gripping force or a special jaw form — the opposite of the intuition that more force is better.</p>
+      <h4>10. Speed and gripping force</h4>
+      <p>Give the maximum spindle speed actually used. A chuck's rated maximum speed is a safety limit, not a recommendation, and <strong>centrifugal force acting on the jaws reduces the actual gripping force as speed rises</strong>, so the force available at working speed can be well below the static figure. On large diameters and heavy parts this affects both safety and machining stability directly. For high-speed work, confirm the chuck's balance requirement and whether dynamic balancing is needed.</p>
+      <h4>The three essentials to send with an inquiry</h4>
+      <ol><li><strong>Machine nameplate photo</strong> — complete model, year of manufacture and serial number. The same model can be revised between production years.</li><li><strong>Nameplate or stamping on the existing part</strong> — the brand, model, part number or rotation arrow on the jaw carrier, cylinder or collet.</li><li><strong>Measured key dimensions</strong> — where the nameplate is worn, send caliper measurements: hole spacing, outside diameter, length and thread pitch.</li></ol>
+      <p>Useful additions: the spindle face showing the nose type and bolt pattern, a close-up of the jaw serrations with a rule alongside, the rear of the spindle with the rotating cylinder, and the workpiece or its drawing.</p>
+      <p>Dimensions: spindle nose designation, chuck size in inches, through-hole diameter, draw tube inner diameter, workpiece diameter range and clamped length, and maximum working speed.</p>
+      <h4>Common inquiry mistakes</h4>
+      <ul><li><strong>Deriving the spindle nose from the chuck size.</strong> An 8" chuck does not imply a particular nose number; the two must be confirmed separately.</li><li><strong>Replacing the chuck without checking the cylinder.</strong> Mismatched stroke or draw force leaves the part under-clamped or the stroke exhausted.</li><li><strong>Ignoring jaw serration pitch.</strong> Same chuck size, different pitch — the jaws will not interchange.</li><li><strong>Deriving bar capacity from the maximum turning diameter.</strong> Use the smallest of spindle bore, draw tube inner diameter and chuck through-hole.</li><li><strong>Confusing ER collets with spindle collets.</strong> The first holds tools, the second holds the workpiece.</li><li><strong>Assuming more gripping force is always better.</strong> Thin-walled and finished parts need appropriate force and the right jaw form.</li><li><strong>Overlooking how speed affects gripping force.</strong> The rated maximum is a safety limit, and available force falls as speed rises.</li></ul>
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">All replacement and compatibility decisions should ultimately rest on the machine manufacturer's original specification, the official drawings, and acceptance conditions agreed between both parties. This article provides general technical guidance and does not replace them.</p>
+      <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
+        <h4 style="margin-bottom:8px">Need help identifying a replacement chuck or collet?</h4>
+        <p style="margin-bottom:12px">Z&amp;Z STROTEC supplies hydraulic chucks, collet chucks and collets for CNC lathes, and helps confirm interface and specification compatibility when replacing them.</p>
+        <p style="margin-bottom:12px">Some items — jaws and jaw carriers, rotating cylinders, and the machine-specific collets used on Swiss-type lathes — are mostly proprietary to a chuck brand or a machine, so the model and dimensions have to be confirmed with the original manufacturer first and lead times are usually longer. We raise these during the confirmation stage and help verify them with the builder, so nothing surfaces as a missing part after the change.</p>
+        <p style="margin-bottom:16px">Send the photographs and dimensions above and we will help confirm which models are workable and what else has to be handled alongside.</p>
+        <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">CONTACT US →</button>
+        </div>
+        <div style="padding-top:14px;margin-top:14px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/collet-chuck/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Collets &amp; Chucks — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Live Tool Holder Replacement Checklist →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/bar-feeder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Bar Feeder Systems →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/spindle/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">CNC Spindles →</button>
+        </div>
+      </div>
+    </section><section lang="zh-Hant" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">繁體中文</div>
+<p>夾頭損壞、夾持力下降、精度跑掉，或原廠型號停產時，不能只憑外觀或機台品牌選購替代品。兩顆看起來相似的夾頭，只要主軸鼻端、通過孔、油壓缸介面、爪座齒距或允許轉速不同，就可能裝不上去，或裝得上去卻夾不穩、精度不到。</p>
+<p>向供應商詢價前，請準備以下 10 項資料。資料越完整，越能縮短確認時間並降低選錯規格的風險。</p>
+
+      <h4>夾頭與筒夾更換／詢價的 10 項辨識清單</h4>
+      <h4>1. 車床品牌、完整型號與出廠年份</h4>
+      <p>請提供完整型號，不只是品牌；同一品牌不同型號的主軸規格與夾持配置可能完全不同。同時說明機台型態：一般固定主軸車床、走心式、雙主軸或立式。走心式的主軸夾持以筒夾為主，與一般車床的油壓夾頭是不同系統。銘牌上若有序號或製造年份，請一併提供。</p>
+      <h4>2. 主軸鼻端規格</h4>
+      <p>這是決定夾頭能不能裝上去的第一個條件。常見規格為 A2 系列（A2-4、A2-5、A2-6、A2-8、A2-11），以短錐面定位、螺栓固定；以及 D1 凸輪鎖定系列（D1-4、D1-6、D1-8）。部分機台使用專用鼻端。請確認是 A2 或 D1、幾號，並拍攝主軸端面照片。錐度號數與螺栓孔分布才是判定依據，只說「8 吋主軸」無法確認。</p>
+      <h4>3. 現有夾頭的品牌、型號與序號</h4>
+      <p>請拍攝完整銘牌，不要只傳局部或模糊照片。銘牌上通常有品牌、型號、尺寸、允許最高轉速與最大油壓。原廠型號很重要，但部分型號可能已改版、停產，或在不同市場使用不同編碼，因此不能單獨作為判定依據。</p>
+      <h4>4. 夾頭型式與尺寸</h4>
+      <p>請說明目前使用與預計更換的型式：中空（貫穿）用於棒料生產、中實用於單件毛胚、筒夾夾頭用於重視同心度與短夾持長度的場合、面盤或特殊治具用於異形件。同時說明是後拉式或前推式，這會影響工件的軸向定位方式。尺寸以吋表示，常見 5"、6"、8"、10"、12"，且與主軸鼻端號數無關。</p>
+      <h4>5. 通過孔直徑</h4>
+      <p>若要以棒料連續生產，請確認三個孔徑：主軸通孔、拉管內徑、夾頭通過孔。<strong>三者取最小值才是實際可用的棒徑上限</strong>，實務上限制往往是拉管內徑而不是主軸通孔。單件毛胚生產不受此限，但工件若較長需伸入主軸，仍需確認。</p>
+      <h4>6. 旋轉油壓缸型號與拉管介面</h4>
+      <p>夾頭本身不會產生夾持力，力量來自主軸後端的旋轉油壓缸，而油壓缸與主軸是緊密綁定的。它必須與主軸後端的拉管螺紋、主軸通孔徑及培林內徑完全一致——不同車床的鼻端規格與貫通穴徑差異很大，例如 A2-6 與 A2-8，穴徑 ∅81&nbsp;mm 與 ∅91&nbsp;mm。請確認油壓缸品牌與型號、中空或中實、行程、最大拉力與使用油壓、拉桿或拉管的螺紋規格與長度。<strong>推力、行程與容許最高轉速，必須嚴格對照機台原廠的液壓迴路與系統壓力設定。</strong>型號對應錯誤，輕則無法安裝，重則夾持力不足——而夾持力不足可能在加工中拋出工件。旋轉油壓缸屬於較接近機台端的零件，規格通常需向原廠確認，交期也比夾頭本體長，建議提早提出並提供現有配置照片。</p>
+      <h4>7. 爪的規格</h4>
+      <p>請確認爪數（2 爪、3 爪或 4 爪）、軟爪或硬爪，以及爪座齒距——常見 1.5&nbsp;mm × 60°、3&nbsp;mm × 60° 或 1/16" × 90°。<strong>齒距是最容易被忽略卻最容易出錯的一項：齒距不同的爪即使夾頭尺寸相同也無法互換。</strong>但介面不只齒距：接合面的滑槽寬度、定位鎖孔距與螺栓規格同樣是判定條件，各品牌夾頭皆有其專利或專屬設計。請拍攝爪座齒部近照，最好附上尺規；銘牌若已磨損，請提供游標卡尺的實測尺寸。<strong>若搭配門型機械手或自動化上下料，爪的外徑、高度與夾持範圍必須與機台極限行程及手臂路徑完全匹配</strong>，否則在高速旋轉或快速移動時容易發生幾何干涉或撞機。並說明是否需要一體式硬爪、可換式爪座，或薄壁件、異形件、內撐夾持用的特殊爪型。軟爪屬消耗品，可依工件搪修；爪與爪座多為各夾頭品牌的專屬規格，訂購前需向原廠確認型號。</p>
+      <h4>8. 筒夾型式與夾持範圍</h4>
+      <p>若使用筒夾夾頭，請確認型式與夾持範圍。主軸筒夾常見 5C、16C、22C、R8 及各機台專用型式。每支筒夾的有效夾持範圍有限，超出範圍會導致夾持力下降與同心度變差，請提供工件外徑與公差範圍。</p>
+      <h4>8b. 走心式機台專用筒夾與導套</h4>
+      <p>走心式車床（Citizen Cincom、STAR、TSUGAMI、Miyano 及台灣的走心機種）的工件夾持系統，與一般車床有本質上的不同。主軸與副主軸所使用的筒夾，以及在切削點支撐棒材的導套，都是針對機台型號量身打造：<strong>錐度角度、外徑、長度及後端拉力的螺紋距，皆為專屬規格。</strong>加工模式也會改變規格——機台是否配備可拆式導套或採無導套設計，會直接改變所需的導套規格與安裝長度。若沒有提供完整機台型號與序號，極容易買到長度或錐度不合的筒夾，結果表現為棒材送料不順、震刀，或加工件嚴重偏擺。<strong>注意：ER 筒夾（ER16、ER20、ER25、ER32 等）屬於刀具夾持端</strong>，用於動力刀座與靜態刀座，與主軸工件夾持的筒夾是不同系統，詢價時請說明是哪一端。</p>
+      <h4>9. 工件資料</h4>
+      <p>夾持方案最終由工件決定，請提供：工件外徑範圍與夾持段長度、材質與重量、是否為薄壁或易變形、夾持段是毛胚面／鑄面／已加工面、是否需要二次夾持精修，以及對同心度或跳動的要求。薄壁件與已精加工面通常需要較低夾持力或特殊爪型，這與「夾持力越大越好」的直覺相反。</p>
+      <h4>10. 轉速與夾持力</h4>
+      <p>請提供實際使用的最高主軸轉速。夾頭的允許最高轉速是安全上限而非建議值，且<strong>隨著轉速提高，作用在爪上的離心力會使實際夾持力下降</strong>，工作轉速下可用的夾持力可能明顯低於靜態值。加工大直徑或重工件時，這會直接影響安全與加工穩定性。高轉速應用請一併確認夾頭的平衡等級與是否需要動平衡。</p>
+      <h4>詢價時建議備妥的「合規三寶」</h4>
+      <ol><li><strong>機台銘牌照片</strong>——完整型號、製造年份及機台序號。同型號不同年份可能改版。</li><li><strong>原有配件的銘牌或鋼印照片</strong>——原爪座、油壓缸或筒夾上的品牌、型號、料號或旋向箭頭。</li><li><strong>關鍵尺寸實測</strong>——銘牌若已磨損，請提供游標卡尺的實測尺寸：孔距、外徑、長度與螺紋距。</li></ol>
+      <p>另建議附上：可看出鼻端型式與螺栓孔分布的主軸端面、附尺規的爪座齒部近照、主軸後端與旋轉油壓缸、工件實物或圖面。</p>
+      <p>尺寸：主軸鼻端號數、夾頭尺寸（吋）、通過孔直徑、拉管內徑、工件外徑範圍與夾持長度、最高使用轉速。</p>
+      <h4>常見的詢價錯誤</h4>
+      <ul><li><strong>用夾頭尺寸推算主軸鼻端。</strong> 8 吋夾頭不等於特定鼻端號數，兩者必須分別確認。</li><li><strong>只換夾頭，沒確認油壓缸。</strong> 行程與拉力不匹配時，會出現夾不緊或行程用盡。</li><li><strong>忽略爪座齒距。</strong> 夾頭尺寸相同但齒距不同，爪無法互換。</li><li><strong>用最大車削直徑推算棒徑。</strong> 應取主軸通孔、拉管內徑與夾頭通過孔的最小值。</li><li><strong>把 ER 筒夾與主軸筒夾混為一談。</strong> 前者是刀具端，後者是工件端。</li><li><strong>假設夾持力越大越好。</strong> 薄壁件與精加工面需要的是適當夾持力與合適爪型。</li><li><strong>忽略轉速對夾持力的影響。</strong> 允許最高轉速是安全上限，實際夾持力會隨轉速下降。</li></ul>
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">所有替換與相容性判定，最終仍應以機台製造商的原始規格書、正式圖面及雙方確認的允收條件為準。本文提供一般性技術指引，不取代上述文件。</p>
+      <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
+        <h4 style="margin-bottom:8px">需要協助辨識替換用夾頭或筒夾？</h4>
+        <p style="margin-bottom:12px">Z&amp;Z STROTEC 供應 CNC 車床用油壓夾頭、筒夾夾頭與筒夾，並協助確認更換時的介面與規格相容性。</p>
+        <p style="margin-bottom:12px">部分項目——例如爪與爪座、旋轉油壓缸，以及走心式車床的機台專用筒夾——多屬各品牌或機台的專屬規格，需要先向原廠確認型號與尺寸才能對應，交期通常也較長。這類項目我們會在確認階段一併提出並協助查證，以免更換後才發現缺件。</p>
+        <p style="margin-bottom:16px">請提供上述照片與尺寸，我們會協助確認可用型號與需要一併處理的項目。</p>
+        <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">立即洽詢 →</button>
+        </div>
+        <div style="padding-top:14px;margin-top:14px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/collet-chuck/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">筒夾／夾頭 — 知識庫 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">動力刀座更換辨識指南 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/bar-feeder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">送料機系統 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/spindle/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">主軸系統 →</button>
+        </div>
+      </div>
+    </section><section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>
+<p>척이 손상되었거나 파지력·정밀도가 떨어졌거나 원 모델이 단종되었을 때, 외관이나 기계 브랜드만으로 대체품을 고를 수 없습니다. 비슷해 보이는 두 척도 주축 노즈, 관통 구멍, 실린더 인터페이스, 조 세레이션 피치, 허용 회전수가 다르면 장착이 되지 않거나, 장착되더라도 안정적인 파지와 정밀도를 얻지 못합니다.</p>
+<p>견적을 요청하기 전에 아래 10가지 항목을 준비해 주십시오. 자료가 완전할수록 확인 시간이 짧아지고 규격 오선정 위험이 줄어듭니다.</p>
+
+      <h4>교체용 척 식별을 위한 10가지 체크리스트</h4>
+      <h4>1. 선반 브랜드, 전체 모델명, 제조 연도</h4>
+      <p>브랜드만이 아니라 전체 모델명을 제공해 주십시오. 같은 제조사라도 모델에 따라 주축 사양과 척킹 구성이 다릅니다. 고정 주축 선반, 스위스형, 트윈 스핀들, 수직형 등 기계 형태도 알려 주십시오. 스위스형은 주축에서 콜릿으로 파지하므로 일반 선반의 유압 척과는 다른 시스템입니다.</p>
+      <h4>2. 주축 노즈 규격</h4>
+      <p>척의 장착 가능 여부를 결정하는 첫 번째 조건입니다. 숏 테이퍼 위치 결정에 볼트로 고정하는 A2 시리즈(A2-4·A2-5·A2-6·A2-8·A2-11)와 캠락 방식의 D1 시리즈(D1-4·D1-6·D1-8)가 일반적이며, 전용 노즈를 쓰는 기계도 있습니다. 어느 시리즈의 몇 번인지 확인하고 주축 단면 사진을 보내 주십시오.</p>
+      <h4>3. 기존 척의 브랜드·모델·일련번호</h4>
+      <p>부분 사진이나 흐릿한 사진이 아니라 명판 전체를 촬영해 주십시오. 브랜드, 모델, 크기, 허용 최고 회전수, 최대 유압이 표기되어 있습니다. 원 모델 번호는 중요하지만 개정·단종되었거나 시장별로 코드가 다를 수 있어 단독 판단 근거로는 부족합니다.</p>
+      <h4>4. 척의 종류와 크기</h4>
+      <p>현재 사용 중인 것과 교체 예정인 것을 알려 주십시오. 봉재 가공용 관통형(중공), 단품 소재용 솔리드형, 동심도와 짧은 파지 길이가 중요한 경우의 콜릿 척, 이형 부품용 페이스 플레이트·전용 지그가 있습니다. 인장식인지 압출식인지도 알려 주십시오. 크기는 인치로 표기하며(5"·6"·8"·10"·12") 주축 노즈 번호와는 무관합니다.</p>
+      <h4>5. 관통 구멍 지름</h4>
+      <p>봉재 연속 가공이라면 주축 관통 구멍, 드로우 튜브 내경, 척 관통 구멍 세 가지를 확인해 주십시오. <strong>셋 중 최솟값이 실제 봉재 상한</strong>이며, 실무에서는 주축 관통 구멍보다 드로우 튜브가 제한인 경우가 많습니다.</p>
+      <h4>6. 로터리 실린더와 드로우 튜브 인터페이스</h4>
+      <p>척 자체는 파지력을 만들지 않으며, 힘은 주축 후단의 로터리 유압 실린더에서 나옵니다. 이 실린더는 주축과 밀접하게 묶여 있어 드로우 튜브 나사, 주축 관통 구멍 지름, 베어링 내경이 정확히 일치해야 합니다. 예를 들어 A2-6과 A2-8, 관통 지름 ∅81&nbsp;mm과 ∅91&nbsp;mm은 전혀 다릅니다. 실린더 브랜드·모델, 중공·솔리드, 스트로크, 최대 인장력과 사용 유압, 드로우 튜브의 나사 규격과 길이를 확인해 주십시오. <strong>추력·스트로크·허용 최고 회전수는 기계 원 제조사의 유압 회로와 시스템 압력 설정에 맞춰 엄격히 대조해야 합니다.</strong> 모델이 맞지 않으면 장착이 불가하거나, 심할 경우 파지력 부족으로 가공 중 공작물이 튀어나갈 수 있습니다.</p>
+      <h4>7. 조(Jaw) 사양</h4>
+      <p>조 수(2·3·4), 소프트·하드 여부, 세레이션 피치(일반적으로 1.5&nbsp;mm × 60°, 3&nbsp;mm × 60°, 1/16" × 90°)를 확인해 주십시오. <strong>피치는 가장 자주 간과되면서 가장 자주 틀리는 항목으로, 피치가 다르면 척 크기가 같아도 호환되지 않습니다.</strong> 다만 인터페이스는 피치만이 아닙니다. 접합면의 슬롯 폭, 위치 결정 홀 간격, 볼트 규격도 판정 조건이며 척 브랜드마다 고유 설계를 가집니다. 세레이션을 근접 촬영하고 명판이 마모되었다면 실측 치수를 제공해 주십시오. <strong>갠트리 로더나 로봇을 함께 쓰는 경우, 조의 외경·높이·파지 범위가 기계의 이동 한계와 로더 경로에 정확히 맞아야</strong> 고속 회전이나 급속 이송 시 간섭·충돌을 피할 수 있습니다.</p>
+      <h4>8. 콜릿 종류와 파지 범위</h4>
+      <p>콜릿 척이라면 종류와 범위를 확인해 주십시오. 주축 콜릿은 5C·16C·22C·R8 및 기계 전용 설계가 일반적입니다. 각 콜릿의 유효 범위는 제한적이므로 공작물 외경과 공차 범위를 알려 주십시오.</p>
+      <h4>8b. 스위스형 전용 콜릿과 가이드 부시</h4>
+      <p>스위스형 선반(Citizen Cincom, STAR, TSUGAMI, Miyano 및 대만 슬라이딩 헤드스톡 기종)의 공작물 파지 시스템은 일반 선반과 본질적으로 다릅니다. 주축·부주축용 콜릿과 절삭점에서 봉재를 지지하는 가이드 부시는 기계 모델에 맞춰 제작되며, <strong>테이퍼 각도, 외경, 길이, 후단 인장 나사 피치가 모두 전용 규격</strong>입니다. 가공 방식도 규격을 바꿉니다. 착탈식 가이드 부시 사양인지 무(無)가이드 부시 방식인지에 따라 필요한 부시 규격과 장착 길이가 달라집니다. 완전한 모델명과 일련번호가 없으면 길이나 테이퍼가 맞지 않는 콜릿을 받기 쉬우며, 이는 봉재 이송 불량·채터·심한 런아웃으로 나타납니다. <strong>ER 콜릿은 공구 측</strong>이며 주축의 공작물 파지용 콜릿과는 다른 시스템입니다.</p>
+      <h4>9. 공작물 정보</h4>
+      <p>척킹 방안은 결국 부품이 결정합니다. 외경 범위와 파지 구간 길이, 재질과 중량, 박육·변형 가능성, 파지면이 소재면·주물면·가공면인지, 2차 파지 정삭 여부, 동심도·런아웃 요구사항을 알려 주십시오. 박육 부품과 가공 완료면은 대개 낮은 파지력이나 전용 조가 필요하며, 이는 '파지력은 클수록 좋다'는 통념과 반대입니다.</p>
+      <h4>10. 회전수와 파지력</h4>
+      <p>실제 사용하는 최고 주축 회전수를 알려 주십시오. 척의 허용 최고 회전수는 권장값이 아니라 안전 한계이며, <strong>회전수가 올라가면 조에 작용하는 원심력이 실제 파지력을 낮춥니다</strong>. 대직경·중량 부품에서는 안전과 가공 안정성에 직접 영향을 줍니다. 고속 용도에서는 척의 밸런스 등급과 동적 밸런싱 필요 여부도 확인하십시오.</p>
+      <h4>문의 시 준비를 권장하는 세 가지 필수 자료</h4>
+      <ol><li><strong>기계 명판 사진</strong> — 전체 모델명, 제조 연도, 일련번호. 같은 모델도 연도에 따라 개정될 수 있습니다.</li><li><strong>기존 부품의 명판 또는 각인 사진</strong> — 조 캐리어·실린더·콜릿의 브랜드, 모델, 부품번호, 회전 방향 화살표.</li><li><strong>핵심 치수 실측</strong> — 명판이 마모된 경우 캘리퍼 실측값(홀 간격, 외경, 길이, 나사 피치)을 보내 주십시오.</li></ol>
+      <p>추가로 유용한 자료: 노즈 형식과 볼트 배치가 보이는 주축 단면, 자를 함께 놓은 세레이션 근접 사진, 주축 후단과 로터리 실린더, 공작물 실물 또는 도면.</p>
+      <p>치수: 주축 노즈 번호, 척 크기(인치), 관통 구멍 지름, 드로우 튜브 내경, 공작물 외경 범위와 파지 길이, 최고 사용 회전수.</p>
+      <h4>문의 시 자주 발생하는 오류</h4>
+      <ul><li><strong>척 크기로 주축 노즈를 추정합니다.</strong> 8" 척이 특정 노즈 번호를 의미하지 않으며 각각 확인해야 합니다.</li><li><strong>척만 교체하고 실린더를 확인하지 않습니다.</strong> 스트로크·인장력이 맞지 않으면 파지 부족이나 스트로크 소진이 발생합니다.</li><li><strong>조 세레이션 피치를 간과합니다.</strong> 척 크기가 같아도 피치가 다르면 호환되지 않습니다.</li><li><strong>최대 선삭 지름으로 봉재 지름을 계산합니다.</strong> 주축 관통 구멍·드로우 튜브 내경·척 관통 구멍의 최솟값을 기준으로 하십시오.</li><li><strong>ER 콜릿과 주축 콜릿을 혼동합니다.</strong> 전자는 공구용, 후자는 공작물용입니다.</li><li><strong>파지력은 클수록 좋다고 가정합니다.</strong> 박육·가공 완료 부품에는 적절한 파지력과 알맞은 조가 필요합니다.</li><li><strong>회전수가 파지력에 미치는 영향을 놓칩니다.</strong> 허용 최고 회전수는 안전 한계이며 파지력은 회전수와 함께 낮아집니다.</li></ul>
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">모든 교체 및 호환성 판정은 최종적으로 기계 제조사의 원본 사양서, 공식 도면, 양측이 합의한 인수 조건을 기준으로 해야 합니다. 본문은 일반적인 기술 지침이며 이를 대체하지 않습니다.</p>
+      <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
+        <h4 style="margin-bottom:8px">교체용 척·콜릿 식별이 필요하십니까?</h4>
+        <p style="margin-bottom:12px">Z&amp;Z STROTEC은 CNC 선반용 유압 척, 콜릿 척, 콜릿을 공급하며 교체 시 인터페이스와 사양 호환성 확인을 지원합니다.</p>
+        <p style="margin-bottom:12px">조와 조 캐리어, 로터리 실린더, 스위스형 선반의 기계 전용 콜릿 등 일부 품목은 척 브랜드나 기계 전용 규격인 경우가 많아 원 제조사에 모델과 치수를 먼저 확인해야 하며 납기도 대체로 깁니다. 이러한 항목은 확인 단계에서 함께 제시하고 제조사 확인을 지원합니다.</p>
+        <p style="margin-bottom:16px">위의 사진과 치수를 보내 주시면 적용 가능한 모델과 함께 처리해야 할 항목을 확인해 드리겠습니다.</p>
+        <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">문의하기 →</button>
+        </div>
+        <div style="padding-top:14px;margin-top:14px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/collet-chuck/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">콜릿 & 척 — 지식 문서 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">라이브 툴 교체 식별 가이드 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/bar-feeder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">바피더 시스템 →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/spindle/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">CNC 주축 →</button>
+        </div>
+      </div>
+    </section></div>
+  <div class="kbp-tags"><span class="tag-pill">chuck</span><span class="tag-pill">collet</span><span class="tag-pill">workholding</span><span class="tag-pill">spindle nose</span><span class="tag-pill">jaws</span><span class="tag-pill">hydraulic chuck</span><span class="tag-pill">replacement</span><span class="tag-pill">quotation</span></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>
+  </div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>

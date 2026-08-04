@@ -127,6 +127,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zz-strotec.com/knowledge/chuck-replacement/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://zz-strotec.com/knowledge/static-tool/</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,7 +176,7 @@
   </url>
   <url>
     <loc>https://zz-strotec.com/knowledge/collet-chuck/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
