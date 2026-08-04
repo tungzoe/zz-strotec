@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_column", {"column_id":"col-18","item_title":"Retrofitting a Bar Feeder to an Existing CNC Lathe: 10 Compatibility Checks Before You Order","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar Feeder Retrofit: 10 Compatibility Checks for an Existing Lathe | Z&amp;Z STROTEC</title>
+<meta name="description" content="Adding a bar feeder to a lathe you already own: spindle bore and draw tube limits, centre height, rear space, spindle liners, the controller interface and who commissions it.">
+<link rel="canonical" href="https://zz-strotec.com/column/bar-feeder-retrofit-compatibility/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bar Feeder Retrofit: 10 Compatibility Checks for an Existing Lathe">
+<meta property="og:description" content="Adding a bar feeder to a lathe you already own: spindle bore and draw tube limits, centre height, rear space, spindle liners, the controller interface and who commissions it.">
+<meta property="og:url" content="https://zz-strotec.com/column/bar-feeder-retrofit-compatibility/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/photo/bar-feeder-retrofit-compatibility.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Retrofitting a Bar Feeder to an Existing CNC Lathe: 10 Compatibility Checks Before You Order","description":"Adding a bar feeder to a lathe you already own: spindle bore and draw tube limits, centre height, rear space, spindle liners, the controller interface and who commissions it.","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.com/photo/bar-feeder-retrofit-compatibility.jpg","articleSection":"Automation · Bar Feeders","datePublished":"2026-08-04","dateModified":"2026-08-04","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/column/bar-feeder-retrofit-compatibility/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/column/">Columns</a> › Retrofitting a Bar Feeder to an Existing CNC Lathe: 10 Compatibility Checks Before You Order</div>
+  
+  <a class="kbp-cta" href="/#col-18">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body">
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+
+        <!-- Header -->
+        <div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Automation &nbsp;·&nbsp; Bar Feeders</span>
+          <h1 style="color:var(--text);margin:10px 0 6px;font-size:1.35rem;font-weight:600;line-height:1.4">Retrofitting a Bar Feeder to an Existing CNC Lathe: 10 Compatibility Checks Before You Order</h1>
+          <p style="color:var(--text-dim);font-size:0.95rem;margin:0 0 4px">舊車床加裝送料機：下單前必須確認的 10 項相容性</p>
+          <p style="color:var(--text-dim);font-size:0.88rem;margin:0">기존 CNC 선반에 바 피더 추가하기: 발주 전 확인해야 할 10가지 호환성 항목</p>
+        </div>
+        <div style="color:var(--text-dim);font-size:0.74rem;margin:-18px 0 22px;line-height:1.6">Published: 2026-08-04 &nbsp;·&nbsp; Written by Z&amp;Z STROTEC &nbsp;／&nbsp; 發布：2026-08-04 ・撰文：Z&amp;Z STROTEC 萬洋國際 &nbsp;／&nbsp; 발행: 2026-08-04 · 작성: Z&amp;Z STROTEC</div>
+
+        <img src="/photo/bar-feeder-retrofit-compatibility.jpg" loading="lazy" alt="A long magazine bar feeder aligned to the rear of a CNC lathe spindle, with dimension callouts marking the bar entry, the spindle centre height, the length of the feeder and the floor space behind the machine" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 22px;display:block">
+
+        <!-- Intro -->
+        <p style="margin-bottom:12px;line-height:1.85">A bar feeder looks like a standalone machine, but it only works as part of a system that includes the lathe spindle, the workholding and the control. The same feeder can run perfectly on one lathe and fail to feed, whip the bar or refuse to interlock on another that looks almost identical. The difference between buying a feeder with a new machine and adding one to a machine you already own is this: on a new machine the builder configures the feeder interface, the spindle liner and the M codes before it ships, while on an existing machine every one of those has to be confirmed as it stands today — including <strong style="color:var(--gold)">which options were selected when the machine was originally purchased</strong>. Confirming these items before you order takes a few photographs, a few dimensions and a copy of the original machine specification. Discovering them after the feeder arrives costs considerably more.</p>
+        <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:10px">送料機看起來是獨立設備，實際上是與車床主軸、夾持系統與控制器一起運作的組合。同一台送料機接在兩台外觀相近的車床上，可能一台順利運轉，另一台卻無法送料、棒材甩動或訊號無法連鎖。與新機配套採購最大的差別在於：新機由製造商在出廠前把送料機介面、主軸內襯管與 M code 一起配置好；既有機台則必須逐項確認現況，包括<strong>當初購機時選配了哪些項目</strong>。下單前確認只需要幾張照片、幾個尺寸與一份購機規格書；等設備到廠才發現不合，處理成本會高出許多。</p>
+        <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">바 피더는 독립된 설비처럼 보이지만 실제로는 선반 주축·척킹 시스템·제어장치와 함께 작동하는 하나의 조합입니다. 같은 피더를 외관이 비슷한 두 대의 선반에 연결해도 한 대는 문제없이 돌아가고 다른 한 대는 공급이 되지 않거나 봉재가 흔들리거나 인터록이 걸리지 않을 수 있습니다. 신규 장비와 함께 구매하는 경우와의 가장 큰 차이는, 신규 장비는 제조사가 출하 전에 피더 인터페이스·주축 라이너·M 코드를 모두 설정해 두는 반면, 기존 장비는 <strong>최초 구매 시 선택한 옵션</strong>을 포함해 현재 상태를 항목별로 확인해야 한다는 점입니다. 발주 전 확인에는 사진 몇 장, 치수 몇 개, 구매 사양서 한 부면 충분합니다.</p>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🏷️</span> 1. Machine Brand, Full Model and Year (車床品牌、完整型號與年份)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Give the full model designation, not just the brand. Different models from the same builder can differ completely in spindle specification, rear structure and control version, and the same model can change its electrical configuration between production years. If the nameplate carries a serial number, type number or year of manufacture, include it. The more complete the machine data, the easier it is to establish what was fitted when the machine left the factory — which, as section 8 explains, is what actually decides whether a feeder can be connected.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">請提供完整型號，而不只是品牌。同一製造商的不同型號，主軸規格、後方結構與控制器版本可能完全不同；同一型號也可能因生產年份不同而改版電控配置。銘牌上若有序號、型式編號或製造年份，請一併提供。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">브랜드만이 아니라 전체 모델명을 제공해 주십시오. 같은 제조사라도 모델에 따라 주축 사양·후방 구조·제어장치 버전이 완전히 다를 수 있고, 같은 모델도 생산 연도에 따라 전장 구성이 변경되었을 수 있습니다. 명판의 일련번호·형식번호·제조 연도도 함께 알려 주십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⭕</span> 2. Spindle Bore — and Where the Real Limit Sits (主軸通孔與真正的棒徑上限)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The most common mistake is to work out maximum bar diameter from the maximum turning diameter in the catalogue. Bar capacity is set by the spindle bore, not by the turning diameter.</p>
+          <p style="margin-bottom:14px;line-height:1.8">There is a second limit that gets overlooked more often. <strong style="color:var(--gold)">In practice the constraint is frequently the draw tube inner diameter, or the through-hole at the rear of the chuck, rather than the spindle bore itself.</strong> The smallest of the three is the real limit, and the draw tube is worth measuring rather than taking from a catalogue. State as well whether the stock is round, hexagonal or square: profiled bar needs matching guide channels and spindle liners, and usually restricts the usable spindle speed.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">最常見的誤解是用型錄上的最大車削直徑推算棒徑。決定上限的是主軸通孔，不是車削直徑。更容易被忽略的是：<strong>實際限制往往是拉管內徑或夾頭後端的通過孔，而不是主軸通孔</strong>，三者取最小值才是真正的上限，建議實際量測拉管。同時請說明是圓棒、六角棒或方棒。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">카탈로그의 최대 선삭 지름으로 봉재 지름을 계산하는 것이 가장 흔한 오해입니다. 상한을 결정하는 것은 주축 관통 구멍입니다. 더 자주 간과되는 점은 <strong>실제 제한이 드로우 튜브 내경이나 척 후단 관통 구멍인 경우가 많다</strong>는 것으로, 셋 중 가장 작은 값이 실제 상한입니다. 환봉·육각봉·각봉 여부도 함께 알려 주십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📏</span> 3. Spindle Centre Height (主軸中心高)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Measure from the floor to the spindle centreline. The feeder has to align with the spindle centre, each model has a limited adjustment range, and anything outside that range needs a riser or a different model. Note whether the machine has already been levelled and whether the mounting feet are locked — if the machine is levelled again later, the feeder alignment has to be redone.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">請量測地面到主軸中心的高度。送料機必須與主軸中心對齊，各機型的調整範圍有限，超出範圍就需要墊高或改用其他型號。並請註明機台是否已調水平、腳墊是否鎖定；日後若重新調水平，送料機的對心也必須重做。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">바닥면에서 주축 중심까지의 높이를 측정해 주십시오. 피더는 주축 중심과 정렬되어야 하며 모델마다 조정 범위가 정해져 있어, 범위를 벗어나면 받침대나 다른 기종이 필요합니다. 레벨링 완료 여부와 받침 발 고정 여부도 알려 주시고, 이후 레벨을 다시 잡으면 피더 정렬도 다시 해야 합니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📐</span> 4. Usable Length and Space Behind the Machine (機台後方的可用長度與空間)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A long feeder running 3 m or 4 m bar needs more length than the bar itself. Beyond the equipment footprint, allow working space on the loading side, an access route for maintenance and cleaning, and room to retract or swing the feeder aside — needed when changing guide channels or a spindle liner, or cleaning the oil circuit.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Give the actual distance from the rear of the machine to the wall, a column or the next machine, and say what sits in between: chip conveyor, coolant tank, electrical cabinet or pipework. A simple plan view is more useful than any description.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">處理 3 m 或 4 m 棒材的長料機，所需長度會比棒材本身更長。除了設備長度，還要保留裝料側操作空間、維修清潔通道，以及送料機退開或側移的空間（更換膠管或主軸內襯管、清理油路時需要）。請提供機台後端到牆面、柱子或鄰近設備的實際距離，並說明中間是否有排屑機、油箱、電控箱或管路。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">3 m·4 m 봉재를 처리하는 장척 피더는 봉재보다 더 긴 공간이 필요합니다. 설비 길이 외에 투입 측 작업 공간, 정비·청소 통로, 피더를 후퇴시키거나 측면으로 이동시킬 공간(가이드 채널·주축 라이너 교체, 오일 배관 청소 시 필요)도 확보해야 합니다. 후단에서 벽·기둥·인접 설비까지의 실제 거리와 그 사이의 칩 컨베이어·오일 탱크·전장 박스·배관도 알려 주십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📦</span> 5. Short or Long Feeder: Start From How Bar Arrives (短料機或長料機：先看棒料怎麼進廠)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">This should be decided by your existing material handling, not by output targets. If material arrives as sawn bar around 1.2 m, or the crane and gangways cannot handle full-length stock, a short feeder is usually the better fit. If you run 3 m or 4 m bar and the goal is continuous unattended production, a long feeder means far fewer bar changes.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A short feeder takes less floor space and is easier to install but needs reloading more often; a long feeder runs longer unattended but demands more space and better material handling. The trade-off is tied directly to how the machine will be staffed, so include it in the inquiry.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">這一項應由現有的物料搬運方式決定，而不是由產能決定。若進料是 1.2 m 左右的鋸切棒，或天車與走道無法搬運長棒，短料機通常較合適；若使用 3 m、4 m 全長棒並以無人化連續生產為目標，長料機的換料次數少得多。短料機占地小、安裝條件寬鬆但換料頻繁；長料機連續運轉久但對空間與搬運要求高。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">이 항목은 생산량이 아니라 현재의 자재 취급 방식으로 결정하는 것이 맞습니다. 1.2 m 내외 절단 봉재가 입고되거나 크레인·통로가 장척 봉재를 감당하지 못하면 단척 피더가 적합한 경우가 많습니다. 3 m·4 m 전장 봉재로 무인 연속 가공이 목표라면 장척 피더가 교체 횟수를 크게 줄여 줍니다. 인력 운용과 직결되므로 문의 시 함께 알려 주십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⚡</span> 6. Target Spindle Speed (目標轉速：決定送料機型式的關鍵)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Give the spindle speed you actually intend to run, together with the matching bar diameter and length. Contact types, where the bar rests in a guide channel, are simpler and lower in cost and suit moderate speeds and larger diameters. Hydrodynamic types, where the bar floats on an oil film inside the channel, are clearly quieter and steadier at high speed.</p>
+          <p style="margin-bottom:14px;line-height:1.8">At high speed, however, the vibration often does not originate in the feeder at all. It comes from <strong style="color:var(--gold)">the clearance between the bar and the spindle bore</strong> — a length the feeder cannot support, which is why the next item is unavoidable for high-speed work. Note too that maximum bar diameter and maximum spindle speed usually cannot be taken together: running at the largest diameter normally means running below the headline speed.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">請提供實際要使用的主軸轉速，以及對應的棒材直徑與長度。接觸式（棒材置於導引槽）結構單純、成本較低，適合較低轉速與較大直徑；油壓式（棒材在充油通道中由油膜支撐）在高轉速下明顯更安靜穩定。但高轉速的振動常常不在送料機，而是<strong>棒材與主軸通孔之間的間隙</strong>，那段送料機支撐不到。另外，最大棒徑與最高轉速通常無法同時成立。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">실제 사용할 주축 회전수와 대응하는 봉재 지름·길이를 알려 주십시오. 접촉식은 구조가 단순하고 비용이 낮아 비교적 낮은 회전수와 큰 지름에 적합하며, 유압 부동식은 고속에서 진동과 소음이 확실히 낮습니다. 다만 고속 진동은 피더가 아니라 <strong>봉재와 주축 관통 구멍 사이의 간극</strong>에서 오는 경우가 많습니다. 최대 지름과 최고 회전수는 일반적으로 동시에 성립하지 않습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🧩</span> 7. Two Places the Bar Is Supported (兩處支撐件：膠管與主軸內襯管)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A rotating bar has to be supported along its whole length, and the supporting parts sit in two different places. On a retrofit, the second one is regularly missed.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong>Inside the feeder — guide channel and bushings (膠管與夾塊).</strong> These line and support the bar inside the feeder, absorbing vibration and reducing noise, and they are the core of high-speed stability. They are normally supplied with the feeder, but each set covers a bar diameter range. If the machine has to run several sizes, provide the full list so the number of sets and the changeover time can be assessed.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong>Inside the lathe spindle bore — the spindle liner (主軸內襯管).</strong> The bore is sized for the largest bar the machine accepts, and the bar actually run is usually smaller. The length between the chuck and the rear of the spindle is where the feeder cannot reach; without a liner that section is unsupported, and at high speed it whips, producing noise, degraded finish and, over time, additional load on the spindle bearings.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong style="color:var(--gold)">This is a machine-side part and is not normally included in the feeder quotation</strong>, yet it is the most common reason a retrofit cannot reach its intended speed. Availability has to be checked case by case: on some machines a liner can be made to the bore and bar dimensions, while a machine-specific part, a discontinued item, or a brand handled locally by a particular agent has to come through the builder or that agent. Confirm at the inquiry stage whether a liner is needed, who will obtain it, and whether its lead time affects the commissioning date. If it cannot be obtained quickly, choosing a bar size closer to the bore or running at reduced speed are workable interim measures.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">棒材旋轉時需要全程支撐，而支撐件位於兩個不同位置，舊機加裝時第二處常被漏掉。<strong>送料機內部是膠管與夾塊</strong>，隨送料機配置，但各有對應的棒徑範圍，多棒徑生產要評估需要幾組與更換工時。<strong>車床主軸通孔內則是主軸內襯管</strong>：從夾頭到主軸後端這段送料機支撐不到，沒有襯管時棒材會甩動，造成噪音、表面粗糙度惡化，長期也增加主軸軸承負擔。這一項屬車床端零件，通常不含在送料機報價內，卻是加裝後「轉速拉不上去」最常見的原因。取得方式需個別確認：部分機種可依尺寸訂製，機台專用件、已停產或當地由特定代理供應者，則須透過原廠或代理。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">회전하는 봉재는 전 구간에서 지지되어야 하며 지지 부품은 서로 다른 두 위치에 있습니다. <strong>피더 내부는 가이드 채널과 부싱(膠管·夾塊)</strong>으로 통상 피더와 함께 구성되지만 대응 봉재 지름 범위가 정해져 있습니다. <strong>선반 주축 관통 구멍 내부는 주축 라이너</strong>입니다. 척에서 주축 후단까지는 피더가 지지할 수 없어, 라이너가 없으면 고속에서 봉재가 흔들리며 소음·표면 거칠기 저하가 발생하고 주축 베어링 부담도 커집니다. 이 부품은 선반 측 부품이라 피더 견적에 보통 포함되지 않지만, 추가 후 회전수가 오르지 않는 가장 흔한 원인입니다. 입수 방법은 기종별 확인이 필요합니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔌</span> 8. Controller Interface (控制器介接：最容易卡住的一項)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The feeder and the lathe have to exchange signals to run continuously. The basic sequence is chuck open → feed → chuck clamp → machine → part off → repeat, and it needs at least: feeder ready, feed complete, chuck open and clamped, bar end detection, and fault stop with interlock. On the machine side, confirm whether a dedicated feeder interface connector or terminal set is already fitted, the controller brand and series (FANUC, Mitsubishi or other) and which M codes are available, whether spare I/O points remain, and whether the PLC program can be modified or builder support is required.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong style="color:var(--gold)">Whether the interface exists depends on how the machine was specified at purchase, not on its age.</strong> Some builders include a bar feeder interface as standard; others list it as an option. If the option was not taken, a recent machine may have no provision in the cabinet at all; if it was taken, a machine in service for years can be connected directly. The quickest way to settle this is to retrieve the original machine specification, option list or order attachment and check whether the interface was included — more reliable than inspecting the cabinet, and faster than querying the builder.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Where no provision exists, wiring has to be added in the cabinet, M codes assigned, the PLC program modified and the interlocks tested. If the machine is out of warranty, or the builder no longer supports the model, this usually needs a local integrator. The workload and cost vary widely, so establish who is responsible at the quotation stage rather than folding it into the word "installation".</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">送料機與車床必須交換訊號才能連續運轉：夾頭鬆開 → 送料 → 夾頭夾緊 → 切削 → 切斷 → 下一循環，至少需要送料機備妥、送料完成、夾頭鬆開／夾緊、料尾偵測、異常停止與連鎖等訊號。<strong>有沒有介面取決於當初購機時的配置，而不是機齡</strong>：有些品牌列為標配，有些列為選配。購機時沒選配，機台再新也可能沒有預留接點；當初有選配，用了多年一樣可直接接。最快的確認方式是調出購機規格書或選配清單，比目測電控箱可靠，也比向原廠查詢快。若確實沒有預留，就需要拉線、設定 M code、修改 PLC 並測試連鎖，建議在報價階段就釐清由誰負責。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">피더와 선반은 신호를 주고받아야 연속 운전이 가능합니다. 척 해제 → 공급 → 클램프 → 가공 → 절단 순서이며 피더 준비, 공급 완료, 척 해제·클램프, 봉재 끝 감지, 이상 정지·인터록 신호가 필요합니다. <strong>인터페이스 유무는 장비 연식이 아니라 최초 구매 시 사양 구성에 따라 결정됩니다</strong>. 표준으로 포함하는 제조사도, 옵션으로 분류하는 제조사도 있습니다. 가장 빠른 확인 방법은 구매 사양서·옵션 목록 확인이며, 준비되어 있지 않다면 배선·M 코드·PLC 수정과 인터록 시험이 필요하므로 견적 단계에서 담당 범위를 명확히 하십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">♻️</span> 9. Remnant Length and Bar Changeover (料尾殘料與換料方式)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Every bar leaves a length that cannot be machined. Confirm the expected remnant length, whether remnants eject to the front or the rear, whether automatic ejection is required, and whether the machine has to stop for a bar change. Remnant length feeds straight into material cost: over an annual volume a few centimetres either way is not a small number, particularly in stainless or alloy steel.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">每根棒材都會留下無法加工的殘料。請確認預期殘料長度、由前方或後方排出、是否需要自動退料，以及換新棒時是否需要停機。殘料長度直接反映在材料成本上；以年用量計算，幾公分的差異並不小，不鏽鋼或合金鋼尤其明顯。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">모든 봉재에는 가공할 수 없는 잔재가 남습니다. 예상 잔재 길이, 전방·후방 배출 여부, 자동 배출 필요 여부, 봉재 교체 시 정지 필요 여부를 확인해 주십시오. 잔재 길이는 재료비에 직접 반영되며, 연간 사용량으로 보면 몇 센티미터의 차이도 작지 않습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🛡️</span> 10. Installation Conditions and Safety (安裝條件與安全需求)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Finally, confirm the site conditions: floor flatness and load capacity, how the feeder is aligned to the spindle, power supply rating and cabinet position, compressed air supply, hydraulic oil type and volume on hydrodynamic types, guarding for the rotating bar and the safety fence, safety interlock and emergency stop integration, and any local safety or electrical certification requirements. Alignment between feeder and spindle is what decides installation quality: poor alignment may be invisible at low speed, but at high speed it shows up directly as vibration and noise.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">最後請確認現場條件：地面平整度與承重、送料機與主軸的對心方式、電源規格與配電位置、壓縮空氣供應、油壓式的液壓油型號與用量、旋轉棒材防護罩與安全圍籬、安全互鎖與急停整合，以及當地安全或電氣認證需求。送料機與主軸的同軸度決定安裝品質——低轉速看不出來，高轉速會直接反映為振動與噪音。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">마지막으로 현장 조건을 확인해 주십시오. 바닥 평탄도와 하중, 피더와 주축의 정렬 방식, 전원 사양과 배전 위치, 압축 공기 공급, 유압 부동식의 유압유 종류와 사용량, 회전 봉재 보호 커버와 안전 펜스, 인터록·비상 정지 통합, 현지 안전·전기 인증 요구사항입니다. 피더와 주축의 동심도가 설치 품질을 좌우하며, 저속에서는 드러나지 않고 고속에서 진동과 소음으로 나타납니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🧑‍🔧</span> Installation and Commissioning: Local Support Is Required (安裝與調機需要當地技術人員)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Confirm this before you order, because it decides whether the equipment can actually be brought into production. Adding a bar feeder is not a matter of pushing the unit up to the back of the machine and connecting it — it involves at least three stages that require judgement on site.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong>Mechanical alignment.</strong> Feeder-to-spindle concentricity has to be adjusted in practice: level, height and angle. The difference is invisible at low speed and has to be checked and re-trimmed as speed is raised, so it cannot be set once from a manual. <strong>Control integration.</strong> Where no interface was provided, wiring has to be run, M codes set, the PLC program modified and the interlocked sequence tested — work that needs someone familiar with that machine's control, not something an operator completes alone. <strong>Trial running.</strong> Once real bar is loaded, feed speed, thrust, chuck timing and bar-end detection normally all need adjustment before the machine will run continuously without intervention.</p>
+          <p style="margin-bottom:14px;line-height:1.8">So confirm at the inquiry stage whether local service personnel or an integrator are available, who is responsible for installation, alignment and control integration respectively, whether an engineer has to be sent and how cost and schedule are calculated, whether remote support with local electrical and mechanical staff is workable, and how the installation will be accepted. <strong style="color:var(--gold)">For overseas buyers this matters most: the equipment can be shipped, but on-site commissioning cannot.</strong> If there is no local capability, build technical support into the package at the quotation stage rather than looking for it once the equipment has landed.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">這一點請在下單前確認，因為它直接影響設備能否順利上線。加裝送料機不是把設備推到機台後方接上去而已，至少包含三段需要現場判斷的工作：<strong>機構對心</strong>（水平、高低與角度要實際調整，低轉速看不出差異，必須升速後反覆微調）、<strong>控制整合</strong>（沒有預留介面時要拉線、設定 M code、修改 PLC 並測試連鎖，需要熟悉該機台控制器的人）、<strong>試料調機</strong>（實際棒材上線後，送料速度、推力、夾頭時序與料尾判定通常都要再調）。因此詢價時就要確認當地是否有可支援的售服或整合商、各段由誰負責、是否需派員及費用時程。<strong>設備可以海運，現場調機不行</strong>。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">이 항목은 설비의 정상 가동 여부를 좌우하므로 발주 전에 확인하시기 바랍니다. 바 피더 추가는 설비를 뒤에 밀어 넣고 연결하는 작업이 아니며, 현장 판단이 필요한 작업이 최소 세 단계 포함됩니다. <strong>기구 정렬</strong>은 수평·높이·각도를 실제로 조정해야 하고 회전수를 올려가며 반복 미세 조정해야 합니다. <strong>제어 통합</strong>은 배선·M 코드·PLC 수정과 연동 시험이 필요하며 해당 제어장치를 아는 인력이 있어야 합니다. <strong>시험 가공</strong>에서는 공급 속도·추력·척 타이밍·봉재 끝 판정을 다시 조정합니다. <strong>설비는 해상 운송이 가능하지만 현장 조정은 불가능합니다</strong>. 현지 대응 인력이 없다면 견적 단계에서 기술 지원을 방안에 포함하십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📷</span> Photos and Dimensions to Send (建議提供的照片與尺寸)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Sending the following usually removes one or two rounds of questions: the machine nameplate; the original machine specification or option list, to confirm whether the feeder interface was included; the rear of the spindle showing the draw tube and bore; an overall view behind the machine showing the distance to the wall; the electrical cabinet interior and terminal strip; the existing feeder nameplate if this is a replacement; and the bar stock itself, including a section view. Dimensions: spindle bore diameter, draw tube inner diameter, spindle centre height, usable length behind the machine, and bar diameter and length.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">以下資料通常可省去一到兩輪來回確認：車床銘牌、購機規格書或選配清單（確認送料機介面是否在原始配置內）、主軸後端外觀（含拉管與通孔）、機台後方全景（可看出到牆面距離）、電控箱內部與端子台、現有送料機銘牌（若為替換）、棒材實物與剖面。尺寸請提供：主軸通孔直徑、拉管內徑、主軸中心高、機台後方可用長度、棒材直徑與長度。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">다음 자료를 보내 주시면 대개 확인 절차를 한두 차례 줄일 수 있습니다. 선반 명판, 구매 사양서 또는 옵션 목록(피더 인터페이스 포함 여부 확인용), 드로우 튜브와 관통 구멍이 보이는 주축 후단, 벽까지의 거리가 보이는 장비 후방 전경, 전장 박스 내부와 단자대, 기존 피더 명판(교체 시), 봉재 실물과 단면입니다. 치수는 주축 관통 구멍 지름, 드로우 튜브 내경, 주축 중심 높이, 후방 가용 길이, 봉재 지름과 길이입니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⚠️</span> Common Inquiry Mistakes (常見的詢價錯誤)</h3>
+          <p style="margin-bottom:14px;line-height:1.8"><strong>Deriving bar capacity from the maximum turning diameter.</strong> Use the smallest of spindle bore, draw tube inner diameter and chuck through-hole. <strong>Giving the brand without the full model and year.</strong> Electrical configurations change between production years, and an incomplete model number makes the interface impossible to assess. <strong>Judging the interface by machine age.</strong> Standard or optional depends on the builder, and whether it is actually fitted depends on how the machine was specified at purchase — work from the original specification, because this is where budget gaps most often appear.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong>Measuring only to the wall.</strong> Loading space and the room needed to retract the feeder are left out, and the equipment does not fit once it arrives. <strong>Asking for maximum bar diameter and maximum speed together.</strong> These generally cannot coexist; give the combinations you actually intend to run. <strong>Thinking of the guide channel but not the spindle liner.</strong> Vibration discovered after installation usually traces back to clearance between the bar and the spindle bore. <strong>Treating installation as part of delivery.</strong> Alignment and control integration need technical personnel on site, and looking for them after the equipment arrives is a common cause of delayed start-up.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)"><strong>用最大車削直徑推算棒徑</strong>：應取主軸通孔、拉管內徑與夾頭通過孔中最小者。<strong>只給品牌不給完整型號與年份</strong>：電控配置會隨年份改版。<strong>用機齡判斷有無介面</strong>：標配或選配依品牌而異，實際有沒有取決於購機時是否選配，請以購機規格書為準。<strong>後方距離只量到牆面</strong>：漏掉裝料與退開空間。<strong>同時要求最大棒徑與最高轉速</strong>：兩者通常無法並存。<strong>只想到膠管，忘了主軸內襯管</strong>。<strong>把安裝視為交機的一部分</strong>：對心與控制整合需要現場技術人員。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>최대 선삭 지름으로 봉재 지름을 계산</strong> — 주축 관통 구멍·드로우 튜브 내경·척 관통 구멍 중 최솟값을 기준으로 하십시오. <strong>브랜드만 제공하고 전체 모델명·연도를 누락</strong>. <strong>장비 연식으로 인터페이스 유무를 판단</strong> — 구매 사양서를 기준으로 하십시오. <strong>후방 거리를 벽까지만 측정</strong>. <strong>최대 지름과 최고 회전수를 동시에 요구</strong>. <strong>가이드 채널만 생각하고 주축 라이너를 놓침</strong>. <strong>설치를 납품의 일부로만 보고 별도 계획하지 않음</strong>.</p>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:0.78rem;line-height:1.7;margin:16px 0 16px">This article provides general technical information. It does not replace the lathe and bar feeder manufacturers' operating instructions, a site-specific risk assessment, or commissioning by a qualified technician. ／ 本文提供一般性技術資訊，不取代車床與送料機製造商的操作說明、個別現場的風險評估，或合格技術人員的安裝調機判斷。／ 본문은 일반적인 기술 정보를 제공하며, 선반·바피더 제조사의 취급설명서, 개별 현장의 위험 평가, 자격을 갖춘 기술자의 설치·조정 판단을 대체하지 않습니다.</p>
+
+        <!-- CTA -->
+        <div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:24px;text-align:center;margin-bottom:16px">
+          <h3 style="color:var(--text);margin:0 0 8px;font-size:1.05rem">Need Help Confirming Bar Feeder Compatibility?</h3>
+          <p style="color:var(--text-dim);font-size:0.9rem;max-width:560px;margin:0 auto 20px">Z&amp;Z STROTEC supplies CNC bar feeders from several brands, along with feeder-side parts and spares such as guide channels, bushings, pushers and front guide tubes. Machine-side parts such as spindle liners are a separate question, and we will raise whether one is needed and how it can be obtained during the confirmation stage. Send the photographs and dimensions above, and tell us what technical support is available locally.</p>
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px">TECHNICAL SUPPORT / 立即洽詢 / 문의하기 →</button>
+        </div>
+        <div style="padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/bar-feeder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Bar Feeder Systems — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/collet-chuck/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Collets &amp; Chucks — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/spindle/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">CNC Spindles — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/automation/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Automation &amp; Loading — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Live Tool Holder Replacement Checklist — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/column/eliminating-material-vibration-high-rpm-synchronization-between-bar/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Bar Feeder &amp; Guide Bushing Synchronisation — Expert Column →</button>
+        </div>
+
+      </div>
+    </div>
+  <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Automation · Bar Feeders</span></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>
+  </div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
