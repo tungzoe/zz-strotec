@@ -954,6 +954,32 @@
 
 
   /* What's New */
+  /* Static "NEW" pill for recently published cards. Same look as
+     .whats-new-badge but without the blink — two of these animating in a list
+     reads as an advert rather than a note. Each carries data-new-until and is
+     removed automatically once that date passes, so no one has to remember. */
+  .card-new {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 9px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1.5px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  /* Sidebar rows are narrow — shrink the pill so it does not push the label. */
+  .sidebar-item .card-new {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    margin-left: 5px;
+  }
+
   .whats-new-badge {
     display: inline-block;
     background: var(--gold);
@@ -1372,7 +1398,7 @@
       <div class="sidebar-item" onclick="openKnowledge('collet-chuck')">
         <span class="icon">🎯</span><span data-i18n="sb_collet"> Collets &amp; Chucks</span>
       </div>
-      <div class="sidebar-item" onclick="openKnowledge('chuck-replacement')">
+      <div class="sidebar-item" onclick="openKnowledge('chuck-replacement')" data-new="2026-09-04">
         <span class="icon">🔄</span><span data-i18n="sb_chuck_repl"> Chuck &amp; Collet Replacement</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('automation')">
@@ -2385,7 +2411,7 @@
       <div class="section-title">EXPERT COLUMN &nbsp;／&nbsp; 專家專欄</div>
       <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:24px">深度技術分析與實務案例，由 Z&amp;Z STROTEC 專業團隊撰寫。</p>
 
-      <div onclick="openColumn('col-19')" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div onclick="openColumn('col-19')" data-new="2026-09-04" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
         <div style="flex:1">
           <div style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Procurement &nbsp;·&nbsp; RFQ Preparation</div>
           <div style="color:var(--text);font-weight:500;font-size:0.95rem;margin-bottom:4px;line-height:1.4">CNC Machine RFQ Checklist: 15 Specifications Buyers Should Provide Before Requesting a Quote</div>
@@ -2395,7 +2421,7 @@
         <div style="flex-shrink:0;color:var(--gold);font-size:1.3rem;opacity:0.7;align-self:center">→</div>
       </div>
 
-      <div onclick="openColumn('col-18')" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div onclick="openColumn('col-18')" data-new="2026-09-04" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
         <div style="flex:1">
           <div style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Automation &nbsp;·&nbsp; Bar Feeders</div>
           <div style="color:var(--text);font-weight:500;font-size:0.95rem;margin-bottom:4px;line-height:1.4">Retrofitting a Bar Feeder to an Existing CNC Lathe: 10 Compatibility Checks Before You Order</div>
@@ -12506,6 +12532,29 @@ document.addEventListener('dragstart', function(e) {
 });
 
 // ─── Hash routing: restore page from URL on load ──────────────────
+// One convention for "recently published": put data-new="YYYY-MM-DD" — the date
+// the flag should stop showing — on a column card or a sidebar row. This paints
+// the pill where it belongs and drops the flag once that date passes, so nothing
+// on the site keeps claiming to be new months later. renderFeaturedColumn()
+// clones cards on window.load, i.e. after this has run, so the home page
+// inherits the badge rather than adding a second one of its own.
+function applyNewBadges() {
+  const today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll('[data-new]').forEach(function (el) {
+    if (el.getAttribute('data-new') < today) { el.removeAttribute('data-new'); return; }
+    // Column card → the category eyebrow; sidebar row → the label span.
+    const host = el.classList.contains('sidebar-item')
+      ? (el.querySelector('span[data-i18n]') || el)
+      : (el.firstElementChild && el.firstElementChild.firstElementChild);
+    if (!host || host.querySelector('.card-new')) return;
+    const b = document.createElement('span');
+    b.className = 'card-new';
+    b.textContent = 'NEW';
+    host.appendChild(b);
+  });
+}
+document.addEventListener('DOMContentLoaded', applyNewBadges);
+
 document.addEventListener('DOMContentLoaded', function() {
   const hash = window.location.hash.replace('#', '');
   if (hash.startsWith('kb-') && typeof KB !== 'undefined' && KB[hash.slice(3)]) {
@@ -13465,7 +13514,7 @@ function renderFeaturedColumn() {
     if (i === 0 || cards[i].hasAttribute('data-new')) {
       const inner = clone.querySelector('div');
       const cat = inner ? inner.firstElementChild : null;
-      if (cat && !cat.querySelector('.whats-new-badge')) {
+      if (cat && !cat.querySelector('.whats-new-badge, .card-new')) {
         const b = document.createElement('span');
         b.className = 'whats-new-badge';
         b.textContent = 'NEW';

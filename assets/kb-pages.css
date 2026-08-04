@@ -841,6 +841,32 @@
 
 
   /* What's New */
+  /* Static "NEW" pill for recently published cards. Same look as
+     .whats-new-badge but without the blink — two of these animating in a list
+     reads as an advert rather than a note. Each carries data-new-until and is
+     removed automatically once that date passes, so no one has to remember. */
+  .card-new {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 9px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1.5px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  /* Sidebar rows are narrow — shrink the pill so it does not push the label. */
+  .sidebar-item .card-new {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    margin-left: 5px;
+  }
+
   .whats-new-badge {
     display: inline-block;
     background: var(--gold);
