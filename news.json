@@ -20,19 +20,19 @@
     "  · 首頁只顯示最新 4 則未過期項目；其餘一律在 News 頁面呈現。",
     "  · 寧可少而可信 — 只有 2~3 則可查證的新聞時，就只放 2~3 則，不要用模糊來源湊數。"
   ],
-  "updated": "2026-07-22",
+  "updated": "2026-08-04",
   "items": [
     {
-      "title": "June machinery exports keep growing; industry targets a record year",
-      "title_zh": "6月機械出口續正成長 全年拚創高",
-      "title_ko": "6월 기계 수출 성장 지속, 연간 최고치 도전",
-      "source": "工商時報 China Times",
-      "published": "2026-07-11",
-      "url": "https://www.chinatimes.com/newspapers/20260711000213-260202",
+      "title": "June export orders hit a record high on AI demand; machinery orders up 17.6%",
+      "title_zh": "6月外銷訂單創歷史新高，機械訂單年增 17.6%",
+      "title_ko": "6월 수출 수주 AI 수요로 사상 최고, 기계 수주 17.6% 증가",
+      "source": "Focus Taiwan (CNA)",
+      "published": "2026-07-21",
       "market": "Taiwan",
-      "summary": "June machinery exports hit US$3.188bn (+16.6% YoY); H1 reached US$17.796bn (+19.3%). Machine tools bucked the trend at US$177m in June (-8.3%) and US$978m for H1 (-3.1%).",
-      "summary_zh": "6月機械出口 31.88 億美元、年增 16.6%；上半年 177.96 億美元、年增 19.3%。工具機則逆勢走弱，6月 1.77 億美元、年減 8.3%，上半年 9.78 億美元、年減 3.1%。",
-      "summary_ko": "6월 기계 수출 31.88억 달러(+16.6%), 상반기 177.96억 달러(+19.3%). 반면 공작기계는 6월 1.77억 달러(-8.3%), 상반기 9.78억 달러(-3.1%)로 부진."
+      "url": "https://focustaiwan.tw/business/202607210027",
+      "summary": "Export orders reached US$95.26bn in June, up 59.4% year on year and a record high. Machinery orders rose 17.6% to US$2.18bn, buoyed by the AI boom.",
+      "summary_zh": "6月外銷訂單 952.6 億美元、年增 59.4%，創歷史新高。機械類訂單年增 17.6% 至 21.8 億美元，由 AI 需求帶動。",
+      "summary_ko": "6월 수출 수주 952.6억 달러로 전년 대비 59.4% 증가하며 사상 최고. 기계 수주는 AI 붐에 힘입어 17.6% 늘어난 21.8억 달러."
     },
     {
       "title": "Taiwan machine tool & key component import/export statistics (monthly)",
@@ -48,28 +48,40 @@
       "summary_ko": "공작기계 협회 공식 통계 페이지. 월간 수출입 속보를 발표하며, 대부분 언론 보도의 원출처."
     },
     {
-      "title": "AI demand lifts machinery exports to a record monthly high",
-      "title_zh": "AI 需求推升機械出口 創單月歷史新高",
-      "title_ko": "AI 수요가 견인한 기계 수출, 월간 사상 최고치",
-      "source": "Taipei Times",
-      "published": "2026-06-15",
-      "url": "https://www.taipeitimes.com/News/biz/archives/2026/06/15/2003859095",
+      "title": "H1 machine tool exports by destination: China 27.1%, US 16.0%; Vietnam and Germany up, Turkey and Brazil down",
+      "title_zh": "上半年工具機出口市場分布：中國 27.1%、美國 16.0%；越南、德國成長，土耳其與巴西衰退",
+      "title_ko": "상반기 공작기계 수출 시장별 분포: 중국 27.1%, 미국 16.0%, 베트남·독일 성장, 터키·브라질 감소",
+      "source": "工具機發展基金會／臺灣機械工業同業公會 TAMI（新聞發佈 TMTF-835）",
+      "published": "2026-07-14",
       "market": "Taiwan",
-      "summary": "Machinery exports reached US$3.501bn — a 16th straight monthly rise, +26.2% YoY and an all-time monthly record. Top buyers: US (US$3.86bn), China (US$2.99bn), Singapore (US$1.127bn).",
-      "summary_zh": "機械出口達 35.01 億美元，連續第 16 個月成長、年增 26.2%，創單月歷史新高。前三大買主為美國 38.6 億、中國 29.9 億、新加坡 11.27 億美元。",
-      "summary_ko": "기계 수출 35.01억 달러로 16개월 연속 증가, 전년 대비 26.2% 성장하며 월간 최고치 경신. 주요 수입국은 미국·중국·싱가포르 순."
+      "url": "https://www.tami.org.tw/_uploadFiles/ind2-2026-6%E6%9C%88-%E8%87%BA%E7%81%A3%E5%B7%A5%E5%85%B7%E6%A9%9F%E7%94%A2%E6%A5%AD%E7%8F%BE%E6%B3%81.pdf",
+      "summary": "H1 2026 machine tool exports were US$978.31m (-3.1%): cutting machines US$806.19m (-2.5%), forming machines US$172.11m (-5.7%). By destination, China took US$264.87m (27.1%, -2.5%) and the US US$156.66m (16.0%, -14.6%), followed by India (7.7%, +9.5%), Vietnam (6.9%, +49.8%) and Thailand (5.3%, +8.4%). South Korea grew 11.5%, Germany 47.8% and Malaysia 59.1%, while Turkey fell 46.1% and Brazil 37.5%. The report attributes the pressure mainly to exchange rates and competition on export orders, and notes exports to the US have been negative for close to a year since the 2025 reciprocal tariff.",
+      "summary_zh": "2026 上半年工具機出口 9 億 7,831 萬美元、年減 3.1%：切削工具機 8 億 619 萬美元（-2.5%），成型工具機 1 億 7,211 萬美元（-5.7%）。市場別以中國 2 億 6,487 萬美元（占 27.1%、-2.5%）居首，美國 1 億 5,666 萬美元（16.0%、-14.6%）次之，其後為印度（7.7%、+9.5%）、越南（6.9%、+49.8%）、泰國（5.3%、+8.4%）。南韓成長 11.5%、德國 47.8%、馬來西亞 59.1%；土耳其減少 46.1%、巴西減少 37.5%。報告指出主要壓力來自匯率與出口訂單競爭，並提到自 2025 年美國對等關稅實施後，對美出口已連續近一年負成長。",
+      "summary_ko": "2026년 상반기 공작기계 수출 9억 7,831만 달러(-3.1%). 절삭 8억 619만 달러(-2.5%), 성형 1억 7,211만 달러(-5.7%). 시장별로 중국 2억 6,487만 달러(27.1%, -2.5%), 미국 1억 5,666만 달러(16.0%, -14.6%), 인도(7.7%, +9.5%), 베트남(6.9%, +49.8%), 태국(5.3%, +8.4%) 순. 한국 +11.5%, 독일 +47.8%, 말레이시아 +59.1%인 반면 터키 -46.1%, 브라질 -37.5%. 환율과 수주 경쟁이 주요 압력이며, 2025년 미국 상호관세 시행 이후 대미 수출은 근 1년간 마이너스."
     },
     {
-      "title": "Taiwan machine tools emerge as key in US-Taiwan economic 'Golden Era,' says AIT",
-      "title_zh": "AIT：台灣工具機是台美經濟「黃金時代」的關鍵",
-      "title_ko": "AIT, 대만 공작기계는 미·대만 경제 '황금기'의 핵심",
-      "source": "DIGITIMES",
-      "published": "2026-03-27",
-      "url": "https://www.digitimes.com/news/a20260325PD239/taiwan-usa-machine-tool-robotics-manufacturing-2026.html",
-      "market": "Taiwan / USA",
-      "summary": "As TMTS returned to Taichung, the American Institute in Taiwan framed Taiwan's machine tool sector as a strategic pillar of deepening US-Taiwan economic ties.",
-      "summary_zh": "TMTS 重返台中舉辦，美國在台協會 (AIT) 將台灣工具機產業定位為深化台美經濟關係的戰略支柱。",
-      "summary_ko": "TMTS의 타이중 복귀에 맞춰, AIT는 대만 공작기계 산업을 미·대만 경제 관계 심화의 전략적 축으로 평가."
+      "title": "June machinery exports keep growing; industry targets a record year",
+      "title_zh": "6月機械出口續正成長 全年拚創高",
+      "title_ko": "6월 기계 수출 성장 지속, 연간 최고치 도전",
+      "source": "工商時報 China Times",
+      "published": "2026-07-11",
+      "url": "https://www.chinatimes.com/newspapers/20260711000213-260202",
+      "market": "Taiwan",
+      "summary": "June machinery exports hit US$3.188bn (+16.6% YoY); H1 reached US$17.796bn (+19.3%). Machine tools bucked the trend at US$177m in June (-8.3%) and US$978m for H1 (-3.1%).",
+      "summary_zh": "6月機械出口 31.88 億美元、年增 16.6%；上半年 177.96 億美元、年增 19.3%。工具機則逆勢走弱，6月 1.77 億美元、年減 8.3%，上半年 9.78 億美元、年減 3.1%。",
+      "summary_ko": "6월 기계 수출 31.88억 달러(+16.6%), 상반기 177.96억 달러(+19.3%). 반면 공작기계는 6월 1.77억 달러(-8.3%), 상반기 9.78억 달러(-3.1%)로 부진."
+    },
+    {
+      "title": "June exports were the third-highest monthly level on record; traditional industries grew for a fourth month",
+      "title_zh": "6月出口為歷年單月第三高，傳統產業連四個月成長",
+      "title_ko": "6월 수출 역대 월간 3위, 전통산업 4개월 연속 성장",
+      "source": "Focus Taiwan (CNA)",
+      "published": "2026-07-09",
+      "market": "Taiwan",
+      "url": "https://focustaiwan.tw/business/202607090022",
+      "summary": "June exports were US$74.83bn, up 40.3% year on year and the third-highest monthly total on record — a 32nd consecutive month of growth. Traditional industries grew 6.9%, a fourth straight month of gains.",
+      "summary_zh": "6月出口 748.3 億美元、年增 40.3%，為歷年單月第三高，並為連續第 32 個月正成長。傳統產業成長 6.9%，已連續四個月上升。",
+      "summary_ko": "6월 수출 748.3억 달러로 전년 대비 40.3% 증가, 역대 월간 3위이자 32개월 연속 증가. 전통산업은 6.9% 성장하며 4개월 연속 상승."
     },
     {
       "title": "Fact Sheet on U.S.-Taiwan Agreement on Reciprocal Trade",
@@ -82,18 +94,6 @@
       "summary": "Official US text of the reciprocal trade agreement: the US applies the higher of its MFN rate or 15% to Taiwanese goods. Buyers should confirm the actual duty against their own HS code.",
       "summary_zh": "美方官方文本：對台灣輸美貨品採「MFN 稅率與 15% 取其高」。實際稅率仍須依各自 HS Code 查核，切勿直接假設一律 15%。",
       "summary_ko": "미국 공식 문서: 대만산 제품에 MFN 세율과 15% 중 높은 쪽을 적용. 실제 관세율은 HS 코드별로 반드시 확인 필요."
-    },
-    {
-      "title": "Machine tool firms eye export growth",
-      "title_zh": "工具機業者看好今年出口成長",
-      "title_ko": "공작기계 업계, 올해 수출 성장 기대",
-      "source": "Taipei Times",
-      "published": "2026-01-21",
-      "url": "https://www.taipeitimes.com/News/biz/archives/2026/01/21/2003850928",
-      "market": "Taiwan / USA",
-      "summary": "Taiwanese builders target 5-10% export growth for 2026 and 5-8% to the US. The tariff cut from 20% to 15% gives roughly 8.5-13% more pricing room; about 60% of surveyed makers expect revenue growth.",
-      "summary_zh": "台灣工具機廠商目標 2026 年出口成長 5~10%，對美出口成長 5~8%。關稅由 20% 降至 15%，約帶來 8.5~13% 的議價空間；約六成受訪廠商看好營收成長。",
-      "summary_ko": "대만 제조사들은 2026년 수출 5~10%, 대미 수출 5~8% 성장을 목표. 관세 20%→15% 인하로 약 8.5~13%의 가격 협상 여력 확보."
     }
   ]
 }

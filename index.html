@@ -3533,6 +3533,7 @@ const IMG_LIVETOOL = 'photo/living-tools.jpg';
 const IMG_LTREPL = 'photo/live-tool-holder-replacement.jpg';
 const IMG_BARFEEDER = 'photo/bar-feeder.jpg';
 const IMG_CHUCKCOLLET = 'photo/chucks-collets-guide-bush.jpg';
+const IMG_CHUCKREPL = 'photo/chuck-replacement-identification.jpg';
 const IMG_CNCLATHE = 'photo/cnc-lathe-know.jpg';
 const IMG_SPINDLECOOLING = 'photo/spindle-cooling.jpg';
 const IMG_POWERSUPPLY = 'photo/cnc-power-transformer-guide.jpg';
@@ -6677,6 +6678,8 @@ const KB = {
 <p>척이 손상되었거나 파지력·정밀도가 떨어졌거나 원 모델이 단종되었을 때, 외관이나 기계 브랜드만으로 대체품을 고를 수 없습니다. 비슷해 보이는 두 척도 주축 노즈, 관통 구멍, 실린더 인터페이스, 조 세레이션 피치, 허용 회전수가 다르면 장착이 되지 않거나, 장착되더라도 안정적인 파지와 정밀도를 얻지 못합니다.</p>
 <p>견적을 요청하기 전에 아래 10가지 항목을 준비해 주십시오. 자료가 완전할수록 확인 시간이 짧아지고 규격 오선정 위험이 줄어듭니다.</p>
 
+      <img src="${IMG_CHUCKREPL}" alt="주축 노즈, 드로우 튜브, 로터리 실린더가 축을 따라 분해된 CNC 선반 주축과 3조 척, 캘리퍼로 측정하는 모습. 삽입 이미지는 조 세레이션 피치가 맞는 경우와 맞지 않는 경우, 그리고 회전수에 따른 파지력 게이지." style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;display:block">
+
       <h4>교체용 척 식별을 위한 10가지 체크리스트</h4>
       <h4>1. 선반 브랜드, 전체 모델명, 제조 연도</h4>
       <p>브랜드만이 아니라 전체 모델명을 제공해 주십시오. 같은 제조사라도 모델에 따라 주축 사양과 척킹 구성이 다릅니다. 고정 주축 선반, 스위스형, 트윈 스핀들, 수직형 등 기계 형태도 알려 주십시오. 스위스형은 주축에서 콜릿으로 파지하므로 일반 선반의 유압 척과는 다른 시스템입니다.</p>
@@ -6727,6 +6730,8 @@ const KB = {
 <p>夾頭損壞、夾持力下降、精度跑掉，或原廠型號停產時，不能只憑外觀或機台品牌選購替代品。兩顆看起來相似的夾頭，只要主軸鼻端、通過孔、油壓缸介面、爪座齒距或允許轉速不同，就可能裝不上去，或裝得上去卻夾不穩、精度不到。</p>
 <p>向供應商詢價前，請準備以下 10 項資料。資料越完整，越能縮短確認時間並降低選錯規格的風險。</p>
 
+      <img src="${IMG_CHUCKREPL}" alt="CNC 車床主軸與三爪夾頭，主軸鼻端、拉管與旋轉油壓缸沿軸線分解，並以卡尺量測；插圖為爪座齒距吻合與不吻合的對照，以及夾持力隨轉速變化的儀表。" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;display:block">
+
       <h4>夾頭與筒夾更換／詢價的 10 項辨識清單</h4>
       <h4>1. 車床品牌、完整型號與出廠年份</h4>
       <p>請提供完整型號，不只是品牌；同一品牌不同型號的主軸規格與夾持配置可能完全不同。同時說明機台型態：一般固定主軸車床、走心式、雙主軸或立式。走心式的主軸夾持以筒夾為主，與一般車床的油壓夾頭是不同系統。銘牌上若有序號或製造年份，請一併提供。</p>
@@ -6776,6 +6781,8 @@ const KB = {
     body: `
 <p>When a chuck is damaged, loses gripping force or accuracy, or the original model is discontinued, a replacement cannot be chosen from appearance or machine brand alone. Two chucks that look alike may differ in spindle nose, through-hole, cylinder interface, jaw serration pitch or permitted speed — differences that prevent mounting, or allow mounting but not reliable clamping or accuracy.</p>
 <p>Before requesting a quotation, please prepare the 10 items below. The more complete the information, the shorter the confirmation time and the lower the risk of selecting the wrong specification.</p>
+
+      <img src="${IMG_CHUCKREPL}" alt="A CNC lathe spindle and three-jaw chuck with the spindle nose, draw tube and rotating cylinder separated along the axis and a caliper taking a measurement, with insets comparing matched and mismatched jaw serration pitch and a gauge showing gripping force falling with speed." style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;display:block">
 
       <h4>The 10-point checklist for identifying a replacement chuck</h4>
       <h4>1. Lathe brand, full model and year</h4>
@@ -12723,14 +12730,14 @@ const NEWS_HOME_MAX = 4;        // home shows at most this many current items
 // Last-resort copy, used only if news.json cannot be loaded (e.g. the page is
 // opened straight from the filesystem). Keep in sync with the top of news.json.
 const NEWS_FALLBACK = [
-  { title: 'June machinery exports keep growing; industry targets a record year',
-    title_zh: '6月機械出口續正成長 全年拚創高',
-    title_ko: '6월 기계 수출 성장 지속, 연간 최고치 도전',
-    source: '工商時報 China Times', published: '2026-07-11', market: 'Taiwan',
-    url: 'https://www.chinatimes.com/newspapers/20260711000213-260202',
-    summary: 'June machinery exports hit US$3.188bn (+16.6% YoY); machine tools fell to US$177m (-8.3%).',
-    summary_zh: '6月機械出口 31.88 億美元、年增 16.6%；工具機 1.77 億美元、年減 8.3%。',
-    summary_ko: '6월 기계 수출 31.88억 달러(+16.6%), 공작기계는 1.77억 달러(-8.3%).' },
+  { title: 'June export orders hit a record high on AI demand; machinery orders up 17.6%',
+    title_zh: '6月外銷訂單創歷史新高，機械訂單年增 17.6%',
+    title_ko: '6월 수출 수주 AI 수요로 사상 최고, 기계 수주 17.6% 증가',
+    source: 'Focus Taiwan (CNA)', published: '2026-07-21', market: 'Taiwan',
+    url: 'https://focustaiwan.tw/business/202607210027',
+    summary: 'Export orders reached US$95.26bn in June (+59.4% YoY), a record high. Machinery orders rose 17.6% to US$2.18bn.',
+    summary_zh: '6月外銷訂單 952.6 億美元、年增 59.4%，創歷史新高。機械類訂單年增 17.6% 至 21.8 億美元。',
+    summary_ko: '6월 수출 수주 952.6억 달러(+59.4%)로 사상 최고. 기계 수주는 17.6% 늘어난 21.8억 달러.' },
   { title: 'Taiwan machine tool & key component import/export statistics (monthly)',
     title_zh: '台灣工具機及關鍵零組件進出口速報（每月）',
     title_ko: '대만 공작기계·핵심부품 수출입 통계 (월간)',
