@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Z&amp;Z STROTEC</title>
+<meta name="description" content="What personal data Z&amp;Z STROTEC collects through this site, why, how long it is kept, which processors are involved, and how to have it removed.">
+<link rel="canonical" href="https://zz-strotec.com/privacy/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy Policy">
+<meta property="og:description" content="What personal data Z&amp;Z STROTEC collects through this site, why, how long it is kept, which processors are involved, and how to have it removed.">
+<meta property="og:url" content="https://zz-strotec.com/privacy/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy · 隱私權政策 · 개인정보 처리방침","description":"What personal data Z&Z STROTEC collects through this site, why, how long it is kept, which processors are involved, and how to have it removed.","url":"https://zz-strotec.com/privacy/","inLanguage":["en","zh-Hant","ko"],"isPartOf":{"@type":"WebSite","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}}}</script>
+<link rel="stylesheet" href="../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › Privacy Policy</div>
+  <h1 class="kbp-h1">Privacy Policy · 隱私權政策 · 개인정보 처리방침</h1>
+  <div class="kbp-body">
+      
+
+      <div style="max-width:820px">
+        <p style="color:var(--text-dim);font-size:0.82rem;margin:0 0 26px">Last updated / 最後更新 / 최종 수정: 2026-08-06</p>
+
+        <!-- English -->
+        <section lang="en" style="margin-bottom:38px">
+          <h3 style="color:var(--gold);font-size:0.95rem;letter-spacing:1px;margin:0 0 14px">ENGLISH</h3>
+
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">This policy explains what personal data Z&amp;Z STROTEC CO., LTD. (萬洋國際有限公司) collects through this website, why we collect it, how long we keep it, and how you can have it removed. We are the data controller.</p>
+
+          <h4 style="margin:22px 0 8px">Who we are</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            Z&amp;Z STROTEC CO., LTD. (萬洋國際有限公司)<br>
+            13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)<br>
+            Company Registration No.: 80235084<br>
+            Tel: <a href="tel:+886425341660" style="color:var(--gold)">+886-4-2534-1660</a><br>
+            Contact: <a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a>
+          </p>
+
+          <h4 style="margin:22px 0 8px">What we collect, and why</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>Inquiry form</strong> — name, company, email, country and the details you write in the message field. We use this only to answer your inquiry and to quote. Legal basis: steps taken at your request prior to entering into a contract.</li>
+            <li><strong>Newsletter form</strong> — your email address, used only to tell you when we publish a new Expert Column or a significant Knowledge Library update. Legal basis: your consent.</li>
+            <li><strong>Google Analytics 4</strong> — pages viewed, approximate location derived from IP, device and browser type. We use this to see which articles are actually read. In the EEA, the UK and Switzerland this is switched off until you accept it in the banner at the bottom of the page. Legal basis: your consent.</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">We do not sell personal data, we do not use it for advertising or profiling, and we do not run remarketing.</p>
+
+          <h4 style="margin:22px 0 8px">Who processes it on our behalf</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>Formspree</strong> — delivers the inquiry form to our mailbox.</li>
+            <li><strong>Mailchimp (Intuit)</strong> — stores the newsletter list and sends the emails.</li>
+            <li><strong>Google (Analytics 4)</strong> — website statistics, only after consent where consent is required.</li>
+            <li><strong>GitHub Pages</strong> — hosts this site and keeps standard server logs.</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">These providers process data outside Taiwan, including in the United States. Transfers rely on the providers' own standard contractual clauses.</p>
+
+          <h4 style="margin:22px 0 8px">How long we keep it</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li>Inquiries: 3 years from our last exchange with you, so we can pick up a returning enquiry with its history. Inquiries that lead to an order are kept for 7 years, as export and accounting records require.</li>
+            <li>Newsletter: until you unsubscribe. Every email carries an unsubscribe link, and unsubscribing removes you from the list.</li>
+            <li>Google Analytics: 14 months, then deleted automatically.</li>
+          </ul>
+
+          <h4 style="margin:22px 0 8px">Your rights</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">If you are in the EEA, the UK or Switzerland, you can ask us for a copy of your data, ask us to correct or delete it, object to its use, or withdraw consent at any time. Write to <a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a> and we will reply within 30 days. You also have the right to complain to your national data protection authority.</p>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">To withdraw analytics consent after accepting it, clear this site's data in your browser — the consent banner will appear again on your next visit.</p>
+
+          <h4 style="margin:22px 0 8px">Cookies</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">This site sets no cookies of its own. Google Analytics sets its own cookies, and only once you have accepted. Your choice is stored locally in your browser, not on our server.</p>
+        </section>
+
+        <!-- 繁體中文 -->
+        <section lang="zh-Hant" style="margin-bottom:38px;padding-top:26px;border-top:1px solid var(--border)">
+          <h3 style="color:var(--gold);font-size:0.95rem;letter-spacing:1px;margin:0 0 14px">繁體中文</h3>
+
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">本政策說明萬洋國際有限公司（Z&amp;Z STROTEC CO., LTD.）透過本網站蒐集哪些個人資料、用途為何、保存多久，以及您如何要求刪除。本公司為資料控管者。</p>
+
+          <h4 style="margin:22px 0 8px">我們是誰</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            萬洋國際有限公司（Z&amp;Z STROTEC CO., LTD.）<br>
+            42755 台中市潭子區中山路2段135號13樓-2<br>
+            統一編號：80235084<br>
+            電話：<a href="tel:+886425341660" style="color:var(--gold)">+886-4-2534-1660</a><br>
+            聯絡信箱：<a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a>
+          </p>
+
+          <h4 style="margin:22px 0 8px">蒐集項目與目的</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>詢價表單</strong>— 姓名、公司、Email、國家，以及您在需求欄位填寫的內容。僅用於回覆詢價與報價。法律依據：應您要求於締約前所採取的必要步驟。</li>
+            <li><strong>訂閱表單</strong>— 您的 Email，僅用於在我們發布新專欄或重要知識庫更新時通知您。法律依據：您的同意。</li>
+            <li><strong>Google Analytics 4</strong>— 瀏覽頁面、依 IP 推估的大致地區、裝置與瀏覽器類型，用於了解哪些文章真正被閱讀。在歐洲經濟區、英國與瑞士，未經您在頁面底部同意前不會啟用。法律依據：您的同意。</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">我們不販售個人資料，不用於廣告或側寫，也不進行再行銷。</p>
+
+          <h4 style="margin:22px 0 8px">受託處理的第三方</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>Formspree</strong>— 將詢價表單送達我們的信箱。</li>
+            <li><strong>Mailchimp（Intuit）</strong>— 保存訂閱名單並寄送郵件。</li>
+            <li><strong>Google（Analytics 4）</strong>— 網站流量統計，於需要同意的地區取得同意後才啟用。</li>
+            <li><strong>GitHub Pages</strong>— 網站代管，並保留一般伺服器日誌。</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">上述服務商於台灣境外（包含美國）處理資料，跨境傳輸依各服務商自身之標準契約條款進行。</p>
+
+          <h4 style="margin:22px 0 8px">保存期間</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li>詢價紀錄：自最後一次往來起 3 年，以便再次詢價時能延續先前脈絡。已成立訂單者依出口與會計法規保存 7 年。</li>
+            <li>訂閱名單：至您取消訂閱為止。每封信件均附退訂連結，退訂後即自名單移除。</li>
+            <li>Google Analytics：14 個月後自動刪除。</li>
+          </ul>
+
+          <h4 style="margin:22px 0 8px">您的權利</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">若您位於歐洲經濟區、英國或瑞士，您可要求取得資料副本、更正或刪除、拒絕特定利用，或隨時撤回同意。請來信 <a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a>，我們將於 30 日內回覆。您亦有權向所在國之個資主管機關提出申訴。</p>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">若已同意分析追蹤而欲撤回，請於瀏覽器清除本站資料，下次造訪時同意提示會再次出現。</p>
+
+          <h4 style="margin:22px 0 8px">Cookie</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">本站不設置自有 Cookie。Google Analytics 於您同意後才會設置其 Cookie。您的選擇僅儲存於您的瀏覽器，不會回傳本公司伺服器。</p>
+        </section>
+
+        <!-- 한국어 -->
+        <section lang="ko" style="padding-top:26px;border-top:1px solid var(--border)">
+          <h3 style="color:var(--gold);font-size:0.95rem;letter-spacing:1px;margin:0 0 14px">한국어</h3>
+
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">본 방침은 Z&amp;Z STROTEC CO., LTD.(萬洋國際有限公司)가 본 웹사이트를 통해 수집하는 개인정보의 항목·이용 목적·보유 기간, 그리고 삭제 요청 방법을 설명합니다. 당사가 개인정보 관리자입니다.</p>
+
+          <h4 style="margin:22px 0 8px">회사 정보</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            Z&amp;Z STROTEC CO., LTD. (萬洋國際有限公司)<br>
+            13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)<br>
+            사업자등록번호: 80235084<br>
+            전화: <a href="tel:+886425341660" style="color:var(--gold)">+886-4-2534-1660</a><br>
+            문의: <a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a>
+          </p>
+
+          <h4 style="margin:22px 0 8px">수집 항목 및 목적</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>견적 문의 양식</strong> — 이름, 회사명, 이메일, 국가 및 문의 내용. 문의 회신과 견적 제공에만 사용합니다. 법적 근거: 계약 체결 전 귀하의 요청에 따른 조치.</li>
+            <li><strong>뉴스레터 양식</strong> — 이메일 주소. 새 전문가 칼럼이나 주요 지식 자료 업데이트를 알리는 용도로만 사용합니다. 법적 근거: 동의.</li>
+            <li><strong>Google Analytics 4</strong> — 조회 페이지, IP 기반 대략적 지역, 기기·브라우저 정보. 어떤 글이 실제로 읽히는지 파악하는 데 사용합니다. EEA·영국·스위스에서는 하단 배너에서 동의하기 전까지 작동하지 않습니다. 법적 근거: 동의.</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">당사는 개인정보를 판매하지 않으며, 광고·프로파일링·리마케팅에 사용하지 않습니다.</p>
+
+          <h4 style="margin:22px 0 8px">수탁 처리자</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li><strong>Formspree</strong> — 문의 양식을 당사 메일함으로 전달.</li>
+            <li><strong>Mailchimp (Intuit)</strong> — 뉴스레터 명단 보관 및 발송.</li>
+            <li><strong>Google (Analytics 4)</strong> — 웹사이트 통계. 동의가 필요한 지역에서는 동의 후에만 작동.</li>
+            <li><strong>GitHub Pages</strong> — 사이트 호스팅 및 일반 서버 로그 보관.</li>
+          </ul>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">위 사업자는 미국을 포함한 대만 국외에서 데이터를 처리하며, 국외 이전은 각 사업자의 표준계약조항에 따릅니다.</p>
+
+          <h4 style="margin:22px 0 8px">보유 기간</h4>
+          <ul style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">
+            <li>문의 내역: 마지막 연락일로부터 3년. 주문으로 이어진 건은 수출·회계 법령에 따라 7년.</li>
+            <li>뉴스레터: 수신 거부 시까지. 모든 메일에 수신 거부 링크가 포함되며, 거부 시 명단에서 삭제됩니다.</li>
+            <li>Google Analytics: 14개월 후 자동 삭제.</li>
+          </ul>
+
+          <h4 style="margin:22px 0 8px">귀하의 권리</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">EEA·영국·스위스에 계신 경우 데이터 사본 요청, 정정·삭제 요청, 이용 거부, 동의 철회를 언제든 요청하실 수 있습니다. <a href="mailto:info@zz-strotec.com" style="color:var(--gold)">info@zz-strotec.com</a> 으로 연락 주시면 30일 이내에 회신드립니다. 각국 개인정보 감독기관에 민원을 제기할 권리도 있습니다.</p>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">분석 동의를 철회하시려면 브라우저에서 본 사이트의 데이터를 삭제해 주십시오. 다음 방문 시 동의 배너가 다시 표시됩니다.</p>
+
+          <h4 style="margin:22px 0 8px">쿠키</h4>
+          <p style="color:var(--text-dim);line-height:1.85;font-size:0.9rem">본 사이트는 자체 쿠키를 사용하지 않습니다. Google Analytics는 동의 후에만 자체 쿠키를 설정합니다. 귀하의 선택은 브라우저에만 저장되며 당사 서버로 전송되지 않습니다.</p>
+        </section>
+      </div>
+    </div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>

@@ -94,6 +94,28 @@ function extractBraces(src, marker) {
   throw new Error('unbalanced braces for ' + marker);
 }
 
+/* --- same matcher, for a [...] array literal after `marker` ---------------- */
+function extractBrackets(src, marker) {
+  const start = src.indexOf(marker);
+  if (start < 0) throw new Error('marker not found: ' + marker);
+  let i = src.indexOf('[', start);
+  const open = i;
+  let depth = 0, quote = null;
+  for (; i < src.length; i++) {
+    const c = src[i];
+    if (quote) {
+      if (c === '\\') { i++; continue; }
+      if (c === quote) quote = null;
+      continue;
+    }
+    if (c === "'" || c === '"' || c === '`') { quote = c; continue; }
+    if (c === '/' && src[i + 1] === '/') { i = src.indexOf('\n', i); if (i < 0) i = src.length; continue; }
+    if (c === '[') { depth++; continue; }
+    if (c === ']') { depth--; if (depth === 0) return src.slice(open, i + 1); }
+  }
+  throw new Error('unbalanced brackets for ' + marker);
+}
+
 /* --- balanced <div>…</div> block starting at an id="..." attribute -------- */
 function extractDivBlock(src, idAttr) {
   const at = src.indexOf(idAttr);
@@ -133,6 +155,10 @@ try { SEO_DESC = evalObj('const SEO_DESC = {'); } catch (e) { /* not pinned yet 
 let SEO_TITLE = {}, SEO_SLUG = {};
 try { SEO_TITLE = evalObj('const SEO_TITLE = {'); } catch (e) { /* none pinned */ }
 try { SEO_SLUG = evalObj('const SEO_SLUG = {'); } catch (e) { /* none pinned */ }
+// The glossary. In the SPA these 196 rows are built by JS from this array, so a
+// crawler that does not run scripts sees an empty table — which is why they get
+// a real static page of their own.
+const TERMS = new Function('return (' + extractBrackets(html, 'const TERMS = [') + ');')();
 
 /* ------------------------------------------------------------ column parsing */
 const columns = [];
@@ -415,6 +441,7 @@ ${CONSENT_DEFAULTS}
     <a href="${BASE}knowledge/">Knowledge</a>
     <a href="${BASE}column/">Columns</a>
     <a href="${BASE}markets/">Markets</a>
+    <a href="${BASE}terminology/">Terminology</a>
     <a href="${BASE}">Full site →</a>
   </nav>
 </header>
@@ -423,12 +450,16 @@ ${CONSENT_DEFAULTS}
   ${main}
 </main>
 <footer class="kbp-footer">
-  <div>Z&amp;Z STROTEC · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
   <div style="margin-top:8px">
     <a href="${BASE}">Full interactive site</a>·
     <a href="${BASE}knowledge/">Knowledge Library</a>·
     <a href="${BASE}column/">Expert Columns</a>·
-    <a href="${BASE}markets/">Markets</a>
+    <a href="${BASE}markets/">Markets</a>·
+    <a href="${BASE}terminology/">Terminology</a>·
+    <a href="${BASE}privacy/">Privacy Policy</a>
   </div>
 </footer>
 ${CONSENT_BANNER}
@@ -446,7 +477,7 @@ function emit(relDir, urlPath, contentHtml) {
   written.push({ url: SITE + urlPath, loc: urlPath });
 }
 // clean previously generated dirs so renamed slugs don't leave orphans
-for (const d of ['knowledge', 'column', 'markets']) {
+for (const d of ['knowledge', 'column', 'markets', 'terminology', 'privacy']) {
   fs.rmSync(path.join(ROOT, d), { recursive: true, force: true });
 }
 
@@ -540,13 +571,21 @@ for (const [key, item] of Object.entries(KB)) {
 }
 
 /* ----------------------------------------------------------------- MARKETS */
+// Market guides quote duty rates, certification regimes and payment customs, so
+// each page states when it was last gone through. Keep MARKET_REVIEWED in step
+// with the constant of the same name in index.html; a per-market `reviewed`
+// field overrides it once an individual guide is revised.
+const MARKET_REVIEWED = '2026-06';
 for (const [key, item] of Object.entries(MARKETS)) {
   const url = `${SITE}markets/${key}/`;
   const desc = SEO_DESC['market:' + key] || clip(stripTags(item.body || ''), 155);
+  const reviewed = item.reviewed || MARKET_REVIEWED;
+  const reviewedHtml = `<div style="color:var(--text-dim);font-size:.78rem;margin-top:28px;padding-top:14px;border-top:1px solid var(--border)">Last reviewed / 最後查核 / 최종 확인: ${reviewed}</div>`;
   const bodyHtml = [
     item.body ? `<section lang="en">${item.body}</section>` : '',
     item.body_zh ? `<section lang="zh-Hant" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">繁體中文</div>${item.body_zh}</section>` : '',
-    item.body_ko ? `<section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>${item.body_ko}</section>` : ''
+    item.body_ko ? `<section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>${item.body_ko}</section>` : '',
+    reviewedHtml
   ].join('');
   renderEntry({
     depth: 2, url, title: item.title, seoTitle: SEO_TITLE['market:' + key],
@@ -630,6 +669,104 @@ hub({
     sub: [i.title_zh, i.title_ko].filter(Boolean).join(' · ')
   }))
 });
+
+/* ------------------------------------------------------------ TERMINOLOGY
+ * One comprehensive page rather than fifteen category pages: several categories
+ * hold only one to three terms, which would make thin pages, and splitting the
+ * table would put the same rows on two URLs. Grouped by category with a jump
+ * list, so it still reads as a reference rather than a wall.
+ */
+{
+  const catOrder = [];
+  const byCat = new Map();
+  for (const t of TERMS) {
+    if (!byCat.has(t.cat)) { byCat.set(t.cat, []); catOrder.push(t.cat); }
+    byCat.get(t.cat).push(t);
+  }
+  const catSlug = c => slugify(c.replace(/&/g, ' and '));
+  const termId = t => 'term-' + slugify(t.en);
+
+  const jump = catOrder.map(c =>
+    `<a href="#cat-${catSlug(c)}" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">${attrEsc(c)} <span style="color:var(--gold)">${byCat.get(c).length}</span></a>`
+  ).join('');
+
+  const sections = catOrder.map(c => {
+    const rows = byCat.get(c).map(t => {
+      const note = t.note_en || '';
+      return `<tr id="${termId(t)}">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">${attrEsc(t.en)}</strong>${note ? `<div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">${attrEsc(note)}</div>` : ''}</td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">${attrEsc(t.zh || '')}${t.note ? `<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">${attrEsc(t.note)}</div>` : ''}</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">${attrEsc(t.ko || '')}${t.note_ko ? `<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">${attrEsc(t.note_ko)}</div>` : ''}</td>
+      </tr>`;
+    }).join('\n');
+    return `<h2 id="cat-${catSlug(c)}" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">${attrEsc(c)} <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· ${byCat.get(c).length} terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>`;
+  }).join('\n');
+
+  const url = `${SITE}terminology/`;
+  const title = 'CNC Machine Tool Terminology — English · 繁體中文 · 한국어';
+  const desc = `A ${TERMS.length}-term trilingual glossary of CNC machine-tool vocabulary — machines, spindles, bar feeders, tooling, workholding, metrology, hydraulics and export terms — in English, Traditional Chinese and Korean.`;
+  const ld = jsonld({
+    '@context': 'https://schema.org', '@type': 'DefinedTermSet',
+    name: 'CNC Machine Tool Terminology', description: desc, url,
+    inLanguage: ['en', 'zh-Hant', 'ko'],
+    publisher: PUBLISHER,
+    hasDefinedTerm: TERMS.map(t => ({
+      '@type': 'DefinedTerm', name: t.en, inDefinedTermSet: url,
+      termCode: t.cat, '@id': url + '#' + termId(t),
+      ...(t.note_en ? { description: t.note_en } : {})
+    }))
+  });
+  const main = `<h1 class="kbp-h1">${title}</h1>
+  <p style="color:var(--text-dim);line-height:1.8;max-width:720px">Machine-tool vocabulary does not translate cleanly. The same part is a 動力刀座 in a Taiwanese quotation, a <em>live tool holder</em> in an English specification and a 라이브 툴 홀더 in a Korean purchase order — and a mismatch between those three is how the wrong part gets shipped. These are the ${TERMS.length} terms we most often have to reconcile across a quotation, a drawing and a packing list.</p>
+  <a class="kbp-cta" href="${BASE}#terminology">Searchable version · 可搜尋版本 · 검색 가능한 버전 →</a>
+  <div style="margin:0 0 8px">${jump}</div>
+  <div class="kbp-body">${sections}</div>`;
+  emit('terminology', 'terminology/', pageShell({
+    depth: 1, url, title: 'CNC Machine Tool Terminology (EN · 中文 · 한국어)',
+    desc: clip(desc, 155), ogImage: SITE + LOGO, ld,
+    crumb: '› Terminology', main,
+    track: { name: 'view_terminology', params: { site_language: 'en', landing: true } }
+  }));
+  urls.push({ loc: url, priority: '0.9', lastmod: TODAY });
+  console.log(`Generated terminology page: ${TERMS.length} terms in ${catOrder.length} categories`);
+}
+
+/* --------------------------------------------------------------- PRIVACY
+ * Lifted straight out of the SPA page so the two can never drift apart. It
+ * needs a real URL because the consent checkboxes and the footer link to it,
+ * and because a policy behind a JS route is not much of a policy. */
+{
+  const block = extractDivBlock(html, 'id="page-privacy"');
+  // drop the SPA section-title; the generated shell supplies its own <h1>
+  const inner = block
+    .replace(/^<div[^>]*id="page-privacy"[^>]*>/, '')
+    .replace(/<\/div>\s*$/, '')
+    .replace(/<div class="section-title"[\s\S]*?<\/div>/, '');
+  const url = `${SITE}privacy/`;
+  const title = 'Privacy Policy · 隱私權政策 · 개인정보 처리방침';
+  const desc = 'What personal data Z&Z STROTEC collects through this site, why, how long it is kept, which processors are involved, and how to have it removed.';
+  const ld = jsonld({
+    '@context': 'https://schema.org', '@type': 'WebPage',
+    name: title, description: desc, url, inLanguage: ['en', 'zh-Hant', 'ko'],
+    isPartOf: { '@type': 'WebSite', name: 'Z&Z STROTEC', url: SITE },
+    publisher: PUBLISHER
+  });
+  const main = `<h1 class="kbp-h1">${title}</h1>
+  <div class="kbp-body">${rewriteAssets(rewriteNav(inner))}</div>`;
+  emit('privacy', 'privacy/', pageShell({
+    depth: 1, url, title: 'Privacy Policy', desc, ogImage: SITE + LOGO, ld,
+    crumb: '› Privacy Policy', main
+  }));
+  urls.push({ loc: url, priority: '0.3', lastmod: TODAY });
+}
 
 /* ---------------------------------------------------------------- sitemap */
 const homeEntry = `  <url>\n    <loc>${SITE}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`;

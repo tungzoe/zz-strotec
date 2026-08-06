@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_terminology", {"site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNC Machine Tool Terminology (EN · 中文 · 한국어) | Z&amp;Z STROTEC</title>
+<meta name="description" content="A 196-term trilingual glossary of CNC machine-tool vocabulary — machines, spindles, bar feeders, tooling, workholding, metrology, hydraulics and export…">
+<link rel="canonical" href="https://zz-strotec.com/terminology/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNC Machine Tool Terminology (EN · 中文 · 한국어)">
+<meta property="og:description" content="A 196-term trilingual glossary of CNC machine-tool vocabulary — machines, spindles, bar feeders, tooling, workholding, metrology, hydraulics and export…">
+<meta property="og:url" content="https://zz-strotec.com/terminology/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTermSet","name":"CNC Machine Tool Terminology","description":"A 196-term trilingual glossary of CNC machine-tool vocabulary — machines, spindles, bar feeders, tooling, workholding, metrology, hydraulics and export terms — in English, Traditional Chinese and Korean.","url":"https://zz-strotec.com/terminology/","inLanguage":["en","zh-Hant","ko"],"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"hasDefinedTerm":[{"@type":"DefinedTerm","name":"machine tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-machine-tool","description":"A power-driven machine for cutting or forming metal workpieces"},{"@type":"DefinedTerm","name":"CNC Lathe","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-cnc-lathe"},{"@type":"DefinedTerm","name":"Numerically-controlled lathe","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-numerically-controlled-lathe"},{"@type":"DefinedTerm","name":"Computer Numerical Control (CNC)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-computer-numerical-control-cnc","description":"NC with an onboard computer, adding programmable computation"},{"@type":"DefinedTerm","name":"machining center","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-machining-center"},{"@type":"DefinedTerm","name":"Double-column Machining center","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-double-column-machining-center"},{"@type":"DefinedTerm","name":"milling machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-milling-machine"},{"@type":"DefinedTerm","name":"Boring Machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-boring-machine"},{"@type":"DefinedTerm","name":"Drilling Machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-drilling-machine"},{"@type":"DefinedTerm","name":"Grinding machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-grinding-machine"},{"@type":"DefinedTerm","name":"Swiss type","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-swiss-type","description":"Headstock slides with the bar through a guide bushing — ideal for long slender precision parts"},{"@type":"DefinedTerm","name":"Fixed head type","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-fixed-head-type","description":"Fixed headstock; the tool moves to feed (conventional lathe type)"},{"@type":"DefinedTerm","name":"Turret lathe","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-turret-lathe"},{"@type":"DefinedTerm","name":"Wire EDM","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-wire-edm","description":"Wire electrical discharge machining; slow-wire (precision) and fast-wire types"},{"@type":"DefinedTerm","name":"Electric discharge machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-electric-discharge-machine"},{"@type":"DefinedTerm","name":"Gear cutting machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-gear-cutting-machine"},{"@type":"DefinedTerm","name":"Special purpose machine","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Machines","@id":"https://zz-strotec.com/terminology/#term-special-purpose-machine"},{"@type":"DefinedTerm","name":"Main Spindle","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-main-spindle"},{"@type":"DefinedTerm","name":"Sub-spindle","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-sub-spindle"},{"@type":"DefinedTerm","name":"Built-in Type spindle","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-built-in-type-spindle"},{"@type":"DefinedTerm","name":"Spindle motor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-spindle-motor","description":"Belt-driven or built-in (integrated) type"},{"@type":"DefinedTerm","name":"Servo motor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-servo-motor","description":"Comes in AC and DC types"},{"@type":"DefinedTerm","name":"Driver / AMP","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-driver-amp"},{"@type":"DefinedTerm","name":"Controller","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-controller"},{"@type":"DefinedTerm","name":"Encoder","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-encoder","description":"Position / speed feedback device"},{"@type":"DefinedTerm","name":"CTS (Coolant Thru Spindle)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-cts-coolant-thru-spindle"},{"@type":"DefinedTerm","name":"Ball Screw","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-ball-screw","description":"Converts rotary motion into linear motion"},{"@type":"DefinedTerm","name":"linear guideways","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-linear-guideways"},{"@type":"DefinedTerm","name":"Slider Block / Truck","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-slider-block-truck","description":"The moving carriage that rides on a linear guide rail"},{"@type":"DefinedTerm","name":"linear scale","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-linear-scale"},{"@type":"DefinedTerm","name":"Bearing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-bearing"},{"@type":"DefinedTerm","name":"Ball type Bearing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-ball-type-bearing"},{"@type":"DefinedTerm","name":"Roller Type Bearing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Spindle & Drive","@id":"https://zz-strotec.com/terminology/#term-roller-type-bearing"},{"@type":"DefinedTerm","name":"Bar Feeder","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-bar-feeder"},{"@type":"DefinedTerm","name":"Bar","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-bar"},{"@type":"DefinedTerm","name":"Guiding Channel","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-guiding-channel"},{"@type":"DefinedTerm","name":"(Bar) Pusher","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-bar-pusher"},{"@type":"DefinedTerm","name":"Bushing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-bushing"},{"@type":"DefinedTerm","name":"Rotating Unit","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-rotating-unit"},{"@type":"DefinedTerm","name":"Front Tube","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-front-tube"},{"@type":"DefinedTerm","name":"Spindle bore","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-spindle-bore"},{"@type":"DefinedTerm","name":"Feeding Support","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-feeding-support"},{"@type":"DefinedTerm","name":"Part catcher box","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-part-catcher-box"},{"@type":"DefinedTerm","name":"Parts catcher","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Bar Feeder","@id":"https://zz-strotec.com/terminology/#term-parts-catcher"},{"@type":"DefinedTerm","name":"Turret","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-turret"},{"@type":"DefinedTerm","name":"Upper Turret","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-upper-turret"},{"@type":"DefinedTerm","name":"Lower Turret","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-lower-turret"},{"@type":"DefinedTerm","name":"Gang type","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-gang-type"},{"@type":"DefinedTerm","name":"Tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-tool"},{"@type":"DefinedTerm","name":"Tool Holder","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-tool-holder"},{"@type":"DefinedTerm","name":"Power tool / Live Tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-power-tool-live-tool"},{"@type":"DefinedTerm","name":"station","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-station","description":"A single tool-mounting position on the turret (e.g. 8-station servo turret)"},{"@type":"DefinedTerm","name":"tool sleeve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-tool-sleeve"},{"@type":"DefinedTerm","name":"Chuck","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-chuck"},{"@type":"DefinedTerm","name":"Collet (Collet Chuck)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-collet-collet-chuck"},{"@type":"DefinedTerm","name":"3-Jaw Chuck","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-3-jaw-chuck"},{"@type":"DefinedTerm","name":"Jig Chuck","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-jig-chuck"},{"@type":"DefinedTerm","name":"Tailstock","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-tailstock"},{"@type":"DefinedTerm","name":"A.T.C. system","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-a-t-c-system"},{"@type":"DefinedTerm","name":"Gear hobbing unit","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Tooling","@id":"https://zz-strotec.com/terminology/#term-gear-hobbing-unit"},{"@type":"DefinedTerm","name":"Milling Tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-milling-tool"},{"@type":"DefinedTerm","name":"ID/OD Turning","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-id-od-turning"},{"@type":"DefinedTerm","name":"Inner Grooving","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-inner-grooving"},{"@type":"DefinedTerm","name":"ID Threading","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-id-threading"},{"@type":"DefinedTerm","name":"Cut Off Tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-cut-off-tool"},{"@type":"DefinedTerm","name":"Broaching tool","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-broaching-tool"},{"@type":"DefinedTerm","name":"Tap / Tapping","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-tap-tapping","description":"Forming internal threads"},{"@type":"DefinedTerm","name":"Thread Rolling","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-thread-rolling","description":"Forming external threads by rolling (chipless)"},{"@type":"DefinedTerm","name":"Knurling","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Cutting Tools","@id":"https://zz-strotec.com/terminology/#term-knurling"},{"@type":"DefinedTerm","name":"Gear","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-gear"},{"@type":"DefinedTerm","name":"Bevel Gear","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-bevel-gear"},{"@type":"DefinedTerm","name":"Clutch","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-clutch"},{"@type":"DefinedTerm","name":"Conveyor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-conveyor"},{"@type":"DefinedTerm","name":"chip conveyors","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-chip-conveyors"},{"@type":"DefinedTerm","name":"Screw-type chip conveyors","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-screw-type-chip-conveyors"},{"@type":"DefinedTerm","name":"Oil Seal / O-RING","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-oil-seal-o-ring","description":"Prevents lubricant from leaking at joints"},{"@type":"DefinedTerm","name":"Pulley","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-pulley"},{"@type":"DefinedTerm","name":"Spring","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-spring"},{"@type":"DefinedTerm","name":"Transformer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-transformer"},{"@type":"DefinedTerm","name":"Pump","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-pump"},{"@type":"DefinedTerm","name":"Lubricator","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-lubricator"},{"@type":"DefinedTerm","name":"Sensor Switch","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-sensor-switch"},{"@type":"DefinedTerm","name":"Handwheel / MPG","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-handwheel-mpg"},{"@type":"DefinedTerm","name":"Nipple","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-nipple"},{"@type":"DefinedTerm","name":"Joint","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-joint"},{"@type":"DefinedTerm","name":"Flexible cover","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-flexible-cover"},{"@type":"DefinedTerm","name":"Spindle Cover","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-spindle-cover"},{"@type":"DefinedTerm","name":"Air Compressor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-air-compressor"},{"@type":"DefinedTerm","name":"Chiller","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-chiller"},{"@type":"DefinedTerm","name":"Oil Mist Recollector","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-oil-mist-recollector"},{"@type":"DefinedTerm","name":"Hydraulic Cylinder","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Hydraulics","@id":"https://zz-strotec.com/terminology/#term-hydraulic-cylinder"},{"@type":"DefinedTerm","name":"Hydraulic Motor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Hydraulics","@id":"https://zz-strotec.com/terminology/#term-hydraulic-motor"},{"@type":"DefinedTerm","name":"Hydraulic Presses","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Hydraulics","@id":"https://zz-strotec.com/terminology/#term-hydraulic-presses"},{"@type":"DefinedTerm","name":"Accuracy","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-accuracy"},{"@type":"DefinedTerm","name":"Chamfer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-chamfer"},{"@type":"DefinedTerm","name":"Clearance / Tolerance","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-clearance-tolerance"},{"@type":"DefinedTerm","name":"Outside Diameter (OD)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-outside-diameter-od"},{"@type":"DefinedTerm","name":"Inside Diameter (ID)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-inside-diameter-id"},{"@type":"DefinedTerm","name":"Diameter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-diameter"},{"@type":"DefinedTerm","name":"Vernier Caliper","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-vernier-caliper"},{"@type":"DefinedTerm","name":"Runout","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-runout","description":"Deviation from the axis of rotation when spinning (concentricity error)"},{"@type":"DefinedTerm","name":"Concentricity","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-concentricity"},{"@type":"DefinedTerm","name":"Depth of Cut","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-depth-of-cut"},{"@type":"DefinedTerm","name":"Thou","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-thou","description":"1 thou = 0.001 inch (a thousandth of an inch); common machining unit"},{"@type":"DefinedTerm","name":"G-code","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-g-code","description":"The programming language a CNC controller reads"},{"@type":"DefinedTerm","name":"CAD","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-cad","description":"Computer Aided Design"},{"@type":"DefinedTerm","name":"CAM","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-cam","description":"Computer Aided Manufacturing"},{"@type":"DefinedTerm","name":"Post Processor","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-post-processor","description":"Translates CAM output into a specific machine dialect"},{"@type":"DefinedTerm","name":"Work Coordinate System (WCS)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-work-coordinate-system-wcs"},{"@type":"DefinedTerm","name":"Chatter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-chatter","description":"Self-excited vibration between tool and workpiece during cutting; causes surface waviness and tool wear"},{"@type":"DefinedTerm","name":"Rigid tapping","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-rigid-tapping"},{"@type":"DefinedTerm","name":"Simulation","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-simulation"},{"@type":"DefinedTerm","name":"parameter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-parameter"},{"@type":"DefinedTerm","name":"travel / stroke","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"CNC Programming","@id":"https://zz-strotec.com/terminology/#term-travel-stroke"},{"@type":"DefinedTerm","name":"Work holding","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Workholding","@id":"https://zz-strotec.com/terminology/#term-work-holding"},{"@type":"DefinedTerm","name":"Tool holding","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Workholding","@id":"https://zz-strotec.com/terminology/#term-tool-holding"},{"@type":"DefinedTerm","name":"Fixturing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Workholding","@id":"https://zz-strotec.com/terminology/#term-fixturing"},{"@type":"DefinedTerm","name":"Vise","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Workholding","@id":"https://zz-strotec.com/terminology/#term-vise"},{"@type":"DefinedTerm","name":"Washer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Workholding","@id":"https://zz-strotec.com/terminology/#term-washer"},{"@type":"DefinedTerm","name":"try-out / running-test cost","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Trade & Export","@id":"https://zz-strotec.com/terminology/#term-try-out-running-test-cost","description":"Cost of trial run / test cutting before the machine ships"},{"@type":"DefinedTerm","name":"defect loss / yield loss","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-defect-loss-yield-loss"},{"@type":"DefinedTerm","name":"yield rate","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Measurement","@id":"https://zz-strotec.com/terminology/#term-yield-rate"},{"@type":"DefinedTerm","name":"thermal load","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-thermal-load"},{"@type":"DefinedTerm","name":"mechanical load","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-mechanical-load"},{"@type":"DefinedTerm","name":"bracket","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-bracket","description":"A mounting/support bracket (e.g. the seat connecting a bar feeder to a lathe)"},{"@type":"DefinedTerm","name":"exploded view","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Mechanical Parts","@id":"https://zz-strotec.com/terminology/#term-exploded-view","description":"An exploded parts diagram"},{"@type":"DefinedTerm","name":"Tungsten steel","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Materials","@id":"https://zz-strotec.com/terminology/#term-tungsten-steel"},{"@type":"DefinedTerm","name":"Titanium plating","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Materials","@id":"https://zz-strotec.com/terminology/#term-titanium-plating"},{"@type":"DefinedTerm","name":"Pipe","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-pipe"},{"@type":"DefinedTerm","name":"Fittings","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-fittings"},{"@type":"DefinedTerm","name":"Coupling / Socket","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-coupling-socket"},{"@type":"DefinedTerm","name":"Reducer / Reducing Coupling","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-reducer-reducing-coupling"},{"@type":"DefinedTerm","name":"Eccentric Reducer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-eccentric-reducer"},{"@type":"DefinedTerm","name":"Reducing Bushing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-reducing-bushing"},{"@type":"DefinedTerm","name":"Tee (90° equal)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-tee-90-equal"},{"@type":"DefinedTerm","name":"Reducing Tee","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-reducing-tee"},{"@type":"DefinedTerm","name":"Y Tee (45°)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-y-tee-45"},{"@type":"DefinedTerm","name":"90° Elbow","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-90-elbow"},{"@type":"DefinedTerm","name":"45° Elbow","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-45-elbow"},{"@type":"DefinedTerm","name":"Female Adapter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-female-adapter"},{"@type":"DefinedTerm","name":"Male Adapter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-male-adapter"},{"@type":"DefinedTerm","name":"Cap","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-cap"},{"@type":"DefinedTerm","name":"Plug","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-plug"},{"@type":"DefinedTerm","name":"Cross","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-cross"},{"@type":"DefinedTerm","name":"Union","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-union"},{"@type":"DefinedTerm","name":"Nipple","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-nipple"},{"@type":"DefinedTerm","name":"Saddle / Pipe Clamp","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-saddle-pipe-clamp"},{"@type":"DefinedTerm","name":"Flange","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-flange"},{"@type":"DefinedTerm","name":"Blind Flange","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-blind-flange"},{"@type":"DefinedTerm","name":"Gasket / Packing","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-gasket-packing"},{"@type":"DefinedTerm","name":"Welding Rod","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-welding-rod"},{"@type":"DefinedTerm","name":"Solvent Cement","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-solvent-cement"},{"@type":"DefinedTerm","name":"Expansion Joint","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Piping & Fittings","@id":"https://zz-strotec.com/terminology/#term-expansion-joint"},{"@type":"DefinedTerm","name":"Ball Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-ball-valve"},{"@type":"DefinedTerm","name":"True Union Ball Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-true-union-ball-valve"},{"@type":"DefinedTerm","name":"3-Way Ball Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-3-way-ball-valve"},{"@type":"DefinedTerm","name":"Butterfly Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-butterfly-valve"},{"@type":"DefinedTerm","name":"Diaphragm Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-diaphragm-valve"},{"@type":"DefinedTerm","name":"Gate Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-gate-valve"},{"@type":"DefinedTerm","name":"Needle Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-needle-valve"},{"@type":"DefinedTerm","name":"Globe Valve / Stop Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-globe-valve-stop-valve"},{"@type":"DefinedTerm","name":"Check Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-check-valve","description":"Prevents reverse flow"},{"@type":"DefinedTerm","name":"Swing Check Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-swing-check-valve"},{"@type":"DefinedTerm","name":"Foot Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-foot-valve"},{"@type":"DefinedTerm","name":"Solenoid Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-solenoid-valve"},{"@type":"DefinedTerm","name":"Pressure Relief Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-pressure-relief-valve"},{"@type":"DefinedTerm","name":"Air Release Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-air-release-valve"},{"@type":"DefinedTerm","name":"Pressure Regulator","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-pressure-regulator"},{"@type":"DefinedTerm","name":"Control Valve","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-control-valve"},{"@type":"DefinedTerm","name":"Y Strainer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-y-strainer"},{"@type":"DefinedTerm","name":"Basket Strainer","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-basket-strainer"},{"@type":"DefinedTerm","name":"Flow Meter","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-flow-meter"},{"@type":"DefinedTerm","name":"Actuator","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-actuator"},{"@type":"DefinedTerm","name":"Electric Actuator","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-electric-actuator"},{"@type":"DefinedTerm","name":"Pneumatic Actuator","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Valves","@id":"https://zz-strotec.com/terminology/#term-pneumatic-actuator"},{"@type":"DefinedTerm","name":"Gantry Loader","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-gantry-loader","description":"Automatic load/unload system for CNC machines"},{"@type":"DefinedTerm","name":"Auto Loader","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-auto-loader"},{"@type":"DefinedTerm","name":"Side Loader","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-side-loader"},{"@type":"DefinedTerm","name":"Stocker System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-stocker-system","description":"Workpiece storage with automatic retrieval"},{"@type":"DefinedTerm","name":"Shuttle System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-shuttle-system","description":"A shuttle transfer that moves workpieces back and forth between the machining and load/unload areas"},{"@type":"DefinedTerm","name":"Multi-Axes Robot","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-multi-axes-robot"},{"@type":"DefinedTerm","name":"FMS (Flexible Manufacturing System)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-fms-flexible-manufacturing-system"},{"@type":"DefinedTerm","name":"MPS (Multi Pallet System)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-mps-multi-pallet-system"},{"@type":"DefinedTerm","name":"Turn Unit","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-turn-unit","description":"Used to flip the workpiece over"},{"@type":"DefinedTerm","name":"Jig System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-jig-system"},{"@type":"DefinedTerm","name":"Pallet Change System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-pallet-change-system"},{"@type":"DefinedTerm","name":"Pallet","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-pallet"},{"@type":"DefinedTerm","name":"Gripper","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-gripper","description":"The gripping device on a robot arm"},{"@type":"DefinedTerm","name":"Hand Held Pendant","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-hand-held-pendant"},{"@type":"DefinedTerm","name":"Helical Rack and Pinion","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-helical-rack-and-pinion","description":"Low-noise transmission (vs straight-cut)"},{"@type":"DefinedTerm","name":"Measuring System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-measuring-system"},{"@type":"DefinedTerm","name":"Washing System","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-washing-system","description":"Workpiece washing / cleaning"},{"@type":"DefinedTerm","name":"X-Axis (Crosswise Horizontal)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-x-axis-crosswise-horizontal"},{"@type":"DefinedTerm","name":"Y-Axis (Horizontal)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-y-axis-horizontal"},{"@type":"DefinedTerm","name":"Z-Axis (Vertical)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-z-axis-vertical"},{"@type":"DefinedTerm","name":"AWC (Automatic Workpiece Changer)","inDefinedTermSet":"https://zz-strotec.com/terminology/","termCode":"Automation & Robotics","@id":"https://zz-strotec.com/terminology/#term-awc-automatic-workpiece-changer"}]}</script>
+<link rel="stylesheet" href="../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › Terminology</div>
+  <h1 class="kbp-h1">CNC Machine Tool Terminology — English · 繁體中文 · 한국어</h1>
+  <p style="color:var(--text-dim);line-height:1.8;max-width:720px">Machine-tool vocabulary does not translate cleanly. The same part is a 動力刀座 in a Taiwanese quotation, a <em>live tool holder</em> in an English specification and a 라이브 툴 홀더 in a Korean purchase order — and a mismatch between those three is how the wrong part gets shipped. These are the 196 terms we most often have to reconcile across a quotation, a drawing and a packing list.</p>
+  <a class="kbp-cta" href="/#terminology">Searchable version · 可搜尋版本 · 검색 가능한 버전 →</a>
+  <div style="margin:0 0 8px"><a href="#cat-machines" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Machines <span style="color:var(--gold)">17</span></a><a href="#cat-spindle-and-drive" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Spindle &amp; Drive <span style="color:var(--gold)">16</span></a><a href="#cat-bar-feeder" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Bar Feeder <span style="color:var(--gold)">11</span></a><a href="#cat-tooling" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Tooling <span style="color:var(--gold)">16</span></a><a href="#cat-cutting-tools" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Cutting Tools <span style="color:var(--gold)">9</span></a><a href="#cat-mechanical-parts" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Mechanical Parts <span style="color:var(--gold)">25</span></a><a href="#cat-hydraulics" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Hydraulics <span style="color:var(--gold)">3</span></a><a href="#cat-measurement" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Measurement <span style="color:var(--gold)">13</span></a><a href="#cat-cnc-programming" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">CNC Programming <span style="color:var(--gold)">10</span></a><a href="#cat-workholding" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Workholding <span style="color:var(--gold)">5</span></a><a href="#cat-trade-and-export" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Trade &amp; Export <span style="color:var(--gold)">1</span></a><a href="#cat-materials" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Materials <span style="color:var(--gold)">2</span></a><a href="#cat-piping-and-fittings" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Piping &amp; Fittings <span style="color:var(--gold)">25</span></a><a href="#cat-valves" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Valves <span style="color:var(--gold)">22</span></a><a href="#cat-automation-and-robotics" style="display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text-dim);font-size:12px;text-decoration:none;margin:0 6px 6px 0">Automation &amp; Robotics <span style="color:var(--gold)">21</span></a></div>
+  <div class="kbp-body"><h2 id="cat-machines" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Machines <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 17 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-machine-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">machine tool</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">A power-driven machine for cutting or forming metal workpieces</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">工具機<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">動力驅動、用於切削或成形金屬工件的機械</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공작기계<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">금속 공작물을 절삭·성형하는 동력 구동 기계</div></td>
+      </tr>
+<tr id="term-cnc-lathe">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">CNC Lathe</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電腦車床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">CNC 선반</td>
+      </tr>
+<tr id="term-numerically-controlled-lathe">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Numerically-controlled lathe</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">NC 車床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">수치제어 선반 (NC 선반)</td>
+      </tr>
+<tr id="term-computer-numerical-control-cnc">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Computer Numerical Control (CNC)</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">NC with an onboard computer, adding programmable computation</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電腦化數值控制<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">NC加入電腦裝置，具備程式運算功能</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">컴퓨터 수치 제어<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">NC에 컴퓨터를 더해 프로그램 연산 기능을 갖춘 제어</div></td>
+      </tr>
+<tr id="term-machining-center">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">machining center</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">加工中心機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">머시닝 센터</td>
+      </tr>
+<tr id="term-double-column-machining-center">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Double-column Machining center</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">龍門加工中心</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">문형 가공기</td>
+      </tr>
+<tr id="term-milling-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">milling machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">銑床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">밀링 머신</td>
+      </tr>
+<tr id="term-boring-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Boring Machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">搪床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">보링 머신</td>
+      </tr>
+<tr id="term-drilling-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Drilling Machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">鑽床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">드릴링 머신</td>
+      </tr>
+<tr id="term-grinding-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Grinding machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">磨床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">연삭기</td>
+      </tr>
+<tr id="term-swiss-type">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Swiss type</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Headstock slides with the bar through a guide bushing — ideal for long slender precision parts</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">走心式(車床)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">主軸隨棒料移動、搭配導套加工，適合細長精密件</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스위스 타입 (주축이동형)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">주축이 봉재와 함께 이동하며 가이드 부시로 가공 — 가늘고 긴 정밀 부품에 적합</div></td>
+      </tr>
+<tr id="term-fixed-head-type">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Fixed head type</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Fixed headstock; the tool moves to feed (conventional lathe type)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">走刀式(車床)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">主軸固定，由刀具移動進給（傳統車床型式）</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">고정주축형<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">주축 고정, 공구가 이동하며 이송 (전통적 선반 형식)</div></td>
+      </tr>
+<tr id="term-turret-lathe">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Turret lathe</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">六角車床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">터렛 선반</td>
+      </tr>
+<tr id="term-wire-edm">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Wire EDM</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Wire electrical discharge machining; slow-wire (precision) and fast-wire types</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">線切割機<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">線切割放電加工；分慢走絲（精密）與快走絲</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">와이어 방전가공기<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">와이어 방전가공; 저속 와이어(정밀)와 고속 와이어로 구분</div></td>
+      </tr>
+<tr id="term-electric-discharge-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Electric discharge machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">放電加工機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">방전가공기 (EDM)</td>
+      </tr>
+<tr id="term-gear-cutting-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gear cutting machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">齒輪切削機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">기어 절삭기</td>
+      </tr>
+<tr id="term-special-purpose-machine">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Special purpose machine</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">專用機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">전용기</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-spindle-and-drive" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Spindle &amp; Drive <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 16 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-main-spindle">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Main Spindle</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">主軸</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">주축 / 스핀들</td>
+      </tr>
+<tr id="term-sub-spindle">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Sub-spindle</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">副主軸</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">부주축</td>
+      </tr>
+<tr id="term-built-in-type-spindle">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Built-in Type spindle</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內藏式主軸</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">내장형 모터 주축</td>
+      </tr>
+<tr id="term-spindle-motor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Spindle motor</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Belt-driven or built-in (integrated) type</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">主軸馬達<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">皮帶式 / 內藏式</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스핀들 모터<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">벨트식 또는 빌트인(내장)식</div></td>
+      </tr>
+<tr id="term-servo-motor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Servo motor</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Comes in AC and DC types</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">伺服馬達<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">分AC和DC兩種</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">서보모터<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">AC와 DC 두 종류</div></td>
+      </tr>
+<tr id="term-driver-amp">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Driver / AMP</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">驅動器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">드라이버 / 앰프</td>
+      </tr>
+<tr id="term-controller">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Controller</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">控制器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">컨트롤러</td>
+      </tr>
+<tr id="term-encoder">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Encoder</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Position / speed feedback device</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">編碼器<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">位置/轉速回授</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">엔코더<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">위치·속도 피드백 장치</div></td>
+      </tr>
+<tr id="term-cts-coolant-thru-spindle">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">CTS (Coolant Thru Spindle)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">主軸中心出水</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">주축 중심 절삭유 공급</td>
+      </tr>
+<tr id="term-ball-screw">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Ball Screw</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Converts rotary motion into linear motion</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滾珠螺桿<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">將旋轉運動轉換成直線運動</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">볼스크류<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">회전 운동을 직선 운동으로 변환</div></td>
+      </tr>
+<tr id="term-linear-guideways">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">linear guideways</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">線性滑軌</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리니어 가이드</td>
+      </tr>
+<tr id="term-slider-block-truck">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Slider Block / Truck</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">The moving carriage that rides on a linear guide rail</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滑塊<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">線性滑軌上的移動座</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리니어 블록 / 슬라이드 블록<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">리니어 가이드 위를 움직이는 블록</div></td>
+      </tr>
+<tr id="term-linear-scale">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">linear scale</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">光學尺</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리니어 스케일</td>
+      </tr>
+<tr id="term-bearing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Bearing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">軸承 / 培林</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">베어링</td>
+      </tr>
+<tr id="term-ball-type-bearing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Ball type Bearing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滾珠軸承</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">볼베어링</td>
+      </tr>
+<tr id="term-roller-type-bearing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Roller Type Bearing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滾柱軸承</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">롤러 베어링</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-bar-feeder" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Bar Feeder <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 11 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-bar-feeder">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Bar Feeder</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">送料機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">바피더</td>
+      </tr>
+<tr id="term-bar">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Bar</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">棒材</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">바</td>
+      </tr>
+<tr id="term-guiding-channel">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Guiding Channel</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">膠管</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">가이드 채널</td>
+      </tr>
+<tr id="term-bar-pusher">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">(Bar) Pusher</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">壓桿/推桿</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">밀대</td>
+      </tr>
+<tr id="term-bushing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Bushing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">夾塊</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">부싱/방진구</td>
+      </tr>
+<tr id="term-rotating-unit">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Rotating Unit</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">中軸</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">회전봉</td>
+      </tr>
+<tr id="term-front-tube">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Front Tube</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">前端套管</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">프론트 튜브</td>
+      </tr>
+<tr id="term-spindle-bore">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Spindle bore</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">主軸內徑</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">주축 내경</td>
+      </tr>
+<tr id="term-feeding-support">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Feeding Support</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">送料尾座</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">피딩 서포트</td>
+      </tr>
+<tr id="term-part-catcher-box">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Part catcher box</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">接料盒</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">파트 캐처 박스</td>
+      </tr>
+<tr id="term-parts-catcher">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Parts catcher</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">接料器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">파트 캐처</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-tooling" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Tooling <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 16 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-turret">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Turret</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀塔</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">터렛</td>
+      </tr>
+<tr id="term-upper-turret">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Upper Turret</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">上刀塔</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">상부 터렛</td>
+      </tr>
+<tr id="term-lower-turret">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Lower Turret</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">下刀塔</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">하부 터렛</td>
+      </tr>
+<tr id="term-gang-type">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gang type</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">櫛式</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">갱 타입</td>
+      </tr>
+<tr id="term-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tool</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀具</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공구</td>
+      </tr>
+<tr id="term-tool-holder">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tool Holder</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀具座</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공구대</td>
+      </tr>
+<tr id="term-power-tool-live-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Power tool / Live Tool</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">動力刀具</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">회전공구</td>
+      </tr>
+<tr id="term-station">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">station</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">A single tool-mounting position on the turret (e.g. 8-station servo turret)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀位<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">刀塔上的單一刀具安裝位置（例：8 刀位伺服刀塔）</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스테이션<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">터렛의 단일 공구 장착 위치 (예: 8 스테이션 서보 터렛)</div></td>
+      </tr>
+<tr id="term-tool-sleeve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">tool sleeve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀套/套筒</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">툴 슬리브</td>
+      </tr>
+<tr id="term-chuck">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Chuck</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">夾頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">척</td>
+      </tr>
+<tr id="term-collet-collet-chuck">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Collet (Collet Chuck)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">筒夾</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">콜릿</td>
+      </tr>
+<tr id="term-3-jaw-chuck">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">3-Jaw Chuck</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">三爪夾頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">3죠 척</td>
+      </tr>
+<tr id="term-jig-chuck">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Jig Chuck</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">治具夾頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">지그 척</td>
+      </tr>
+<tr id="term-tailstock">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tailstock</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">尾座</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">심압대</td>
+      </tr>
+<tr id="term-a-t-c-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">A.T.C. system</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">加工中心機刀庫</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">자동공구교환장치 (ATC)</td>
+      </tr>
+<tr id="term-gear-hobbing-unit">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gear hobbing unit</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滾齒刀座</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">기어호빙유닛</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-cutting-tools" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Cutting Tools <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 9 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-milling-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Milling Tool</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">銑刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">밀링 커터</td>
+      </tr>
+<tr id="term-id-od-turning">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">ID/OD Turning</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內/外徑刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">내경/외경 선삭공구</td>
+      </tr>
+<tr id="term-inner-grooving">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Inner Grooving</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內徑切槽刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">내경 홈가공 공구</td>
+      </tr>
+<tr id="term-id-threading">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">ID Threading</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內徑車牙刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">내경 나사가공 공구</td>
+      </tr>
+<tr id="term-cut-off-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Cut Off Tool</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">切斷刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">절단 공구</td>
+      </tr>
+<tr id="term-broaching-tool">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Broaching tool</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">拉刀</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">브로치</td>
+      </tr>
+<tr id="term-tap-tapping">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tap / Tapping</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Forming internal threads</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">牙攻/攻牙<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">內牙成型</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">탭<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">암나사(내부 나사) 가공</div></td>
+      </tr>
+<tr id="term-thread-rolling">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Thread Rolling</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Forming external threads by rolling (chipless)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">輾牙/搓牙<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">外螺紋成型</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">나사 전조<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">전조로 수나사(외부 나사) 성형</div></td>
+      </tr>
+<tr id="term-knurling">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Knurling</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">滾花</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">널링</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-mechanical-parts" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Mechanical Parts <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 25 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-gear">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gear</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">齒輪</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">기어</td>
+      </tr>
+<tr id="term-bevel-gear">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Bevel Gear</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">傘齒輪</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">베벨 기어</td>
+      </tr>
+<tr id="term-clutch">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Clutch</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">離合器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">클러치</td>
+      </tr>
+<tr id="term-conveyor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Conveyor</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">輸送機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">컨베이어</td>
+      </tr>
+<tr id="term-chip-conveyors">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">chip conveyors</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">除屑機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">칩 컨베이어</td>
+      </tr>
+<tr id="term-screw-type-chip-conveyors">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Screw-type chip conveyors</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">自動螺旋式除屑機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스크류식 칩 컨베이어</td>
+      </tr>
+<tr id="term-oil-seal-o-ring">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Oil Seal / O-RING</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Prevents lubricant from leaking at joints</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">油封(軸封)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">防止潤滑油從接縫溢出</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">오링<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">이음부에서 윤활유 누출 방지</div></td>
+      </tr>
+<tr id="term-pulley">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pulley</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">皮帶輪</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">풀리</td>
+      </tr>
+<tr id="term-spring">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Spring</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">彈簧</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스프링</td>
+      </tr>
+<tr id="term-transformer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Transformer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">變壓器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">변압기</td>
+      </tr>
+<tr id="term-pump">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pump</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">幫浦/泵</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">펌프</td>
+      </tr>
+<tr id="term-lubricator">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Lubricator</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">油霧潤滑裝置</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">루브리케이터 / 오일미스트</td>
+      </tr>
+<tr id="term-sensor-switch">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Sensor Switch</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">感應開關</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">센서 스위치</td>
+      </tr>
+<tr id="term-handwheel-mpg">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Handwheel / MPG</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">手輪</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">핸들</td>
+      </tr>
+<tr id="term-nipple">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Nipple</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">(管)內接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">니플</td>
+      </tr>
+<tr id="term-joint">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Joint</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">조인트/커넥터</td>
+      </tr>
+<tr id="term-flexible-cover">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Flexible cover</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">伸縮護罩</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">텔레스코픽 커버</td>
+      </tr>
+<tr id="term-spindle-cover">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Spindle Cover</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">主軸防護罩</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">주축 커버</td>
+      </tr>
+<tr id="term-air-compressor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Air Compressor</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">空氣壓縮機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공기 압축기</td>
+      </tr>
+<tr id="term-chiller">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Chiller</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">冷卻機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">칠러</td>
+      </tr>
+<tr id="term-oil-mist-recollector">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Oil Mist Recollector</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">油霧回收機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">오일미스트 집진기</td>
+      </tr>
+<tr id="term-thermal-load">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">thermal load</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">熱負載</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">열부하</td>
+      </tr>
+<tr id="term-mechanical-load">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">mechanical load</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">機械負載</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">기계 부하</td>
+      </tr>
+<tr id="term-bracket">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">bracket</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">A mounting/support bracket (e.g. the seat connecting a bar feeder to a lathe)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">托架/支架<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">固定／支撐用托架（例：料機與車床連接座）</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">브래킷<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">고정·지지용 브래킷 (예: 바피더와 선반 연결 시트)</div></td>
+      </tr>
+<tr id="term-exploded-view">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">exploded view</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">An exploded parts diagram</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">分解圖<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">零件分解圖</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">분해도<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">부품 분해도</div></td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-hydraulics" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Hydraulics <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 3 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-hydraulic-cylinder">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Hydraulic Cylinder</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">油壓缸</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유압 실린더</td>
+      </tr>
+<tr id="term-hydraulic-motor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Hydraulic Motor</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">油壓馬達</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유압 모터</td>
+      </tr>
+<tr id="term-hydraulic-presses">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Hydraulic Presses</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">液壓沖床</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유압 프레스</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-measurement" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Measurement <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 13 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-accuracy">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Accuracy</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">精密度</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">정밀도/정도</td>
+      </tr>
+<tr id="term-chamfer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Chamfer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">倒角</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">면취</td>
+      </tr>
+<tr id="term-clearance-tolerance">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Clearance / Tolerance</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">公差</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공차</td>
+      </tr>
+<tr id="term-outside-diameter-od">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Outside Diameter (OD)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">外徑</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">외경 / 바깥 지름</td>
+      </tr>
+<tr id="term-inside-diameter-id">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Inside Diameter (ID)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內徑</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">내경 / 안지름</td>
+      </tr>
+<tr id="term-diameter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Diameter</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">直徑</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">직경</td>
+      </tr>
+<tr id="term-vernier-caliper">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Vernier Caliper</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">游標卡尺</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">노기스</td>
+      </tr>
+<tr id="term-runout">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Runout</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Deviation from the axis of rotation when spinning (concentricity error)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">偏擺/跳動<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">迴轉時相對旋轉軸心的偏擺量（同心度誤差）</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">런아웃<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">회전 시 축심에 대한 흔들림(편심)량 (동심도 오차)</div></td>
+      </tr>
+<tr id="term-concentricity">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Concentricity</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">同心度</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">동심도</td>
+      </tr>
+<tr id="term-depth-of-cut">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Depth of Cut</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">切削深度</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">절삭 깊이</td>
+      </tr>
+<tr id="term-thou">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Thou</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">1 thou = 0.001 inch (a thousandth of an inch); common machining unit</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">千分之一英吋 (0.001&quot;)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">1 thou＝0.001 英吋（千分之一吋），加工常用單位</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">사우 (1/1000인치)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">1 thou = 0.001인치(천분의 1인치); 가공 상용 단위</div></td>
+      </tr>
+<tr id="term-defect-loss-yield-loss">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">defect loss / yield loss</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">不良損失</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">불량 손실</td>
+      </tr>
+<tr id="term-yield-rate">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">yield rate</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">良率</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">양품률</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-cnc-programming" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">CNC Programming <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 10 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-g-code">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">G-code</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">The programming language a CNC controller reads</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">G碼<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">CNC控制器讀的程式語言</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">G코드<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">CNC 컨트롤러가 읽는 프로그래밍 언어</div></td>
+      </tr>
+<tr id="term-cad">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">CAD</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Computer Aided Design</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電腦輔助設計<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">Computer Aided Design</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">CAD (캐드)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">컴퓨터 지원 설계 (Computer Aided Design)</div></td>
+      </tr>
+<tr id="term-cam">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">CAM</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Computer Aided Manufacturing</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電腦輔助製造<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">Computer Aided Manufacturing</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">CAM (캠)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">컴퓨터 지원 제조 (Computer Aided Manufacturing)</div></td>
+      </tr>
+<tr id="term-post-processor">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Post Processor</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Translates CAM output into a specific machine dialect</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">後處理器<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">將CAM翻譯成特定機器方言</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">포스트 프로세서<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">CAM 출력을 특정 기계 방언으로 변환</div></td>
+      </tr>
+<tr id="term-work-coordinate-system-wcs">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Work Coordinate System (WCS)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">工作座標系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공작물 좌표계</td>
+      </tr>
+<tr id="term-chatter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Chatter</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Self-excited vibration between tool and workpiece during cutting; causes surface waviness and tool wear</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">顫動<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">切削時刀具與工件的自激振動，造成表面波紋、刀具磨耗</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">채터 (떨림)<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">절삭 중 공구와 공작물 사이의 자려 진동; 표면 물결과 공구 마모 유발</div></td>
+      </tr>
+<tr id="term-rigid-tapping">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Rigid tapping</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">剛性攻牙</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리지드 태핑</td>
+      </tr>
+<tr id="term-simulation">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Simulation</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">模擬(路徑)</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">시뮬레이션</td>
+      </tr>
+<tr id="term-parameter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">parameter</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">參數</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">파라미터</td>
+      </tr>
+<tr id="term-travel-stroke">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">travel / stroke</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">行程</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스트로크</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-workholding" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Workholding <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 5 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-work-holding">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Work holding</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">夾具</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">클램핑/공작물 고정</td>
+      </tr>
+<tr id="term-tool-holding">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tool holding</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">刀座</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공구대</td>
+      </tr>
+<tr id="term-fixturing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Fixturing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">治具</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">픽스처/고정구</td>
+      </tr>
+<tr id="term-vise">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Vise</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">虎鉗</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">바이스</td>
+      </tr>
+<tr id="term-washer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Washer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">墊圈/華司</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">와셔</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-trade-and-export" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Trade &amp; Export <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 1 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-try-out-running-test-cost">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">try-out / running-test cost</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Cost of trial run / test cutting before the machine ships</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">試車費用<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">機台出貨前試車/試跑的費用</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">시운전 비용<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">출하 전 시운전·시삭 비용</div></td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-materials" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Materials <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 2 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-tungsten-steel">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tungsten steel</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">鎢鋼</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">텅스텐강</td>
+      </tr>
+<tr id="term-titanium-plating">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Titanium plating</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">鍍鈦</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">티타늄 코팅</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-piping-and-fittings" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Piping &amp; Fittings <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 25 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-pipe">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pipe</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">直管</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">파이프</td>
+      </tr>
+<tr id="term-fittings">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Fittings</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">配件/繼手</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">피팅</td>
+      </tr>
+<tr id="term-coupling-socket">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Coupling / Socket</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">平接頭/管接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">소켓</td>
+      </tr>
+<tr id="term-reducer-reducing-coupling">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Reducer / Reducing Coupling</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">長大小頭（同心）</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리듀서</td>
+      </tr>
+<tr id="term-eccentric-reducer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Eccentric Reducer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">偏心大小頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">편심 리듀서</td>
+      </tr>
+<tr id="term-reducing-bushing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Reducing Bushing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">短大小頭/卜申</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리듀싱 부싱</td>
+      </tr>
+<tr id="term-tee-90-equal">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Tee (90° equal)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">正三通</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">티</td>
+      </tr>
+<tr id="term-reducing-tee">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Reducing Tee</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">異三通</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">리듀싱 티</td>
+      </tr>
+<tr id="term-y-tee-45">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Y Tee (45°)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y三通</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y 티</td>
+      </tr>
+<tr id="term-90-elbow">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">90° Elbow</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">90度彎頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">90도 엘보</td>
+      </tr>
+<tr id="term-45-elbow">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">45° Elbow</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">45度彎頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">45도 엘보</td>
+      </tr>
+<tr id="term-female-adapter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Female Adapter</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">內牙接頭/龍接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">암나사 어댑터</td>
+      </tr>
+<tr id="term-male-adapter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Male Adapter</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">外牙接頭/閥接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">수나사 어댑터</td>
+      </tr>
+<tr id="term-cap">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Cap</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">管帽</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">캡</td>
+      </tr>
+<tr id="term-plug">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Plug</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">外牙塞頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">플러그</td>
+      </tr>
+<tr id="term-cross">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Cross</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">四通</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">크로스</td>
+      </tr>
+<tr id="term-union">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Union</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">由任</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유니온</td>
+      </tr>
+<tr id="term-nipple">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Nipple</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">立布</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">니플</td>
+      </tr>
+<tr id="term-saddle-pipe-clamp">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Saddle / Pipe Clamp</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">管夾/管架</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">새들</td>
+      </tr>
+<tr id="term-flange">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Flange</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">法蘭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">플랜지</td>
+      </tr>
+<tr id="term-blind-flange">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Blind Flange</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">盲板/盲法蘭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">블라인드 플랜지</td>
+      </tr>
+<tr id="term-gasket-packing">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gasket / Packing</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">墊片/迫緊</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">가스켓</td>
+      </tr>
+<tr id="term-welding-rod">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Welding Rod</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">焊條</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">용접봉</td>
+      </tr>
+<tr id="term-solvent-cement">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Solvent Cement</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">膠合劑/接著劑</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">솔벤트 시멘트</td>
+      </tr>
+<tr id="term-expansion-joint">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Expansion Joint</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">膨脹接頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">익스팬션 조인트</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-valves" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Valves <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 22 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-ball-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Ball Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">球閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">볼 밸브</td>
+      </tr>
+<tr id="term-true-union-ball-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">True Union Ball Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">雙由任球閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">트루 유니온 볼 밸브</td>
+      </tr>
+<tr id="term-3-way-ball-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">3-Way Ball Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">三通球閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">3웨이 볼 밸브</td>
+      </tr>
+<tr id="term-butterfly-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Butterfly Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">蝶閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">버터플라이 밸브</td>
+      </tr>
+<tr id="term-diaphragm-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Diaphragm Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">隔膜閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">다이어프램 밸브</td>
+      </tr>
+<tr id="term-gate-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gate Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">閘閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">게이트 밸브</td>
+      </tr>
+<tr id="term-needle-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Needle Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">針閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">니들 밸브</td>
+      </tr>
+<tr id="term-globe-valve-stop-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Globe Valve / Stop Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">球塞閥/停止閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">글로브 밸브</td>
+      </tr>
+<tr id="term-check-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Check Valve</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Prevents reverse flow</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">逆止閥<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">防止逆流</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">체크 밸브<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">역류 방지</div></td>
+      </tr>
+<tr id="term-swing-check-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Swing Check Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">擺動式逆止閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스윙 체크 밸브</td>
+      </tr>
+<tr id="term-foot-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Foot Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">福特閥（底閥）</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">풋 밸브</td>
+      </tr>
+<tr id="term-solenoid-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Solenoid Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電磁閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">솔레노이드 밸브</td>
+      </tr>
+<tr id="term-pressure-relief-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pressure Relief Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">釋壓閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">압력 릴리프 밸브</td>
+      </tr>
+<tr id="term-air-release-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Air Release Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">釋氣閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">에어 릴리프 밸브</td>
+      </tr>
+<tr id="term-pressure-regulator">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pressure Regulator</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">調壓閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">압력 조절기</td>
+      </tr>
+<tr id="term-control-valve">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Control Valve</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">控制閥</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">컨트롤 밸브</td>
+      </tr>
+<tr id="term-y-strainer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Y Strainer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y型過濾器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y형 스트레이너</td>
+      </tr>
+<tr id="term-basket-strainer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Basket Strainer</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">籃式過濾器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">바스켓 스트레이너</td>
+      </tr>
+<tr id="term-flow-meter">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Flow Meter</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">流量計</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유량계</td>
+      </tr>
+<tr id="term-actuator">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Actuator</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">驅動器/制動器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">액추에이터</td>
+      </tr>
+<tr id="term-electric-actuator">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Electric Actuator</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">電動頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">전동 액추에이터</td>
+      </tr>
+<tr id="term-pneumatic-actuator">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pneumatic Actuator</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">氣動頭</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">공압 액추에이터</td>
+      </tr></tbody>
+    </table></div>
+<h2 id="cat-automation-and-robotics" style="color:var(--text);font-size:1.15rem;margin:34px 0 10px;padding-top:8px">Automation &amp; Robotics <span style="color:var(--text-dim);font-size:.8rem;font-weight:400">· 21 terms</span></h2>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">ENGLISH</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">繁體中文</th>
+        <th style="text-align:left;padding:8px 12px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:.78rem;letter-spacing:1px;font-weight:600">한국어</th>
+      </tr></thead>
+      <tbody><tr id="term-gantry-loader">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gantry Loader</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Automatic load/unload system for CNC machines</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">龍門式搬運機械手<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">CNC機台自動上下料系統</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">갠트리 로더<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">CNC 기계 자동 로딩·언로딩 시스템</div></td>
+      </tr>
+<tr id="term-auto-loader">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Auto Loader</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">自動搬運機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">오토 로더</td>
+      </tr>
+<tr id="term-side-loader">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Side Loader</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">側面搬運機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">사이드 로더</td>
+      </tr>
+<tr id="term-stocker-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Stocker System</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Workpiece storage with automatic retrieval</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">儲料系統<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">工件存儲及自動取料</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">스토커 시스템<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">공작물 보관 및 자동 반출</div></td>
+      </tr>
+<tr id="term-shuttle-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Shuttle System</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">A shuttle transfer that moves workpieces back and forth between the machining and load/unload areas</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">穿梭搬運系統<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">穿梭式搬運裝置，在加工區與裝卸區之間往復運送工件</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">셔틀 시스템<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">가공 구역과 로딩 구역 사이를 왕복하며 공작물을 운반하는 셔틀 장치</div></td>
+      </tr>
+<tr id="term-multi-axes-robot">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Multi-Axes Robot</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">多軸機械手臂</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">다축 로봇</td>
+      </tr>
+<tr id="term-fms-flexible-manufacturing-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">FMS (Flexible Manufacturing System)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">彈性製造系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">유연생산시스템</td>
+      </tr>
+<tr id="term-mps-multi-pallet-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">MPS (Multi Pallet System)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">多托盤系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">다팔레트 시스템</td>
+      </tr>
+<tr id="term-turn-unit">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Turn Unit</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Used to flip the workpiece over</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">翻轉裝置<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">工件翻面用</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">턴 유닛<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">공작물 뒤집기용</div></td>
+      </tr>
+<tr id="term-jig-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Jig System</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">治具系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">지그 시스템</td>
+      </tr>
+<tr id="term-pallet-change-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pallet Change System</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">托盤交換系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">팔레트 교환 시스템</td>
+      </tr>
+<tr id="term-pallet">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Pallet</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">托盤/棧板</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">팔레트</td>
+      </tr>
+<tr id="term-gripper">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Gripper</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">The gripping device on a robot arm</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">夾爪<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">機械手的夾持裝置</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">그리퍼<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">로봇 암의 파지 장치</div></td>
+      </tr>
+<tr id="term-hand-held-pendant">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Hand Held Pendant</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">手持式操作器</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">핸드 헬드 펜던트</td>
+      </tr>
+<tr id="term-helical-rack-and-pinion">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Helical Rack and Pinion</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Low-noise transmission (vs straight-cut)</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">斜齒條齒輪組<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">低噪音傳動</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">헬리컬 랙 피니온<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">저소음 전동</div></td>
+      </tr>
+<tr id="term-measuring-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Measuring System</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">量測系統</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">측정 시스템</td>
+      </tr>
+<tr id="term-washing-system">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Washing System</strong><div style="color:var(--text-dim);font-size:.82rem;line-height:1.6;margin-top:4px">Workpiece washing / cleaning</div></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">清洗系統<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">工件清洗</div></td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">세척 시스템<div style="font-size:.82rem;line-height:1.6;margin-top:4px;opacity:.8">공작물 세척</div></td>
+      </tr>
+<tr id="term-x-axis-crosswise-horizontal">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">X-Axis (Crosswise Horizontal)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">X軸（水平橫移）</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">X축 (횡방향)</td>
+      </tr>
+<tr id="term-y-axis-horizontal">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Y-Axis (Horizontal)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y軸（前後）</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Y축 (전후방향)</td>
+      </tr>
+<tr id="term-z-axis-vertical">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">Z-Axis (Vertical)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Z軸（上下）</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Z축 (수직방향)</td>
+      </tr>
+<tr id="term-awc-automatic-workpiece-changer">
+        <td style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top"><strong style="color:var(--text)">AWC (Automatic Workpiece Changer)</strong></td>
+        <td lang="zh-Hant" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">自動工件交換機</td>
+        <td lang="ko" style="padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">자동 공작물 교환장치</td>
+      </tr></tbody>
+    </table></div></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
