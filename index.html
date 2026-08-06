@@ -5715,7 +5715,7 @@ const KB = {
   'export-docs': {
     title: 'The Ultimate Export Document Checklist for CNC Machine Tools',
     title_zh: 'CNC 工具機出口文件與通關清單總覽',
-    title_ko: 'CNC 공작기계 수출 서류 &amp; 통관 체크리스트 총정리',
+    title_ko: 'CNC 공작기계 수출 서류 & 통관 체크리스트 총정리',
     tags: ['export', 'documents', 'proforma invoice', 'invoice', 'packing list', 'B/L', 'certificate of origin', 'C1 C2 C3', 'customs'],
     published: '2026-06-29', updated: '2026-07-03',
     body_ko: `
@@ -6747,7 +6747,7 @@ const KB = {
     title: 'How to Identify a Replacement Chuck or Collet Chuck',
     title_zh: '夾頭與筒夾更換辨識指南',
     title_ko: '교체용 척·콜릿 척 식별 가이드',
-    tags: ['chuck', 'collet', 'workholding', 'spindle nose', 'jaws', 'hydraulic chuck', 'replacement', 'quotation'],
+    tags: ['chuck', 'collet', 'workholding', 'spindle nose', 'jaws', 'hydraulic chuck', 'replacement', 'quotation', '夾頭', '筒夾', '主軸鼻端', '爪座齒距', '旋轉油壓缸', '走心式車床', '척', '콜릿 척', '유압척', '주축 노즈', '조 세레이션', '가이드 부시'],
     articleSection: 'Chuck & Collet Replacement',
     published: '2026-08-04', updated: '2026-08-04',
     body_ko: `
@@ -13195,18 +13195,31 @@ function doSearch() {
   const q = document.getElementById('searchInput').value.trim().toLowerCase();
   if (!q) return;
 
+  // All three language variants go into the haystack, not just the English body.
+  // Otherwise a 中文 or 한국어 query can only ever match whatever happens to be
+  // listed in `tags`, and most articles are invisible to it.
+  const haystack = item => [
+    item.title, item.title_zh, item.title_ko,
+    ...(item.tags || []),
+    item.body, item.body_zh, item.body_ko
+  ].filter(Boolean).join(' ').toLowerCase();
+  // Result titles follow the reading language, so a 中文/한국어 hit is legible
+  // in the list and _highlight can actually mark the matched text.
+  const label = item => (currentLang === 'zh' && item.title_zh) ? item.title_zh
+                      : (currentLang === 'ko' && item.title_ko) ? item.title_ko
+                      : item.title;
+
   const results = [];
   // Search KB
   for (const [key, item] of Object.entries(KB)) {
-    const score = [item.title, ...item.tags, item.body].join(' ').toLowerCase();
-    if (score.includes(q)) {
-      results.push({ type: 'knowledge', key, title: item.title, tags: item.tags });
+    if (haystack(item).includes(q)) {
+      results.push({ type: 'knowledge', key, title: label(item), tags: item.tags });
     }
   }
   // Search markets
   for (const [key, item] of Object.entries(MARKETS)) {
-    if (item.title.toLowerCase().includes(q) || item.body.toLowerCase().includes(q)) {
-      results.push({ type: 'market', key, title: item.title, tags: [key, 'market'] });
+    if (haystack(item).includes(q)) {
+      results.push({ type: 'market', key, title: label(item), tags: [key, 'market'] });
     }
   }
 
