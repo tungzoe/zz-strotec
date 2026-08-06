@@ -461,6 +461,7 @@ ${CONSENT_DEFAULTS}
     <a href="${BASE}terminology/">Terminology</a>·
     <a href="${BASE}privacy/">Privacy Policy</a>
   </div>
+  <div style="margin-top:10px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8">Sponsored placements are clearly labelled and do not influence editorial content. · 贊助刊登一律明確標示，不影響內容編輯判斷.</div>
 </footer>
 ${CONSENT_BANNER}
 </body>

@@ -1350,7 +1350,11 @@
     <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
     <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
     <button class="nav-btn" onclick="showPage('subscribe')" style="color:#5bbcff;border:1px solid #2a5a7a;margin-left:4px">✉️ <span data-i18n="nav_subscribe">Subscribe</span></button>
-    <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
+    <!-- 刊登廣告 used to sit here, highlighted, in the middle of an otherwise
+         English nav aimed at overseas buyers. They cannot read it and read a
+         gold-outlined button as an advert; the Taiwanese vendors it is for do
+         not arrive through the top nav. It now lives in the footer and under
+         Services. -->
   </div>
 </header>
 
@@ -1603,9 +1607,6 @@
       </div>
       <div class="sidebar-item" onclick="showPage('whatsnew')" style="color:#2aaa6a">
         <span class="icon">🆕</span><span> What's New</span>
-      </div>
-      <div class="sidebar-item" onclick="showPage('advertise')">
-        <span class="icon">📢</span><span> 刊登廣告 / Advertise</span>
       </div>
       <div class="sidebar-item" onclick="showPage('subscribe')" style="color:#5bbcff">
         <span class="icon">✉️</span><span data-i18n="sb_subscribe"> Subscribe to Updates</span>
@@ -3196,6 +3197,14 @@
         <div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px">
           <p style="color:var(--text-dim);font-size:13px;line-height:1.8;margin:0">✦ 所有刊登內容須經萬洋國際審核，確保符合平台專業定位。<br>✦ 費用及合作形式依個案洽談，歡迎先來信索取媒體資料（Media Kit）。<br>✦ 適合廠商類型（不限）：車床廠、料機廠、刀具廠、零組件供應商、CNC 控制器、倉儲設備、油冷氣設備、高壓系統、氣壓元件等工業相關產品皆可。</p>
         </div>
+
+        <!-- The knowledge library is the reason anyone comes here; a reader who
+             suspects an article was paid for stops trusting all forty of them.
+             Worth being explicit about with the advertiser, not only the reader. -->
+        <div style="background:rgba(42,127,255,0.06);border:1px solid var(--blue-dim);border-radius:6px;padding:14px 18px;margin-top:14px">
+          <div style="font-size:11px;letter-spacing:1.5px;color:#6ab0ff;margin-bottom:8px">編輯獨立聲明</div>
+          <p style="color:var(--text-dim);font-size:13px;line-height:1.8;margin:0">贊助刊登一律明確標示為贊助內容，並且<strong style="color:var(--text)">不影響知識庫與專家專欄的內容編輯判斷</strong>。我們不接受以刊登費用換取文章推薦、產品評比排序或技術結論的合作方式——知識庫的價值建立在讀者相信它是中立的，這一點不對外販售。</p>
+        </div>
       </div>
 
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
@@ -3533,6 +3542,16 @@
 
         <div style="text-align:center;margin-top:20px">
           <button class="btn-gold" style="padding:13px 34px;font-size:14px" onclick="showPage('inquiry')" data-i18n="svc_cta_main">Get a Quote · 立即詢價 →</button>
+        </div>
+
+        <!-- For Taiwanese suppliers, not for the overseas buyers the rest of
+             this page addresses — hence the bottom of Services rather than the
+             top nav. -->
+        <div style="margin-top:28px;padding-top:18px;border-top:1px solid var(--border);text-align:center">
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;margin:0">
+            台灣廠商如有刊登合作需求，請見<button onclick="showPage('advertise')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.85rem;font-family:inherit;padding:0;text-decoration:underline">刊登廣告說明</button>。<br>
+            贊助刊登一律明確標示，不影響內容編輯判斷。
+          </p>
         </div>
       </div>
     </div>
@@ -13143,7 +13162,7 @@ function showPage(id) {
   }
 
   if (id === 'home' || id === 'news') loadNews();
-  if (id === 'about') animateAboutStats();
+  if (id === 'about') { applyLangFilter(document.getElementById('page-about'), currentLang); animateAboutStats(); }
   // Update URL hash for bookmarking / sharing
   if (id === 'home') {
     history.replaceState(null, '', window.location.pathname);
@@ -13188,6 +13207,8 @@ function openColumn(id) {
     _colPg.innerHTML = COLUMNS[id];
     _colPg.dataset.loaded = '1';
   }
+  // Columns carry all three languages stacked; show only the one being read.
+  if (_colPg && _colPg.dataset.loaded) applyLangFilter(_colPg, currentLang);
   _colPg.classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   closeDetail();
@@ -14023,6 +14044,87 @@ function switchLang(lang) {
 
   // Re-render the news list so headlines/summaries switch language too
   if (typeof _newsItems !== 'undefined' && _newsItems) renderNews(_newsItems);
+
+  // Columns and About stack all three languages; show only the chosen one
+  refreshLangFilter();
+}
+
+
+// ─── Trilingual body filter ───────────────────────────────────────
+// The eighteen expert columns and the About page stack the languages one after
+// another — English, then 中文, then 한국어, section by section. That is right
+// for the generated static pages, where all three have to be in the HTML for
+// each language to be searchable, but on screen it means an English reader
+// scrolls past two paragraphs they cannot read after every point.
+//
+// This works on what is in the DOM rather than on markup added to each article,
+// so the eighteen columns did not have to be rewritten — and the static pages,
+// which never call it, keep all three languages. The rule that makes it safe:
+// a container is filtered only when it holds more than one language. A CTA box
+// or a disclaimer written only in English holds one, so it is left alone and
+// stays visible whichever language is selected. Likewise, if a container has no
+// text in the chosen language — the two earliest columns have no Korean — the
+// whole container is shown rather than leaving the reader with a blank section.
+// Returns 'en' | 'zh' | 'ko', or 'all' for a block that carries more than one
+// language at once and therefore belongs to every reader.
+function _blockLang(text) {
+  var score = {
+    zh: (text.match(/[一-鿿]/g) || []).length,
+    ko: (text.match(/[가-힯]/g) || []).length,
+    // A Latin letter carries far less than a CJK character, so divide before
+    // comparing — otherwise a Chinese paragraph quoting "VDI 40" reads English.
+    en: (text.match(/[A-Za-z]/g) || []).length / 5
+  };
+  var order = ['zh', 'ko', 'en'].sort(function (a, b) { return score[b] - score[a]; });
+  var top = score[order[0]], second = score[order[1]];
+  if (top < 3) return 'all';           // no real text in it — never hide
+  // The per-article disclaimer is one paragraph containing all three languages
+  // (186 Latin letters, 48 Han, 57 hangul in a typical column). Blocks like it
+  // are shared content: hiding them takes text away from every reader.
+  if (second / top > 0.35) return 'all';
+  return order[0];
+}
+
+function applyLangFilter(root, lang) {
+  if (!root) return;
+  var groups = new Map();
+  root.querySelectorAll('p, ul, ol').forEach(function (el) {
+    // list items travel with their list, not as blocks of their own
+    if (el.parentElement && el.parentElement.closest('ul, ol')) return;
+    var t = el.textContent || '';
+    if (t.replace(/\s/g, '').length < 4) return;
+    var g = groups.get(el.parentElement) || [];
+    g.push([el, _blockLang(t)]);
+    groups.set(el.parentElement, g);
+  });
+  groups.forEach(function (items) {
+    var seen = {};
+    items.forEach(function (pair) { if (pair[1] !== 'all') seen[pair[1]] = 1; });
+    // Only a container that actually offers the chosen language gets filtered.
+    // Where it does not — the two earliest columns have no Korean — everything
+    // stays, so the reader falls back to English rather than to a blank page.
+    var translated = Object.keys(seen).length > 1 && seen[lang];
+    items.forEach(function (pair) {
+      var l = pair[1], hide;
+      if (l === 'all' || l === lang) hide = false;
+      else if (translated) hide = true;
+      // A block standing alone in another language: Chinese or Korean prose is
+      // article body and safe to hide, but an English-only block on its own is
+      // usually structural — a CTA, a caption, a label — so it stays put.
+      else hide = (l !== 'en');
+      pair[0].style.display = hide ? 'none' : '';
+    });
+  });
+}
+
+// Re-run over whatever is currently on screen: the open column, if any, and the
+// About page. Columns are injected lazily by openColumn, so only loaded ones
+// are touched — a column opened later is filtered at injection time instead.
+function refreshLangFilter() {
+  document.querySelectorAll('.page[id^="page-col-"]').forEach(function (pg) {
+    if (pg.dataset.loaded) applyLangFilter(pg, currentLang);
+  });
+  applyLangFilter(document.getElementById('page-about'), currentLang);
 }
 
 
@@ -14379,8 +14481,17 @@ window.addEventListener('load', () => {
     <a href="/column/" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Expert Columns</a>·
     <a href="/markets/" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Markets</a>·
     <a href="/terminology/" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Terminology</a>·
-    <a href="/privacy/" onclick="showPage('privacy');return false;" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Privacy Policy</a>
+    <a href="/privacy/" onclick="showPage('privacy');return false;" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Privacy Policy</a>·
+    <a href="#advertise" onclick="showPage('advertise');return false;" style="color:var(--text-muted);text-decoration:none;margin:0 10px;">刊登廣告 / Advertise</a>
   </nav>
+  <!-- Stated before there is any sponsor to state it about. Added once the
+       first placement is sold, it reads as a defence; added now, it is the
+       rule the knowledge library was built under. -->
+  <p style="font-size:11px;color:var(--text-muted);line-height:1.8;max-width:760px;margin:0 auto 12px;">
+    Sponsored placements are clearly labelled and do not influence editorial content.
+    &nbsp;·&nbsp; 贊助刊登一律明確標示，不影響內容編輯判斷。
+    &nbsp;·&nbsp; 유료 게재는 명확히 표시되며 편집 내용에 영향을 주지 않습니다.
+  </p>
   <!-- Overseas buyers verify a Taiwanese supplier by its registered address and
        company number before they wire a deposit, so both are stated in full. -->
   <p style="font-size:11px;color:var(--text-muted);line-height:1.9;margin-bottom:10px;">
