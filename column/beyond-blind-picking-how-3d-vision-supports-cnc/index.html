@@ -137,28 +137,28 @@ body{margin:0}
         </div>
         <div style="color:var(--text-dim);font-size:0.74rem;margin:-18px 0 22px;line-height:1.6">Published: 2026-06-29 &nbsp;·&nbsp; Written by Z&amp;Z STROTEC &nbsp;／&nbsp; 發布：2026-06-29 ・撰文：Z&amp;Z STROTEC 萬洋國際 &nbsp;／&nbsp; 발행: 2026-06-29 · 작성: Z&amp;Z STROTEC</div>
 
-        <img src="/photo/3D-vision.jpg" loading="lazy" alt="3D vision-guided CNC robotic cell — random bin picking, high-mix low-volume, optical guidance setup, and in-cell AOI inspection" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 22px;display:block">
+        <img src="/photo/3D-vision.jpg" loading="lazy" alt="3D vision-guided CNC robotic cell: random bin picking, high-mix low-volume, optical guidance setup, and in-cell AOI inspection" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 22px;display:block">
 
         <!-- Intro -->
         <p style="margin-bottom:12px;line-height:1.85">
-          Adding an articulated robot arm is often the first step toward unattended, lights-out machining. Traditional robot cells, however, rely on <strong>"blind picking"</strong> — the arm only moves to pre-taught coordinates, so every part must arrive in a fixed position, either neatly arranged in trays or held by custom fixtures. That works well for high-volume, repetitive runs, but it becomes costly and inflexible when your work is high-mix and low-volume.
+          Adding an articulated robot arm is often the first step toward unattended, lights-out machining. Traditional robot cells, however, rely on <strong>"blind picking"</strong>, where the arm only moves to pre-taught coordinates, so every part must arrive in a fixed position, either neatly arranged in trays or held by custom fixtures. That works well for high-volume, repetitive runs, but it becomes costly and inflexible when your work is high-mix and low-volume.
         </p>
         <p style="margin-bottom:12px;line-height:1.85">
           <strong>3D vision recognition</strong> gives the robot a way to "see" where a part actually is, instead of assuming it is always in the same place. This makes the same cell easier to re-task between products. Below are four practical ways vision-guided robots are used in CNC loading and unloading.
         </p>
         <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:10px">
-          導入多關節機械手臂，往往是邁向無人化、關燈生產的第一步。但傳統機械手臂多採「盲抓」——手臂只會移動到預先示教的座標，因此每個零件都必須固定到位，不是整齊排列在料盤上，就是靠專用治具夾持。這對大量重複生產很有效，但當生產屬於少量多樣時，就會變得昂貴且缺乏彈性。3D 視覺辨識讓手臂能「看見」零件的實際位置，而非假設它永遠在同一處，使同一套手臂在不同產品間更容易重新調度。
+          導入多關節機械手臂，往往是邁向無人化、關燈生產的第一步。但傳統機械手臂多採「盲抓」，手臂只會移動到預先示教的座標，因此每個零件都必須固定到位，不是整齊排列在料盤上，就是靠專用治具夾持。這對大量重複生產很有效，但當生產屬於少量多樣時，就會變得昂貴且缺乏彈性。3D 視覺辨識讓手臂能「看見」零件的實際位置，而非假設它永遠在同一處，使同一套手臂在不同產品間更容易重新調度。
         </p>
         <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">
-          다관절 로봇 암을 도입하는 것은 무인·소등(lights-out) 가공으로 가는 첫걸음인 경우가 많습니다. 그러나 전통적인 로봇 셀은 '블라인드 피킹'에 의존합니다—암은 미리 티칭된 좌표로만 이동하므로 모든 부품이 항상 같은 위치에 있어야 합니다. 대량 반복 생산에는 효과적이지만, 다품종 소량 생산에서는 비용이 크고 유연성이 떨어집니다. 3D 비전 인식은 로봇이 부품의 실제 위치를 '볼' 수 있게 하여 동일한 셀을 제품 간에 더 쉽게 전환하도록 돕습니다.
+          다관절 로봇 암을 도입하는 것은 무인·소등(lights-out) 가공으로 가는 첫걸음인 경우가 많습니다. 그러나 전통적인 로봇 셀은 '블라인드 피킹'에 의존합니다. 암은 미리 티칭된 좌표로만 이동하므로 모든 부품이 항상 같은 위치에 있어야 합니다. 대량 반복 생산에는 효과적이지만, 다품종 소량 생산에서는 비용이 크고 유연성이 떨어집니다. 3D 비전 인식은 로봇이 부품의 실제 위치를 '볼' 수 있게 하여 동일한 셀을 제품 간에 더 쉽게 전환하도록 돕습니다.
         </p>
 
         <!-- Section 1: Random Bin Picking -->
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
-          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📦</span> 1. Random Bin Picking — Less Reliance on Custom Fixtures (散堆抓取，減少治具成本)</h3>
-          <p style="margin-bottom:14px;line-height:1.8">With a 3D camera and recognition software, the robot can determine the position and orientation of parts piled randomly in a bin and pick them one by one. This reduces the need to pre-sort parts by hand, or to build a dedicated fixture for every new product — often one of the larger hidden costs when introducing automation.</p>
-          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>散堆抓取：</strong> 搭配 3D 相機與辨識軟體，手臂能判斷散亂堆放於料框中零件的位置與方向，逐一抓取。這可減少人工預先分料、或為每項新產品開發專用治具的需求——而治具往往是導入自動化時較大的隱性成本之一。</p>
-          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>랜덤 빈 피킹:</strong> 3D 카메라와 인식 소프트웨어를 결합하면, 로봇은 빈 안에 무작위로 쌓인 부품의 위치와 방향을 파악해 하나씩 집어냅니다. 이는 사람이 부품을 미리 정렬하거나 신제품마다 전용 지그를 제작할 필요를 줄여 줍니다—지그는 자동화 도입 시 큰 숨은 비용 중 하나인 경우가 많습니다.</p>
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📦</span> 1. Random Bin Picking: Less Reliance on Custom Fixtures (散堆抓取，減少治具成本)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">With a 3D camera and recognition software, the robot can determine the position and orientation of parts piled randomly in a bin and pick them one by one. This reduces the need to pre-sort parts by hand, or to build a dedicated fixture for every new product, which is often one of the larger hidden costs when introducing automation.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>散堆抓取：</strong> 搭配 3D 相機與辨識軟體，手臂能判斷散亂堆放於料框中零件的位置與方向，逐一抓取。這可減少人工預先分料、或為每項新產品開發專用治具的需求，而治具往往是導入自動化時較大的隱性成本之一。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>랜덤 빈 피킹:</strong> 3D 카메라와 인식 소프트웨어를 결합하면, 로봇은 빈 안에 무작위로 쌓인 부품의 위치와 방향을 파악해 하나씩 집어냅니다. 이는 사람이 부품을 미리 정렬하거나 신제품마다 전용 지그를 제작할 필요를 줄여 줍니다. 지그는 자동화 도입 시 큰 숨은 비용 중 하나인 경우가 많습니다.</p>
         </div>
 
         <!-- Section 2: High-Mix, Low-Volume -->
@@ -180,7 +180,7 @@ body{margin:0}
         <!-- Section 4: In-Cell Inspection -->
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:28px">
           <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔍</span> 4. In-Cell Inspection and Secondary Tasks (擴充自動光學檢測與多工)</h3>
-          <p style="margin-bottom:14px;line-height:1.8">A vision-equipped robot can do more than load parts. While the machine is cutting, the same cell can run Automated Optical Inspection (AOI) to check for visible defects, or handle secondary steps such as deburring or washing — making fuller use of the cell's cycle time.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A vision-equipped robot can do more than load parts. While the machine is cutting, the same cell can run Automated Optical Inspection (AOI) to check for visible defects, or handle secondary steps such as deburring or washing, making fuller use of the cell's cycle time.</p>
           <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>多工與品檢：</strong> 配備視覺的手臂不只用於上下料。在機台切削的同時，同一套手臂可執行自動光學檢測（AOI）檢查外觀瑕疵，或處理去毛邊、清洗等二次加工，更充分利用稼動時間。</p>
           <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>검사 및 다중 작업:</strong> 비전을 갖춘 로봇은 단순 로딩에만 그치지 않습니다. 기계가 절삭하는 동안 같은 셀이 자동 광학 검사(AOI)로 외관 결함을 확인하거나, 디버링·세척 같은 2차 공정을 처리하여 셀의 가동 시간을 더 충분히 활용할 수 있습니다.</p>
         </div>
