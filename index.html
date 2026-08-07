@@ -14453,17 +14453,19 @@ document.addEventListener('click', function(e) {
 function renderFeaturedColumn() {
   const wrap = document.getElementById('home-columns');
   if (!wrap) return;
-  const cards = document.querySelectorAll('#page-column div[onclick^="openColumn(\'col-"]');
+  // Cards are <a href> elements so crawlers see a real link; match on the onclick
+  // regardless of tag name, or this silently finds nothing and the home block stays empty.
+  const cards = document.querySelectorAll('#page-column [onclick^="openColumn(\'col-"]');
   if (!cards.length) return;
-  // Show the newest few columns (index is newest-first). Clone keeps styling + onclick.
-  const N = Math.min(3, cards.length);
+  // Show the newest couple of columns (index is newest-first). Clone keeps styling + onclick.
+  const N = Math.min(2, cards.length);
   wrap.innerHTML = '';
   for (let i = 0; i < N; i++) {
     const clone = cards[i].cloneNode(true);
-    // Flash a NEW badge on the newest column (i===0, auto) plus any card tagged
-    // data-new (use this to also flag same-day releases). The badge moves to
-    // whatever is newest on its own — no manual upkeep for the latest article.
-    if (i === 0 || cards[i].hasAttribute('data-new')) {
+    // The NEW pill follows the same data-new expiry as everywhere else, so the
+    // home page stops calling an article new on the date the flag runs out
+    // rather than pinning one on whatever happens to be newest forever.
+    if (cards[i].hasAttribute('data-new')) {
       const inner = clone.querySelector('div');
       const cat = inner ? inner.firstElementChild : null;
       if (cat && !cat.querySelector('.whats-new-badge, .card-new')) {
