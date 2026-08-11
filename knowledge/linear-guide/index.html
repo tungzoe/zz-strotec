@@ -63,17 +63,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Linear Guide &amp; Rails | Z&amp;Z STROTEC</title>
-<meta name="description" content="Choosing linear guides: size, preload class, accuracy grade and brand, plus lubrication and the details to give when ordering a replacement carriage.">
+<meta name="description" content="Linear guides: why preload codes differ by brand, what the C rating actually means, mounting datum and parallelism, and why rails and blocks are matched sets.">
 <link rel="canonical" href="https://zz-strotec.com/knowledge/linear-guide/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear Guide &amp; Rails">
-<meta property="og:description" content="Choosing linear guides: size, preload class, accuracy grade and brand, plus lubrication and the details to give when ordering a replacement carriage.">
+<meta property="og:description" content="Linear guides: why preload codes differ by brand, what the C rating actually means, mounting datum and parallelism, and why rails and blocks are matched sets.">
 <meta property="og:url" content="https://zz-strotec.com/knowledge/linear-guide/">
 <meta property="og:site_name" content="Z&amp;Z STROTEC">
 <meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Linear Guide & Rails","description":"Choosing linear guides: size, preload class, accuracy grade and brand, plus lubrication and the details to give when ordering a replacement carriage.","inLanguage":["en","zh-Hant","ko"],"articleSection":"linear guide","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/knowledge/linear-guide/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Linear Guide & Rails","description":"Linear guides: why preload codes differ by brand, what the C rating actually means, mounting datum and parallelism, and why rails and blocks are matched sets.","inLanguage":["en","zh-Hant","ko"],"articleSection":"linear guide","datePublished":"2026-06-29","dateModified":"2026-08-11","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/knowledge/linear-guide/"}</script>
 <link rel="stylesheet" href="../../assets/kb-pages.css">
 <style>
 /* --- standalone SEO page chrome --- */
@@ -125,7 +125,7 @@ body{margin:0}
   
   <h1 class="kbp-h1">Linear Guide & Rails</h1>
   <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">線性滑軌</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">리니어 가이드 & 레일</span></p>
-  <p class="kbp-byline">Published: 2026-06-29 · Written by Z&amp;Z STROTEC</p>
+  <p class="kbp-byline">Published: 2026-06-29 · Updated: 2026-08-11 · Written by Z&amp;Z STROTEC</p>
   <a class="kbp-cta" href="/#kb-linear-guide">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
   <div class="kbp-body"><section lang="en">
       <h4>What is a Linear Guide?</h4>
@@ -133,12 +133,32 @@ body{margin:0}
 
       <h4>Key Specifications</h4>
       <ul>
-        <li><strong>Size (model number)</strong>: e.g. THK HSR25 — the number indicates rail width in mm</li>
-        <li><strong>Preload class</strong>: C0 (heavy), C1 (medium), C2 (light) — higher preload = more rigidity, less backlash</li>
-        <li><strong>Accuracy class</strong>: Normal (N), High (H), Precision (P), Super Precision (SP), Ultra Precision (UP)</li>
-        <li><strong>Dynamic load rating (C)</strong>: Maximum dynamic load the guide can handle</li>
-        <li><strong>Static load rating (C0)</strong>: Maximum static load before permanent deformation</li>
+        <li><strong>Size (model number)</strong>: e.g. THK HSR25. The figure is the nominal size designation for the series, not a statement that the rail measures exactly 25 mm across. Take rail width, block height, mounting hole pitch and end distances from that brand's dimension table.</li>
+        <li><strong>Radial clearance / preload</strong>: the symbols are brand and series specific and do not carry from one catalogue to another. THK's LM Guide range uses Normal clearance, C1 (light preload) and C0 (medium preload); HIWIN's HG series uses Z0, ZA and ZB. More preload means higher rigidity and less displacement, but also more sliding resistance and more load on the raceways, so specifying beyond what the axis needs costs life. THK's own guidance puts machining centres, NC lathes and other heavy-cutting axes at C0, and single-rail, overhung or light-load high-accuracy axes at C1. Confirm the symbol against the catalogue for the exact brand and series before ordering.</li>
+        <li><strong>Basic dynamic load rating (C)</strong>: the reference value used to calculate rated life, not a maximum that must never be exceeded. THK states C against a nominal life of 50 km for ball guides and 100 km for roller guides, so two brands' C figures only compare once both are on the same basis (ISO 14728-1 gives the conversion). Actual selection runs through equivalent load, static safety factor, average load and a load factor covering vibration and shock.</li>
+        <li><strong>Basic static load rating (C0)</strong>: the basis for the static safety factor against permanent deformation of the raceway.</li>
+        <li><strong>Accuracy grade</strong>: Normal, H (high), P (precision), SP (super precision), UP (ultra precision). The grade covers running parallelism, height and width tolerance, and the height and width difference within a matched set. THK's guideline puts machining centres, lathes and milling machines at P or SP, and jig borers and grinding machines at SP or UP.</li>
       </ul>
+
+      <h4>Load Direction and Moments</h4>
+      A guide takes radial, reverse radial and lateral loads, and pitching, yawing and rolling moments, so total weight on the axis is only part of the picture. Four-way equal load types, THK's HSR and SHS among them, carry the same rated load radially, reverse radially and laterally. Radial types such as SSR and SR do not: their reverse radial and lateral ratings are a fraction of C, given by factors in the catalogue. Where loads act in more than one direction at once, convert them into an equivalent load before working out life or the static safety factor.
+
+      <h4>Ball or Roller</h4>
+      Balls contact the raceway at a point, rollers along a line. Roller types give higher rigidity and load capacity for heavy cutting; ball types run faster and cost less, and caged designs cut noise and extend the maintenance-free interval. The trade-off by application is worked through in the column below.
+      <div style="margin:10px 0 4px">
+        <button class="nav-btn" onclick="location.href='/column/ball-vs-roller-linear-guides-how-to-balance/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Ball vs. Roller Linear Guides &mdash; Expert Column &rarr;</button>
+      </div>
+
+      <h4>Mounting Datum, Parallelism and Tightening</h4>
+      Accuracy is not decided by the accuracy grade alone. The flatness of the machine's mounting surface, the parallelism between the two rails, and how the bolts are tightened all show up in running resistance and service life.
+      <ul>
+        <li><strong>Reference surfaces</strong>: on THK guides the block's datum face is the one opposite the face carrying the logo, and the rail's datum face is the one marked with a line. Reversed datum sides or a different grease nipple direction have to be specified on the order.</li>
+        <li><strong>Master rail</strong>: rails mounted on the same plane share a serial number, and the master rail carries "KB" after that serial. Normal grade guides are not marked, so any rail with the same serial can serve as the master.</li>
+        <li><strong>Tightening</strong>: press each rail against its datum face, then tighten in the recommended sequence and to the recommended torque. Where a long rail is supplied jointed, the joint match marks have to line up.</li>
+      </ul>
+
+      <h4>Rails and Blocks Are Not Freely Interchangeable</h4>
+      A rail and the blocks used on it must carry the same serial number, and a block taken off for cleaning goes back on the same rail in the same orientation. Preload, accuracy and the matched pairing all depend on it. THK sells the GK series specifically as the exception, where blocks and rails are bought separately and combined freely, which is a useful reminder that standard products are matched sets. So a replacement is confirmed on the full model designation and the pairing marks, not on rail width and hole pitch alone.
 
       <h4>Major Brands</h4>
       <ul>
@@ -147,16 +167,26 @@ body{margin:0}
         <li><strong>NSK, INA, Bosch Rexroth</strong>: European/Japanese alternatives.</li>
       </ul>
 
-      <h4>Maintenance Tips</h4>
+      <h4>Maintenance and Failure Signs</h4>
       <ul>
         <li>Lubricate regularly with specified grease or oil mist system</li>
-        <li>Protect from chips and coolant — check wipers and seals</li>
-        <li>Check for smooth travel — any roughness indicates contamination or wear</li>
-        <li>Replace in pairs (rail + matching blocks) when possible</li>
+        <li>Protect from chips and coolant, and check wipers and seals</li>
+        <li>Replace as a matched set (rail plus its blocks) rather than mixing parts</li>
+        <li>Watch for: noise or a knock at one point of the travel, local notchiness, rising drag over time, split or missing wipers, corrosion or water marks on the raceway, indentation of the raceway after a shock load or a long standstill under vibration, and a repeating pattern on the machined surface that follows the axis rather than the tool</li>
       </ul>
 
-      <h4>Ordering Note</h4>
-      Always specify: model number, length (for rails), preload class, accuracy class, and whether end caps or lubrication fittings are needed.
+      <h4>Ordering Data</h4>
+      Specify the full model designation and size, block form (flange or square), block length (standard or long), number of blocks per rail, rail length with mounting hole pitch and end distances, preload symbol, accuracy grade, seal and wiper configuration, grease nipple type and direction, surface treatment, and whether jointed rails are acceptable.
+
+      <h4>Sources</h4>
+      <ul>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0008/" target="_blank" rel="noopener">THK &mdash; selecting a radial clearance: Normal, C1 light preload, C0 medium preload, with application examples</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0007/" target="_blank" rel="noopener">THK &mdash; nominal life, and the 50 km / 100 km basis of the basic dynamic load rating</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0004/" target="_blank" rel="noopener">THK &mdash; rated loads in all directions and equivalent load</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0009/" target="_blank" rel="noopener">THK &mdash; accuracy standards and accuracy grades by machine type</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/maintenance/0001/" target="_blank" rel="noopener">THK &mdash; master rail marking, reference surfaces and combined use of rail and blocks</a></li>
+        <li><a href="https://www.thk.com/opm/brand/gk/en/" target="_blank" rel="noopener">THK &mdash; GK series, interchangeable blocks and rails compared with set products</a></li>
+      </ul>
 
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">EXPERT COLUMN / 專家專欄</div>
@@ -181,12 +211,32 @@ body{margin:0}
 
       <h4>主要規格說明</h4>
       <ul>
-        <li><strong>型號尺寸</strong>：如 THK HSR25，數字代表導軌寬度（mm）</li>
-        <li><strong>預壓等級</strong>：C0（重預壓）、C1（中預壓）、C2（輕預壓）— 預壓越高剛性越強，間隙越小</li>
-        <li><strong>精度等級</strong>：普通（N）、高（H）、精密（P）、超精密（SP）、極精密（UP）</li>
-        <li><strong>動態負載額定值（C）</strong>：滑軌可承受的最大動態負載</li>
-        <li><strong>靜態負載額定值（C0）</strong>：不產生永久變形的最大靜態負載</li>
+        <li><strong>型號尺寸</strong>：如 THK HSR25。數字是該系列的公稱尺寸代號，不代表導軌實際寬度就是 25 mm。實際軌寬、滑塊高度、安裝孔距與端部孔距，請查該品牌的尺寸表。</li>
+        <li><strong>徑向間隙／預壓等級</strong>：代號依品牌與系列而定，不能跨型錄套用。THK 的 LM Guide 使用普通間隙、C1（輕預壓）與 C0（中預壓）；HIWIN HG 系列則是 Z0、ZA、ZB。預壓越大剛性越高、變位越小，但滑動阻力與滾道受力也隨之增加，超出實際需要反而折損壽命。THK 自己的選型建議是：加工中心、NC 車床等重切削軸用 C0；單軌配置、有伸出負荷或輕負荷高精度的軸用 C1。下單前務必依該品牌與系列的型錄確認代號。</li>
+        <li><strong>基本動額定負荷（C）</strong>：計算額定壽命用的基準值，不是使用時絕對不能超過的上限。THK 的 C 值，滾珠型以 50 km、滾柱型以 100 km 額定壽命為基準，因此兩個品牌的 C 值要換算到同一基準才能比較（ISO 14728-1 有換算式）。實際選型還要走等效負荷、靜態安全係數、平均負荷，以及涵蓋振動與衝擊的負荷係數。</li>
+        <li><strong>基本靜額定負荷（C0）</strong>：計算靜態安全係數的基準，對應滾道永久變形。</li>
+        <li><strong>精度等級</strong>：普通、H（高）、P（精密）、SP（超精密）、UP（極精密）。等級涵蓋走行平行度、高度與寬度公差，以及同一組配對內的高度差與寬度差。THK 的建議是加工中心、車床、銑床用 P 或 SP，搪孔盤與磨床用 SP 或 UP。</li>
       </ul>
+
+      <h4>負載方向與力矩</h4>
+      滑軌要承受的不只是重量，還包括徑向、反徑向、側向負荷，以及俯仰、偏擺與滾轉力矩。四方向等負荷型（THK 的 HSR、SHS 等）在徑向、反徑向與側向的額定負荷相同；徑向型（如 SSR、SR）則不然，其反徑向與側向額定值只有 C 的一部分，係數列在型錄裡。當多個方向的負荷同時作用時，要先換算成等效負荷，再計算壽命與靜態安全係數。
+
+      <h4>滾珠型與滾柱型</h4>
+      滾珠是點接觸，滾柱是線接觸。滾柱型剛性與負荷能力較高，適合重切削；滾珠型速度較快、成本較低，保持器設計還能降低噪音並延長免保養週期。各應用別的取捨，詳見下方專欄。
+      <div style="margin:10px 0 4px">
+        <button class="nav-btn" onclick="location.href='/column/ball-vs-roller-linear-guides-how-to-balance/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">滾珠 vs. 滾柱線性滑軌 &mdash; 專家專欄 &rarr;</button>
+      </div>
+
+      <h4>安裝基準面、平行度與鎖付</h4>
+      精度不是只由精度等級決定。機台安裝面的平面度、兩支軌道之間的平行度，以及螺栓怎麼鎖，都會反映在滑動阻力與壽命上。
+      <ul>
+        <li><strong>基準面</strong>：THK 滑軌的滑塊基準面在標示廠牌 logo 那面的反面，導軌基準面則是刻有基準線的那一面。若要改變基準側方向或注油嘴方向，須於訂購時指定。</li>
+        <li><strong>基準軌</strong>：安裝在同一平面上的導軌會有相同序號，基準軌在序號後標示「KB」。普通等級不做此標示，同序號的任一支都可以當基準軌。</li>
+        <li><strong>鎖付</strong>：先把導軌靠緊基準面，再依建議順序與扭矩鎖付。長軌若以接軌方式供應，接合處的對合標記必須對齊。</li>
+      </ul>
+
+      <h4>滑塊與導軌不可任意混配</h4>
+      導軌與其上的滑塊必須是相同序號，滑塊拆下清潔後也要裝回同一支軌、同一方向。預壓、精度與配對關係都建立在這個前提上。THK 另外設有 GK 系列，明確定位為「軌與塊可分開購買、自由組合」的例外，反過來說明一般產品是成組配對的。因此更換時要核對完整型號與配對標記，不能只確認軌寬與螺栓孔位。
 
       <h4>主要品牌</h4>
       <ul>
@@ -195,16 +245,26 @@ body{margin:0}
         <li><strong>NSK、INA、Bosch Rexroth</strong>：歐日替代品牌。</li>
       </ul>
 
-      <h4>保養要點</h4>
+      <h4>保養要點與失效徵兆</h4>
       <ul>
         <li>定期以指定黃油或油霧系統補充潤滑</li>
         <li>防止切屑與切削液侵入，定期檢查防塵刮片與密封</li>
-        <li>滑動是否順暢，若有卡頓感代表污染或磨損</li>
-        <li>盡量成套更換（導軌＋配對滑塊）</li>
+        <li>盡量成組更換（導軌與其配對滑塊），不要混用零件</li>
+        <li>需要留意的徵兆：異音或行程中某一點的敲擊聲、局部卡頓、運行阻力逐漸增加、刮片破損或脫落、滾道鏽蝕或水痕、受衝擊或長期靜止振動後滾道出現壓痕，以及加工表面出現隨軸向而非隨刀具的週期性紋路</li>
       </ul>
 
-      <h4>訂購注意事項</h4>
-      請務必標明：型號、長度（導軌）、預壓等級、精度等級，以及是否需要端蓋或注油嘴。
+      <h4>訂購資料</h4>
+      請提供：完整型號與尺寸、滑塊外形（法蘭型或方型）、滑塊長度（標準型或加長型）、每軌滑塊數量、導軌總長與安裝孔距及端部孔距、預壓代號、精度等級、密封與刮片配置、注油嘴形式與方向、表面處理，以及是否可接受接軌供應。
+
+      <h4>資料依據</h4>
+      <ul>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0008/" target="_blank" rel="noopener">THK &mdash; 徑向間隙（預壓）選定：普通間隙、C1 輕預壓、C0 中預壓與適用範例</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0007/" target="_blank" rel="noopener">THK &mdash; 額定壽命，以及基本動額定負荷的 50 km／100 km 基準</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0004/" target="_blank" rel="noopener">THK &mdash; 各方向額定負荷與等效負荷</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0009/" target="_blank" rel="noopener">THK &mdash; 精度基準與各機種建議精度等級</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/maintenance/0001/" target="_blank" rel="noopener">THK &mdash; 基準軌標示、基準面與軌塊配對使用</a></li>
+        <li><a href="https://www.thk.com/opm/brand/gk/en/" target="_blank" rel="noopener">THK &mdash; GK 系列（軌塊可互換）與成組產品的差異</a></li>
+      </ul>
 
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">專家專欄</div>
@@ -229,12 +289,32 @@ body{margin:0}
 
       <h4>주요 사양</h4>
       <ul>
-        <li><strong>크기 (모델 번호)</strong>: 예) THK HSR25 — 숫자는 레일 폭(mm)을 나타냄</li>
-        <li><strong>예압 등급</strong>: C0 (중예압), C1 (경예압), C2 (무예압) — 예압이 높을수록 강성 증가, 백래시 감소</li>
-        <li><strong>정밀도 등급</strong>: 보통(N), 고(H), 정밀(P), 초정밀(SP), 극정밀(UP)</li>
-        <li><strong>동적 부하 정격 (C)</strong>: 가이드가 처리할 수 있는 최대 동적 부하</li>
-        <li><strong>정적 부하 정격 (C0)</strong>: 영구 변형 전 최대 정적 부하</li>
+        <li><strong>크기 (모델 번호)</strong>: 예) THK HSR25. 숫자는 해당 시리즈의 공칭 크기 기호이며, 레일 폭이 정확히 25 mm라는 뜻은 아닙니다. 실제 레일 폭, 블록 높이, 장착 구멍 피치, 단부 거리는 해당 브랜드의 치수표에서 확인해야 합니다.</li>
+        <li><strong>레이디얼 틈새 / 예압</strong>: 기호는 브랜드와 시리즈마다 다르며 카탈로그를 넘나들어 적용할 수 없습니다. THK LM 가이드는 보통 틈새, C1(경예압), C0(중예압)을 사용하고 HIWIN HG 시리즈는 Z0, ZA, ZB를 사용합니다. 예압이 클수록 강성이 높고 변위는 작아지지만 미끄럼 저항과 궤도면 하중도 함께 커져, 필요 이상으로 지정하면 수명을 깎습니다. THK의 선정 지침은 머시닝센터·NC 선반 등 중절삭 축에 C0, 단일 레일이나 오버행 하중·경하중 고정밀 축에 C1을 권장합니다. 발주 전 해당 브랜드와 시리즈의 카탈로그로 기호를 확인하십시오.</li>
+        <li><strong>기본 동정격하중 (C)</strong>: 정격 수명 계산에 쓰는 기준값이며, 절대 넘으면 안 되는 최대 하중이 아닙니다. THK는 볼 가이드 50 km, 롤러 가이드 100 km의 정격 수명을 기준으로 C를 표시하므로, 두 브랜드의 C 값은 같은 기준으로 환산해야 비교할 수 있습니다(ISO 14728-1에 환산식이 있습니다). 실제 선정은 등가 하중, 정적 안전계수, 평균 하중, 진동·충격을 반영한 하중계수를 거칩니다.</li>
+        <li><strong>기본 정정격하중 (C0)</strong>: 궤도면의 영구 변형에 대한 정적 안전계수의 기준입니다.</li>
+        <li><strong>정밀도 등급</strong>: 보통, H(고), P(정밀), SP(초정밀), UP(극정밀). 등급은 주행 평행도, 높이·폭 공차, 한 세트 내의 높이차·폭차를 포함합니다. THK 지침은 머시닝센터·선반·밀링에 P 또는 SP, 지그 보러·연삭기에 SP 또는 UP를 제시합니다.</li>
       </ul>
+
+      <h4>하중 방향과 모멘트</h4>
+      가이드는 무게만이 아니라 레이디얼·역레이디얼·측면 하중과 피칭·요잉·롤링 모멘트를 함께 받습니다. THK의 HSR·SHS 같은 4방향 등하중 타입은 레이디얼·역레이디얼·측면 정격하중이 동일하지만, SSR·SR 같은 레이디얼 타입은 그렇지 않아 역레이디얼·측면 정격이 C의 일부이며 계수는 카탈로그에 있습니다. 두 방향 이상의 하중이 동시에 걸리면 등가 하중으로 환산한 뒤 수명과 정적 안전계수를 계산합니다.
+
+      <h4>볼과 롤러</h4>
+      볼은 점 접촉, 롤러는 선 접촉입니다. 롤러 타입은 강성과 부하 능력이 높아 중절삭에 적합하고, 볼 타입은 속도가 빠르고 비용이 낮으며 케이지 방식은 소음을 줄이고 무보수 기간을 늘립니다. 용도별 판단 기준은 아래 칼럼에서 다룹니다.
+      <div style="margin:10px 0 4px">
+        <button class="nav-btn" onclick="location.href='/column/ball-vs-roller-linear-guides-how-to-balance/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">볼 vs. 롤러 리니어 가이드 &mdash; 전문가 칼럼 &rarr;</button>
+      </div>
+
+      <h4>기준면·평행도·체결</h4>
+      정밀도는 등급만으로 정해지지 않습니다. 기계 장착면의 평면도, 두 레일 사이의 평행도, 볼트 체결 방식이 모두 미끄럼 저항과 수명에 나타납니다.
+      <ul>
+        <li><strong>기준면</strong>: THK 가이드에서 블록의 기준면은 로고가 표시된 면의 반대쪽이며, 레일의 기준면은 기준선이 새겨진 면입니다. 기준면 방향이나 그리스 니플 방향을 바꾸려면 주문 시 지정해야 합니다.</li>
+        <li><strong>마스터 레일</strong>: 같은 평면에 장착되는 레일은 동일한 일련번호를 가지며, 마스터 레일은 일련번호 뒤에 "KB"가 표시됩니다. 보통 등급은 표시가 없으므로 같은 일련번호의 어느 레일이든 마스터로 사용할 수 있습니다.</li>
+        <li><strong>체결</strong>: 각 레일을 기준면에 밀착시킨 뒤 권장 순서와 권장 토크로 조입니다. 장척 레일이 이음 방식으로 공급되면 이음부의 맞춤 표시가 일치해야 합니다.</li>
+      </ul>
+
+      <h4>레일과 블록은 임의로 혼용할 수 없습니다</h4>
+      레일과 그 위의 블록은 일련번호가 같아야 하며, 청소를 위해 분리한 블록도 같은 레일에 같은 방향으로 되돌려야 합니다. 예압·정밀도·짝 맞춤이 모두 여기에 걸려 있습니다. THK가 블록과 레일을 따로 구매해 자유롭게 조합하는 GK 시리즈를 별도로 두고 있다는 사실 자체가, 일반 제품은 세트로 짝지어진 것임을 보여 줍니다. 따라서 교체 시에는 레일 폭과 볼트 구멍 위치만이 아니라 전체 모델명과 짝 표시를 확인해야 합니다.
 
       <h4>주요 브랜드</h4>
       <ul>
@@ -243,16 +323,26 @@ body{margin:0}
         <li><strong>NSK, INA, Bosch Rexroth</strong>: 유럽/일본 대안 브랜드.</li>
       </ul>
 
-      <h4>유지보수 팁</h4>
+      <h4>유지보수와 고장 징후</h4>
       <ul>
         <li>지정 그리스 또는 오일 미스트 시스템으로 정기적으로 윤활</li>
-        <li>칩 및 절삭유로부터 보호 — 와이퍼 및 씰 점검</li>
-        <li>부드러운 이동 여부 확인 — 거칠거나 걸리면 오염 또는 마모 의심</li>
-        <li>가능하면 레일과 블록을 쌍으로 교체</li>
+        <li>칩과 절삭유로부터 보호하고 와이퍼·씰을 점검</li>
+        <li>부품을 섞지 말고 세트(레일과 해당 블록) 단위로 교체</li>
+        <li>주의할 징후: 이음이나 행정 중 특정 지점의 타격음, 국부적인 걸림, 점진적으로 커지는 운전 저항, 와이퍼 파손이나 이탈, 궤도면의 부식·수분 자국, 충격 하중이나 장기 정지 중 진동 후 생긴 궤도면 압흔, 공구가 아니라 축을 따라 반복되는 가공면 무늬</li>
       </ul>
 
-      <h4>주문 시 주의사항</h4>
-      반드시 명시: 모델 번호, 길이(레일), 예압 등급, 정밀도 등급, 엔드캡 또는 윤활 피팅 필요 여부.
+      <h4>주문 자료</h4>
+      전체 모델명과 크기, 블록 형상(플랜지형 또는 각형), 블록 길이(표준형 또는 롱형), 레일당 블록 수, 레일 전장과 장착 구멍 피치 및 단부 거리, 예압 기호, 정밀도 등급, 씰·와이퍼 구성, 그리스 니플 형식과 방향, 표면 처리, 이음 레일 허용 여부를 알려 주십시오.
+
+      <h4>근거 자료</h4>
+      <ul>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0008/" target="_blank" rel="noopener">THK &mdash; 레이디얼 틈새(예압) 선정: 보통 틈새, C1 경예압, C0 중예압과 적용 예</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0007/" target="_blank" rel="noopener">THK &mdash; 정격 수명과 기본 동정격하중의 50 km / 100 km 기준</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0004/" target="_blank" rel="noopener">THK &mdash; 각 방향 정격하중과 등가 하중</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/selection/0009/" target="_blank" rel="noopener">THK &mdash; 정밀도 기준과 기종별 정밀도 등급</a></li>
+        <li><a href="https://www.thk.com/us/en/products/lm_guide/maintenance/0001/" target="_blank" rel="noopener">THK &mdash; 마스터 레일 표시, 기준면, 레일과 블록의 조합 사용</a></li>
+        <li><a href="https://www.thk.com/opm/brand/gk/en/" target="_blank" rel="noopener">THK &mdash; GK 시리즈(레일·블록 호환)와 세트 제품의 차이</a></li>
+      </ul>
 
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">전문가 칼럼</div>
