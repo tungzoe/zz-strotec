@@ -874,6 +874,14 @@
     margin-left: 5px;
   }
 
+  /* "UPDATED" is the same pill in outline form: an entry that was revised is
+     worth flagging, but it should not compete with a genuinely new one. */
+  .card-new.card-updated {
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue-dim);
+  }
+
   .whats-new-badge {
     display: inline-block;
     background: var(--gold);
