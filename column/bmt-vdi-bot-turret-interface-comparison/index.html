@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_column", {"column_id":"col-20","item_title":"BMT, VDI and BOT Turret Interfaces Compared: Are Tool Holders Interchangeable? 8 Specifications to Check Before You Order","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMT vs VDI vs BOT Turret Interfaces: Are Tool Holders Interchangeable? | Z&amp;Z STROTEC</title>
+<meta name="description" content="Do BMT, VDI and BOT tool holders interchange? What each interface is, why the same size can still not fit, and the 8 specifications to confirm before ordering.">
+<link rel="canonical" href="https://zz-strotec.com/column/bmt-vdi-bot-turret-interface-comparison/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BMT vs VDI vs BOT Turret Interfaces: Are Tool Holders Interchangeable?">
+<meta property="og:description" content="Do BMT, VDI and BOT tool holders interchange? What each interface is, why the same size can still not fit, and the 8 specifications to confirm before ordering.">
+<meta property="og:url" content="https://zz-strotec.com/column/bmt-vdi-bot-turret-interface-comparison/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/photo/bmt-vdi-bot-turret-interface-comparison.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"BMT, VDI and BOT Turret Interfaces Compared: Are Tool Holders Interchangeable? 8 Specifications to Check Before You Order","description":"Do BMT, VDI and BOT tool holders interchange? What each interface is, why the same size can still not fit, and the 8 specifications to confirm before ordering.","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.com/photo/bmt-vdi-bot-turret-interface-comparison.jpg","articleSection":"Tooling · Turret Interfaces","datePublished":"2026-08-11","dateModified":"2026-08-11","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/column/bmt-vdi-bot-turret-interface-comparison/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/column/">Columns</a> › BMT, VDI and BOT Turret Interfaces Compared: Are Tool Holders Interchangeable? 8 Specifications to Check Before You Order</div>
+  
+  <a class="kbp-cta" href="/#col-20">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body">
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+
+        <!-- Header -->
+        <div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Tooling &nbsp;·&nbsp; Turret Interfaces</span>
+          <h1 style="color:var(--text);margin:10px 0 6px;font-size:1.35rem;font-weight:600;line-height:1.4">BMT, VDI and BOT Turret Interfaces Compared: Are Tool Holders Interchangeable? 8 Specifications to Check Before You Order</h1>
+          <p style="color:var(--text-dim);font-size:0.95rem;margin:0 0 4px">BMT、VDI、BOT 刀塔介面完整比較：刀座可以互換嗎？選型前必查 8 項規格</p>
+          <p style="color:var(--text-dim);font-size:0.88rem;margin:0">BMT·VDI·BOT 터렛 인터페이스 비교: 툴 홀더는 호환되는가? 발주 전 확인할 8가지 사양</p>
+        </div>
+        <div style="color:var(--text-dim);font-size:0.74rem;margin:-18px 0 22px;line-height:1.6">Published: 2026-08-11 &nbsp;·&nbsp; Written by Z&amp;Z STROTEC &nbsp;／&nbsp; 發布：2026-08-11 ・撰文：Z&amp;Z STROTEC 萬洋國際 &nbsp;／&nbsp; 발행: 2026-08-11 · 작성: Z&amp;Z STROTEC</div>
+
+        <img src="/photo/bmt-vdi-bot-turret-interface-comparison.jpg" loading="lazy" alt="Three lathe turret tool holders side by side in front of a turret: a cylindrical-shank VDI holder, a driven holder showing its splined drive coupling on the bolted mounting face, and a bolt-on static turning block" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 22px;display:block">
+
+        <!-- Intro -->
+        <p style="margin-bottom:12px;line-height:1.85">A label such as BMT65, VDI40 or BOT24 looks like a part number, and the natural reading is that two holders carrying the same label will bolt onto the same turret. In practice the label narrows the field without settling the question. It tells you roughly which mounting family the holder belongs to, not that every mounting dimension, locating feature and drive coupling matches. A static holder bought on the label alone commonly turns up with bolts that will not line up, a centre height that is out by a few millimetres, or a body that fouls the neighbouring station once it is in place. With <strong style="color:var(--gold)">driven holders the risk is higher</strong>, because two holders that look identical from the front can still carry different drive couplings behind the mounting face.</p>
+        <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:10px">看到「BMT65」「VDI40」或「BOT24」這些標示時，很多人第一個反應是：尺寸相同，刀座應該就能直接裝上去。實際上沒有這麼簡單。這些名稱可以幫助我們判斷刀塔介面的大方向，卻不代表所有安裝尺寸、定位方式與動力接頭都完全一致。靜態刀座買錯，常見結果是螺絲鎖不上、中心高不對，或裝好後與刀塔、工件發生干涉。<strong>動力刀座的情況更複雜</strong>，即使外觀看起來相同，安裝面後方的驅動接頭也可能不同。</p>
+        <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">BMT65, VDI40, BOT24 같은 표기를 보면 치수가 같으니 툴 홀더도 그대로 장착된다고 생각하기 쉽습니다. 실제로는 그렇게 간단하지 않습니다. 이 표기는 터렛 인터페이스의 큰 방향을 알려 줄 뿐, 모든 장착 치수·위치 결정 방식·구동 커플링이 동일하다는 뜻은 아닙니다. 정적 홀더를 잘못 구매하면 볼트가 맞지 않거나 중심 높이가 어긋나거나 장착 후 터렛·공작물과 간섭이 생깁니다. <strong>구동(라이브) 홀더는 더 복잡합니다.</strong> 겉모습이 같아도 장착면 뒤쪽의 구동 커플링이 다를 수 있기 때문입니다.</p>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🧭</span> The Short Answer First (先說結論)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">If only one thing survives this article, make it this: <strong style="color:var(--gold)">the same interface name means the holder belongs to a related mounting system, not that compatibility has been confirmed.</strong></p>
+          <p style="margin-bottom:14px;line-height:1.8">VDI is the most standardised of the three. The cylindrical shank and the turret locating bore have published interchangeability dimensions in the ISO 10889 series. BMT and BOT do not have an equivalent international standard behind them: the dimensions come from the turret and machine builders, which is precisely why the label alone cannot guarantee a fit. Once a driven holder is involved, the drive coupling, the permitted speed, the direction of rotation and the coolant arrangement all have to be confirmed as well.</p>
+          <p style="margin-bottom:14px;line-height:1.8">So the working order is machine and turret first, holder second. Not a matching size on a website first, and a compatibility check afterwards.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">如果只記得一件事，請記住：<strong>介面名稱相同，只代表屬於相近的安裝系統，不等於已經確認相容。</strong>三者之中 VDI 的標準化程度最高，圓柱柄與刀塔定位孔的互換尺寸收錄在 ISO 10889 系列中。BMT 與 BOT 背後沒有對應的國際標準，尺寸來自刀塔與機台製造商，這正是名稱本身無法保證能裝的原因。到了動力刀座，還必須確認驅動接頭、允許轉速、旋轉方向與冷卻方式。因此正確的順序是先確認機台與刀塔，再確認刀座，而不是先看到一個相同的尺寸名稱就直接下單。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">한 가지만 기억하신다면 이것입니다. <strong>인터페이스 명칭이 같다는 것은 유사한 장착 방식에 속한다는 뜻일 뿐, 호환이 확인되었다는 뜻이 아닙니다.</strong> 셋 중 VDI가 표준화 정도가 가장 높으며, 원통형 섕크와 터렛 위치 결정 구멍의 호환 치수는 ISO 10889 시리즈에 규정되어 있습니다. BMT와 BOT에는 이에 해당하는 국제 표준이 없고 치수는 터렛·기계 제조사에서 나옵니다. 명칭만으로 장착을 보장할 수 없는 이유가 여기에 있습니다. 구동 홀더라면 구동 커플링·허용 회전수·회전 방향·절삭유 방식까지 확인해야 합니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⭕</span> VDI: a Cylindrical Shank Into a Locating Bore (VDI：以圓柱柄插入刀塔定位孔)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A VDI holder has a cylindrical shank that enters a bore in the turret and is clamped by a mechanism inside the turret. The sizes usually seen are VDI20, VDI25, VDI30, VDI40 and VDI50, and the number is the nominal shank diameter in millimetres.</p>
+          <p style="margin-bottom:14px;line-height:1.8">The term VDI is trade usage inherited from DIN 69880. The current international reference is the ISO 10889 series, where Part 1 sets the interchangeability dimensions for the cylindrical shank and the location bore together with the technical delivery conditions, and the later parts cover the individual holder types.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Changeover is quick and the interface is easy to identify, which is why VDI remains common on turning centres. The caution is the same one that runs through this article: a static holder going in does not prove that a driven holder of the same size will work, because the position and form of the drive coupling still have to be checked separately.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">VDI 刀座具有圓柱形柄部，安裝時將柄部插入刀塔孔，再由刀塔內部機構鎖緊。常見尺寸包括 VDI20、VDI25、VDI30、VDI40 與 VDI50，數字對應圓柱柄的公稱直徑（mm）。業界慣稱的 VDI 源自 DIN 69880，目前的國際依據是 ISO 10889 系列：第 1 部規範圓柱柄與定位孔的互換尺寸及技術交貨條件，後續各部則分別規範刀座型式。VDI 的優點是換裝快速、介面容易辨識。需要注意的是，靜態刀座能裝上去，不代表同尺寸的動力刀座也一定能使用，驅動接頭的位置與形式仍須另外核對。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">VDI 홀더는 원통형 섕크를 터렛 구멍에 삽입한 뒤 터렛 내부 기구로 고정합니다. 흔히 쓰이는 규격은 VDI20·25·30·40·50이며 숫자는 섕크의 공칭 지름(mm)입니다. 업계에서 쓰는 VDI라는 표현은 DIN 69880에서 이어진 것이고, 현재 국제 기준은 ISO 10889 시리즈입니다. 제1부가 원통형 섕크와 위치 결정 구멍의 호환 치수 및 기술 납품 조건을 규정합니다. 교체가 빠르고 인터페이스 식별이 쉽다는 장점이 있지만, 정적 홀더가 장착된다고 해서 같은 규격의 구동 홀더가 반드시 사용 가능한 것은 아닙니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔩</span> BMT: Bolted to the Turret Face (BMT：以刀塔端面作為主要安裝面)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">BMT stands for base mounted turret. The holder is bolted onto the turret face and held in position by locating keys or a locating face rather than by a shank inside a bore.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Compared with a cylindrical shank, the contact area is larger, which is why BMT is common on machines built for heavier cutting loads and on mill-turn work. BMT45, BMT55, BMT65 and BMT75 are the sizes most often quoted, with BMT40 and BMT85 also appearing in catalogues.</p>
+          <p style="margin-bottom:14px;line-height:1.8">What the number does not do is settle the purchase. There is no ISO standard for BMT, so the mounting dimensions are set by the turret and machine builders. Two machines both described as BMT65 can still differ in bolt spacing, key position, centre height or drive coupling, and one builder's own catalogue splits BMT65 holders by station count as well as by machine model. Work from the machine builder's drawing and the holder maker's application list, not from the size alone.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">BMT 指 Base Mounted Turret，刀座以螺栓固定在刀塔端面，並透過定位鍵或定位面保持安裝位置，而不是靠柄部插入孔內。相較於圓柱柄介面，BMT 的接觸面較大，因此常見於切削負荷較大的機型與車銑複合加工。常見尺寸為 BMT45、BMT55、BMT65、BMT75，型錄上也看得到 BMT40 與 BMT85。但這些數字不能單獨作為採購依據：BMT 並沒有對應的 ISO 標準，安裝尺寸由刀塔與機台製造商決定。兩台機器都標示 BMT65，螺栓孔距、定位鍵位置、中心高或動力接頭仍可能不同；同一家原廠的刀座清單，甚至會再依刀塔工位數與機型分開列出。選購時應以機台原廠圖面及刀座供應商的適用機型表為準。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">BMT는 base mounted turret의 약자로, 홀더를 터렛 단면에 볼트로 고정하고 위치 결정 키 또는 위치 결정면으로 자세를 유지합니다. 원통형 섕크보다 접촉 면적이 넓어 절삭 부하가 큰 기종과 밀턴 가공에 많이 쓰입니다. 흔히 BMT45·55·65·75가 언급되며 카탈로그에는 BMT40·BMT85도 있습니다. 다만 BMT에는 대응하는 ISO 표준이 없어 장착 치수는 터렛·기계 제조사가 정합니다. 같은 BMT65 표기라도 볼트 간격·키 위치·중심 높이·구동 커플링이 다를 수 있으므로, 기계 제조사 도면과 홀더 제조사의 적용 기종표를 기준으로 하십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔧</span> BOT: the Trade Name for Bolt-On Tooling (BOT：業界常見的螺栓鎖付刀座稱呼)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">BOT is normally read as bolt-on tooling, meaning a holder or tool block bolted to the turret. The term turns up on static OD and ID holders, face grooving holders and plain tool blocks.</p>
+          <p style="margin-bottom:14px;line-height:1.8">BMT and BOT are both bolted interfaces, but they are not one dimensional system. Naming is not consistent between manufacturers, and the number after BOT does not correspond to a BMT size. In one builder's range, BOT20 and BOT24 designate holders for that builder's own turrets, and its 24 station hybrid turret carries bolt-on stations and VDI40 stations on the same turret, so a single machine can present two interfaces at once.</p>
+          <p style="margin-bottom:14px;line-height:1.8">When a BOT specification comes up, the safe move is to ask for the mounting face drawing and check bolt positions, locating features and centre height against it rather than trusting the name.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">BOT 通常用來描述 Bolt-On Tooling，也就是以螺栓固定在刀塔上的刀座或刀塊，常見於靜態外徑刀座、內徑刀座、端面溝槽刀座等產品。BOT 和 BMT 都採用螺栓鎖付，但不能因此視為同一套尺寸系統：不同製造商的命名方式並不一致，BOT 後面的數字也不對應 BMT 尺寸。以某機台品牌為例，BOT20、BOT24 指的是該品牌自家刀塔用的刀座，而其 24 工位的混合式刀塔同時具備螺栓鎖付工位與 VDI40 工位，等於一台機器上同時存在兩種介面。實務上看到 BOT 規格時，最安全的做法是索取安裝面圖面，核對孔位、定位結構與中心高，不要只依名稱判斷。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">BOT는 보통 bolt-on tooling, 즉 터렛에 볼트로 고정하는 홀더나 툴 블록을 가리킵니다. 정적 외경·내경 홀더, 단면 그루빙 홀더, 툴 블록 등에서 자주 보입니다. BMT와 BOT 모두 볼트 고정 방식이지만 동일한 치수 체계는 아닙니다. 제조사마다 명명이 다르고 BOT 뒤의 숫자도 BMT 규격과 대응하지 않습니다. 어떤 기계 브랜드에서는 BOT20·BOT24가 자사 터렛용 홀더를 뜻하며, 해당 브랜드의 24스테이션 하이브리드 터렛은 볼트 고정 스테이션과 VDI40 스테이션을 함께 갖추고 있어 한 대의 기계에 두 가지 인터페이스가 동시에 존재합니다. BOT 사양을 접하면 명칭에 의존하지 말고 장착면 도면을 요청해 확인하십시오.</p>
+        </div>
+
+        <h3 style="color:var(--text);font-size:1rem;margin:26px 0 12px">Where the Three Differ ／ 三種介面的主要差異 ／ 세 가지 인터페이스의 주요 차이</h3>
+        <div style="overflow-x:auto;margin:0 0 16px">
+          <table style="width:100%;border-collapse:collapse;font-size:0.86rem;min-width:560px">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">Item ／ 比較項目 ／ 항목</th>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">VDI</th>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">BMT</th>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">BOT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Mounting ／ 主要安裝方式 ／ 장착 방식</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Cylindrical shank into a turret bore ／ 圓柱柄插入刀塔孔 ／ 원통형 섕크를 터렛 구멍에 삽입</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Bolted to the turret face ／ 螺栓固定於刀塔端面 ／ 터렛 단면에 볼트 고정</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Bolted to the turret or a tool block face ／ 螺栓固定於刀塔或刀座面 ／ 터렛 또는 툴 블록면에 볼트 고정</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Common sizes ／ 常見尺寸名稱 ／ 일반 규격</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">VDI20, 25, 30, 40, 50</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">BMT45, 55, 65, 75 (also 40, 85)</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Builder specific, e.g. BOT20, BOT24 ／ 依品牌而定 ／ 브랜드별 상이</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Location ／ 定位方式 ／ 위치 결정</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Shank plus serration or locating feature ／ 圓柱柄加齒形或定位結構 ／ 섕크와 세레이션·위치 결정 구조</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Mounting face plus locating keys ／ 安裝面加定位鍵 ／ 장착면과 위치 결정 키</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Depends on turret and maker ／ 依刀塔及製造商設計 ／ 터렛·제조사 설계에 따름</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Changeover ／ 換裝便利性 ／ 교체 편의성</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Faster ／ 較快 ／ 빠른 편</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Bolts have to come out ／ 需拆裝固定螺栓 ／ 고정 볼트 탈착 필요</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Depends on the design ／ 依結構而定 ／ 구조에 따라 다름</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Contact area ／ 接觸面與剛性 ／ 접촉면과 강성</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Varies with size and design ／ 視尺寸與刀座設計而定 ／ 규격·설계에 따라 다름</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Usually a broad face contact ／ 通常具有較大端面接觸 ／ 대체로 넓은 단면 접촉</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Varies with holder and face ／ 視刀座與安裝面設計而定 ／ 홀더·장착면 설계에 따라 다름</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Published standard ／ 規格一致性 ／ 규격 일관성</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">ISO 10889 series ／ 有 ISO 10889 系列 ／ ISO 10889 시리즈 있음</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">No ISO standard, builder defined ／ 無 ISO 標準，由製造商定義 ／ ISO 표준 없음, 제조사 규정</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">No ISO standard, naming varies ／ 無 ISO 標準，命名差異大 ／ ISO 표준 없음, 명명 편차 큼</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Driven holders ／ 動力刀座相容性 ／ 구동 홀더</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Confirm the drive coupling ／ 必須確認驅動接頭 ／ 구동 커플링 확인 필수</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Confirm the drive coupling ／ 必須確認驅動接頭 ／ 구동 커플링 확인 필수</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Mostly static holders, confirm per product ／ 多見於靜態刀座，仍須依實際產品確認 ／ 대부분 정적 홀더, 제품별 확인</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)">Order on the name alone ／ 能否只看名稱訂購 ／ 명칭만으로 발주</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Not advisable ／ 不建議 ／ 권장하지 않음</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">No ／ 不可以 ／ 불가</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">No ／ 不可以 ／ 불가</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin-bottom:24px">The table is a first sort, not a substitute for the machine drawing. ／ 這張表可以用來初步分類，不能取代機台圖面確認。／ 이 표는 1차 분류용이며 기계 도면 확인을 대체하지 않습니다.</p>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">❓</span> Why Two Holders Both Marked BMT65 Can Still Not Fit (為什麼同樣寫 BMT65，還是可能裝不上？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The name carries part of the information. What decides whether a holder can be fitted and used is the full set of interface dimensions together with the working conditions.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Two driven holders both marked BMT65 can share a mounting face and still use a drive coupling of a different form or in a different position. Forced into place, the drive shaft does not engage properly, which shows up as noise, heat, damaged teeth and, at worst, harm to the drive train inside the turret. Static holders are not decided by bolt positions alone either: a centre height that is out, the wrong hand of tool, or a body larger than the space available will all affect the cut.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Machine model is not a reliable shortcut either. One builder states plainly that older turning centres in a series, and some models sold in certain regions, are fitted with VDI or bolt-on turrets rather than the BMT65 turret that the same series carries today. The series name is the same, the interface is not.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Three conditions have to hold at once before a holder counts as usable: the mounting dimensions match, the tool centre lines up with the spindle centre, and the holder clears everything through the actual machining travel. For a driven holder, add compatible drive and coolant conditions.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">刀座名稱只提供部分資訊，真正決定能否安裝與使用的，是整套介面尺寸與工作條件。同樣標示 BMT65 的兩支動力刀座，可能有相同的安裝面，卻使用不同形狀或不同位置的驅動接頭。即使勉強鎖上，驅動軸沒有正確咬合，就可能造成異音、發熱、齒面損傷，嚴重時傷到刀塔內部傳動機構。靜態刀座也不能只看孔位：中心高偏差、刀具方向錯誤或本體外形過大，都會影響實際加工。機型名稱同樣不是捷徑。有原廠即明確說明，同一系列的較舊機台，以及部分地區銷售的機型，配備的是 VDI 或螺栓鎖付刀塔，而不是該系列現在使用的 BMT65 刀塔：系列名稱相同，介面卻不同。所謂「可以裝」，至少要同時滿足三個條件：安裝尺寸正確、刀具中心與主軸中心一致、刀座在實際加工行程內不會干涉。動力刀座還要再加上驅動與冷卻條件相容。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">명칭은 정보의 일부만 전달합니다. 장착과 사용 가능 여부를 결정하는 것은 인터페이스 치수 전체와 작업 조건입니다. 같은 BMT65 표기의 구동 홀더라도 장착면은 같고 구동 커플링의 형상이나 위치가 다를 수 있습니다. 무리하게 체결하면 구동축이 제대로 물리지 않아 이음·발열·치면 손상이 발생하고 심하면 터렛 내부 전동 기구까지 손상됩니다. 기종명도 확실한 근거가 되지 못합니다. 어떤 제조사는 같은 시리즈의 구형 장비와 일부 지역 판매 모델에는 BMT65가 아니라 VDI 또는 볼트 고정 터렛이 장착되어 있다고 명시합니다. 사용 가능하다고 말하려면 장착 치수 일치, 공구 중심과 주축 중심 일치, 실제 가공 행정 내 간섭 없음의 세 조건이 동시에 성립해야 하며, 구동 홀더는 구동·절삭유 조건까지 맞아야 합니다.</p>
+        </div>
+
+        <h3 style="color:var(--text);font-size:1.05rem;margin:26px 0 14px">8 Specifications to Check Before You Order ／ 選型前必查的 8 項規格 ／ 발주 전 확인할 8가지 사양</h3>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🏷️</span> 1. Machine Brand, Full Model, Year and Serial Number (機台品牌、完整型號、年份與序號)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A brand plus the words "CNC lathe", or a brand plus "BMT65", is not enough to work from. The same builder uses different turrets across series and production years.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A workable set is the brand, the complete model designation, the approximate year of manufacture, the machine serial number and the control model. The serial number matters more than it looks: some builders change the turret or the drive system during the production run of one model, so the model designation on its own does not always settle it.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">不要只提供「某品牌車床」或「BMT65 車床」。同一品牌可能在不同系列、不同年份使用不同刀塔。較完整的資料應包括：機台品牌、完整型號、大約出廠年份、機台序號與控制器型號。其中機台序號很重要，部分製造商會在同一機型的生產期間更換刀塔或驅動系統，單靠型號不一定能確認。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">브랜드와 "CNC 선반", 또는 브랜드와 "BMT65"만으로는 판단할 수 없습니다. 같은 제조사도 시리즈와 생산 연도에 따라 다른 터렛을 사용합니다. 브랜드, 전체 모델명, 대략적인 제조 연도, 기계 일련번호, 제어장치 모델을 함께 알려 주십시오. 일부 제조사는 같은 모델의 생산 기간 중 터렛이나 구동 시스템을 변경하므로 일련번호가 특히 중요합니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔄</span> 2. Turret Brand, Model and Station Count (刀塔品牌、型號與工位數)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The turret is not always made by the machine builder. Many machines are fitted with a third party turret, and the same machine model can be built with different turret configurations depending on the market or the options ordered.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Photograph the turret nameplate and record the turret brand, model and number of stations. If the nameplate is hard to read, send photographs of the turret from the front, from the side, and in its installed position.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">刀塔不一定由機台品牌自行製造。有些機台會搭配第三方刀塔，同一個機台型號也可能因市場或選配不同而採用不同配置。請拍下刀塔銘牌，並記錄刀塔品牌、型號及工位數。如果銘牌不易辨識，可以提供刀塔正面、側面和安裝位置的照片。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">터렛을 기계 제조사가 직접 만들지 않는 경우도 많습니다. 제3자 터렛이 장착되기도 하고, 같은 기종이라도 시장이나 옵션에 따라 구성이 달라질 수 있습니다. 터렛 명판을 촬영해 브랜드·모델·스테이션 수를 기록해 주십시오. 명판 식별이 어렵다면 터렛의 정면·측면·장착 상태 사진을 보내 주시면 됩니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📐</span> 3. Interface Type and Nominal Size (介面類型與公稱尺寸)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Establish first whether the interface is VDI, BMT, BOT or a builder's own design, then record the nominal size. For VDI, confirm the shank diameter and the locating form. For BMT and BOT, confirm the mounting face dimensions properly rather than writing "about 65 mm".</p>
+          <p style="margin-bottom:14px;line-height:1.8">If the original holder is still available, photographing the part number on the holder body is usually more reliable than measuring it yourself.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">先確認是 VDI、BMT、BOT，還是機台品牌的專用介面，再記錄公稱尺寸。VDI 應確認圓柱柄直徑及定位形式；BMT、BOT 應確認安裝面尺寸，不能只寫「大約 65 mm」。如果原有刀座仍在，拍攝刀座本體上的料號通常比自行量測更有效。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">먼저 VDI·BMT·BOT 또는 제조사 전용 인터페이스 중 무엇인지 확인한 뒤 공칭 규격을 기록합니다. VDI는 섕크 지름과 위치 결정 형식을, BMT·BOT는 장착면 치수를 확인해야 하며 "약 65 mm" 같은 표기는 근거가 되지 않습니다. 기존 홀더가 남아 있다면 본체의 품번을 촬영하는 편이 직접 실측하는 것보다 정확한 경우가 많습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔩</span> 4. Bolt Pattern and Locating Keys (螺栓孔位與定位鍵)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">On BMT and BOT holders, the same number of bolts does not mean the same bolt positions. Confirm the number of bolts and the thread size, the hole centre distances, the width of the locating key, its position and direction, and the size of any spigot or recess on the mounting face.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Use a vernier caliper and send clearly annotated photographs. A dimensioned drawing of the turret or of the original holder is better still.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">對 BMT 和 BOT 刀座來說，螺栓數量相同不代表孔位相同。需要確認：螺栓數量與牙規、孔中心距、定位鍵的寬度、定位鍵的位置與方向，以及安裝面的凸台或凹槽尺寸。量測時應使用游標卡尺，並附上清楚的標註照片。若能取得刀塔或原刀座的尺寸圖，準確度會更高。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">BMT·BOT 홀더는 볼트 개수가 같아도 위치가 같다는 뜻이 아닙니다. 볼트 개수와 나사 규격, 구멍 중심 거리, 위치 결정 키의 폭·위치·방향, 장착면의 돌출부나 홈 치수를 확인해 주십시오. 측정에는 버니어 캘리퍼스를 사용하고 치수를 표기한 사진을 함께 보내 주시면 됩니다. 터렛이나 기존 홀더의 치수 도면이 있으면 정확도가 훨씬 높아집니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📏</span> 5. Tool Centre Height (刀具中心高)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Centre height is the distance from the cutting edge to the mounting datum. Get it wrong and it shows directly in the cutting geometry, in dimensional stability and in insert life.</p>
+          <p style="margin-bottom:14px;line-height:1.8">OD holders, ID holders and driven holders all need it confirmed. Do not assume that the same BMT or BOT designation carries the same centre height.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">中心高是刀具切削刃到安裝基準面的距離。中心高不正確，會直接影響切削角度、尺寸穩定性與刀片壽命。外徑刀座、內徑刀座和動力刀座都需要確認中心高，不要假設相同的 BMT 或 BOT 名稱就具有相同中心高。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">중심 높이는 절삭날에서 장착 기준면까지의 거리입니다. 값이 맞지 않으면 절삭 각도, 치수 안정성, 인서트 수명에 곧바로 영향을 줍니다. 외경·내경·구동 홀더 모두 확인이 필요하며, BMT나 BOT 명칭이 같다고 중심 높이까지 같다고 가정해서는 안 됩니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">↔️</span> 6. Axial, Radial and Tool Orientation (軸向、徑向與刀具方向)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">One interface carries holders pointing in several directions. For static holders, confirm whether the holder is for OD turning, boring, facing or grooving, and whether it is left hand or right hand. For driven holders, separate axial from radial and confirm which way the tool projects.</p>
+          <p style="margin-bottom:14px;line-height:1.8">On a machine with a sub spindle or a Y axis, check as well that the holder clears the spindle, the chuck, the guarding and the neighbouring stations through tool change, cutting and retract.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">同一套介面可以搭配不同方向的刀座。靜態刀座要確認外徑、內徑、端面或溝槽用途，也要確認左手或右手方向；動力刀座則要分辨軸向與徑向，並確認刀具伸出方向。若機台具有副主軸或 Y 軸，還要檢查刀座在換刀、加工及退刀過程中是否會碰到主軸、夾頭、護罩或相鄰刀位。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">같은 인터페이스라도 방향이 다른 홀더가 존재합니다. 정적 홀더는 외경·내경·단면·그루빙 용도와 좌수·우수 방향을, 구동 홀더는 축방향·반경방향 구분과 공구 돌출 방향을 확인해야 합니다. 서브 주축이나 Y축이 있는 기계라면 공구 교환·가공·후퇴 과정에서 주축·척·커버·인접 스테이션과 간섭하지 않는지도 확인하십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⚙️</span> 7. Drive Coupling, Speed and Direction of Rotation (動力接頭、轉速與旋轉方向)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">This is where driven holders go wrong most often. Confirm the form of the drive coupling, its dimensions, its centre position, the maximum input speed, the output speed at the tool, the ratio whether reducing or increasing, the direction of rotation and the permitted torque.</p>
+          <p style="margin-bottom:14px;line-height:1.8"><strong style="color:var(--gold)">An identical mounting interface with a different drive coupling is still unusable.</strong> If the original driven holder has failed, photograph the back of the holder, the drive coupling and the maker's part number rather than only the front of the unit.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">這是動力刀座最容易出錯的部分。需要確認的資料包括：驅動接頭形狀、接頭尺寸、接頭中心位置、最高輸入轉速、刀具端輸出轉速、減速比或增速比、旋轉方向與允許扭矩。<strong>即使安裝介面相同，驅動接頭不同仍然不能使用。</strong>若原有動力刀座已損壞，建議拍攝刀座背面、驅動接頭及原廠料號，不要只拍正面外觀。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">구동 홀더에서 가장 오류가 잦은 항목입니다. 구동 커플링의 형상·치수·중심 위치, 최대 입력 회전수, 공구단 출력 회전수, 감속비 또는 증속비, 회전 방향, 허용 토크를 확인해 주십시오. <strong>장착 인터페이스가 같아도 구동 커플링이 다르면 사용할 수 없습니다.</strong> 기존 구동 홀더가 손상된 경우 정면 외관만이 아니라 홀더 뒷면·구동 커플링·제조사 품번을 촬영해 주십시오.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">💧</span> 8. Tool Clamping, Coolant and Cutting Conditions (刀具夾持、冷卻與加工條件)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Finally, confirm what the holder actually has to do. The tool end may take an ER collet, a Weldon side lock, a hydraulic chuck, a shell mill arbor or something else. Coolant may be external, internal to the holder, or high pressure through the centre.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Sending the tool shank or collet size, the material, the tool dimensions, the intended speed, the coolant pressure, whether through coolant is needed, the rough shape of the workpiece and chuck, and the acceptable projection saves a round of questions. These points decide more than whether the holder fits: they affect bearing arrangement, sealing, holder life and how stable the cut ends up being.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">最後要確認刀座實際要做什麼工作。刀具端可能使用 ER 筒夾、Weldon 側固式、液壓刀把、面銑刀接口或其他形式；冷卻方式則可能是外部冷卻、刀座內冷或高壓中心出水。詢價時最好一併提供：刀具柄徑或筒夾規格、加工材料、刀具尺寸、預計轉速、冷卻壓力、是否需要中心出水、工件及夾頭的大致外形，以及可接受的刀座伸出長度。這些資訊不只關係到能否安裝，也會影響軸承配置、密封方式、刀座壽命與加工穩定性。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">마지막으로 홀더가 실제로 수행할 작업을 확인합니다. 공구단은 ER 콜릿, 웰돈 사이드락, 유압 척, 페이스밀 아버 등이 될 수 있고, 절삭유는 외부 공급·홀더 내부 공급·고압 중심 관통 방식이 있습니다. 문의 시 공구 섕크 지름 또는 콜릿 규격, 가공 재질, 공구 치수, 예정 회전수, 절삭유 압력, 중심 관통 필요 여부, 공작물과 척의 대략적 형상, 허용 돌출 길이를 함께 알려 주십시오. 이 정보는 장착 가능 여부뿐 아니라 베어링 구성·실링·홀더 수명·가공 안정성에도 영향을 줍니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔍</span> Static and Driven Holders Are Not Equally Hard to Judge (靜態刀座與動力刀座，判斷難度不一樣)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A static holder has no internal drive, so the check narrows to the mounting face, centre height, tool size, orientation and clearance. With complete data, a replacement is usually straightforward to establish.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A driven holder adds the drive coupling, speed, torque, direction of rotation, bearing arrangement and coolant sealing. Any one of those being wrong can make the holder unusable, or shorten its life to a matter of weeks.</p>
+          <p style="margin-bottom:14px;line-height:1.8">So when buying a used or non original driven holder, "is it BMT65" is the wrong question. The more useful one is: <strong style="color:var(--gold)">does this holder come with a stated machine brand, machine model, turret model and drive coupling?</strong> A supplier who cannot answer that is usually carrying the risk over to you.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">靜態刀座沒有內部驅動機構，確認重點集中在安裝面、中心高、刀具尺寸、方向與干涉空間，資料完整時，替換判斷通常比較直接。動力刀座除了上述項目，還要核對驅動接頭、轉速、扭矩、旋轉方向、軸承配置與冷卻密封，任何一項不符，都可能讓刀座無法使用，或在短時間內損壞。因此採購二手或非原廠動力刀座時，不能只問「是不是 BMT65」，更實際的問法是：<strong>這支刀座是否有明確列出適用的機台品牌、型號、刀塔型號與驅動接頭？</strong>如果供應商無法回答，風險通常不低。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">정적 홀더는 내부 구동 기구가 없어 장착면·중심 높이·공구 치수·방향·간섭 공간만 확인하면 되므로, 자료가 충분하면 대체품 판단이 비교적 명확합니다. 구동 홀더는 여기에 구동 커플링·회전수·토크·회전 방향·베어링 구성·절삭유 실링까지 확인해야 하며, 하나라도 맞지 않으면 사용이 불가하거나 단기간에 손상됩니다. 따라서 중고나 비순정 구동 홀더를 구매할 때는 "BMT65인가"가 아니라 <strong>적용 기계 브랜드·모델·터렛 모델·구동 커플링이 명시되어 있는가</strong>를 물어야 합니다. 답하지 못하는 공급자라면 위험은 대개 구매자에게 넘어옵니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📷</span> Can Photographs Alone Settle It? (網路照片可以用來確認嗎？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Photographs help, but they do not replace dimensions. The useful set is the machine nameplate, the turret nameplate, a full view of the turret face, the original holder from the front and the side, the mounting interface on the back of that holder, a close view of the drive coupling, the holder part number, and the main dimensions with a caliper reading visible.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A rule placed alongside gives a sense of scale, but the selection itself should rest on measured values or the builder's drawing.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">照片有幫助，但不能完全取代尺寸資料。建議至少準備：機台銘牌、刀塔銘牌、刀塔正面全景、原刀座正面與側面、原刀座背面安裝介面、動力接頭近照、刀座料號，以及附有游標卡尺讀數的主要尺寸照片。拍照時可在旁邊放置直尺作為比例參考，但正式選型仍應以實際量測值或原廠圖面為準。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">사진은 도움이 되지만 치수 자료를 대신하지는 못합니다. 기계 명판, 터렛 명판, 터렛 정면 전경, 기존 홀더의 정면·측면, 홀더 뒷면 장착 인터페이스, 구동 커플링 근접 사진, 홀더 품번, 캘리퍼스 눈금이 보이는 주요 치수 사진을 준비해 주십시오. 옆에 자를 놓으면 크기 비교에 도움이 되지만, 최종 선정은 실측값이나 제조사 도면을 기준으로 해야 합니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📋</span> What a Usable Tool Holder Inquiry Contains (一份有效的刀座詢價資料)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Sending it in this form is the quickest way to shorten the confirmation loop:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li>Machine brand and model</li>
+            <li>Year of manufacture or serial number</li>
+            <li>Turret brand, model and station count</li>
+            <li>Interface type and size</li>
+            <li>Original holder brand and part number</li>
+            <li>Static or driven</li>
+            <li>Axial or radial, and hand of tool</li>
+            <li>Tool end specification</li>
+            <li>Maximum working speed</li>
+            <li>Coolant type and pressure</li>
+            <li>Material and application</li>
+            <li>Photographs of the original holder and the mounting face</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">The more complete this is, the more of the fitting risk a supplier can rule out before quoting, instead of both sides discovering the mismatch after delivery.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">若要加快確認速度，可以直接整理成以下格式：機台品牌、機台型號、出廠年份或序號、刀塔品牌與型號、刀塔工位數、介面類型與尺寸、原刀座品牌與料號、靜態或動力刀座、軸向或徑向與刀具方向、刀具端規格、最高使用轉速、冷卻方式與壓力、加工材料與用途，以及原刀座及安裝面的照片。資料越完整，供應商越容易在報價前排除安裝錯誤，也能減少收到產品後才發現不相容的情況。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">확인 속도를 높이려면 다음 형식으로 정리해 보내 주십시오. 기계 브랜드, 기계 모델, 제조 연도 또는 일련번호, 터렛 브랜드와 모델, 터렛 스테이션 수, 인터페이스 종류와 규격, 기존 홀더 브랜드와 품번, 정적·구동 구분, 축방향·반경방향과 공구 방향, 공구단 사양, 최고 사용 회전수, 절삭유 방식과 압력, 가공 재질과 용도, 기존 홀더와 장착면 사진입니다. 자료가 충실할수록 견적 전에 장착 오류를 걸러낼 수 있습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">✅</span> So Are BMT, VDI and BOT Holders Interchangeable? (所以到底能不能互換？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The answer is not a plain yes or no.</p>
+          <p style="margin-bottom:14px;line-height:1.8">VDI holders of the same size have clearer published interchange dimensions for the shank, but holder type, orientation, centre height and, for driven holders, the drive conditions still have to be confirmed. BMT and BOT cannot be judged by name and number at all: mounting drawing, bolt positions, locating keys, centre height and the maker's application list all have to be checked, with the drive coupling and working conditions added for driven holders.</p>
+          <p style="margin-bottom:14px;line-height:1.8">The reliable order is <strong style="color:var(--gold)">machine model, then turret model, then mounting interface, then holder orientation, then drive and coolant, then the actual cutting conditions.</strong> Reversing it, by buying a holder that looks the same and then working out whether it fits, is normally the most expensive way to do this.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">答案不是單純的可以或不可以。VDI 同尺寸產品具有較明確的圓柱柄互換規範，但仍要確認刀座型式、方向、中心高，以及動力刀座的驅動條件。BMT 和 BOT 則不能只依名稱與數字判斷，即使標示相同，也應核對安裝圖面、孔位、定位鍵、中心高及適用機型，動力刀座還需要確認驅動接頭與工作條件。最可靠的判斷順序是：<strong>機台型號 → 刀塔型號 → 安裝介面 → 刀座方向 → 驅動與冷卻 → 實際加工條件</strong>。不要把這個順序反過來，先買一支看起來相同的刀座，再想辦法確認能不能裝，通常是成本最高的做法。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">단순한 예 또는 아니오로 답할 수 없습니다. VDI는 같은 규격이면 섕크 호환 치수가 비교적 명확하지만 홀더 형식·방향·중심 높이, 구동 홀더의 구동 조건은 여전히 확인해야 합니다. BMT와 BOT는 명칭과 숫자만으로 판단할 수 없으며, 장착 도면·볼트 위치·위치 결정 키·중심 높이·적용 기종표를 확인해야 하고 구동 홀더는 커플링과 작업 조건까지 봐야 합니다. 신뢰할 수 있는 순서는 <strong>기계 모델 → 터렛 모델 → 장착 인터페이스 → 홀더 방향 → 구동·절삭유 → 실제 가공 조건</strong>입니다. 비슷해 보이는 홀더를 먼저 구매하고 장착 가능 여부를 뒤에 확인하는 방식이 대개 가장 비싼 방법입니다.</p>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:0.78rem;line-height:1.7;margin:16px 0 16px">This article provides general technical information. Final selection should follow the machine builder's drawings, the turret documentation and the holder manufacturer's application list. ／ 本文提供一般性技術資訊，最終選型仍應以機台製造商圖面、刀塔資料及刀座製造商適用表為準。／ 본문은 일반적인 기술 정보를 제공하며, 최종 선정은 기계 제조사 도면, 터렛 자료, 홀더 제조사 적용표를 기준으로 해야 합니다.</p>
+
+        <!-- CTA -->
+        <div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:24px;text-align:center;margin-bottom:16px">
+          <h3 style="color:var(--text);margin:0 0 8px;font-size:1.05rem">Need a Replacement Holder Confirmed?</h3>
+          <p style="color:var(--text-dim);font-size:0.9rem;max-width:560px;margin:0 auto 20px">Z&amp;Z STROTEC supplies static and driven tool holders from several brands, together with chucks and collets. Send the machine and turret nameplates, the original holder part number, photographs of the mounting interface and the main dimensions, and we will put the selection data together and raise any compatibility questions with you before quoting.</p>
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px">TECHNICAL SUPPORT / 立即洽詢 / 문의하기 →</button>
+        </div>
+        <div style="padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Tool Holders &amp; Turrets — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/static-tool/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Static Tool Holders — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Live Tool Holders — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/live-tool-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Live Tool Holder Replacement Checklist — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/column/live-tool-holder-troubleshooting/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Live Tool Holder Troubleshooting — Expert Column →</button>
+          <button class="nav-btn" onclick="location.href='/column/optimizing-live-tool-holders-for-swiss-type-lathes/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Vibration Control for Live Tool Holders — Expert Column →</button>
+        </div>
+
+        <h4 style="color:var(--text);font-size:0.92rem;margin:26px 0 8px">Sources ／ 資料依據 ／ 근거 자료</h4>
+        <ul style="margin:0;padding-left:20px;line-height:1.9;color:var(--text-dim);font-size:0.85rem">
+          <li><a href="https://www.iso.org/standard/38550.html" target="_blank" rel="noopener" style="color:var(--gold)">ISO 10889-1:2004, tool holders with cylindrical shank: cylindrical shank and location bore, technical delivery conditions</a></li>
+          <li><a href="https://www.iso.org/standard/68866.html" target="_blank" rel="noopener" style="color:var(--gold)">ISO 10889-2:2016, type A shanks for tool holders of special designs</a></li>
+          <li><a href="https://www.haastooling.com/c/bmt65-live-toolholding" target="_blank" rel="noopener" style="color:var(--gold)">Haas Tooling, BMT65 live toolholding: machine applicability by model and station count</a></li>
+          <li><a href="https://www.haastooling.com/c/bot24-toolholding" target="_blank" rel="noopener" style="color:var(--gold)">Haas Tooling, BOT24 toolholding for the 24 station hybrid turret</a></li>
+        </ul>
+
+      </div>
+</div>
+  <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Tooling · Turret Interfaces</span></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <div style="margin-top:10px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8">Sponsored placements are clearly labelled and do not influence editorial content. · 贊助刊登一律明確標示，不影響內容編輯判斷.</div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
