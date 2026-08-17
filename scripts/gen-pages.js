@@ -267,6 +267,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 `;
 
 const CSS_HREF = d => `${'../'.repeat(d)}assets/kb-pages.css`;
@@ -484,13 +494,193 @@ for (const d of ['knowledge', 'column', 'markets', 'terminology', 'privacy']) {
 
 const urls = [];   // for sitemap: {loc, priority}
 
+/* --------------------------------------------------------- related linking
+ * Every generated page used to be a leaf: reachable only from its section hub
+ * and the footer, with no link to any sibling. Google crawled the hubs, then
+ * left a fifth of the leaves in "Discovered — currently not indexed" without
+ * ever fetching them, because nothing on the site said one leaf was worth
+ * reaching from another. These blocks give each page real contextual outbound
+ * links — and, symmetrically, inbound links from pages Google already has.
+ *
+ * Relations are derived, not hand-listed, so they stay correct as entries are
+ * added: knowledge pairs by shared tags, markets by region plus the trade
+ * topics every market guide leans on, columns by the knowledge entries whose
+ * subject they actually name.
+ */
+const REL_MAX = 6;
+
+function relatedHtml(items) {
+  if (!items || !items.length) return '';
+  const lis = items.map(it =>
+    `<li><a href="${it.href}">${attrEsc(it.title)}${it.sub ? `<span class="s">${attrEsc(it.sub)}</span>` : ''}</a></li>`
+  ).join('');
+  return `<nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul>${lis}</ul>
+  </nav>`;
+}
+
+const TERMINOLOGY_LINK = {
+  href: `${BASE}terminology/`,
+  title: 'CNC Machine Tool Terminology',
+  sub: '術語對照表 · 용어집 — EN · 中文 · 한국어'
+};
+
+const kbLink = k => ({
+  href: `${BASE}knowledge/${k}/`, title: KB[k].title,
+  sub: [KB[k].title_zh, KB[k].title_ko].filter(Boolean).join(' · ')
+});
+const marketLink = k => ({
+  href: `${BASE}markets/${k}/`, title: MARKETS[k].title,
+  sub: [MARKETS[k].title_zh, MARKETS[k].title_ko].filter(Boolean).join(' · ')
+});
+
+/* --- knowledge ↔ knowledge: shared tags ---------------------------------- */
+const normTag = t => String(t).toLowerCase().trim();
+const kbTags = Object.fromEntries(
+  Object.entries(KB).map(([k, v]) => [k, new Set((v.tags || []).map(normTag))]));
+const kbKeys = Object.keys(KB);
+
+// A handful of entries carry tags no sibling repeats verbatim — "spindle
+// cooling" never equals "spindle" — so a second, weaker signal tops the list
+// up: significant words shared between the two titles.
+const STOP = new Set(['the', 'and', 'for', 'with', 'from', 'your', 'what', 'when',
+                      'how', 'guide', 'quick', 'reference', 'cnc', 'machine',
+                      'machines', 'tool', 'tools', 'checklist', 'explained']);
+const titleWords = k => new Set(
+  stripTags(KB[k].title).toLowerCase().match(/[a-z]{4,}/g) ?.filter(w => !STOP.has(w)) || []);
+const kbWords = Object.fromEntries(kbKeys.map(k => [k, titleWords(k)]));
+
+function relatedKnowledge(key) {
+  const mine = kbTags[key], myWords = kbWords[key];
+  return kbKeys
+    .filter(k => k !== key)
+    .map(k => {
+      let shared = 0;
+      for (const t of kbTags[k]) if (mine.has(t)) shared++;
+      let words = 0;
+      for (const w of kbWords[k]) if (myWords.has(w)) words++;
+      // a shared tag is the stronger claim; a shared title word only breaks
+      // in when tags alone would leave the block half empty
+      return { k, score: shared * 10 + words };
+    })
+    .filter(x => x.score > 0)
+    // best match first; alphabetical key breaks ties so a re-run of the
+    // generator produces byte-identical pages
+    .sort((a, b) => b.score - a.score || a.k.localeCompare(b.k))
+    .slice(0, REL_MAX)
+    .map(x => kbLink(x.k));
+}
+
+/* --- markets ↔ markets: same region -------------------------------------- */
+// Neighbouring markets are the ones a buyer or an agent actually compares. Any
+// market added to index.html that is missing here still gets the trade-topic
+// links below, so the block never comes out empty.
+const MARKET_REGIONS = {
+  americas: ['argentina', 'brazil', 'canada', 'colombia', 'mexico', 'usa'],
+  europe: ['czech', 'germany', 'italy', 'poland', 'switzerland'],
+  mideast: ['israel', 'saudi', 'turkey', 'uae'],
+  apac: ['australia', 'india', 'indonesia', 'korea', 'malaysia', 'thailand', 'vietnam']
+};
+const regionOf = {};
+for (const [r, ks] of Object.entries(MARKET_REGIONS)) for (const k of ks) regionOf[k] = r;
+
+// The trade topics a market guide leans on. Rotating the tail means the
+// twenty-odd market pages spread their links across the whole set instead of
+// piling every one of them onto the same four entries.
+const MARKET_TOPICS_CORE = ['import-duty', 'customs', 'export-docs', 'payment-terms'];
+const MARKET_TOPICS_ROTATING = ['container-cbm', 'air-freight-guide', 'export-process-flow',
+                                'marine-insurance', 'installation-sat', 'power-supply'];
+
+function relatedMarket(key, idx) {
+  const out = [];
+  const peers = MARKET_REGIONS[regionOf[key]] || [];
+  // start just after this market and wrap, so inbound links spread evenly
+  // around the region rather than all landing on its first member
+  const at = peers.indexOf(key);
+  for (let i = 1; i < peers.length && out.length < 3; i++) {
+    const p = peers[(at + i) % peers.length];
+    if (p !== key && MARKETS[p]) out.push(marketLink(p));
+  }
+  const topics = MARKET_TOPICS_CORE.concat(
+    MARKET_TOPICS_ROTATING[idx % MARKET_TOPICS_ROTATING.length],
+    MARKET_TOPICS_ROTATING[(idx + 3) % MARKET_TOPICS_ROTATING.length]);
+  for (const t of topics) if (KB[t] && out.length < REL_MAX + 3) out.push(kbLink(t));
+  out.push(TERMINOLOGY_LINK);
+  return out;
+}
+
+/* --- knowledge → markets: the trade entries a market guide points back at -
+ * Without this the market pages are reachable only from each other and their
+ * hub, which is the corner of the site Google is slowest to reach. The trade
+ * and logistics entries are the ones where naming a destination is genuinely
+ * useful, so they carry the return links, dealt round-robin so every market
+ * gets a share rather than the first few taking them all.
+ */
+const TRADE_KB = ['customs', 'export-docs', 'export-process-flow', 'payment-terms',
+                  'container-cbm', 'air-freight-guide', 'marine-insurance',
+                  'import-duty', 'shtc-export-control', 'trade-services',
+                  'installation-sat', 'power-supply'];
+const marketKeys = Object.keys(MARKETS);
+const tradeMarkets = {};   // kb key -> market keys
+TRADE_KB.forEach((k, i) => {
+  const per = 4;
+  tradeMarkets[k] = Array.from({ length: per },
+    (_, j) => marketKeys[(i * per + j) % marketKeys.length]);
+});
+
+/* --- columns ↔ knowledge: entries the article actually talks about --------
+ * Scored on the entry's own title and tags appearing in the column text, on
+ * word boundaries. Requiring the full title was too strict — an article on
+ * bar-feeder retrofits says "bar feeder" a dozen times and never once says
+ * "Bar Feeder Selection Guide" — so tags carry most of the matching and the
+ * title, when it does appear, counts for more.
+ */
+const columnMentions = new Map();   // column -> [kb key], best match first
+const kbMentionedBy = {};           // kb key -> [column]
+// Tags too generic to identify a subject: they appear in nearly every article.
+const WEAK_TAG = new Set(['export', 'customs', 'quotation', 'turning', 'milling',
+                          'shipping', 'packing', 'maintenance', 'automation',
+                          'drive', 'coating', 'material', 'accuracy', 'service']);
+const wordRe = s => new RegExp('(?:^|[^a-z0-9])' + s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                               + '(?:$|[^a-z0-9])', 'i');
+for (const c of columns) {
+  const text = stripTags(c.inner).toLowerCase();
+  const scored = kbKeys.map(k => {
+    const title = stripTags(KB[k].title).toLowerCase();
+    let score = title.length >= 5 && text.includes(title) ? 5 : 0;
+    for (const t of KB[k].tags || []) {
+      const tag = normTag(t);
+      // latin tags only — the Chinese and Korean tags would match against the
+      // article's own translated sections and make every column match every entry
+      if (tag.length >= 5 && /^[a-z0-9 /-]+$/.test(tag) && !WEAK_TAG.has(tag)
+          && wordRe(tag).test(text)) score++;
+    }
+    return { k, score };
+  }).filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score || a.k.localeCompare(b.k));
+  const hits = scored.map(x => x.k);
+  columnMentions.set(c, hits);
+  for (const k of hits.slice(0, REL_MAX)) (kbMentionedBy[k] = kbMentionedBy[k] || []).push(c);
+}
+const columnLink = c => ({
+  href: `${BASE}column/${c.slug}/`, title: c.title,
+  sub: c.sectionName || 'Expert Column'
+});
+
+function relatedColumn(c) {
+  const out = (columnMentions.get(c) || []).slice(0, REL_MAX).map(kbLink);
+  out.push(TERMINOLOGY_LINK);
+  return out;
+}
+
 /* ---------------------------------------------------------- render an entry */
 const ORG = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE };
 const PUBLISHER = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE,
                     logo: { '@type': 'ImageObject', url: SITE + LOGO } };
 function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogImage, bodyHtml,
                        published, updated, tags, crumb, deeplink, section,
-                       schemaType, articleSection, suppressHeader, track }) {
+                       schemaType, articleSection, suppressHeader, track, related }) {
   let ld;
   if (schemaType === 'WebPage') {
     // Markets are informational location/market pages, not articles.
@@ -537,7 +727,8 @@ function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogIm
   const main = `${header}
   <a class="kbp-cta" href="${deeplink}">${deeplink.includes('#') ? 'View interactive version' : 'Open full site'} · 完整互動版 · 인터랙티브 버전 →</a>
   <div class="kbp-body">${rewriteAssets(rewriteNav(bodyHtml))}</div>
-  ${tagHtml}`;
+  ${tagHtml}
+  ${relatedHtml(related)}`;
   emit(url.replace(SITE, ''), url.replace(SITE, ''),
     pageShell({ depth, url, title: seoTitle || title, desc,
                 ogImage: ogImage || SITE + LOGO, ld, crumb, main, track }));
@@ -563,6 +754,10 @@ for (const [key, item] of Object.entries(KB)) {
     schemaType: 'TechArticle', articleSection: item.articleSection || (item.tags && item.tags[0]) || 'Knowledge',
     crumb: `› <a href="${BASE}knowledge/">Knowledge</a> › ${attrEsc(item.title)}`,
     deeplink: `${BASE}#kb-${key}`, section: 'knowledge',
+    related: relatedKnowledge(key)
+      .concat((kbMentionedBy[key] || []).slice(0, 2).map(columnLink))
+      .concat((tradeMarkets[key] || []).filter(m => MARKETS[m]).map(marketLink))
+      .concat(TERMINOLOGY_LINK),
     track: {
       name: 'view_knowledge',
       params: { item_key: key, item_title: item.title,
@@ -577,6 +772,7 @@ for (const [key, item] of Object.entries(KB)) {
 // with the constant of the same name in index.html; a per-market `reviewed`
 // field overrides it once an individual guide is revised.
 const MARKET_REVIEWED = '2026-06';
+let marketIdx = 0;
 for (const [key, item] of Object.entries(MARKETS)) {
   const url = `${SITE}markets/${key}/`;
   const desc = SEO_DESC['market:' + key] || clip(stripTags(item.body || ''), 155);
@@ -596,6 +792,7 @@ for (const [key, item] of Object.entries(MARKETS)) {
     schemaType: 'WebPage',
     crumb: `› <a href="${BASE}markets/">Markets</a> › ${attrEsc(item.title)}`,
     deeplink: `${BASE}`, section: 'markets',
+    related: relatedMarket(key, marketIdx++),
     track: {
       name: 'view_market',
       params: { market_key: key, item_key: key, item_title: item.title,
@@ -617,6 +814,7 @@ for (const c of columns) {
     schemaType: 'Article', articleSection: c.sectionName || 'Expert Column',
     crumb: `› <a href="${BASE}column/">Columns</a> › ${attrEsc(c.title)}`,
     deeplink: `${BASE}#${c.id}`, section: 'column',
+    related: relatedColumn(c),
     track: {
       name: 'view_column',
       // c.id is the same col-N the in-app event sends, so the two views of a

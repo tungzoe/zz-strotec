@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -206,6 +216,10 @@ body{margin:0}
       </div>
     </div>
   <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Smart Automation · Vision-Guided Robotics</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/automation/">CNC Loading/Unloading: Gantry Loader vs. Robotic Arm<span class="s">CNC 自動化上下料：龍門式搬運機械手 vs. 多軸機械手臂 · CNC 로딩/언로딩: 갠트리 로더 vs. 다관절 로봇 암</span></a></li><li><a href="/knowledge/chip-conveyor/">Chip Management Systems: Selecting the Right Conveyor for CNC Machining<span class="s">切屑管理系統：CNC 加工的鐵屑輸送機選型指南 · 칩 관리 시스템: CNC 가공에 맞는 컨베이어 선정 가이드</span></a></li><li><a href="/knowledge/tool-holder/">Tool Holders &amp; Turrets<span class="s">刀具座與刀塔 · 툴 홀더 &amp; 터렛</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>

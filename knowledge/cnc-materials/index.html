@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -396,6 +406,10 @@ body{margin:0}
       <p style="margin-top:18px">소재에 맞는 공구도, 기계의 강성과 주변장치 지원이 뒷받침될 때 효과가 있습니다. 인코넬·티타늄 같은 난삭재에는 <button class="nav-btn" onclick="location.href='/knowledge/coolant-cts/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 CTS</button>와 강력한 <button class="nav-btn" onclick="location.href='/knowledge/live-tool/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">BMT 동력 공구대</button> 업그레이드가 안정적인 무인 가공에 특히 도움이 됩니다. <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">공구·절삭유 솔루션 문의 →</button></p>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">material</span><span class="tag-pill">stainless steel</span><span class="tag-pill">titanium</span><span class="tag-pill">aluminium</span><span class="tag-pill">brass</span><span class="tag-pill">copper</span><span class="tag-pill">Inconel</span><span class="tag-pill">tool steel</span><span class="tag-pill">cutting speed</span><span class="tag-pill">SFM</span><span class="tag-pill">不鏽鋼</span><span class="tag-pill">鈦合金</span><span class="tag-pill">鋁合金</span><span class="tag-pill">英高鎳</span><span class="tag-pill">工具鋼</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/cutting-tools/">Why Carbide Inserts Wear Too Fast: CNC Tool Coating &amp; Cutting Parameter Guide<span class="s">碳化鎢刀片為何磨耗過快：CNC 刀具塗層與切削參數指南 · 초경 인서트가 빨리 마모되는 이유: CNC 공구 코팅 &amp; 절삭 조건 가이드</span></a></li><li><a href="/knowledge/gcode/">G-Code Quick Reference<span class="s">G-Code 快速參考 · G-Code 빠른 참조</span></a></li><li><a href="/knowledge/chip-conveyor/">Chip Management Systems: Selecting the Right Conveyor for CNC Machining<span class="s">切屑管理系統：CNC 加工的鐵屑輸送機選型指南 · 칩 관리 시스템: CNC 가공에 맞는 컨베이어 선정 가이드</span></a></li><li><a href="/knowledge/coolant-cts/">Coolant Management &amp; CTS: Maximizing CNC Tool Life and Stability<span class="s">冷卻液管理與中心出水系統：最大化 CNC 刀具壽命與穩定性 · 절삭유 관리 &amp; CTS: CNC 공구 수명과 안정성 극대화</span></a></li><li><a href="/column/ball-vs-roller-linear-guides-how-to-balance/">Ball vs. Roller Linear Guides: How to Balance Machining Precision and Lifespan<span class="s">Core Components · Linear Guides</span></a></li><li><a href="/column/navigating-cbam-how-green-machining-impacts-your-sourcing/">How CBAM and Green Machining Affect Your Sourcing Strategy<span class="s">Sourcing Strategy · CBAM Compliance</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>

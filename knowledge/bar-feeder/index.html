@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -414,6 +424,10 @@ body{margin:0}
       </div>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">automation</span><span class="tag-pill">CNC lathe</span><span class="tag-pill">turning</span><span class="tag-pill">bar stock</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/cnc-lathe/">CNC Lathe Specification Guide<span class="s">CNC 車床規格指南 · CNC 선반 사양 가이드</span></a></li><li><a href="/knowledge/automation/">CNC Loading/Unloading: Gantry Loader vs. Robotic Arm<span class="s">CNC 自動化上下料：龍門式搬運機械手 vs. 多軸機械手臂 · CNC 로딩/언로딩: 갠트리 로더 vs. 다관절 로봇 암</span></a></li><li><a href="/knowledge/gcode/">G-Code Quick Reference<span class="s">G-Code 快速參考 · G-Code 빠른 참조</span></a></li><li><a href="/knowledge/live-tool/">Live Tool Holders (動力刀座)<span class="s">動力刀座 · 라이브 툴 홀더 (동력 공구대)</span></a></li><li><a href="/knowledge/chip-conveyor/">Chip Management Systems: Selecting the Right Conveyor for CNC Machining<span class="s">切屑管理系統：CNC 加工的鐵屑輸送機選型指南 · 칩 관리 시스템: CNC 가공에 맞는 컨베이어 선정 가이드</span></a></li><li><a href="/knowledge/servo-motor/">Servo Motor &amp; Drive Systems<span class="s">伺服馬達與驅動系統 · 서보 모터 &amp; 드라이브 시스템</span></a></li><li><a href="/column/eliminating-material-vibration-high-rpm-synchronization-between-bar/">High-RPM Synchronization Between Bar Feeders and Guide Bushings<span class="s">Automation · Bar Feeding</span></a></li><li><a href="/column/linear-guideway-maintenance-guide-maximize-your-cnc-precision/">How Linear Guideway Maintenance Protects CNC Precision<span class="s">Maintenance · CNC Precision</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>

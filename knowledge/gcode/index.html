@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -273,6 +283,10 @@ body{margin:0}
       </ul>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">G-code</span><span class="tag-pill">M-code</span><span class="tag-pill">CNC programming</span><span class="tag-pill">turning</span><span class="tag-pill">milling</span><span class="tag-pill">cutting speed</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/bar-feeder/">Bar Feeder Systems<span class="s">送料機系統 · 바피더 시스템</span></a></li><li><a href="/knowledge/cnc-lathe/">CNC Lathe Specification Guide<span class="s">CNC 車床規格指南 · CNC 선반 사양 가이드</span></a></li><li><a href="/knowledge/cnc-materials/">CNC Machining Material Guide: Speeds, Coolant &amp; Tooling for 7 Common Metals<span class="s">CNC 加工材質指南：7 種常見金屬的切削速度、冷卻策略與刀具選型 · CNC 가공 소재 가이드: 7대 금속의 절삭 속도·절삭유·공구</span></a></li><li><a href="/knowledge/cutting-tools/">Why Carbide Inserts Wear Too Fast: CNC Tool Coating &amp; Cutting Parameter Guide<span class="s">碳化鎢刀片為何磨耗過快：CNC 刀具塗層與切削參數指南 · 초경 인서트가 빨리 마모되는 이유: CNC 공구 코팅 &amp; 절삭 조건 가이드</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>

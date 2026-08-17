@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -246,6 +256,10 @@ body{margin:0}
       <p style="margin-top:18px">CMM과 계측실에 큰 투자를 해도, 기계가 공차를 못 지키면 불량률은 높은 채로 남습니다. 진정한 정밀도는 절삭날에서 시작됩니다. 강성 높은 <button class="nav-btn" onclick="location.href='/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>, 정밀 <button class="nav-btn" onclick="location.href='/knowledge/servo-motor/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터</button>, 런아웃이 낮은 <button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">공구대</button>를 갖추면 부품이 CMM 검사를 처음에 통과할 가능성이 높아집니다. 기계 정밀도 자체는 <button class="nav-btn" onclick="location.href='/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">기계 정밀도 가이드</button>를 참고하세요. <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 CNC 부품 문의 →</button></p>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">metrology</span><span class="tag-pill">CMM</span><span class="tag-pill">micrometer</span><span class="tag-pill">vernier caliper</span><span class="tag-pill">bore gauge</span><span class="tag-pill">dial indicator</span><span class="tag-pill">height gauge</span><span class="tag-pill">surface roughness</span><span class="tag-pill">Ra</span><span class="tag-pill">runout</span><span class="tag-pill">量測</span><span class="tag-pill">三次元</span><span class="tag-pill">表面粗糙度</span><span class="tag-pill">跳動</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/column/optimizing-live-tool-holders-for-swiss-type-lathes/">Vibration Control for Live Tool Holders on Swiss-Type Lathes<span class="s">Tooling · Swiss-Type Lathes</span></a></li><li><a href="/column/linear-guideway-maintenance-guide-maximize-your-cnc-precision/">How Linear Guideway Maintenance Protects CNC Precision<span class="s">Maintenance · CNC Precision</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>

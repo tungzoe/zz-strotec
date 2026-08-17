@@ -107,6 +107,16 @@ body{margin:0}
 .kbp-hublist a:hover{border-color:var(--gold)}
 .kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
 .kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
 </style>
 </head>
 <body>
@@ -315,6 +325,10 @@ body{margin:0}
       <p style="margin-top:18px">소프트웨어 보정에는 한계가 있습니다. 진정한 정밀도는 강성 높은 기구부와 열 안정성에서 시작됩니다. 신규 제작이든 리트로핏이든, 고급 <button class="nav-btn" onclick="location.href='/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>·정밀 볼스크루·견고한 <button class="nav-btn" onclick="location.href='/knowledge/coolant-cts/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">스핀들 냉각/CTS</button>를 갖추는 것이 장기 마이크론급 정밀도를 위한 가장 확실한 길입니다. 관련 증상은 <button class="nav-btn" onclick="location.href='/knowledge/cnc-troubleshooting/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CNC 트러블슈팅</button>도 참고하세요. <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 전동·공구 솔루션 문의 →</button></p>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">accuracy</span><span class="tag-pill">positioning accuracy</span><span class="tag-pill">repeatability</span><span class="tag-pill">backlash</span><span class="tag-pill">ball screw</span><span class="tag-pill">thermal error</span><span class="tag-pill">machine leveling</span><span class="tag-pill">ISO 230-2</span><span class="tag-pill">定位精度</span><span class="tag-pill">重複精度</span><span class="tag-pill">背隙</span><span class="tag-pill">熱誤差</span><span class="tag-pill">滾珠螺桿</span><span class="tag-pill">機台水平</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/installation-sat/">CNC Machine Installation, Commissioning &amp; Site Acceptance Checklist<span class="s">CNC 機台到廠安裝、試車與驗收清單 · CNC 기계 설치·시운전·현장 인수검사(SAT) 체크리스트</span></a></li><li><a href="/knowledge/spindle-cooling/">Spindle Cooling &amp; Thermal Compensation<span class="s">主軸冷卻與熱補償 · 주축 냉각 및 열보정</span></a></li><li><a href="/column/why-cheap-cnc-machines-cost-more-the-truth/">Why Cheap CNC Machines Cost More Over Their Lifetime<span class="s">Machine Procurement · Total Cost of Ownership</span></a></li><li><a href="/column/before-paying-the-balance-how-to-conduct-a/">How to Run a CNC Factory Acceptance Test Before Paying the Balance<span class="s">Procurement · Factory Acceptance Test</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
 </main>
 <footer class="kbp-footer">
   <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
