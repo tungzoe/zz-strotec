@@ -58,22 +58,22 @@
 <script>
   gtag('js', new Date());
   gtag('config', 'G-LR7TGXJLS9');
-  gtag('event', "view_knowledge", {"item_key":"spindle","item_title":"Spindle Technology","site_language":"en","landing":true});
+  gtag('event', "view_knowledge", {"item_key":"spindle","item_title":"CNC Spindle Selection, Acceptance Testing and Troubleshooting","site_language":"en","landing":true});
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spindle Technology | Z&amp;Z STROTEC</title>
-<meta name="description" content="Belt, gear, direct-drive and built-in spindles compared: bearing types, the speed against torque trade-off, and spindle nose interface standards.">
+<title>CNC Spindle Selection, Acceptance Testing and Troubleshooting | Z&amp;Z STROTEC</title>
+<meta name="description" content="Spindle selection past maximum RPM: torque curve, tooling interface, bearings and lubrication, plus runout, warm-up, temperature and vibration checks.">
 <link rel="canonical" href="https://zz-strotec.com/knowledge/spindle/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spindle Technology">
-<meta property="og:description" content="Belt, gear, direct-drive and built-in spindles compared: bearing types, the speed against torque trade-off, and spindle nose interface standards.">
+<meta property="og:title" content="CNC Spindle Selection, Acceptance Testing and Troubleshooting">
+<meta property="og:description" content="Spindle selection past maximum RPM: torque curve, tooling interface, bearings and lubrication, plus runout, warm-up, temperature and vibration checks.">
 <meta property="og:url" content="https://zz-strotec.com/knowledge/spindle/">
 <meta property="og:site_name" content="Z&amp;Z STROTEC">
-<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta property="og:image" content="https://zz-strotec.com/photo/cnc-spindle-selection-acceptance-troubleshooting.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Spindle Technology","description":"Belt, gear, direct-drive and built-in spindles compared: bearing types, the speed against torque trade-off, and spindle nose interface standards.","inLanguage":["en","zh-Hant","ko"],"articleSection":"spindle","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/knowledge/spindle/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"CNC Spindle Selection, Acceptance Testing and Troubleshooting","description":"Spindle selection past maximum RPM: torque curve, tooling interface, bearings and lubrication, plus runout, warm-up, temperature and vibration checks.","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.com/photo/cnc-spindle-selection-acceptance-troubleshooting.jpg","articleSection":"spindle","datePublished":"2026-06-29","dateModified":"2026-08-17","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/knowledge/spindle/"}</script>
 <link rel="stylesheet" href="../../assets/kb-pages.css">
 <style>
 /* --- standalone SEO page chrome --- */
@@ -131,80 +131,692 @@ body{margin:0}
   </nav>
 </header>
 <main class="kbp-wrap">
-  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/knowledge/">Knowledge</a> › Spindle Technology</div>
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/knowledge/">Knowledge</a> › CNC Spindle Selection, Acceptance Testing and Troubleshooting</div>
   
-  <h1 class="kbp-h1">Spindle Technology</h1>
-  <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">主軸技術</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">주축 기술</span></p>
-  <p class="kbp-byline">Published: 2026-06-29 · Written by Z&amp;Z STROTEC</p>
+  <h1 class="kbp-h1">CNC Spindle Selection, Acceptance Testing and Troubleshooting</h1>
+  <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">CNC 主軸選型、驗收與故障診斷指南</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">CNC 주축 선정·검수·고장 진단 가이드</span></p>
+  <p class="kbp-byline">Published: 2026-06-29 · Updated: 2026-08-17 · Written by Z&amp;Z STROTEC</p>
   <a class="kbp-cta" href="/#kb-spindle">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
   <div class="kbp-body"><section lang="en">
-      <h4>Spindle Types</h4>
+      <img src="/photo/cnc-spindle-selection-acceptance-troubleshooting.jpg" alt="A technician checking CNC spindle radial runout with a precision test arbor and dial indicator" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:4px 0 12px;display:block">
+
+      <h4>Maximum RPM Is Not the Whole Specification</h4>
+      <p style="margin:0 0 12px">The spindle directly affects machining capability, surface finish, tool life and the risk of unplanned downtime. Comparing only maximum speed and motor power can overlook the factors that decide real cutting performance: the torque curve, base speed, tooling interface, bearing arrangement, lubrication and cooling.</p>
+      <p style="margin:0 0 12px">A spindle built for high-speed aluminium or mould work will not necessarily suit heavy steel cutting, and a spindle with generous low-speed torque will not necessarily suit long runs at very high speed. Selection should start from the workpiece, the tool and the cutting process rather than from a chosen maximum RPM.</p>
+
+      <h4>1. Information Required for Spindle Selection</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.1 Material and operation</strong></p>
       <ul>
-        <li><strong>Belt-driven spindle</strong>: Motor connected via belt. Lower cost. Vibration transmitted from motor. Suitable for lower RPM applications.</li>
-        <li><strong>Gear-driven spindle</strong>: High torque at low RPM. Common in heavy-duty lathes for large workpieces.</li>
-        <li><strong>Direct-drive / motorized spindle (電主軸)</strong>: Motor integrated with spindle. Highest speed, lowest vibration. Premium option for high-speed machining.</li>
-        <li><strong>Built-in motor spindle</strong>: Similar to direct drive — motor rotor mounted directly on spindle shaft.</li>
+        <li>Aluminium, small-diameter tools and finishing work usually favour high-speed capability.</li>
+        <li>Steel, stainless steel and larger tools generally need more low-speed torque.</li>
+        <li>Drilling, tapping, heavy roughing and high-speed contouring make different demands on the spindle.</li>
+        <li>A lathe spindle also has to be checked against bar diameter, spindle bore, chuck and draw-tube dimensions.</li>
       </ul>
 
-      <h4>Bearing Types</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.2 Power, torque and base speed</strong></p>
+      <p style="margin:0 0 12px">Rated power on a datasheet does not represent cutting capability on its own. Ask for:</p>
       <ul>
-        <li><strong>Angular contact ball bearings</strong>: Standard for most CNC machine spindles. Good speed and accuracy balance.</li>
-        <li><strong>Roller bearings</strong>: Higher load capacity, lower speed. For heavy turning.</li>
-        <li><strong>Hydrostatic bearings</strong>: Oil film support — excellent accuracy, used in ultra-precision machines.</li>
+        <li>Continuous and short-time power</li>
+        <li>Continuous and short-time torque</li>
+        <li>Base speed</li>
+        <li>Constant-torque and constant-power ranges</li>
+        <li>Power and torque available at the speed you will actually cut at</li>
+      </ul>
+      <p style="margin:0 0 12px">Two spindles carrying the same stated power can behave very differently in low-speed heavy cutting, because base speed and drive arrangement differ.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.3 Drive arrangement</strong></p>
+      <ul>
+        <li><strong>Belt-driven</strong>: a mature arrangement, relatively easy to service, and speed and torque can be adjusted through the pulley ratio. Belt tension, wear and balance all show up as vibration.</li>
+        <li><strong>Direct-coupled</strong>: the motor drives the spindle directly, with fewer transmission parts, and suits medium to high speeds. Coupling accuracy and alignment matter a great deal.</li>
+        <li><strong>Built-in motor</strong>: the motor is integrated into the spindle, suiting high speed and rapid acceleration, but placing higher demands on cooling, bearings, lubrication and service capability.</li>
+        <li><strong>Geared</strong>: gives higher low-speed torque for heavy cutting, at the cost of gear noise, lubrication requirements and backlash.</li>
+      </ul>
+      <p style="margin:0 0 12px">No single arrangement is best in every condition. The choice follows material, tool diameter, cutting load and the expected speed range.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.4 Tooling interface</strong></p>
+      <p style="margin:0 0 12px">BT, BBT, CAT, HSK and polygonal taper interfaces differ in contact method, rigidity, high-speed behaviour and tool-change system. Confirming the interface also means confirming:</p>
+      <ul>
+        <li>Taper form and size</li>
+        <li>Pull stud or clamping mechanism</li>
+        <li>Spindle drawbar force</li>
+        <li>Whether tooling has to be balanced</li>
+        <li>Compatibility with the existing magazine and holders</li>
+        <li>Coolant-through-spindle pressure and sealing</li>
+      </ul>
+      <p style="margin:0 0 12px">A matching interface name does not mean every holder, pull stud or tool-change component is interchangeable.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.5 Bearings, preload and lubrication</strong></p>
+      <p style="margin:0 0 12px">Machine-tool spindles commonly use precision angular contact ball bearings, sometimes combined with cylindrical roller bearings, to reach the required radial rigidity, axial load capacity and speed capability.</p>
+      <p style="margin:0 0 12px">Preload raises rigidity and running accuracy, but preload, speed, load and temperature are linked. Excessive operating preload increases friction and temperature rise, so maximum rigidity is not the goal on its own.</p>
+      <p style="margin:0 0 12px">Grease and oil-air lubrication are both common. A high-speed oil-air system has to deliver a small, metered oil quantity consistently; too little, too much, the wrong oil or contamination can all produce abnormal temperature rise and bearing damage.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.6 Manufacturing accuracy and dynamic balancing</strong></p>
+      <p style="margin:0 0 12px">A high-quality spindle depends on more than precision bearings. Its shaft, taper, bearing seats and mating surfaces require precision machining and grinding to control roundness, concentricity, face squareness and fit. Geometric errors in these features show up in spindle runout, bearing loading and tool-change repeatability.</p>
+      <p style="margin:0 0 12px">After assembly, the rotating components and the complete spindle assembly are normally dynamically or trim balanced for their design speed. Balancing corrects uneven mass distribution and couple unbalance, reducing centrifugal force, vibration, bearing load and surface marking at high speed.</p>
+      <p style="margin:0 0 12px">A balanced spindle does not make every tool assembly fit for high-speed use. The holder, collet, cutting tool, pull stud and retained coolant form a second rotating system. Where the spindle and tooling manufacturers require it, the complete tool assembly should be balanced and its overhang controlled.</p>
+
+      <h4>2. Acceptance Checks for a New or Replaced Spindle</h4>
+      <p style="margin:0 0 12px">A spindle should not be accepted simply because it turns without an alarm. Record the following under test conditions agreed in advance.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.1 Visual and system checks</strong></p>
+      <ul>
+        <li>Spindle nameplate, model and serial number</li>
+        <li>Tooling interface and pull-stud specification</li>
+        <li>Lubricant, coolant and air-supply conditions</li>
+        <li>Hoses, fittings and seals checked for leakage</li>
+        <li>Encoder, orientation and tool-change functions</li>
+        <li>Chiller setpoint against actual temperature</li>
       </ul>
 
-      <h4>Spindle Speed vs Torque Tradeoff</h4>
-      High RPM spindles sacrifice torque. For hard/heavy materials → choose higher torque (lower RPM range). For small diameter, aluminum, or finishing → choose high RPM spindle.
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.2 Spindle runout</strong></p>
+      <p style="margin:0 0 12px">Use a calibrated test arbor and indicator to measure radial runout near the spindle nose and at an agreed projection. The report should record at least:</p>
+      <ul>
+        <li>Arbor specification and calibration status</li>
+        <li>Measurement position and projection length</li>
+        <li>Whether the spindle was cold or warmed up</li>
+        <li>Measurement method and instrument resolution</li>
+        <li>Measured result and acceptance limit</li>
+      </ul>
+      <p style="margin:0 0 12px">Measured runout can include error from the spindle, the taper, the arbor, the holder, the clamping and the measuring setup, so results only compare when the method is held constant.</p>
 
-      <h4>Nose Type (Spindle Interface)</h4>
-      A2-5, A2-6, A2-8, A2-11 are common spindle nose sizes. Chuck size and bar feeder collet size depend on this specification.
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.3 Temperature rise, thermal displacement and compensation</strong></p>
+      <p style="margin:0 0 12px">As a spindle runs from cold to thermal stability, the bearings, motor and spindle head deform. Following the manufacturer's procedure, raise speed in stages and record:</p>
+      <ul>
+        <li>Temperature at the spindle nose or a specified point</li>
+        <li>Coolant inlet and outlet temperature</li>
+        <li>Speed and duration at each stage</li>
+        <li>Axial or radial thermal displacement</li>
+        <li>Time taken to reach a stable condition</li>
+      </ul>
+      <p style="margin:0 0 12px">Modern machine tools do not rely on warm-up alone to manage thermal deformation. Depending on the machine, spindle cooling and oil-air lubrication are combined with thermally balanced structural design, temperature sensors and CNC thermal-error compensation. Using spindle speed, running time and measured machine or ambient temperature, the control can estimate thermal displacement and correct axis position.</p>
+      <p style="margin:0 0 12px">Compensation does not replace correct lubrication, cooling or warm-up. Cooling controls heat generation and temperature distribution; compensation corrects the predictable displacement that remains. A chiller failure, a faulty sensor or a thermal condition outside the compensation model can still produce unacceptable dimensional error on a machine that has the function.</p>
+      <p style="margin:0 0 12px">When accepting a machine with thermal compensation, confirm:</p>
+      <ul>
+        <li>Which temperature and operating data the compensation uses</li>
+        <li>When compensation becomes active, and whether it can be monitored</li>
+        <li>Actual dimensional change from a cold start to thermal stability</li>
+        <li>Whether spindle replacement or machine recalibration requires new compensation data</li>
+        <li>The test conditions used with compensation enabled and disabled</li>
+      </ul>
+      <p style="margin:0 0 12px">There is no universal normal temperature or compensation value for every spindle. Ambient temperature, speed, bearings, lubrication, cooling, sensor position and machine structure all change the result, so judgement rests on the manufacturer's specification for that model and baseline data taken under comparable conditions.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.4 Vibration and abnormal noise</strong></p>
+      <p style="margin:0 0 12px">A vibration measurement has to record the measuring point, sensor direction, mounting method, speed, the tool or arbor fitted, and the frequency band. A single overall vibration value is rarely enough to diagnose a fault on its own.</p>
+      <p style="margin:0 0 12px">ISO 20816-1 sets out general principles for measuring and evaluating machine vibration, but different machines still need evaluation criteria suited to their structure and duty. Figures published for general rotating machinery should not be treated as universal alarm levels for machine-tool spindles.</p>
+      <p style="margin:0 0 12px">In practice it is more useful to establish a baseline for the same spindle at the same measuring point and speed, then watch how amplitude and spectrum change over time.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.5 Cutting test</strong></p>
+      <p style="margin:0 0 12px">Final acceptance should include a cutting test with a representative workpiece and tooling, covering:</p>
+      <ul>
+        <li>Surface roughness</li>
+        <li>Dimensional and geometric accuracy</li>
+        <li>Whether chatter appears at particular speeds</li>
+        <li>Spindle load</li>
+        <li>Temperature change through the machining cycle</li>
+        <li>Abnormal wear or fretting on tools and holders</li>
+      </ul>
+      <p style="margin:0 0 12px">Running clean with no load does not prove the spindle holds accuracy under real cutting load.</p>
+
+      <h4>3. Why Spindle Warm-Up Matters</h4>
+      <p style="margin:0 0 12px">Warm-up gradually distributes lubricant and brings the bearings, shaft, motor and cooling system close to a stable operating temperature. Taking a cold spindle straight to maximum speed can cause rapid temperature change and unstable thermal displacement.</p>
+      <p style="margin:0 0 12px">The warm-up program should follow the machine manual, normally starting slow and raising speed in stages. High-speed spindles also require a suitable, balanced holder or test tool in the taper where the manufacturer specifies one.</p>
+      <p style="margin:0 0 12px">Requirements vary widely between spindle designs. How long an idle period calls for a warm-up, whether a holder must be fitted, and the speed and duration of each stage all come from the manual for that machine, and should not be carried over from another builder's procedure.</p>
+
+      <h4>4. Five Common Symptoms</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Symptom 1: abnormal temperature rise</strong></p>
+      <p style="margin:0 0 12px">Possible causes include insufficient or excessive lubrication, the wrong oil, a chiller or cooling-circuit fault, incorrect bearing preload or assembly, seal friction, tool imbalance, excessive cutting load, and a faulty sensor or setting.</p>
+      <p style="margin:0 0 12px">Reduce load first and compare against the same spindle's earlier temperatures at the same speed, rather than dismantling the spindle. Stop and call qualified service if temperature climbs quickly without stabilising, or arrives together with abnormal noise, vibration or a lubrication alarm.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Symptom 2: increased noise or vibration</strong></p>
+      <p style="margin:0 0 12px">Possible causes include bearing damage, an unbalanced tool or holder, damage to the holder, taper or pull stud, worn or incorrectly tensioned belts, coupling misalignment, cutting chatter, and vibration transmitted from other equipment or the foundation.</p>
+      <p style="margin:0 0 12px">Compare the bare spindle, a balanced holder and the actual tool in turn, recording results at several speeds. If the vibration only appears with one tool or one cutting condition, the cause is not necessarily the spindle bearings.</p>
+      <p style="margin:0 0 12px">If vibration rises with speed, or grows sharply within a particular speed band, check the balance of the spindle assembly and of the complete tool assembly as well as the bearings. Wear or geometric error on the shaft, taper or mating surfaces can also produce runout and unbalance effects. After taper regrinding, bearing replacement or replacement of rotating parts, runout and balance should be verified again.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Symptom 3: increased runout or poor surface finish</strong></p>
+      <p style="margin:0 0 12px">Work through these in order:</p>
+      <ol>
+        <li>Cutting tool and cutting edge</li>
+        <li>Holder and collet</li>
+        <li>Pull stud and clamping force</li>
+        <li>Cleanliness and condition of the spindle taper</li>
+        <li>Test arbor runout</li>
+        <li>Spindle bearings and thermal state</li>
+      </ol>
+      <p style="margin:0 0 12px">A small chip, an oil film, a knock or fretting on the holder taper is enough to cost repeatability.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Symptom 4: tool sticking or unstable tool changes</strong></p>
+      <p style="margin:0 0 12px">Possible causes include a temperature difference between spindle and holder, taper contamination, an incompatible pull stud, a worn drawbar mechanism, insufficient clamping force, and air-pressure or sensor faults.</p>
+      <p style="margin:0 0 12px">Do not strike the spindle or modify the pull stud as an improvised fix. Confirm the holder, pull stud, drawbar force, air pressure and tool-change mechanism against the manufacturer's procedure first.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Symptom 5: chatter during cutting</strong></p>
+      <p style="margin:0 0 12px">Chatter is a dynamic problem formed by the spindle, tool, workpiece, fixture, machine structure and cutting parameters together. Options include:</p>
+      <ul>
+        <li>Shortening tool overhang</li>
+        <li>Increasing workpiece and fixture rigidity</li>
+        <li>Changing spindle speed</li>
+        <li>Adjusting depth of cut, width of cut and feed</li>
+        <li>Using a tool with different pitch or a different number of flutes</li>
+        <li>Checking holder balance and clamping</li>
+      </ul>
+      <p style="margin:0 0 12px">Until those have been worked through, surface chatter marks are not evidence of bearing damage.</p>
+
+      <h4>5. Building a Preventive Maintenance Record</h4>
+      <p style="margin:0 0 12px">A comparable condition record is more useful than a fixed replacement interval.</p>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Daily or per shift</strong></p>
+      <ul>
+        <li>Confirm the warm-up program has run</li>
+        <li>Check for abnormal noise, vibration and oil leakage</li>
+        <li>Check air pressure, lubrication and cooling alarms</li>
+        <li>Clean and inspect holders and the spindle taper</li>
+        <li>Note any unusual machined surface or spindle load</li>
+      </ul>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">Periodic checks</strong></p>
+      <ul>
+        <li>Spindle runout</li>
+        <li>Tool clamping force</li>
+        <li>Temperature at representative speeds</li>
+        <li>Vibration trend at fixed measuring points</li>
+        <li>Belts, couplings, chiller and lubrication equipment</li>
+        <li>Coolant-through-spindle rotary union and seals</li>
+      </ul>
+      <p style="margin:0 0 12px">Trend data has to be collected at the same speed, warm-up state, measuring point, tooling and ambient conditions, or it loses its diagnostic value.</p>
+
+      <h4>6. Information to Provide for a Spindle Inquiry</h4>
+      <ul>
+        <li>Machine brand, model, year and serial number</li>
+        <li>Spindle model, serial number and nameplate photograph</li>
+        <li>Photographs of the spindle nose, connectors, motor and encoder</li>
+        <li>Tooling interface and pull-stud specification</li>
+        <li>Maximum speed, power, torque and drive arrangement</li>
+        <li>Lubrication and cooling method</li>
+        <li>Coolant-through-spindle specification</li>
+        <li>Alarm history and the conditions in which it occurs</li>
+        <li>Temperature, runout and vibration records</li>
+        <li>Any previous collision, coolant ingress or lubrication interruption</li>
+        <li>Whether a new, repaired or compatible replacement spindle is preferred</li>
+      </ul>
+      <p style="margin:0 0 12px">The more complete the information, the lower the risk of receiving a spindle that looks similar but cannot actually be installed or run.</p>
+
+      <h4>Conclusion</h4>
+      <p style="margin:0 0 12px">Maximum speed is one part of spindle selection. A reliable solution has to meet the power and torque the work needs, together with the tooling interface, rigidity, thermal behaviour, lubrication, cooling and available service support.</p>
+      <p style="margin:0 0 12px">Acceptance should document runout, temperature rise, vibration and cutting results using agreed test conditions. In service, trend records taken under the same conditions catch change early, and keep tooling, fixturing or parameter problems from being misdiagnosed as spindle failure.</p>
+
+      <h4>Sources</h4>
+      <ul>
+        <li><a href="https://www.iso.org/standard/63180.html" target="_blank" rel="noopener">ISO 20816-1:2016 — general guidelines for measurement and evaluation of machine vibration</a></li>
+        <li><a href="https://www.nsk.com/content/dam/nsk/eu/en_gb/documents/corporate-europe/EN_NSK_Bro_MTM-Guide_low-res.pdf" target="_blank" rel="noopener">Bearing manufacturer data: machine-tool spindle bearing arrangements, preload and lubrication</a></li>
+        <li><a href="https://evolution.skf.com/en/factors-in-motorised-spindle-design/" target="_blank" rel="noopener">Bearing manufacturer data: heat generation and cooling in motorised spindle design</a></li>
+        <li><a href="https://evolution.skf.com/en/energy-efficient-minimal-quantity-lubrication-for-high-speed-spindles/" target="_blank" rel="noopener">Bearing manufacturer data: minimal-quantity oil-air lubrication for high-speed spindles</a></li>
+        <li><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/reference-documents/mill---spindle---programs--run-in--warm-up--break-in-.html" target="_blank" rel="noopener">Machine builder data: spindle run-in and warm-up program example</a></li>
+        <li><a href="https://www.haascnc.com/service/online-manuals/vf-vm-series---service-manual/vf-vm---40t---spindle.html" target="_blank" rel="noopener">Machine builder service manual: 40-taper spindle inspection items</a></li>
+      </ul>
+
+      <p style="margin:14px 0 12px">Related reading: <button class="nav-btn" onclick="location.href='/knowledge/spindle-cooling/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Spindle Cooling &amp; Thermal Compensation</button>, <button class="nav-btn" onclick="location.href='/knowledge/coolant-cts/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Coolant Systems &amp; CTS</button>, <button class="nav-btn" onclick="location.href='/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Machine Accuracy</button>, <button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Tool Holders &amp; Turrets</button>, and <button class="nav-btn" onclick="location.href='/knowledge/part-lifespan/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Part Lifespan</button>.</p>
+
+      <div style="border-top:1px solid var(--border);margin-top:24px;padding-top:20px">
+        <h4 style="margin-top:0">Looking for a spindle, a repair solution or a compatible replacement?</h4>
+        <p style="margin:0 0 14px">Send the machine and spindle nameplates, interface photographs and operating conditions. Z&amp;Z STROTEC can help confirm specifications, sourcing and export arrangements with Taiwanese manufacturers. Installation, alignment and repair work still has to be carried out by qualified technicians locally.</p>
+        <div style="text-align:center">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">SEND INQUIRY / 立即洽詢 →</button>
+        </div>
+      </div>
+
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">This article provides general selection and maintenance information. Operating procedures, acceptance limits, warm-up programs, lubricants and repair methods must follow the latest documentation from the machine and spindle manufacturer.</p>
     </section><section lang="zh-Hant" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">繁體中文</div>
-      <h4>主軸類型</h4>
+      <img src="/photo/cnc-spindle-selection-acceptance-troubleshooting.jpg" alt="技術人員以精密測試棒與量表檢查 CNC 主軸的徑向偏擺" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:4px 0 12px;display:block">
+
+      <h4>主軸規格不能只看最高轉速</h4>
+      <p style="margin:0 0 12px">主軸直接影響加工能力、表面品質、刀具壽命與停機風險。採購主軸或整台 CNC 工具機時，若只比較最高轉速與馬達功率，很容易忽略真正決定加工表現的扭矩曲線、刀具介面、軸承配置、潤滑與冷卻條件。</p>
+      <p style="margin:0 0 12px">適合模具與鋁合金高速加工的主軸，不一定適合鋼件重切削；低速扭矩充足的主軸，也不一定適合長時間超高速運轉。選型應從工件、刀具與加工條件開始，而不是先訂一個最高轉速。</p>
+
+      <h4>一、主軸選型應確認哪些條件</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1. 加工材料與加工方式</strong></p>
       <ul>
-        <li><strong>皮帶驅動主軸</strong>：馬達透過皮帶連接，成本較低，振動會從馬達傳入，適合較低轉速應用。</li>
-        <li><strong>齒輪驅動主軸</strong>：低轉速時扭力大，常見於重切削大型工件的車床。</li>
-        <li><strong>直驅 / 電主軸</strong>：馬達與主軸整合為一體，轉速最高、振動最小，高速加工的頂級選擇。</li>
-        <li><strong>內藏式馬達主軸</strong>：與直驅類似，馬達轉子直接安裝在主軸上。</li>
+        <li>鋁合金、小徑刀具與精加工通常重視高速性能。</li>
+        <li>鋼、不鏽鋼與較大直徑刀具通常需要較高的低速扭矩。</li>
+        <li>鑽孔、攻牙、重切削與高速曲面加工，對主軸的要求並不相同。</li>
+        <li>車床主軸還須確認棒材直徑、主軸通孔、夾頭與拉管尺寸。</li>
       </ul>
 
-      <h4>軸承類型</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2. 功率、扭矩與基底轉速</strong></p>
+      <p style="margin:0 0 12px">規格表上的額定功率不能單獨代表切削能力。選型時應同時取得：</p>
       <ul>
-        <li><strong>角接觸球軸承</strong>：大多數 CNC 主軸的標準配置，轉速與精度兼顧。</li>
-        <li><strong>滾柱軸承</strong>：承載能力強、轉速較低，適合重切削。</li>
-        <li><strong>液靜壓軸承</strong>：油膜支撐，精度優異，用於超精密加工機台。</li>
+        <li>連續與短時間額定功率</li>
+        <li>連續與短時間扭矩</li>
+        <li>基底轉速</li>
+        <li>恆扭矩與恆功率區間</li>
+        <li>實際加工轉速下可提供的功率與扭矩</li>
+      </ul>
+      <p style="margin:0 0 12px">兩支標示相同功率的主軸，可能因基底轉速與傳動配置不同，在低速重切削時產生完全不同的表現。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">3. 傳動型式</strong></p>
+      <ul>
+        <li><strong>皮帶式</strong>：結構成熟、維修相對容易，也可藉由皮帶輪比調整轉速與扭矩；皮帶張力、磨耗與平衡狀況會影響振動。</li>
+        <li><strong>直結式</strong>：馬達直接連接主軸，傳動零件較少，適合中高速加工；聯軸器精度與對心狀況非常重要。</li>
+        <li><strong>內藏式（電主軸）</strong>：馬達整合於主軸內，適合高速與高加減速應用；對冷卻、軸承、潤滑與維修能力的要求較高。</li>
+        <li><strong>齒輪式</strong>：可提供較高的低速扭矩，適合重切削，但需考慮齒輪噪音、潤滑與背隙。</li>
+      </ul>
+      <p style="margin:0 0 12px">沒有一種傳動方式在所有加工條件下都最好，應依材料、刀具直徑、切削負載與預期轉速範圍選擇。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">4. 刀具介面</strong></p>
+      <p style="margin:0 0 12px">BT、BBT、CAT、HSK 與多角錐度介面在接觸方式、剛性、高速性能與換刀系統上各有差異。確認介面時應一併檢查：</p>
+      <ul>
+        <li>錐度與尺寸</li>
+        <li>拉釘或夾持機構</li>
+        <li>主軸拉刀力</li>
+        <li>刀具是否需要動平衡</li>
+        <li>現有刀庫與刀把的相容性</li>
+        <li>中心出水壓力與密封形式</li>
+      </ul>
+      <p style="margin:0 0 12px">名稱相同，不代表所有刀把、拉釘與換刀零件都可以互換。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">5. 軸承、預壓與潤滑</strong></p>
+      <p style="margin:0 0 12px">工具機主軸常使用精密角接觸滾珠軸承，也可能搭配圓柱滾子軸承，以取得所需的徑向剛性、軸向承載能力與高速性能。</p>
+      <p style="margin:0 0 12px">軸承預壓可提高剛性與旋轉精度，但預壓、轉速、負載與溫度彼此相關。過高的運轉預壓會增加摩擦與溫升，因此不能只追求最大剛性。</p>
+      <p style="margin:0 0 12px">常見潤滑方式包括脂潤滑與油氣潤滑。高速油氣系統必須穩定供應經過控制的少量潤滑油；供油不足、供油過量、油品錯誤或污染，都可能造成異常溫升與軸承損傷。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">6. 製造精度與動平衡</strong></p>
+      <p style="margin:0 0 12px">高品質主軸不只依靠精密軸承。主軸軸心、錐孔、軸承座與配合面也需要經過精密加工與研磨，以控制圓度、同軸度、端面垂直度與配合精度。這些形狀與位置誤差會反映在主軸偏擺、軸承受力與刀具重複裝夾精度上。</p>
+      <p style="margin:0 0 12px">主軸組裝後，旋轉零件與完整主軸總成通常還需依設計轉速進行動平衡或精細平衡修正，用意是修正旋轉質量分布不均所產生的離心力與力偶不平衡，降低高速運轉時的振動、軸承負荷與加工表面紋路。</p>
+      <p style="margin:0 0 12px">主軸完成平衡，不代表任何刀具都能安全高速運轉。實際加工時，刀把、筒夾、刀具、拉釘與殘留冷卻液會共同形成另一個旋轉系統。高速應用應依主軸與刀具製造商的要求，對完整刀具組合進行動平衡並控制伸出長度。</p>
+
+      <h4>二、新機或更換主軸後如何驗收</h4>
+      <p style="margin:0 0 12px">主軸驗收不能只確認可以旋轉。建議在雙方事先約定的測試條件下，留下以下資料。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1. 外觀與系統檢查</strong></p>
+      <ul>
+        <li>主軸銘牌、型號與序號</li>
+        <li>刀具介面與拉釘規格</li>
+        <li>潤滑油、冷卻液與氣壓條件</li>
+        <li>管路、接頭與密封是否洩漏</li>
+        <li>編碼器、定位與換刀功能</li>
+        <li>冷卻機設定值與實際溫度</li>
       </ul>
 
-      <h4>主軸轉速與扭力的取捨</h4>
-      高轉速主軸犧牲扭力。加工硬材料或重切削 → 選高扭力（低轉速）主軸。加工小直徑、鋁料或精修 → 選高轉速主軸。
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2. 主軸偏擺</strong></p>
+      <p style="margin:0 0 12px">使用經校正的測試棒與量表，分別量測靠近主軸端及指定伸出位置的徑向偏擺。報告至少應記錄：</p>
+      <ul>
+        <li>測試棒規格與校正狀態</li>
+        <li>量測位置與伸出長度</li>
+        <li>主軸為冷機或暖機狀態</li>
+        <li>量測方法與量具解析度</li>
+        <li>實測結果與允收標準</li>
+      </ul>
+      <p style="margin:0 0 12px">量到的總偏擺可能包含主軸、錐孔、測試棒、刀把、夾持與量測架設誤差，因此必須使用一致的方法比較。</p>
 
-      <h4>鼻端型式（主軸介面）</h4>
-      A2-5、A2-6、A2-8、A2-11 是常見的主軸鼻端規格。夾頭尺寸及料機筒夾尺寸均依此規格決定。
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">3. 溫升、熱位移與熱補償</strong></p>
+      <p style="margin:0 0 12px">主軸從冷機運轉到熱穩定狀態時，軸承、馬達與主軸頭會產生熱變形。驗收時可依製造商程序逐步提高轉速，同時記錄：</p>
+      <ul>
+        <li>主軸前端或指定位置溫度</li>
+        <li>冷卻液進出口溫度</li>
+        <li>各階段轉速與持續時間</li>
+        <li>軸向或徑向熱位移</li>
+        <li>達到穩定狀態所需時間</li>
+      </ul>
+      <p style="margin:0 0 12px">現代工具機通常不只依靠暖機控制熱變形。部分機型會結合主軸冷卻、油氣潤滑、對稱式結構設計、溫度感測器與 CNC 熱誤差補償。控制器可依主軸轉速、運轉時間、環境或機體溫度等資料，估算熱位移並修正軸向位置，以降低溫度變化對加工尺寸的影響。</p>
+      <p style="margin:0 0 12px">需要注意的是，熱補償不能取代正確的潤滑、冷卻與暖機。冷卻系統的作用是控制熱量與溫度分布；熱補償則是針對仍然存在且可預測的熱變形進行位置修正。若冷卻機故障、溫度感測器異常，或實際熱狀態超出補償模型的適用範圍，即使具備補償功能，也可能無法維持預期精度。</p>
+      <p style="margin:0 0 12px">因此，驗收具備熱補償功能的機台時，應確認：</p>
+      <ul>
+        <li>使用哪些溫度或運轉資料建立補償</li>
+        <li>補償功能何時啟用，以及是否可監看</li>
+        <li>冷機至熱穩定期間的實際尺寸變化</li>
+        <li>機台重新校正或更換主軸後是否需要更新補償參數</li>
+        <li>關閉與開啟補償時採用的測試及判定條件</li>
+      </ul>
+      <p style="margin:0 0 12px">不存在適用所有主軸的單一正常溫度或通用補償量。環境溫度、轉速、軸承、潤滑、冷卻、感測位置與機台結構不同，結果也會不同。判定應以該機型的製造商規格、補償功能說明及相同條件下的歷史基線為準。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">4. 振動與異音</strong></p>
+      <p style="margin:0 0 12px">振動量測必須記錄測點、感測器方向、固定方式、轉速、刀具或測試棒狀態，以及量測頻帶。單一總振動值通常不足以直接判定故障。</p>
+      <p style="margin:0 0 12px">ISO 20816-1 提供機械振動量測與評估的一般原則，但不同機械仍需要適合其結構與用途的評估標準。因此，不宜直接把一般旋轉機械的數值當成所有工具機主軸的通用警戒值。</p>
+      <p style="margin:0 0 12px">實務上更有價值的方法，是建立同一支主軸在相同測點與轉速下的基線，觀察振動幅值與頻譜隨時間的變化。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">5. 實際切削測試</strong></p>
+      <p style="margin:0 0 12px">最終驗收應加入代表性工件與刀具的試切，確認：</p>
+      <ul>
+        <li>表面粗糙度</li>
+        <li>尺寸與幾何精度</li>
+        <li>特定轉速下是否產生顫振</li>
+        <li>主軸負載</li>
+        <li>加工循環中的溫度變化</li>
+        <li>刀具與刀把是否出現異常磨耗或微動磨損</li>
+      </ul>
+      <p style="margin:0 0 12px">空轉正常，不代表在實際切削負載下也能維持精度。</p>
+
+      <h4>三、為什麼主軸需要暖機</h4>
+      <p style="margin:0 0 12px">主軸暖機的目的，是逐步分布潤滑劑，並讓軸承、主軸軸心、馬達與冷卻系統接近穩定的工作溫度。冷機後直接進入最高轉速，可能造成快速溫升與不穩定的熱位移。</p>
+      <p style="margin:0 0 12px">暖機程序應以原廠手冊為準，通常由低速開始並分階段提高轉速。高速主軸還必須依製造商要求，使用適合且完成動平衡的刀把或測試工具。</p>
+      <p style="margin:0 0 12px">需要特別注意的是，不同主軸的暖機要求差異很大。停機多久需要暖機、是否必須裝入刀把、各階段轉速與持續時間，都應依該機型規定執行，不應直接套用其他品牌的程序。</p>
+
+      <h4>四、五種常見症狀與檢查方向</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">症狀一：主軸異常升溫</strong></p>
+      <p style="margin:0 0 12px">可能原因包括潤滑不足、過量或油品錯誤，冷卻機或冷卻流路異常，軸承預壓或安裝狀況不正確，密封摩擦，刀具不平衡或切削負載過高，以及溫度感測器或設定異常。</p>
+      <p style="margin:0 0 12px">首先應降低負載並比較相同轉速下的歷史溫度，而不是立即拆卸主軸。若溫度快速上升、無法趨於穩定，或同時出現異音、振動與潤滑警報，應停止運轉並聯絡合格維修人員。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">症狀二：異音或振動增加</strong></p>
+      <p style="margin:0 0 12px">可能原因包括軸承損傷，刀具或刀把不平衡，刀把、錐孔或拉釘損傷，皮帶磨耗或張力不正確，聯軸器對心不良，切削顫振，以及外部設備或基礎傳入的振動。</p>
+      <p style="margin:0 0 12px">診斷時可依序比較空主軸、平衡刀把與實際刀具，並在多個轉速點記錄結果。若振動只在特定刀具或加工條件出現，問題不一定來自主軸軸承。</p>
+      <p style="margin:0 0 12px">若振動主要隨轉速增加，或在特定轉速區間明顯放大，除檢查軸承外，也應確認主軸總成與完整刀具組合的動平衡。主軸軸心、錐孔或配合面的磨損與形位誤差，同樣可能造成偏擺與不平衡效應。維修時若進行錐孔重磨、軸承更換或旋轉零件更換，應重新確認主軸偏擺與平衡狀態。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">症狀三：偏擺增加或表面品質下降</strong></p>
+      <p style="margin:0 0 12px">建議依序檢查：</p>
+      <ol>
+        <li>刀具及刀刃</li>
+        <li>刀把與筒夾</li>
+        <li>拉釘及夾持力</li>
+        <li>主軸錐孔的清潔與損傷</li>
+        <li>測試棒偏擺</li>
+        <li>主軸軸承及熱狀態</li>
+      </ol>
+      <p style="margin:0 0 12px">刀把錐面上的微小切屑、油膜、碰傷或微動磨損，都可能影響重複裝夾精度。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">症狀四：刀具卡住或換刀不穩定</strong></p>
+      <p style="margin:0 0 12px">可能原因包括主軸與刀把溫差、錐面污染、拉釘不相容、拉刀機構磨耗、夾持力不足，以及氣壓或感測器異常。</p>
+      <p style="margin:0 0 12px">不要以敲擊主軸或任意修改拉釘的方式排除問題。應先依原廠程序確認刀把、拉釘、拉刀力、氣壓與換刀機構。</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">症狀五：加工時出現顫振</strong></p>
+      <p style="margin:0 0 12px">顫振是主軸、刀具、工件、夾具、機台結構與切削參數共同形成的動態問題。改善方向可能包括：</p>
+      <ul>
+        <li>縮短刀具伸出量</li>
+        <li>提高工件及夾具剛性</li>
+        <li>改變主軸轉速</li>
+        <li>調整切深、切寬與進給</li>
+        <li>使用不同齒距或刃數的刀具</li>
+        <li>確認刀把平衡與夾持狀態</li>
+      </ul>
+      <p style="margin:0 0 12px">未完成這些排除步驟前，不宜僅憑表面振紋判定主軸軸承損壞。</p>
+
+      <h4>五、建立主軸預防保養紀錄</h4>
+      <p style="margin:0 0 12px">比固定壽命更實用的方法，是建立可比較的狀態紀錄。</p>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">每日或每班</strong></p>
+      <ul>
+        <li>確認暖機程序</li>
+        <li>檢查異音、振動與漏油</li>
+        <li>檢查氣壓、潤滑與冷卻警報</li>
+        <li>清潔並檢查刀把與主軸錐面</li>
+        <li>記錄不尋常的加工表面或負載</li>
+      </ul>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">定期檢查</strong></p>
+      <ul>
+        <li>主軸偏擺</li>
+        <li>刀具夾持力</li>
+        <li>代表性轉速下的溫度</li>
+        <li>固定測點的振動趨勢</li>
+        <li>皮帶、聯軸器、冷卻機與潤滑系統</li>
+        <li>中心出水旋轉接頭與密封狀況</li>
+      </ul>
+      <p style="margin:0 0 12px">比較時必須盡量保持相同的轉速、暖機狀態、測點、刀具與環境條件，否則數據可能失去判讀價值。</p>
+
+      <h4>六、詢價或更換主軸前應提供的資料</h4>
+      <ul>
+        <li>機台品牌、型號、年份與序號</li>
+        <li>主軸型號、序號與銘牌照片</li>
+        <li>主軸前端、接頭、馬達與編碼器照片</li>
+        <li>刀具介面與拉釘規格</li>
+        <li>最高轉速、功率、扭矩與傳動型式</li>
+        <li>潤滑與冷卻方式</li>
+        <li>中心出水規格</li>
+        <li>故障警報及發生條件</li>
+        <li>溫度、偏擺與振動紀錄</li>
+        <li>是否曾發生碰撞、進水或潤滑中斷</li>
+        <li>希望採用新品、維修品或相容替代品</li>
+      </ul>
+      <p style="margin:0 0 12px">資料越完整，越能避免收到外觀相似、實際上卻無法安裝或運轉的主軸。</p>
+
+      <h4>結語</h4>
+      <p style="margin:0 0 12px">主軸的最高轉速只是選型的一部分。真正可靠的主軸方案，必須同時符合加工所需的功率與扭矩、刀具介面、剛性、熱穩定性、潤滑冷卻與維修條件。</p>
+      <p style="margin:0 0 12px">驗收時應使用事先約定的方法記錄偏擺、溫升、振動與實際切削結果；使用後則應建立同條件的趨勢資料。如此才能及早發現變化，也能避免將刀具、刀把、夾具或加工參數的問題誤判為主軸故障。</p>
+
+      <h4>資料來源</h4>
+      <ul>
+        <li><a href="https://www.iso.org/standard/63180.html" target="_blank" rel="noopener">ISO 20816-1:2016 — 機械振動量測與評估的一般指引</a></li>
+        <li><a href="https://www.nsk.com/content/dam/nsk/eu/en_gb/documents/corporate-europe/EN_NSK_Bro_MTM-Guide_low-res.pdf" target="_blank" rel="noopener">軸承製造商資料 — 工具機主軸軸承的配置、預壓與潤滑</a></li>
+        <li><a href="https://evolution.skf.com/en/factors-in-motorised-spindle-design/" target="_blank" rel="noopener">軸承製造商資料 — 內藏式馬達主軸設計中的發熱與冷卻</a></li>
+        <li><a href="https://evolution.skf.com/en/energy-efficient-minimal-quantity-lubrication-for-high-speed-spindles/" target="_blank" rel="noopener">軸承製造商資料 — 高速主軸的微量油氣潤滑</a></li>
+        <li><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/reference-documents/mill---spindle---programs--run-in--warm-up--break-in-.html" target="_blank" rel="noopener">機台製造商資料 — 主軸試車與暖機程序範例</a></li>
+        <li><a href="https://www.haascnc.com/service/online-manuals/vf-vm-series---service-manual/vf-vm---40t---spindle.html" target="_blank" rel="noopener">機台製造商維修手冊 — 40 號錐度主軸的檢查項目</a></li>
+      </ul>
+
+      <p style="margin:14px 0 12px">延伸閱讀：<button class="nav-btn" onclick="location.href='/knowledge/spindle-cooling/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">主軸冷卻與熱補償</button>、<button class="nav-btn" onclick="location.href='/knowledge/coolant-cts/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">切削液與中心出水</button>、<button class="nav-btn" onclick="location.href='/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">機台精度</button>、<button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">刀具座與刀塔</button>、<button class="nav-btn" onclick="location.href='/knowledge/part-lifespan/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">零件壽命</button>。</p>
+
+      <div style="border-top:1px solid var(--border);margin-top:24px;padding-top:20px">
+        <h4 style="margin-top:0">需要尋找主軸、維修替代品或確認機台相容性？</h4>
+        <p style="margin:0 0 14px">請提供機台與主軸銘牌、介面照片及使用條件。Z&amp;Z STROTEC 萬洋國際可協助向台灣製造商確認規格、供貨與出口安排。實際安裝、調校與維修，仍須由當地合格技術人員執行。</p>
+        <div style="text-align:center">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">立即洽詢 / SEND INQUIRY →</button>
+        </div>
+      </div>
+
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">本文為一般選型及維護知識。實際操作、允收值、暖機程序、潤滑油品與維修方式，應以機台與主軸製造商的最新技術文件為準。</p>
     </section><section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>
-      <h4>주축 유형</h4>
+      <img src="/photo/cnc-spindle-selection-acceptance-troubleshooting.jpg" alt="작업자가 정밀 테스트 아버와 다이얼 게이지로 CNC 주축의 반경 방향 런아웃을 측정하는 모습" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:4px 0 12px;display:block">
+
+      <h4>최고 회전수만으로 주축을 선정할 수 없습니다</h4>
+      <p style="margin:0 0 12px">주축은 가공 능력, 표면 품질, 공구 수명 및 설비 정지 위험에 직접적인 영향을 줍니다. 최고 회전수와 모터 출력만 비교하면 실제 절삭 성능을 좌우하는 토크 곡선, 기준 회전수, 공구 인터페이스, 베어링 구성, 윤활 및 냉각 조건을 놓칠 수 있습니다.</p>
+      <p style="margin:0 0 12px">알루미늄이나 금형의 고속 가공에 적합한 주축이 강재 중절삭에도 적합한 것은 아닙니다. 주축은 최고 회전수를 먼저 정하기보다 소재, 공구 및 가공 공정을 기준으로 선정해야 합니다.</p>
+
+      <h4>1. 주축 선정 시 확인할 사항</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.1 소재와 가공 방식</strong></p>
       <ul>
-        <li><strong>벨트 구동 주축</strong>: 벨트로 모터 연결. 비용 절감. 모터에서 진동 전달. 저RPM 용도에 적합.</li>
-        <li><strong>기어 구동 주축</strong>: 저RPM에서 높은 토크. 대형 공작물의 중절삭 선반에 일반적.</li>
-        <li><strong>직결 구동 / 전동 주축 (電主軸)</strong>: 모터와 주축이 일체화. 최고 속도, 최저 진동. 고속 가공의 프리미엄 옵션.</li>
-        <li><strong>내장형 모터 주축</strong>: 직결 구동과 유사 — 모터 로터가 주축 샤프트에 직접 장착.</li>
+        <li>알루미늄 정삭과 소경 공구는 일반적으로 고속 성능이 중요합니다.</li>
+        <li>강재, 스테인리스강 및 대경 공구는 저속 토크가 더 중요할 수 있습니다.</li>
+        <li>드릴링, 탭 가공, 중절삭 및 고속 윤곽 가공은 서로 다른 주축 특성을 요구합니다.</li>
+        <li>선반 주축은 봉재 직경, 주축 관통 구멍, 척 및 드로우 튜브 치수도 확인해야 합니다.</li>
       </ul>
 
-      <h4>베어링 유형</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.2 출력, 토크 및 기준 회전수</strong></p>
+      <p style="margin:0 0 12px">규격표의 정격 출력만으로는 절삭 능력을 판단할 수 없습니다. 다음 자료를 함께 확인해야 합니다.</p>
       <ul>
-        <li><strong>앵귤러 컨택 볼 베어링</strong>: 대부분의 CNC 기계 주축의 표준. 속도와 정밀도의 균형.</li>
-        <li><strong>롤러 베어링</strong>: 높은 부하 용량, 낮은 속도. 중절삭용.</li>
-        <li><strong>유정압 베어링</strong>: 오일 막 지지 — 탁월한 정밀도. 초정밀 기계에 사용.</li>
+        <li>연속 및 단시간 출력</li>
+        <li>연속 및 단시간 토크</li>
+        <li>기준 회전수</li>
+        <li>정토크 및 정출력 구간</li>
+        <li>실제 가공 회전수에서 사용할 수 있는 출력과 토크</li>
+      </ul>
+      <p style="margin:0 0 12px">표시 출력이 같더라도 기준 회전수와 구동 구조가 다르면 저속 중절삭 성능은 크게 달라질 수 있습니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.3 구동 방식</strong></p>
+      <ul>
+        <li><strong>벨트식</strong>: 구조가 성숙하고 정비가 비교적 쉬우며, 풀리 비로 회전수와 토크를 조정할 수 있습니다. 벨트 장력, 마모 및 밸런스 상태가 진동에 영향을 줍니다.</li>
+        <li><strong>직결식</strong>: 모터가 주축에 직접 연결되어 구동 부품이 적고 중고속 가공에 적합합니다. 커플링 정밀도와 정렬 상태가 중요합니다.</li>
+        <li><strong>빌트인 모터식(전동 주축)</strong>: 모터가 주축에 내장되어 고속과 급가감속에 적합하지만, 냉각, 베어링, 윤활 및 정비 역량에 대한 요구가 높습니다.</li>
+        <li><strong>기어식</strong>: 저속 토크를 확보하기 쉬워 중절삭에 적합하지만, 기어 소음, 윤활 및 백래시를 고려해야 합니다.</li>
+      </ul>
+      <p style="margin:0 0 12px">모든 조건에서 가장 좋은 구동 방식은 없습니다. 소재, 공구 직경, 절삭 부하 및 예상 회전수 범위에 따라 선택해야 합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.4 공구 인터페이스</strong></p>
+      <p style="margin:0 0 12px">BT, BBT, CAT, HSK 및 폴리곤 테이퍼 인터페이스는 접촉 방식, 강성, 고속 특성 및 공구 교환 방식에서 차이가 있습니다. 인터페이스를 확인할 때는 다음 항목도 함께 점검해야 합니다.</p>
+      <ul>
+        <li>테이퍼 규격과 치수</li>
+        <li>풀 스터드 또는 클램핑 방식</li>
+        <li>주축 공구 인장력</li>
+        <li>공구 밸런싱 요구 여부</li>
+        <li>기존 공구 매거진 및 홀더와의 호환성</li>
+        <li>주축 관통 절삭유 압력과 밀봉 방식</li>
+      </ul>
+      <p style="margin:0 0 12px">인터페이스 명칭이 같다고 해서 모든 홀더, 풀 스터드 및 공구 교환 부품이 호환되는 것은 아닙니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.5 베어링, 예압 및 윤활</strong></p>
+      <p style="margin:0 0 12px">공작기계 주축에는 정밀 앵귤러 컨택트 볼 베어링이 주로 사용되며, 필요한 반경 방향 강성, 축 방향 부하 용량 및 고속 성능을 얻기 위해 원통 롤러 베어링이 함께 쓰이기도 합니다.</p>
+      <p style="margin:0 0 12px">베어링 예압은 강성과 회전 정밀도를 높이지만, 예압과 회전수, 부하, 온도는 서로 연관되어 있습니다. 운전 예압이 과도하면 마찰과 온도 상승이 커지므로 최대 강성만을 목표로 삼을 수는 없습니다.</p>
+      <p style="margin:0 0 12px">윤활 방식으로는 그리스 윤활과 오일-에어 윤활이 일반적입니다. 고속 오일-에어 시스템은 계량된 소량의 오일을 안정적으로 공급해야 하며, 공급 부족, 과다 공급, 잘못된 유종 또는 오염은 이상 온도 상승과 베어링 손상으로 이어질 수 있습니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">1.6 제작 정밀도와 동적 밸런싱</strong></p>
+      <p style="margin:0 0 12px">고품질 주축은 정밀 베어링만으로 완성되지 않습니다. 주축 샤프트, 테이퍼, 베어링 시트 및 결합면에는 정밀 가공과 연삭이 필요하며, 이를 통해 진원도, 동심도, 단면 직각도 및 끼워맞춤 정밀도를 관리합니다. 이러한 부품의 형상 및 위치 오차는 주축 런아웃, 베어링 하중 및 공구 반복 장착 정밀도에 영향을 줍니다.</p>
+      <p style="margin:0 0 12px">조립 후에는 설계 회전수에 맞추어 회전 부품과 주축 어셈블리의 동적 밸런싱 또는 미세 밸런싱을 실시합니다. 밸런싱은 불균일한 질량 분포와 커플 불평형을 보정하여 고속 운전 시 원심력, 진동, 베어링 부하 및 가공면의 진동 무늬를 줄이는 과정입니다.</p>
+      <p style="margin:0 0 12px">주축 자체가 밸런싱되어 있어도 모든 공구 조합이 고속 운전에 적합한 것은 아닙니다. 공구 홀더, 콜릿, 절삭 공구, 풀 스터드 및 잔류 절삭유가 또 하나의 회전체를 구성하기 때문입니다. 고속 가공에서는 제조사의 요구사항에 따라 완성된 공구 어셈블리의 밸런싱과 돌출 길이를 관리해야 합니다.</p>
+
+      <h4>2. 신규 또는 교체 주축의 검수</h4>
+      <p style="margin:0 0 12px">알람 없이 회전한다는 이유만으로 검수가 끝나지는 않습니다. 사전에 합의한 시험 조건에서 다음 자료를 남기는 것이 좋습니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.1 외관 및 시스템 점검</strong></p>
+      <ul>
+        <li>주축 명판, 모델 및 일련번호</li>
+        <li>공구 인터페이스와 풀 스터드 규격</li>
+        <li>윤활유, 절삭유 및 공압 조건</li>
+        <li>배관, 피팅 및 씰의 누유 여부</li>
+        <li>엔코더, 오리엔테이션 및 공구 교환 기능</li>
+        <li>칠러 설정값과 실제 온도</li>
       </ul>
 
-      <h4>주축 속도 vs 토크 트레이드오프</h4>
-      고RPM 주축은 토크를 희생합니다. 경/중절삭 재료 → 높은 토크(낮은 RPM 범위) 선택. 소직경, 알루미늄, 또는 정삭 → 고RPM 주축 선택.
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.2 주축 런아웃</strong></p>
+      <p style="margin:0 0 12px">교정된 테스트 아버와 다이얼 게이지를 사용하여 주축 선단 부근과 합의된 돌출 위치에서 반경 방향 런아웃을 측정합니다. 보고서에는 최소한 다음 항목을 기록해야 합니다.</p>
+      <ul>
+        <li>테스트 아버 규격과 교정 상태</li>
+        <li>측정 위치와 돌출 길이</li>
+        <li>주축의 냉간 또는 예열 상태</li>
+        <li>측정 방법과 측정기 분해능</li>
+        <li>측정 결과와 허용 기준</li>
+      </ul>
+      <p style="margin:0 0 12px">측정된 런아웃에는 주축, 테이퍼, 테스트 아버, 홀더, 클램핑 및 측정 설치 오차가 포함될 수 있으므로, 동일하고 반복 가능한 방법으로 비교해야 합니다.</p>
 
-      <h4>노즈 유형 (주축 인터페이스)</h4>
-      A2-5, A2-6, A2-8, A2-11은 일반적인 주축 노즈 크기입니다. 척 크기와 바피더 콜릿 크기는 이 사양에 따라 결정됩니다.
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.3 온도 상승, 열변위 및 열보정</strong></p>
+      <p style="margin:0 0 12px">주축이 냉간에서 열 안정 상태로 가는 동안 베어링, 모터 및 주축 헤드에 열변형이 발생합니다. 제조사 절차에 따라 회전수를 단계적으로 높이면서 다음 항목을 기록합니다.</p>
+      <ul>
+        <li>주축 선단 또는 지정 위치의 온도</li>
+        <li>냉각수 입출구 온도</li>
+        <li>단계별 회전수와 지속 시간</li>
+        <li>축 방향 또는 반경 방향 열변위</li>
+        <li>안정 상태에 도달하기까지의 시간</li>
+      </ul>
+      <p style="margin:0 0 12px">현대 공작기계는 열변형을 관리하기 위해 예열 이외의 기술도 사용합니다. 기종에 따라 주축 냉각과 오일-에어 윤활에 열적으로 균형 잡힌 구조 설계, 온도 센서 및 CNC 열오차 보정이 결합됩니다. 제어 장치는 주축 회전수, 운전 시간, 기계 또는 주변 온도 데이터를 이용하여 열변위를 예측하고 축 위치를 보정할 수 있습니다.</p>
+      <p style="margin:0 0 12px">열보정은 올바른 윤활, 냉각 및 예열을 대신하지 않습니다. 냉각은 발생 열과 온도 분포를 제어하고, 열보정은 남아 있는 예측 가능한 변위를 위치 보정으로 줄이는 기술입니다. 냉각 장치 고장, 온도 센서 이상 또는 보정 모델의 적용 범위를 벗어난 열 상태에서는 보정 기능이 있어도 요구 정밀도를 유지하지 못할 수 있습니다.</p>
+      <p style="margin:0 0 12px">열보정 기능이 있는 기계를 검수할 때는 다음 사항을 확인하는 것이 좋습니다.</p>
+      <ul>
+        <li>보정에 사용되는 온도 및 운전 데이터</li>
+        <li>보정 기능의 활성 조건과 모니터링 가능 여부</li>
+        <li>냉간 시동부터 열 안정 상태까지의 실제 치수 변화</li>
+        <li>주축 교체 또는 기계 재교정 후 보정 데이터 갱신 필요 여부</li>
+        <li>보정 기능을 켜거나 끈 상태에서 적용하는 시험 조건</li>
+      </ul>
+      <p style="margin:0 0 12px">모든 주축에 공통으로 적용되는 정상 온도나 보정량은 없습니다. 주변 온도, 회전수, 베어링, 윤활, 냉각, 센서 위치 및 기계 구조에 따라 결과가 달라지므로, 해당 기종의 제조사 규격과 동일 조건에서 취득한 기준 데이터를 기준으로 판단해야 합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.4 진동과 이상음</strong></p>
+      <p style="margin:0 0 12px">진동 측정 시에는 측정점, 센서 방향, 고정 방법, 회전수, 공구 또는 테스트 아버 상태 및 측정 주파수 범위를 기록해야 합니다. 종합 진동값 하나만으로 고장을 판정하기는 어렵습니다.</p>
+      <p style="margin:0 0 12px">ISO 20816-1은 기계 진동의 측정과 평가에 관한 일반 원칙을 제시하지만, 기계마다 구조와 용도에 맞는 평가 기준이 필요합니다. 일반 회전기계의 수치를 모든 공작기계 주축의 경보값으로 그대로 적용하는 것은 적절하지 않습니다.</p>
+      <p style="margin:0 0 12px">실무에서는 동일한 주축, 동일한 측정점과 회전수에서 기준 데이터를 확보하고 진동 크기와 주파수 성분의 변화를 추적하는 방법이 더 유용합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">2.5 실제 절삭 시험</strong></p>
+      <p style="margin:0 0 12px">최종 검수에는 대표 소재와 공구를 사용한 시험 가공을 포함하여 다음을 확인하는 것이 좋습니다.</p>
+      <ul>
+        <li>표면 조도</li>
+        <li>치수 및 기하 정밀도</li>
+        <li>특정 회전수에서의 채터 발생 여부</li>
+        <li>주축 부하</li>
+        <li>가공 사이클 중의 온도 변화</li>
+        <li>공구와 홀더의 이상 마모 또는 프레팅</li>
+      </ul>
+      <p style="margin:0 0 12px">무부하 운전이 정상이라고 해서 실제 절삭 부하에서도 정밀도가 유지된다고 보기는 어렵습니다.</p>
+
+      <h4>3. 주축 예열이 필요한 이유</h4>
+      <p style="margin:0 0 12px">예열은 윤활제를 점진적으로 분포시키고 베어링, 주축 샤프트, 모터 및 냉각 시스템을 안정적인 운전 온도에 가깝게 만드는 과정입니다. 차가운 주축을 즉시 최고 회전수로 운전하면 급격한 온도 변화와 불안정한 열변위가 발생할 수 있습니다.</p>
+      <p style="margin:0 0 12px">예열 절차는 제조사 매뉴얼을 따르며, 일반적으로 저속에서 시작하여 단계적으로 회전수를 높입니다. 고속 주축은 제조사 요구에 따라 적합하고 밸런싱된 홀더 또는 시험 공구를 장착해야 합니다.</p>
+      <p style="margin:0 0 12px">예열 요구사항은 주축 설계에 따라 크게 다릅니다. 정지 후 예열이 필요한 시간, 홀더 장착 여부, 단계별 회전수와 지속 시간은 해당 기종의 매뉴얼을 따라야 하며, 다른 제조사의 절차를 그대로 적용해서는 안 됩니다.</p>
+
+      <h4>4. 자주 나타나는 다섯 가지 증상</h4>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">증상 1: 비정상적인 온도 상승</strong></p>
+      <p style="margin:0 0 12px">윤활 부족이나 과다, 잘못된 유종, 칠러 또는 냉각 유로 이상, 베어링 예압과 조립 상태 불량, 씰 마찰, 공구 불평형, 과도한 절삭 부하, 온도 센서나 설정 이상이 원인일 수 있습니다.</p>
+      <p style="margin:0 0 12px">주축을 바로 분해하기보다 먼저 부하를 낮추고 동일 회전수에서 기록한 과거 온도와 비교합니다. 온도가 빠르게 계속 상승하거나 이상음, 진동 또는 윤활 알람이 함께 발생하면 운전을 중지하고 자격을 갖춘 정비 인력에게 연락해야 합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">증상 2: 이상음 또는 진동 증가</strong></p>
+      <p style="margin:0 0 12px">베어링 손상, 공구나 홀더의 불평형, 홀더·테이퍼·풀 스터드 손상, 벨트 마모나 장력 불량, 커플링 정렬 불량, 절삭 채터, 외부 설비나 기초에서 전달된 진동이 원인일 수 있습니다.</p>
+      <p style="margin:0 0 12px">진단할 때는 공구를 장착하지 않은 주축, 밸런싱된 홀더, 실제 공구 순서로 비교하고 여러 회전수에서 결과를 기록합니다. 특정 공구나 가공 조건에서만 진동이 나타난다면 원인이 주축 베어링에 있다고 단정할 수 없습니다.</p>
+      <p style="margin:0 0 12px">진동이 회전수에 따라 증가하거나 특정 회전수 구간에서 크게 증폭되면 베어링뿐 아니라 주축 어셈블리와 전체 공구 조합의 동적 밸런스도 확인해야 합니다. 주축 샤프트, 테이퍼 또는 결합면의 마모와 형상 오차 역시 런아웃과 불평형을 유발할 수 있습니다. 테이퍼 재연삭, 베어링 교체 또는 회전 부품 교체 후에는 런아웃과 밸런스 상태를 다시 확인해야 합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">증상 3: 런아웃 증가 또는 표면 품질 저하</strong></p>
+      <p style="margin:0 0 12px">다음 순서로 점검합니다.</p>
+      <ol>
+        <li>절삭 공구와 절삭날</li>
+        <li>홀더와 콜릿</li>
+        <li>풀 스터드와 클램핑력</li>
+        <li>주축 테이퍼의 청결 및 손상 상태</li>
+        <li>테스트 아버 런아웃</li>
+        <li>주축 베어링과 열 상태</li>
+      </ol>
+      <p style="margin:0 0 12px">홀더 테이퍼면의 미세한 칩, 유막, 흠집 또는 프레팅도 반복 장착 정밀도를 떨어뜨릴 수 있습니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">증상 4: 공구 고착 또는 불안정한 공구 교환</strong></p>
+      <p style="margin:0 0 12px">주축과 홀더의 온도 차이, 테이퍼 오염, 풀 스터드 비호환, 드로우바 기구 마모, 인장력 부족, 공압 또는 센서 이상이 원인일 수 있습니다.</p>
+      <p style="margin:0 0 12px">주축을 두드리거나 풀 스터드를 임의로 가공하는 방식으로 해결해서는 안 됩니다. 제조사 절차에 따라 홀더, 풀 스터드, 인장력, 공압 및 공구 교환 기구를 먼저 확인해야 합니다.</p>
+
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">증상 5: 절삭 중 채터</strong></p>
+      <p style="margin:0 0 12px">채터는 주축, 공구, 공작물, 지그, 기계 구조 및 절삭 조건이 함께 만드는 동적 현상입니다. 개선 방향은 다음과 같습니다.</p>
+      <ul>
+        <li>공구 돌출 길이 단축</li>
+        <li>공작물과 지그의 강성 향상</li>
+        <li>주축 회전수 변경</li>
+        <li>절입 깊이, 절입 폭 및 이송 조정</li>
+        <li>부등 분할 또는 다른 날수의 공구 사용</li>
+        <li>홀더의 밸런스와 클램핑 상태 확인</li>
+      </ul>
+      <p style="margin:0 0 12px">이러한 확인을 마치기 전에 표면의 진동 무늬만으로 주축 베어링 손상을 판정해서는 안 됩니다.</p>
+
+      <h4>5. 예방 정비 기록 만들기</h4>
+      <p style="margin:0 0 12px">고정된 수명보다 비교 가능한 상태 기록이 더 실용적입니다.</p>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">매일 또는 매 교대</strong></p>
+      <ul>
+        <li>예열 프로그램 실행 확인</li>
+        <li>이상음, 진동 및 누유 점검</li>
+        <li>공압, 윤활 및 냉각 알람 확인</li>
+        <li>공구 홀더와 주축 테이퍼 청소 및 점검</li>
+        <li>비정상적인 가공면이나 주축 부하 기록</li>
+      </ul>
+      <p style="margin:12px 0 6px"><strong style="color:var(--text)">정기 점검</strong></p>
+      <ul>
+        <li>주축 런아웃</li>
+        <li>공구 인장력</li>
+        <li>대표 회전수에서의 온도</li>
+        <li>고정 측정점의 진동 추세</li>
+        <li>벨트, 커플링, 칠러 및 윤활 장치</li>
+        <li>주축 관통 절삭유 로터리 유니언과 씰 상태</li>
+      </ul>
+      <p style="margin:0 0 12px">비교할 때는 회전수, 예열 상태, 측정점, 공구 및 환경 조건을 가능한 한 동일하게 유지해야 합니다. 그렇지 않으면 데이터의 판독 가치가 떨어집니다.</p>
+
+      <h4>6. 주축 문의 또는 교체 시 필요한 자료</h4>
+      <ul>
+        <li>기계 제조사, 모델, 연식 및 일련번호</li>
+        <li>주축 모델, 일련번호 및 명판 사진</li>
+        <li>주축 선단, 커넥터, 모터 및 엔코더 사진</li>
+        <li>공구 인터페이스와 풀 스터드 규격</li>
+        <li>최고 회전수, 출력, 토크 및 구동 방식</li>
+        <li>윤활 및 냉각 방식</li>
+        <li>주축 관통 절삭유 사양</li>
+        <li>알람 내용과 발생 조건</li>
+        <li>온도, 런아웃 및 진동 기록</li>
+        <li>충돌, 절삭유 유입 또는 윤활 중단 이력</li>
+        <li>신품, 수리품 또는 호환 대체품 중 원하는 방식</li>
+      </ul>
+      <p style="margin:0 0 12px">자료가 완전할수록 외관은 비슷하지만 실제로 설치하거나 운전할 수 없는 주축을 받게 될 위험이 줄어듭니다.</p>
+
+      <h4>맺음말</h4>
+      <p style="margin:0 0 12px">최고 회전수는 주축 선정 조건 중 하나일 뿐입니다. 신뢰할 수 있는 주축은 필요한 출력과 토크, 공구 인터페이스, 강성, 열 안정성, 윤활과 냉각, 그리고 정비 조건을 함께 충족해야 합니다.</p>
+      <p style="margin:0 0 12px">검수 시에는 사전에 합의한 방법으로 런아웃, 온도 상승, 진동 및 시험 가공 결과를 기록하고, 운전 이후에는 동일 조건의 추세 데이터를 관리합니다. 그래야 변화를 조기에 발견할 수 있고, 공구나 홀더, 지그, 절삭 조건의 문제를 주축 고장으로 오인하지 않을 수 있습니다.</p>
+
+      <h4>참고 자료</h4>
+      <ul>
+        <li><a href="https://www.iso.org/standard/63180.html" target="_blank" rel="noopener">ISO 20816-1:2016 — 기계 진동 측정 및 평가에 관한 일반 지침</a></li>
+        <li><a href="https://www.nsk.com/content/dam/nsk/eu/en_gb/documents/corporate-europe/EN_NSK_Bro_MTM-Guide_low-res.pdf" target="_blank" rel="noopener">베어링 제조사 자료 — 공작기계 주축 베어링의 구성, 예압 및 윤활</a></li>
+        <li><a href="https://evolution.skf.com/en/factors-in-motorised-spindle-design/" target="_blank" rel="noopener">베어링 제조사 자료 — 빌트인 모터 주축 설계에서의 발열과 냉각</a></li>
+        <li><a href="https://evolution.skf.com/en/energy-efficient-minimal-quantity-lubrication-for-high-speed-spindles/" target="_blank" rel="noopener">베어링 제조사 자료 — 고속 주축의 미량 오일-에어 윤활</a></li>
+        <li><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/reference-documents/mill---spindle---programs--run-in--warm-up--break-in-.html" target="_blank" rel="noopener">기계 제조사 자료 — 주축 런인 및 예열 프로그램 예시</a></li>
+        <li><a href="https://www.haascnc.com/service/online-manuals/vf-vm-series---service-manual/vf-vm---40t---spindle.html" target="_blank" rel="noopener">기계 제조사 서비스 매뉴얼 — 40번 테이퍼 주축의 점검 항목</a></li>
+      </ul>
+
+      <p style="margin:14px 0 12px">함께 읽기: <button class="nav-btn" onclick="location.href='/knowledge/spindle-cooling/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">주축 냉각 및 열보정</button>, <button class="nav-btn" onclick="location.href='/knowledge/coolant-cts/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">절삭유와 CTS</button>, <button class="nav-btn" onclick="location.href='/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">기계 정밀도</button>, <button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">툴 홀더와 터렛</button>, <button class="nav-btn" onclick="location.href='/knowledge/part-lifespan/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">부품 수명</button>.</p>
+
+      <div style="border-top:1px solid var(--border);margin-top:24px;padding-top:20px">
+        <h4 style="margin-top:0">주축, 수리품 또는 호환 대체품이 필요하십니까?</h4>
+        <p style="margin:0 0 14px">기계와 주축의 명판, 인터페이스 사진 및 사용 조건을 보내주십시오. Z&amp;Z STROTEC은 대만 제조사와의 사양 확인, 조달 및 수출 업무를 지원합니다. 실제 설치, 조정 및 정비는 현지의 자격을 갖춘 기술 인력이 수행해야 합니다.</p>
+        <div style="text-align:center">
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">문의하기 / 立即洽詢 →</button>
+        </div>
+      </div>
+
+      <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.7;margin-top:18px">본 문서는 일반적인 선정 및 유지보수 정보를 제공합니다. 실제 운전 절차, 허용 기준, 예열 프로그램, 윤활유 및 수리 방법은 기계와 주축 제조사의 최신 기술 문서를 따라야 합니다.</p>
     </section></div>
-  <div class="kbp-tags"><span class="tag-pill">spindle</span><span class="tag-pill">bearing</span><span class="tag-pill">RPM</span><span class="tag-pill">machine tool</span><span class="tag-pill">main spindle</span></div>
+  <div class="kbp-tags"><span class="tag-pill">spindle</span><span class="tag-pill">main spindle</span><span class="tag-pill">torque curve</span><span class="tag-pill">bearing</span><span class="tag-pill">preload</span><span class="tag-pill">lubrication</span><span class="tag-pill">tooling interface</span><span class="tag-pill">drawbar force</span><span class="tag-pill">runout</span><span class="tag-pill">warm-up</span><span class="tag-pill">thermal displacement</span><span class="tag-pill">thermal compensation</span><span class="tag-pill">vibration</span><span class="tag-pill">balancing</span><span class="tag-pill">chatter</span><span class="tag-pill">machine tool</span><span class="tag-pill">主軸</span><span class="tag-pill">偏擺</span><span class="tag-pill">暖機</span><span class="tag-pill">動平衡</span></div>
   <nav class="kbp-rel" aria-label="Related pages">
     <h2>Related · 延伸閱讀 · 관련 자료</h2>
-    <ul><li><a href="/knowledge/cnc-lathe/">CNC Lathe Specification Guide<span class="s">CNC 車床規格指南 · CNC 선반 사양 가이드</span></a></li><li><a href="/knowledge/tw-brands/">Taiwan Machine Tool Manufacturers<span class="s">台灣工具機製造商 · 대만 공작기계 제조업체</span></a></li><li><a href="/knowledge/spindle-cooling/">Spindle Cooling &amp; Thermal Compensation<span class="s">主軸冷卻與熱補償 · 주축 냉각 및 열보정</span></a></li><li><a href="/column/upgrading-to-mill-turn-cnc-lathes-is-the/">Upgrading to Mill-Turn CNC Lathes: Is the &quot;Done-in-One&quot; Approach Worth It?<span class="s">Process Strategy · Mill-Turn Centers</span></a></li><li><a href="/column/connected-cnc-ot-cybersecurity-checklist/">Connected CNC, Hidden Risk: An OT Cybersecurity Procurement Checklist for Machine Tool Buyers<span class="s">Procurement · OT Cybersecurity</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+    <ul><li><a href="/knowledge/cnc-troubleshooting/">CNC Troubleshooting Guide: Chatter, Poor Finish, Tool Breakage &amp; Positioning Errors<span class="s">CNC 加工異常排除指南：震刀、表面粗糙、刀具斷裂與定位誤差 · CNC 트러블슈팅 가이드: 채터·거친 표면·공구 파손·위치 오차</span></a></li><li><a href="/knowledge/spindle-cooling/">Spindle Cooling &amp; Thermal Compensation<span class="s">主軸冷卻與熱補償 · 주축 냉각 및 열보정</span></a></li><li><a href="/knowledge/cnc-lathe/">CNC Lathe Specification Guide<span class="s">CNC 車床規格指南 · CNC 선반 사양 가이드</span></a></li><li><a href="/knowledge/cnc-metrology/">CNC Metrology Guide: CMM, Micrometers &amp; Surface Roughness<span class="s">CNC 量測技術指南：從三次元量測儀（CMM）到表面粗糙度 · CNC 계측 가이드: CMM·마이크로미터·표면 거칠기</span></a></li><li><a href="/knowledge/maintenance/">CNC Machine Maintenance Guide<span class="s">CNC 機台保養指南 · CNC 기계 유지보수 가이드</span></a></li><li><a href="/knowledge/tw-brands/">Taiwan Machine Tool Manufacturers<span class="s">台灣工具機製造商 · 대만 공작기계 제조업체</span></a></li><li><a href="/column/optimizing-live-tool-holders-for-swiss-type-lathes/">Vibration Control for Live Tool Holders on Swiss-Type Lathes<span class="s">Tooling · Swiss-Type Lathes</span></a></li><li><a href="/column/eliminating-material-vibration-high-rpm-synchronization-between-bar/">High-RPM Synchronization Between Bar Feeders and Guide Bushings<span class="s">Automation · Bar Feeding</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
   </nav>
 </main>
 <footer class="kbp-footer">
