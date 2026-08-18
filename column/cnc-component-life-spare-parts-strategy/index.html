@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_column", {"column_id":"col-21","item_title":"Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them | Z&amp;Z STROTEC</title>
+<meta name="description" content="Rated life for a linear guide is a 90% travel distance, not a guaranteed number of years, and the reference distance behind the C value is not always 50 km. How to read the numbers, what makes parts fail early, and how to tier spares by downtime impact instead of price.">
+<link rel="canonical" href="https://zz-strotec.com/column/cnc-component-life-spare-parts-strategy/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them">
+<meta property="og:description" content="Rated life for a linear guide is a 90% travel distance, not a guaranteed number of years, and the reference distance behind the C value is not always 50 km. How to read the numbers, what makes parts fail early, and how to tier spares by downtime impact instead of price.">
+<meta property="og:url" content="https://zz-strotec.com/column/cnc-component-life-spare-parts-strategy/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/photo/cnc-component-life-spare-parts-strategy.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them","description":"Rated life for a linear guide is a 90% travel distance, not a guaranteed number of years, and the reference distance behind the C value is not always 50 km. How to read the numbers, what makes parts fail early, and how to tier spares by downtime impact instead of price.","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.com/photo/cnc-component-life-spare-parts-strategy.jpg","articleSection":"Maintenance · Spare Parts Strategy","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/column/cnc-component-life-spare-parts-strategy/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/column/">Columns</a> › Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them</div>
+  
+  <a class="kbp-cta" href="/#col-21">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body">
+      
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+
+        <!-- Header -->
+        <div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Maintenance &nbsp;·&nbsp; Spare Parts Strategy</span>
+          <h1 style="color:var(--text);margin:10px 0 6px;font-size:1.35rem;font-weight:600;line-height:1.4">Ageing CNC Machines: How to Read Component Life Ratings, and Build a Spare Parts Strategy Around Them</h1>
+          <p style="color:var(--text-dim);font-size:0.95rem;margin:0 0 4px">務實面對設備老化：CNC 關鍵零件壽命評估與備品庫存策略</p>
+          <p style="color:var(--text-dim);font-size:0.88rem;margin:0">설비 노후화에 대한 현실적 접근: CNC 핵심 부품 수명 평가와 예비품 재고 전략</p>
+        </div>
+        <div style="color:var(--text-dim);font-size:0.74rem;margin:-18px 0 22px;line-height:1.6">Published: 2026-08-18 &nbsp;·&nbsp; Written by Z&amp;Z STROTEC &nbsp;／&nbsp; 發布：2026-08-18 ・撰文：Z&amp;Z STROTEC 萬洋國際 &nbsp;／&nbsp; 발행: 2026-08-18 · 작성: Z&amp;Z STROTEC</div>
+
+        <img src="/photo/cnc-component-life-spare-parts-strategy.jpg" loading="lazy" alt="Maintenance bench beside a CNC machining centre, laid out with linear guide rails and blocks, a spindle assembly, angular contact bearings, a timing belt, a cabinet fan, an encoder battery, and a micrometer, dial indicator and magnifier for measuring them" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 22px;display:block">
+
+        <!-- Intro -->
+        <p style="margin-bottom:12px;line-height:1.85">Once a CNC machine is in production, the question of how long a part will last is rarely answered by a single catalogue figure. The same linear guide or spindle bearing, fitted to two machines of the same model, can end up with very different service lives depending on the material being cut, the load, the running hours, contamination and the way the machine is maintained. For maintenance and production, the useful goal is not predicting the day a part will fail. It is recognising the signs of deterioration early enough to have the part and the repair plan ready before the machine stops.</p>
+        <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:10px">CNC 工具機投入量產後，零件能用多久，往往不是型錄上的一個數字就能回答。同一款線性滑軌或主軸軸承，裝在兩台相同型號的機器上，也可能因為加工材料、負載、運轉時數、環境污染及保養方式不同，出現完全不同的使用結果。對維修與生產單位來說，真正重要的不是預測零件會在哪一天損壞，而是掌握劣化跡象，並在停機前準備好零件與維修方案。本文以線性滑軌和主軸系統為例，說明額定壽命該怎麼看，以及工廠應如何安排備品。</p>
+        <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">CNC 공작기계가 양산에 투입되면, 부품을 얼마나 쓸 수 있는지는 카탈로그의 숫자 하나로 답할 수 없습니다. 같은 리니어 가이드나 주축 베어링이라도 동일 기종 두 대에 장착되었을 때 가공 재질·부하·가동 시간·오염·보전 방식에 따라 전혀 다른 결과가 나옵니다. 보전과 생산 부서에 정말 중요한 것은 고장 날 날짜를 예측하는 일이 아니라, 열화 징후를 파악해 정지 전에 부품과 수리 방안을 준비해 두는 일입니다. 이 글은 리니어 가이드와 주축을 예로 정격 수명을 읽는 방법과 예비품 운용 방식을 정리합니다.</p>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📐</span> 1. Rated Life Is Not a Guaranteed Number of Years (額定壽命不是保證年限)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">For a linear guide, rated life normally means the total travel distance that 90% of a group of identical units, run individually under the same conditions, will reach before rolling contact fatigue causes flaking. The usual form of the calculation is:</p>
+          <p style="margin:0 0 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:0.95rem;color:var(--gold);text-align:center">L<sub>10</sub> = ( C / P )<sup>p</sup> × L<sub>r</sub></p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li><strong style="color:var(--text)">L<sub>10</sub></strong>: rated life</li>
+            <li><strong style="color:var(--text)">C</strong>: basic dynamic load rating</li>
+            <li><strong style="color:var(--text)">P</strong>: calculated load acting on the block</li>
+            <li><strong style="color:var(--text)">p</strong>: life exponent, 3 for ball types and 10/3 for roller types</li>
+            <li><strong style="color:var(--text)">L<sub>r</sub></strong>: the reference travel distance the C value was rated against</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8"><strong style="color:var(--gold)">L<sub>r</sub> is not always 50 km, and this is where cross brand comparisons quietly go wrong.</strong> ISO 14728-1 rates linear motion rolling bearings against 10<sup>5</sup> m, that is 100 km, and several European catalogues follow it. Many Japanese catalogues rate ball types against 50 km and roller types against 100 km. Because C sits inside a cube root relationship, the same product rated on a 100 km basis carries a C value roughly 1.26 times the value it would carry on a 50 km basis. A bigger number in one catalogue can therefore mean a different reference distance rather than a stronger product. Confirm the basis before comparing, and convert if you have to.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Selection in practice also has to account for shock, vibration, fluctuating load, overturning moments, block arrangement, stroke length, mounting accuracy and the operating environment. The result is a sound basis for comparing options and judging risk. It is not a guaranteed service life.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">線性滑軌的「額定壽命」，通常是指一批相同產品在相同條件下個別運轉，其中有 90% 在發生滾動疲勞剝落前可達到的總行走距離，計算式為 L<sub>10</sub> =（C / P）<sup>p</sup> × L<sub>r</sub>。其中 C 為基本動額定負荷，P 為作用於滑塊的計算負荷，p 為壽命指數（滾珠型為 3，滾柱型為 10/3），L<sub>r</sub> 則是該 C 值所採用的基準行走距離。<strong>L<sub>r</sub> 不一定是 50 km，這正是跨品牌比較最容易失準的地方。</strong>ISO 14728-1 以 10<sup>5</sup> m（也就是 100 km）為基準，部分歐系型錄依此標示；不少日系型錄則是滾珠型採 50 km、滾柱型採 100 km。由於 C 值與距離之間是立方根關係，同一項產品以 100 km 為基準時，C 值約為 50 km 基準的 1.26 倍。因此某一份型錄的數字比較大，可能只是基準不同，不代表負荷能力比較強。比較前應先確認雙方基準，必要時換算。實際選型還要納入衝擊、振動、負荷變動、偏心力矩、滑塊配置、行程長度、安裝精度及使用環境。算出的結果適合用來比較選型與評估風險，不應被解讀成保證使用年限。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">리니어 가이드의 정격 수명은 동일 조건에서 개별 운전한 동일 제품군 중 90%가 롤링 피로 박리 이전에 도달하는 총 주행 거리를 뜻하며, 계산식은 L<sub>10</sub> =（C / P）<sup>p</sup> × L<sub>r</sub>입니다. C는 기본 동정격 하중, P는 블록에 작용하는 계산 하중, p는 수명 지수(볼 형식 3, 롤러 형식 10/3), L<sub>r</sub>는 해당 C 값이 기준으로 삼은 주행 거리입니다. <strong>L<sub>r</sub>가 항상 50 km인 것은 아니며, 브랜드 간 비교가 어긋나는 지점이 바로 여기입니다.</strong> ISO 14728-1은 10<sup>5</sup> m, 즉 100 km를 기준으로 하고 일부 유럽 카탈로그가 이를 따릅니다. 일본계 카탈로그는 볼 형식 50 km, 롤러 형식 100 km를 쓰는 경우가 많습니다. C 값은 거리와 세제곱근 관계이므로 같은 제품이라도 100 km 기준이면 50 km 기준 대비 약 1.26배의 C 값을 갖습니다. 어느 카탈로그의 숫자가 크다고 해서 하중 능력이 더 크다는 뜻은 아닙니다. 실제 선정에는 충격·진동·하중 변동·편심 모멘트·블록 배치·행정 길이·장착 정밀도·사용 환경도 반영해야 하며, 계산 결과는 비교와 위험 평가용이지 보증 연수가 아닙니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">⚖️</span> 2. More Preload Does Not Automatically Mean Better (預壓越高，不代表整體表現一定越好)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Suitable preload removes internal clearance, raises rigidity and reduces displacement under load. That is why high precision work, and equipment where the load direction changes frequently, often calls for a higher preload class.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Preload is also an internal load in its own right. Set higher than the application needs, it can increase running resistance, heat generation and lubrication demand, and it eats into the margin available for carrying external load. That may shorten the calculated life, but it does not reduce to a simple rule that more preload always means less life, because the outcome still depends on external load, rigidity requirements, mounting accuracy and how the manufacturer calculates life.</p>
+          <p style="margin-bottom:14px;line-height:1.8">The principle is not that higher is better. It is a reasonable balance between the rigidity the cut needs and the life you want out of the part.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">適度預壓可以減少內部間隙，提高滑軌剛性，改善受力時的位移量，因此高精度加工或負荷方向經常改變的設備，可能會採用較高的預壓等級。但預壓本身也會形成內部負荷。當預壓高於實際需求時，滑塊的運動阻力、發熱與潤滑要求都可能增加，可用於承受外部負荷的餘裕也會受到影響。這可能縮短計算壽命，但不能簡化成「只要提高預壓，壽命就必定降低」，因為實際結果仍取決於外部負荷、剛性需求、安裝精度及製造商的壽命計算方式。選擇預壓的原則不是越高越好，而是在加工剛性與使用壽命之間取得合理平衡。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">적절한 예압은 내부 틈새를 줄여 강성을 높이고 하중을 받을 때의 변위를 개선합니다. 그래서 고정밀 가공이나 하중 방향이 자주 바뀌는 설비에서는 높은 예압 등급을 쓰기도 합니다. 다만 예압 자체도 내부 하중입니다. 실제 필요보다 높으면 블록의 운동 저항·발열·윤활 요구가 커지고 외부 하중을 받을 여유도 줄어듭니다. 계산 수명이 짧아질 수 있지만, 예압을 높이면 반드시 수명이 준다고 단순화할 수는 없습니다. 결과는 외부 하중·강성 요구·장착 정밀도·제조사의 수명 계산 방식에 따라 달라지기 때문입니다. 예압 선택의 원칙은 높을수록 좋다가 아니라, 가공 강성과 사용 수명 사이의 합리적 균형입니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🧩</span> 3. Why Parts Fail Earlier Than Expected (零件為何會比預期更早失效？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Rated life addresses rolling contact fatigue. On the shop floor, parts routinely fail before the calculated life for other reasons entirely:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li>Insufficient lubrication, or the wrong lubricant for the application</li>
+            <li>Chips, dust or coolant reaching the rolling surfaces</li>
+            <li>An uneven mounting datum, or poor parallelism between two rails</li>
+            <li>Failed wipers, way covers or seals</li>
+            <li>Collisions, abnormal loads and frequent hard acceleration</li>
+            <li>Blocked lubrication lines, or an automatic lubricator not actually delivering</li>
+            <li>Parts refitted after removal without being realigned</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">On machines cutting graphite, wood, cast iron or composites, fine dust entering the block can contaminate the lubricant and cause abrasive wear. Hard particles may also be pressed into the raceway surface, leaving indentations that concentrate stress in the rolling contact that follows.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Damage of this kind should not all be called brinelling. True brinelling is permanent plastic deformation from excessive static or shock load. Where foreign particles are pressed into the raceway, the accurate term is particle denting. Contact surface wear caused by repeated micro vibration while the machine is stationary is closer to false brinelling or fretting corrosion. <strong style="color:var(--gold)">The names differ because the fixes differ.</strong> Replace the block without first finding the source of contamination, vibration or abnormal load, and the new part is likely to fail the same way.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">額定壽命主要討論滾動疲勞，但現場零件經常在達到計算壽命前，就因其他原因失效。常見原因包括：潤滑不足或潤滑劑選擇不當；切屑、粉塵或切削液進入滾動面；安裝基準不平或兩支滑軌平行度不良；防塵刮片、伸縮護罩或密封件失效；碰撞、異常負荷及頻繁急加減速；油路堵塞或自動潤滑系統未正常供油；零件拆裝後未重新校正。以加工石墨、木材、鑄鐵或複合材料的設備為例，細小粉塵進入滑塊後，可能污染潤滑劑並造成磨粒磨耗；硬質顆粒也可能被壓入滾道表面，形成壓痕，讓後續滾動接觸產生應力集中。這類污染損傷不應全部稱為布氏壓痕。真正的 brinelling 與過大的靜態或衝擊負荷造成永久塑性變形有關；若是外部顆粒被壓入滾道，較準確的說法是顆粒壓痕；設備停止時受到反覆微振動所形成的接觸面磨損，則可能屬於假性布氏壓痕或微動腐蝕。<strong>名稱不同，處理方式也不同。</strong>若未先找出污染、振動或異常負荷的來源，只更換滑塊，新零件仍可能很快再次損壞。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">정격 수명은 롤링 피로를 다루지만, 현장 부품은 계산 수명에 도달하기 전에 다른 이유로 고장 나는 경우가 많습니다. 윤활 부족이나 부적절한 윤활제, 칩·분진·절삭유의 전동면 침입, 장착 기준면의 불균일이나 두 레일의 평행도 불량, 와이퍼·텔레스코픽 커버·실의 손상, 충돌과 이상 하중 및 잦은 급가감속, 유로 막힘이나 자동 급유 미작동, 재조립 후 재정렬 누락 등이 대표적입니다. 흑연·목재·주철·복합재를 가공하는 설비에서는 미세 분진이 블록에 들어가 윤활제를 오염시키고 연삭 마모를 일으킬 수 있으며, 경질 입자가 전동면에 압입되어 압흔을 남기고 이후 접촉에서 응력 집중을 만듭니다. 이런 손상을 모두 브리넬링이라 부르면 안 됩니다. 진성 브리넬링은 과대한 정하중이나 충격 하중에 의한 영구 소성 변형이고, 외부 입자가 압입된 것은 입자 압흔이며, 정지 중 반복 미진동에 의한 접촉면 마모는 가성 브리넬링 또는 프레팅 부식에 가깝습니다. <strong>명칭이 다르면 조치도 다릅니다.</strong> 오염·진동·이상 하중의 원인을 찾지 않고 블록만 교체하면 새 부품도 같은 방식으로 손상됩니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔎</span> 4. What to Act On With Linear Guides (線性滑軌出現哪些情況需要處理？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">As a linear guide deteriorates, the signs available on the shop floor usually include:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li>A change in the sound of axis movement</li>
+            <li>Uneven running resistance, or a catch at one point in the stroke</li>
+            <li>Falling positioning and repeatability accuracy</li>
+            <li>Periodic marks appearing on the machined surface</li>
+            <li>Dirt or metal powder emerging from the ends of the block</li>
+            <li>Corrosion, indentation, scoring or flaking on the raceway</li>
+            <li>Wipers damaged, or no longer in proper contact with the rail</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">Pulling the block off and pushing it by hand is not a sound test on its own. Some preloaded blocks are meant to have noticeable running resistance, and removing a block incorrectly can let balls fall out or let contamination in.</p>
+          <p style="margin-bottom:14px;line-height:1.8">A more reliable sequence is to rule out lubrication, covers, wipers, drive and mounting problems first, then measure backlash, running resistance, vibration and positioning accuracy. If the raceway is already flaking, badly corroded or clearly indented, replacement is normally the answer. Before ordering, confirm whether rail and block are supplied as a matched pair, and confirm model, accuracy class, preload class, number of blocks and mounting datum. <strong style="color:var(--gold)">Matching dimensions do not make two parts interchangeable.</strong></p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">線性滑軌逐漸劣化時，現場可能觀察到：軸向移動的聲音改變；運動阻力不均或局部卡滯；定位與重複定位精度下降；加工表面出現週期性紋路；滑塊端部漏出髒污或金屬粉末；滾道出現鏽蝕、壓痕、刮傷或剝落；防塵刮片破損或與軌道接觸不良。不建議直接拆下滑塊後空手推動，再以手感作為唯一判斷。某些預壓型滑塊原本就具有較大的運動阻力，而且拆卸方式不當還可能造成滾珠脫落或污染。比較可靠的做法是先排除潤滑、護罩、刮片、驅動與安裝問題，再檢查背隙、運動阻力、振動及定位精度。如果滾道已經剝落、嚴重鏽蝕或出現明顯壓痕，通常應安排更換。更換前還要確認滑軌與滑塊是否為配對產品，以及型號、精度、預壓、滑塊數量和安裝基準。<strong>尺寸相同不代表可以直接互換。</strong></p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">리니어 가이드가 열화되면 현장에서 다음과 같은 징후가 나타납니다. 축 이동음의 변화, 운동 저항의 불균일이나 국부적 걸림, 위치 결정·반복 정밀도 저하, 가공면의 주기적 무늬, 블록 끝단에서 나오는 오염물이나 금속 분말, 전동면의 녹·압흔·스크래치·박리, 와이퍼 파손이나 레일과의 접촉 불량입니다. 블록을 떼어 손으로 밀어 보고 감각만으로 판단하는 방식은 권장하지 않습니다. 일부 예압 블록은 원래 운동 저항이 크며, 잘못 분해하면 볼이 빠지거나 오염이 들어갈 수 있습니다. 더 신뢰할 수 있는 순서는 윤활·커버·와이퍼·구동·장착 문제를 먼저 배제한 뒤 백래시·운동 저항·진동·위치 결정 정밀도를 확인하는 것입니다. 전동면이 이미 박리되었거나 심하게 녹슬었거나 뚜렷한 압흔이 있다면 교체를 계획해야 합니다. 교체 전에는 레일과 블록이 세트 제품인지, 그리고 모델·정밀도·예압·블록 수·장착 기준을 확인하십시오. <strong>치수가 같다고 그대로 호환되는 것은 아닙니다.</strong></p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🌀</span> 5. Spindle Life Is Not Just Running Hours (主軸壽命不能只看運轉時數)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Spindle life depends on speed, cutting load, bearing arrangement, preload, lubrication method, cooling capacity, tool balance and collision history. Age in years, or accumulated hours, is a weak basis for judging how much life is left.</p>
+          <p style="margin-bottom:14px;line-height:1.8">What can be recorded on a regular basis:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li>Spindle temperature at a fixed speed and warm up condition</li>
+            <li>Vibration level and spectrum at the same measuring point</li>
+            <li>The sound of the spindle running</li>
+            <li>Runout and contact condition of the spindle taper</li>
+            <li>Drawbar clamping force</li>
+            <li>Surface finish and dimensional stability</li>
+            <li>Condition of the chiller, lubrication and air seal systems</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">A single temperature or vibration figure carries limited meaning. <strong style="color:var(--gold)">What matters is whether the readings keep drifting away from that machine's own baseline under the same conditions.</strong> A rise in spindle temperature can come from the bearings, but equally from a chiller losing efficiency, a lubrication fault, incorrect belt tension or a long spell of heavy cutting. Noise or chatter should first be checked against tool balance, tool projection, cutting parameters, workholding and machine structure.</p>
+          <p style="margin-bottom:14px;line-height:1.8">If bearing or internal damage is confirmed, have a competent party assess repair against replacement. Wear in the spindle taper or the drawbar mechanism does not always mean the whole spindle has to go, since regrinding or partial replacement is sometimes possible.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">主軸系統的壽命受到轉速、切削負荷、軸承配置、預壓、潤滑方式、冷卻能力、刀具平衡及碰撞紀錄影響。單靠使用年份或累積時數，很難判斷主軸還能使用多久。現場可定期記錄：固定轉速及暖機條件下的主軸溫度；相同測點的振動值及頻譜變化；主軸運轉聲音；主軸錐孔的偏擺與接觸狀況；拉刀機構的夾持力；加工表面與尺寸穩定性；冷卻機、潤滑及氣封系統狀態。單一溫度或振動數字的意義有限。<strong>更值得注意的是，在相同條件下，數據是否持續偏離機台原本的基準。</strong>例如主軸溫度上升可能來自軸承，也可能是冷卻機效率下降、潤滑異常、皮帶張力不當或長時間高負載造成；出現異音或顫振時，也應先排除刀具平衡、刀具伸出量、切削參數、夾持狀況和機台結構問題。若確認軸承或主軸內部受損，應由具備能力的單位評估修復或更換。主軸錐孔或拉刀機構磨耗，也不一定需要更換整支主軸，有些情況可以修磨或更換局部零件。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">주축 수명은 회전수·절삭 부하·베어링 구성·예압·윤활 방식·냉각 능력·공구 밸런스·충돌 이력의 영향을 받습니다. 사용 연수나 누적 시간만으로 남은 수명을 판단하기는 어렵습니다. 현장에서 정기적으로 기록할 항목은 일정 회전수·워밍업 조건에서의 주축 온도, 동일 측정점의 진동값과 스펙트럼 변화, 주축 운전음, 주축 테이퍼의 흔들림과 접촉 상태, 드로바 클램핑력, 가공면과 치수 안정성, 칠러·윤활·에어실 계통 상태입니다. 온도나 진동 수치 하나만으로는 의미가 제한적입니다. <strong>중요한 것은 같은 조건에서 데이터가 그 기계 본래의 기준선에서 계속 벗어나는지 여부입니다.</strong> 주축 온도 상승은 베어링 때문일 수도 있지만 칠러 효율 저하·윤활 이상·벨트 장력 불량·장시간 고부하 때문일 수도 있습니다. 이음이나 채터가 발생하면 공구 밸런스·공구 돌출량·절삭 조건·클램핑 상태·기계 구조 문제를 먼저 배제해야 합니다. 베어링이나 주축 내부 손상이 확인되면 역량 있는 업체가 수리와 교체를 평가하도록 하십시오. 테이퍼나 드로바 마모가 반드시 주축 전체 교체를 뜻하지는 않으며, 재연삭이나 부분 교체가 가능한 경우도 있습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">💰</span> 6. Spares Should Not Be Sorted by Price Alone (備品不應只按照價格分類)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">The two common extremes in spare parts management are holding nothing at all, and leaving a large quantity of expensive parts sitting in the store for years. A more workable approach weighs four things at once:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li><strong style="color:var(--text)">Downtime impact.</strong> Does failure stop the machine immediately? Does it stop the line? Is there another machine that can take the work?</li>
+            <li><strong style="color:var(--text)">Procurement and repair lead time.</strong> Is the part locally stocked, or made to order overseas? Can the old one be repaired? How long from confirming the specification to running production again?</li>
+            <li><strong style="color:var(--text)">Difficulty of substitution.</strong> Is there a compatible model? Will a newer drive or control board require changes to wiring, parameters, firmware or programs?</li>
+            <li><strong style="color:var(--text)">Storage risk.</strong> Batteries, oil seals, belts and some lubricants have shelf lives. Precision rails, ballscrews and bearings need rust protection. Electronic boards need protection from humidity and static. Not every part is suited to long term storage.</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">Typical life ranges published for each component type are a reasonable starting point for planning. They are not a countdown, and they do not replace the condition data from the machine in front of you.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">備品管理最常見的兩個極端，是什麼都不準備，或把大量昂貴零件放在倉庫多年。比較務實的方法，是同時評估四項。<strong>停機影響：</strong>零件損壞後，機台是否立即停機？是否會影響整條生產線？廠內有沒有其他機器可以承接？<strong>採購與維修交期：</strong>零件是當地常備品，還是必須由海外製作？舊品能否修復？從確認規格到重新投產需要多少時間？<strong>替代難度：</strong>是否有相容型號？更換新版驅動器或控制板後，是否需要修改配線、參數、韌體或程式？<strong>保存風險：</strong>電池、油封、皮帶及部分潤滑品有保存期限；精密滑軌、螺桿和軸承需要防鏽；電子板件則要注意濕氣與靜電，不是所有零件都適合長期放置。各類零件公布的典型壽命區間，可以當作規劃的起點，但它不是倒數計時，也不能取代眼前這台機器的實際狀態資料。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">예비품 관리에서 흔한 두 극단은 아무것도 준비하지 않는 것과 고가 부품을 창고에 몇 년씩 쌓아 두는 것입니다. 현실적인 방법은 네 가지를 함께 평가하는 것입니다. <strong>정지 영향:</strong> 고장 시 기계가 즉시 멈추는가, 라인 전체에 영향을 주는가, 사내에 대체 가능한 설비가 있는가. <strong>조달·수리 리드타임:</strong> 현지 상비품인가 해외 제작품인가, 기존 품의 수리가 가능한가, 사양 확정부터 재가동까지 얼마나 걸리는가. <strong>대체 난이도:</strong> 호환 모델이 있는가, 신형 드라이브나 제어 보드로 교체하면 배선·파라미터·펌웨어·프로그램 수정이 필요한가. <strong>보관 위험:</strong> 배터리·오일실·벨트·일부 윤활유에는 보관 기한이 있고, 정밀 레일·볼스크류·베어링은 방청이, 전자 보드는 습기와 정전기 대책이 필요합니다. 부품 종류별로 공개된 일반 수명 구간은 계획의 출발점이 될 뿐, 카운트다운이 아니며 눈앞 설비의 실제 상태 데이터를 대신하지 못합니다.</p>
+        </div>
+
+        <h3 style="color:var(--text);font-size:1.05rem;margin:26px 0 14px">7. Three Common Spare Parts Tiers ／ 三種常見的備品層級 ／ 예비품 3단계 분류</h3>
+        <div style="overflow-x:auto;margin:0 0 16px">
+          <table style="width:100%;border-collapse:collapse;font-size:0.86rem;min-width:560px">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">Tier ／ 層級 ／ 등급</th>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">Typical parts ／ 常見零件 ／ 대표 부품</th>
+                <th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--gold);color:var(--gold);font-size:0.76rem;letter-spacing:1px;font-weight:600">What to do ／ 處理原則 ／ 운용 원칙</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)"><strong>A</strong><br>Hold on site<br>現場常備<br>현장 상비</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Controller and encoder batteries of the specified type, fuses, relays and contactors, proximity switches and common sensors, control cabinet fans and filters, common belts, seals and wipers, tool clamping consumables ／ 指定型號的控制器或編碼器電池、保險絲、繼電器與接觸器、接近開關與常用感測器、控制箱風扇與濾網、常用皮帶密封件與刮片、刀具夾持耗材 ／ 지정 규격 배터리, 퓨즈·릴레이·전자접촉기, 근접 스위치와 상용 센서, 제어반 팬·필터, 상용 벨트·실·와이퍼, 공구 클램핑 소모품</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Low cost, but absence stops the machine. Set quantity from usage, lead time and shelf life, and rotate stock ／ 價格不高但缺少時可能立即停機。依使用量、供貨時間與保存期限設定數量並定期輪替 ／ 저가이지만 없으면 즉시 정지. 사용량·리드타임·보관 기한으로 수량을 정하고 정기 교체</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)"><strong>B</strong><br>Decide by lead time<br>視交期與共用性<br>리드타임 기준 판단</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Servo motors, drives, encoders, oil pumps, lubrication pumps, some control modules ／ 伺服馬達、驅動器、編碼器、油泵、潤滑泵及部分控制模組 ／ 서보 모터·드라이브·엔코더·오일 펌프·윤활 펌프·일부 제어 모듈</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Worth stocking as a shared spare where several machines share a configuration. Where versions differ, confirm compatibility first ／ 廠內多台機台配置相同時可準備共用備品；版本不一時應先確認相容性，避免買到外觀相同卻無法使用的零件 ／ 동일 구성 설비가 여러 대면 공용 예비품이 유효. 버전이 다르면 호환성부터 확인</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)"><strong>C</strong><br>Plan, do not stock<br>備方案不備實品<br>실물 대신 방안 준비</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">Spindle assemblies, precision ballscrews, complete linear guide sets, large special modules ／ 主軸總成、精密滾珠螺桿、整組線性滑軌及大型特殊模組 ／ 주축 어셈블리·정밀 볼스크류·리니어 가이드 세트·대형 특수 모듈</td>
+                <td style="padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-dim)">High value and prone to deteriorate in storage. Keep the full specification, drawings, supplier, repair route, estimated lead time and alternatives on file, and start enquiring once monitoring data drifts ／ 金額較高且長期存放可能劣化。至少提前保存完整規格、圖面、供應商、維修管道、預估交期與替代方案，監測數據持續異常時即可啟動詢價 ／ 고가이며 장기 보관 시 열화 우려. 사양·도면·공급처·수리 경로·예상 납기·대체안을 미리 정리하고 데이터가 벗어나면 즉시 문의 개시</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin-bottom:24px">Tiering is a starting frame, not a fixed rule. A C tier part on a single bottleneck machine may well deserve B tier treatment. ／ 這個分層是起點而非定則。單台瓶頸機台上的 C 類零件，往往值得比照 B 類處理。／ 이 분류는 출발점이며 고정된 규칙이 아닙니다. 병목 설비 한 대에 쓰이는 C 등급 부품은 B 등급으로 다루는 편이 나을 수 있습니다.</p>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📋</span> 8. What a Spare Parts List Should Record (備品表應記錄哪些資料？)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A spare parts list that genuinely saves time during a breakdown does not say "X axis rail" or "spindle motor". At minimum it should record:</p>
+          <ul style="margin:0 0 14px;padding-left:20px;line-height:1.9;color:var(--text-dim)">
+            <li>Machine brand, model and serial number</li>
+            <li>Part manufacturer and complete part number</li>
+            <li>Hardware, firmware and version information</li>
+            <li>Fitted location and the axis it belongs to</li>
+            <li>Photographs of the nameplate, connectors and mounting orientation</li>
+            <li>Accuracy class, preload, dimensions and capacity</li>
+            <li>How it pairs with the control, drive or motor</li>
+            <li>Current stock and where it is stored</li>
+            <li>Purchase date, shelf life and stocktake record</li>
+            <li>Normal lead time and alternative models</li>
+            <li>Previous failure causes and replacement dates</li>
+          </ul>
+          <p style="margin-bottom:14px;line-height:1.8">On older machines the serial number and photographs of the original part matter more than they look. <strong style="color:var(--gold)">The same model built in different years can carry a different control, turret, spindle or servo system</strong>, so the machine name alone does not always identify the right part.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">真正能在故障時節省時間的備品表，不應只寫「X 軸滑軌」或「主軸馬達」。建議至少記錄：機台品牌、型號及序號；零件製造商與完整料號；硬體、韌體及版本資訊；安裝位置與適用軸別；銘牌、接頭及安裝方向照片；精度、預壓、尺寸及容量；與控制器、驅動器或馬達的配套關係；現有庫存與存放位置；購入日期、保存期限與盤點紀錄；正常供貨時間及替代型號；歷次故障原因與更換日期。對舊機而言，機台序號和原零件照片尤其重要。<strong>同一個機型在不同生產年份，可能使用不同的控制器、刀塔、主軸或伺服系統</strong>，只憑機台名稱不一定能確認正確零件。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">고장 시 실제로 시간을 절약해 주는 예비품 목록은 "X축 레일"이나 "주축 모터" 수준으로 적어서는 안 됩니다. 최소한 기계 브랜드·모델·일련번호, 부품 제조사와 전체 품번, 하드웨어·펌웨어·버전 정보, 장착 위치와 해당 축, 명판·커넥터·장착 방향 사진, 정밀도·예압·치수·용량, 제어장치·드라이브·모터와의 조합 관계, 현재 재고와 보관 위치, 구입일·보관 기한·재고 조사 기록, 통상 납기와 대체 모델, 과거 고장 원인과 교체일을 기록하십시오. 구형 설비에서는 일련번호와 기존 부품 사진이 특히 중요합니다. <strong>같은 기종이라도 생산 연도에 따라 제어장치·터렛·주축·서보 시스템이 다를 수 있어</strong> 기계 명칭만으로는 올바른 부품을 확정할 수 없습니다.</p>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">✅</span> From Fixing on Failure to Visible Equipment Management (從壞了再修，改為看得見的設備管理)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Component life is not a fixed countdown. It is the combined result of load, environment, mounting and maintenance.</p>
+          <p style="margin-bottom:14px;line-height:1.8">Rather than assigning each part a replacement year that looks precise, build a baseline record for the machine and keep tracking temperature, vibration, accuracy, backlash, lubrication and alarm history against it. Then decide, on downtime impact, lead time, substitution difficulty and storage risk, which parts belong on the shelf and which only need a purchasing and repair plan established in advance.</p>
+          <p style="margin-bottom:14px;line-height:1.8">On a CNC machine that has been in service for years, the hardest problem is usually not the ageing part itself. <strong style="color:var(--gold)">It is discovering, after the failure, that the part number is incomplete, the original model is discontinued, or the substitute will not fit without modification.</strong> Organising the equipment data, identifying where downtime actually starts, and stocking a sensible quantity of spares is normally more effective at reducing downtime risk than holding a large inventory.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px solid var(--border)">零件壽命不是固定的倒數計時，而是負荷、環境、安裝與維護共同作用的結果。與其為每個零件設定一個看似精確的更換年份，不如建立機台基準資料，持續記錄溫度、振動、精度、背隙、潤滑與警報變化。同時依停機影響、取得時間、替代難度及保存風險，決定哪些零件需要現場庫存，哪些只需預先建立採購與維修方案。對使用多年的 CNC 工具機來說，最棘手的往往不是零件本身老化，<strong>而是發生故障後才發現料號不完整、原型號已停產，或替代品無法直接安裝。</strong>把設備資料整理好，把容易停機的環節找出來，再準備適量的備品，通常比大量囤貨更能有效降低停機風險。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0">부품 수명은 정해진 카운트다운이 아니라 부하·환경·장착·보전이 함께 만들어 내는 결과입니다. 부품마다 정확해 보이는 교체 연도를 정하기보다, 설비의 기준 자료를 만들고 온도·진동·정밀도·백래시·윤활·알람 변화를 계속 기록하는 편이 낫습니다. 그리고 정지 영향·조달 시간·대체 난이도·보관 위험에 따라 어떤 부품을 현장에 두고 어떤 부품은 구매·수리 방안만 미리 준비할지 결정하십시오. 오래 사용한 CNC 공작기계에서 가장 곤란한 것은 부품의 노후 자체가 아니라, <strong>고장이 난 뒤에야 품번이 불완전하거나 원 모델이 단종되었거나 대체품이 그대로 장착되지 않는다는 사실을 알게 되는 경우입니다.</strong> 설비 자료를 정리하고 정지가 시작되는 지점을 찾아 적정 수량의 예비품을 준비하는 편이, 대량 재고보다 정지 위험을 줄이는 데 효과적입니다.</p>
+        </div>
+
+        <p style="color:var(--text-dim);font-size:0.78rem;line-height:1.7;margin:16px 0 16px">This article provides general technical information. Life calculations, preload classes and replacement decisions should follow the component manufacturer's current catalogue and the machine builder's documentation. ／ 本文提供一般性技術資訊，壽命計算、預壓等級與更換判斷仍應以零件製造商現行型錄及機台原廠資料為準。／ 본문은 일반적인 기술 정보를 제공하며, 수명 계산·예압 등급·교체 판단은 부품 제조사의 현행 카탈로그와 기계 제조사 자료를 기준으로 해야 합니다.</p>
+
+        <!-- CTA -->
+        <div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:24px;text-align:center;margin-bottom:16px">
+          <h3 style="color:var(--text);margin:0 0 8px;font-size:1.05rem">Working Out What to Keep on the Shelf?</h3>
+          <p style="color:var(--text-dim);font-size:0.9rem;max-width:600px;margin:0 auto 20px">Z&amp;Z STROTEC supplies tool holders, chucks and collets, and bar feeder parts across several brands, and can quote from a nameplate, a part number and photographs of the mounting interface. For lathe side assemblies such as spindles, ballscrews and linear guide sets, availability depends on the machine brand and whether the model is still supported, so we help you confirm the specification and identify the right route to obtain it rather than assume we can supply it. Installation and commissioning still need service engineers on site.</p>
+          <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px">TECHNICAL SUPPORT / 立即洽詢 / 문의하기 →</button>
+        </div>
+        <div style="padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <button class="nav-btn" onclick="location.href='/knowledge/linear-guide/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Linear Guides &amp; Ballscrews — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/spindle/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Spindles — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/part-lifespan/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Spare Parts Lifespan Guide — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/maintenance/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Preventive Maintenance — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/knowledge/cnc-troubleshooting/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">CNC Troubleshooting — Knowledge Article →</button>
+          <button class="nav-btn" onclick="location.href='/column/ball-vs-roller-linear-guides-how-to-balance/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Ball vs Roller Linear Guides — Expert Column →</button>
+          <button class="nav-btn" onclick="location.href='/column/linear-guideway-maintenance-guide-maximize-your-cnc-precision/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Linear Guideway Maintenance — Expert Column →</button>
+        </div>
+
+        <h4 style="color:var(--text);font-size:0.92rem;margin:26px 0 8px">Sources ／ 資料依據 ／ 근거 자료</h4>
+        <ul style="margin:0;padding-left:20px;line-height:1.9;color:var(--text-dim);font-size:0.85rem">
+          <li><a href="https://www.iso.org/standard/66682.html" target="_blank" rel="noopener" style="color:var(--gold)">ISO 14728-1:2017, linear motion rolling bearings: dynamic load ratings and rating life</a></li>
+          <li><a href="https://www.thk.com/jp/en/products/lm_guide/selection/0007/" target="_blank" rel="noopener" style="color:var(--gold)">Nominal life basis of 50 km for ball types and 100 km for roller types, and the L10 formula, as published by a linear guide manufacturer</a></li>
+          <li><a href="https://www.boschrexroth.com/en/gb/c/linear-guides/" target="_blank" rel="noopener" style="color:var(--gold)">Basic dynamic load rating stated against a 100,000 m nominal life per ISO 14728-1, with the 1.26 factor for converting to a 50,000 m basis</a></li>
+        </ul>
+
+      </div>
+</div>
+  <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Maintenance · Spare Parts Strategy</span></div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/part-lifespan/">Spare Parts Lifespan Guide<span class="s">備用零件壽命指南 · 예비 부품 수명 가이드</span></a></li><li><a href="/knowledge/spindle/">CNC Spindle Selection, Acceptance Testing and Troubleshooting<span class="s">CNC 主軸選型、驗收與故障診斷指南 · CNC 주축 선정·검수·고장 진단 가이드</span></a></li><li><a href="/knowledge/cnc-troubleshooting/">CNC Troubleshooting Guide: Chatter, Poor Finish, Tool Breakage &amp; Positioning Errors<span class="s">CNC 加工異常排除指南：震刀、表面粗糙、刀具斷裂與定位誤差 · CNC 트러블슈팅 가이드: 채터·거친 표면·공구 파손·위치 오차</span></a></li><li><a href="/knowledge/machine-accuracy/">CNC Machine Accuracy Guide: Backlash, Repeatability &amp; Thermal Control<span class="s">CNC 機械精度指南：背隙、重複精度與熱誤差全面解析 · CNC 기계 정밀도 가이드: 백래시·반복 정밀도·열 오차</span></a></li><li><a href="/knowledge/chuck-replacement/">How to Identify a Replacement Chuck or Collet Chuck<span class="s">夾頭與筒夾更換辨識指南 · 교체용 척·콜릿 척 식별 가이드</span></a></li><li><a href="/knowledge/cnc-machine-rfq/">CNC Machine RFQ Checklist: 15 Specifications to Send With an Inquiry<span class="s">CNC 機台詢價清單：RFQ 前應提供的 15 項規格 · CNC 설비 RFQ 체크리스트: 문의 시 보낼 15가지 사양</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <div style="margin-top:10px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8">Sponsored placements are clearly labelled and do not influence editorial content. · 贊助刊登一律明確標示，不影響內容編輯判斷.</div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
