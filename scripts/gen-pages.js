@@ -255,6 +255,18 @@ body{margin:0}
   border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
 .kbp-cta:hover{background:var(--gold);color:#0d0d0d}
 .kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-next{margin-top:32px;padding:22px 24px;background:var(--surface2);
+  border:1px solid var(--gold);border-radius:8px}
+.kbp-next .eb{font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:9px}
+.kbp-next .hd{color:var(--text);font-size:1.02rem;font-weight:600;line-height:1.5}
+.kbp-next .sub{color:var(--text-dim);font-size:.86rem;line-height:1.6;margin-top:3px}
+.kbp-next .bd{color:var(--text-dim);font-size:.9rem;line-height:1.8;margin-top:12px}
+.kbp-next .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.kbp-next a{display:inline-block;padding:10px 22px;border-radius:5px;font-size:12px;
+  letter-spacing:1.5px;text-decoration:none}
+.kbp-next .gold{background:var(--gold);border:1px solid var(--gold);color:#0d0d0d;font-weight:600}
+.kbp-next .blue{background:transparent;border:1px solid #5bbcff;color:#5bbcff}
 .kbp-body img{max-width:100%;height:auto}
 .kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
   color:var(--text-dim);font-size:12px;line-height:1.9}
@@ -678,6 +690,31 @@ function relatedColumn(c) {
 const ORG = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE };
 const PUBLISHER = { '@type': 'Organization', name: 'Z&Z STROTEC', url: SITE,
                     logo: { '@type': 'ImageObject', url: SITE + LOGO } };
+/* ------------------------------------------------------------- foot CTA
+ * The generated pages are where organic and shared traffic actually lands,
+ * and they used to end on a tag row and a list of related links. Analytics
+ * for 2026-07-22..08-18 showed 350 knowledge views and 210 column views
+ * against one inquiry attempt, so every article now closes on a next step.
+ * Trilingual in one block, matching the rest of the generated chrome, since
+ * these pages have no language switcher.
+ */
+function footCta(section, key) {
+  const k = String(key || '').replace(/'/g, '');
+  const ev = (name) => `gtag('event','${name}',{cta_source:'${section}',item_key:'${k}',site_language:'en'})`;
+  return `
+  <div class="kbp-next">
+    <div class="eb">Next step &nbsp;·&nbsp; 下一步 &nbsp;·&nbsp; 다음 단계</div>
+    <div class="hd">Have a specification in hand?</div>
+    <div class="sub">手上已經有規格了嗎？ &nbsp;·&nbsp; 사양이 이미 정해져 있으십니까?</div>
+    <div class="bd">Send us the machine model, the part number or a photo from the floor. We will come back on what is available and what it costs.</div>
+    <div class="bd">把機台型號、零件料號或現場照片寄給我們，我們會回覆供貨狀況與價格。<br>장비 모델명, 부품 번호 또는 현장 사진을 보내주시면 공급 가능 여부와 가격을 회신드립니다.</div>
+    <div class="row">
+      <a class="gold" href="${BASE}#inquiry" onclick="${ev('cta_inquiry_click')}">Send an inquiry &nbsp;/&nbsp; 立即洽詢 →</a>
+      <a class="blue" href="${BASE}#subscribe" onclick="${ev('cta_subscribe_click')}">Get new articles by email &nbsp;/&nbsp; 訂閱新文章通知</a>
+    </div>
+  </div>`;
+}
+
 function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogImage, bodyHtml,
                        published, updated, tags, crumb, deeplink, section,
                        schemaType, articleSection, suppressHeader, track, related }) {
@@ -724,10 +761,15 @@ function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogIm
   <h1 class="kbp-h1">${title}</h1>
   ${subtitle ? `<p style="margin:0 0 12px">${subtitle}</p>` : ''}
   ${byline}`;
+  // Hubs and the privacy page pass no section and get no CTA.
+  const ctaKey = url.replace(SITE, '').replace(/\/$/, '').split('/').pop();
+  const ctaHtml = ['knowledge', 'column', 'markets'].includes(section)
+    ? footCta(section, ctaKey) : '';
   const main = `${header}
   <a class="kbp-cta" href="${deeplink}">${deeplink.includes('#') ? 'View interactive version' : 'Open full site'} · 完整互動版 · 인터랙티브 버전 →</a>
   <div class="kbp-body">${rewriteAssets(rewriteNav(bodyHtml))}</div>
   ${tagHtml}
+  ${ctaHtml}
   ${relatedHtml(related)}`;
   emit(url.replace(SITE, ''), url.replace(SITE, ''),
     pageShell({ depth, url, title: seoTitle || title, desc,

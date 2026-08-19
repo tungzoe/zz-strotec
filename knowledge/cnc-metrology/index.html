@@ -95,6 +95,18 @@ body{margin:0}
   border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
 .kbp-cta:hover{background:var(--gold);color:#0d0d0d}
 .kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-next{margin-top:32px;padding:22px 24px;background:var(--surface2);
+  border:1px solid var(--gold);border-radius:8px}
+.kbp-next .eb{font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:9px}
+.kbp-next .hd{color:var(--text);font-size:1.02rem;font-weight:600;line-height:1.5}
+.kbp-next .sub{color:var(--text-dim);font-size:.86rem;line-height:1.6;margin-top:3px}
+.kbp-next .bd{color:var(--text-dim);font-size:.9rem;line-height:1.8;margin-top:12px}
+.kbp-next .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.kbp-next a{display:inline-block;padding:10px 22px;border-radius:5px;font-size:12px;
+  letter-spacing:1.5px;text-decoration:none}
+.kbp-next .gold{background:var(--gold);border:1px solid var(--gold);color:#0d0d0d;font-weight:600}
+.kbp-next .blue{background:transparent;border:1px solid #5bbcff;color:#5bbcff}
 .kbp-body img{max-width:100%;height:auto}
 .kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
   color:var(--text-dim);font-size:12px;line-height:1.9}
@@ -256,6 +268,18 @@ body{margin:0}
       <p style="margin-top:18px">CMM과 계측실에 큰 투자를 해도, 기계가 공차를 못 지키면 불량률은 높은 채로 남습니다. 진정한 정밀도는 절삭날에서 시작됩니다. 강성 높은 <button class="nav-btn" onclick="location.href='/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>, 정밀 <button class="nav-btn" onclick="location.href='/knowledge/servo-motor/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터</button>, 런아웃이 낮은 <button class="nav-btn" onclick="location.href='/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">공구대</button>를 갖추면 부품이 CMM 검사를 처음에 통과할 가능성이 높아집니다. 기계 정밀도 자체는 <button class="nav-btn" onclick="location.href='/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">기계 정밀도 가이드</button>를 참고하세요. <button class="nav-btn" onclick="location.href='/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 CNC 부품 문의 →</button></p>
     </section></div>
   <div class="kbp-tags"><span class="tag-pill">metrology</span><span class="tag-pill">CMM</span><span class="tag-pill">micrometer</span><span class="tag-pill">vernier caliper</span><span class="tag-pill">bore gauge</span><span class="tag-pill">dial indicator</span><span class="tag-pill">height gauge</span><span class="tag-pill">surface roughness</span><span class="tag-pill">Ra</span><span class="tag-pill">runout</span><span class="tag-pill">量測</span><span class="tag-pill">三次元</span><span class="tag-pill">表面粗糙度</span><span class="tag-pill">跳動</span></div>
+  
+  <div class="kbp-next">
+    <div class="eb">Next step &nbsp;·&nbsp; 下一步 &nbsp;·&nbsp; 다음 단계</div>
+    <div class="hd">Have a specification in hand?</div>
+    <div class="sub">手上已經有規格了嗎？ &nbsp;·&nbsp; 사양이 이미 정해져 있으십니까?</div>
+    <div class="bd">Send us the machine model, the part number or a photo from the floor. We will come back on what is available and what it costs.</div>
+    <div class="bd">把機台型號、零件料號或現場照片寄給我們，我們會回覆供貨狀況與價格。<br>장비 모델명, 부품 번호 또는 현장 사진을 보내주시면 공급 가능 여부와 가격을 회신드립니다.</div>
+    <div class="row">
+      <a class="gold" href="/#inquiry" onclick="gtag('event','cta_inquiry_click',{cta_source:'knowledge',item_key:'cnc-metrology',site_language:'en'})">Send an inquiry &nbsp;/&nbsp; 立即洽詢 →</a>
+      <a class="blue" href="/#subscribe" onclick="gtag('event','cta_subscribe_click',{cta_source:'knowledge',item_key:'cnc-metrology',site_language:'en'})">Get new articles by email &nbsp;/&nbsp; 訂閱新文章通知</a>
+    </div>
+  </div>
   <nav class="kbp-rel" aria-label="Related pages">
     <h2>Related · 延伸閱讀 · 관련 자료</h2>
     <ul><li><a href="/knowledge/spindle/">CNC Spindle Selection, Acceptance Testing and Troubleshooting<span class="s">CNC 主軸選型、驗收與故障診斷指南 · CNC 주축 선정·검수·고장 진단 가이드</span></a></li><li><a href="/column/optimizing-live-tool-holders-for-swiss-type-lathes/">Vibration Control for Live Tool Holders on Swiss-Type Lathes<span class="s">Tooling · Swiss-Type Lathes</span></a></li><li><a href="/column/linear-guideway-maintenance-guide-maximize-your-cnc-precision/">How Linear Guideway Maintenance Protects CNC Precision<span class="s">Maintenance · CNC Precision</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
