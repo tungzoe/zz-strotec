@@ -1317,6 +1317,11 @@
   .kb-chip:hover { border-color: var(--gold); color: var(--gold-light); }
   .kb-chip::after { content: " ›"; color: var(--gold); }
   @media (max-width: 768px) { .kb-quick { grid-template-columns: 1fr; gap: 10px; } }
+  /* Partner tiers: the 110px label column reads fine on desktop but squeezes the
+     value text to a sliver on a phone, so the label stacks above it instead. */
+  .tier-rows { display: grid; grid-template-columns: 110px 1fr; gap: 12px 16px; }
+  @media (max-width: 640px) { .tier-rows { grid-template-columns: 1fr; gap: 4px 0; }
+    .tier-rows > div:nth-child(odd) { margin-top: 10px; } }
 
 /* Terminology page: full-width layout */
 .terms-mode .main { margin-right: 0 !important; }
@@ -1660,6 +1665,20 @@
           </div>
         </div>
       </div>
+      <!-- Why Z&Z: the reader already knows Taiwan makes these machines, so the
+           question this answers is why buy through us rather than direct. Same six
+           services as #page-services, condensed; that page holds the detail. -->
+      <div class="section-title" style="margin-top:4px">WHY Z&amp;Z &nbsp;／&nbsp; 為什麼透過萬洋 &nbsp;／&nbsp; Z&amp;Z를 선택하는 이유</div>
+      <div style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:16px">Taiwanese manufacturers are easy to find. What is harder is specifying the right machine, getting it inspected before it ships, and still having the right spare part three years later. That is the part we do.<br><span style="font-size:0.84rem">台灣的製造廠不難找，難的是選對規格、出貨前驗到機、三年後還拿得到同一顆零件。這一段是我們在做的事。<br>대만 제조사는 찾기 어렵지 않습니다. 어려운 것은 사양을 정확히 정하고, 선적 전에 검수하며, 3년 뒤에도 같은 부품을 확보하는 일입니다.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">MULTI-BRAND SELECTION</div><div style="color:var(--text);font-size:13px;line-height:1.7">We are not tied to one manufacturer. We compare models and specifications against your actual part, cycle time and budget.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">多品牌選型 ・ 다중 브랜드 선정<br>不綁單一原廠，依實際工件、節拍與預算比較機型與規格。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">특정 제조사에 묶여 있지 않으며, 실제 가공물과 예산에 맞춰 기종과 사양을 비교합니다.</div></div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">TECHNICAL CONSULTATION</div><div style="color:var(--text);font-size:13px;line-height:1.7">Specification checks, compatibility questions, acceptance criteria and troubleshooting, in writing, before you commit.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">技術顧問 ・ 기술 컨설팅<br>規格確認、相容性判斷、驗收條件與故障排除，下單前先講清楚。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">사양 확인, 호환성 판단, 검수 기준과 트러블슈팅을 발주 전에 문서로 정리합니다.</div></div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">TRIAL RUN &amp; INSPECTION</div><div style="color:var(--text);font-size:13px;line-height:1.7">We arrange a test cut and inspection at the factory before shipment, so the machine is confirmed to spec while it is still in Taiwan.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">試車與驗機 ・ 시운전 및 검사<br>出貨前於工廠端安排試車與驗機，機台還在台灣時就確認符合規格。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">선적 전 공장에서 시운전과 검사를 진행하여, 대만에 있는 동안 사양 충족 여부를 확인합니다.</div></div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">EXPORT &amp; LOGISTICS</div><div style="color:var(--text);font-size:13px;line-height:1.7">Export documents, packing, sea freight and marine insurance. Machines and parts are quoted on different terms, and we set that out clearly in the quotation.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">出口與物流 ・ 수출 및 물류<br>出口文件、包裝、海運與海上保險。機台與零件適用的貿易條件不同，報價時會分別載明。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">수출 서류, 포장, 해상운송 및 적하보험. 장비와 부품은 거래조건이 다르며 견적서에 각각 명시합니다.</div></div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">SPARE PARTS MANAGEMENT</div><div style="color:var(--text);font-size:13px;line-height:1.7">We plan stock around component service life and keep supplying the same part number over the life of the machine.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">備品管理 ・ 예비 부품 관리<br>依零件壽命規劃常備料，在機台的使用年限內持續供應同一料號。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">부품 수명에 맞춰 재고를 계획하고, 장비 사용 기간 동안 동일 품번을 계속 공급합니다.</div></div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 18px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">AFTER-SALES COORDINATION</div><div style="color:var(--text);font-size:13px;line-height:1.7">Machine sales include installation and after-sales service through local agents in Korea, Brazil, Switzerland and Argentina. For other markets we supply parts and components.</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:6px">售後協調 ・ 애프터서비스 조율<br>機台銷售含安裝與售後，由韓國、巴西、瑞士、阿根廷的在地服務商執行。其他市場我們供應零件與零組件。</div><div style="color:var(--text-dim);font-size:12px;line-height:1.7;margin-top:4px">장비 판매는 한국, 브라질, 스위스, 아르헨티나 현지 대리점을 통해 설치와 애프터서비스를 포함합니다. 그 외 시장에는 부품을 공급합니다.</div></div>
+      </div>
+      <div style="margin-bottom:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center"><span onclick="showPage('services')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600">Full service list / 完整服務說明 →</span><span style="color:var(--text-dim);font-size:0.82rem">Handled in English, 中文 or 한국어</span></div>
       <div class="section-title" data-i18n="section_featured">FEATURED TOPICS</div>
       <div class="cards-grid">
         <a class="card" href="/knowledge/bar-feeder/" onclick="openKnowledge('bar-feeder');return false;">
@@ -2391,7 +2410,9 @@
                 <option>Technical Consultation</option>
                 <option>After-sales / Warranty Support</option>
                 <option>Factory Visit / Sourcing Trip in Taiwan — 來台採購 / 工廠參訪</option>
-                <option>Advertising & Partnership — 刊登廣告 / 合作洽詢</option>
+                <option>Partnership · Knowledge Partner ／ 知識夥伴（技術內容・展覽資訊）</option>
+                <option>Partnership · Solution Partner ／ 方案夥伴（自動化・整線・特殊專案）</option>
+                <option>Partnership · Industry Sponsor ／ 產業曝光（版位・服務專頁）</option>
                 <option>Other</option>
               </select>
             </div>
@@ -2658,7 +2679,7 @@
 
       <div style="background:var(--surface);border:1px dashed var(--border);border-radius:8px;padding:20px;text-align:center;color:var(--text-dim)">
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">More Expert Columns Coming</div>
-        <p style="font-size:0.88rem;margin:0">更多專家專欄陸續刊出。如有刊登合作需求，歡迎<button onclick="showPage('advertise')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:inherit;padding:0;text-decoration:underline">聯絡我們</button>。</p>
+        <p style="font-size:0.88rem;margin:0">更多專家專欄陸續刊出。如有合作需求，歡迎<button onclick="showPage('advertise')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:inherit;padding:0;text-decoration:underline">聯絡我們</button>。</p>
       </div>
     </div>
 
@@ -3288,59 +3309,92 @@
 
     <!-- ADVERTISE PAGE -->
     <div class="page" id="page-advertise">
-      <div class="section-title">ADVERTISE WITH US &nbsp;／&nbsp; 刊登廣告 &amp; 合作洽詢</div>
+      <div class="section-title">PARTNER WITH US &nbsp;／&nbsp; 合作夥伴計畫 &nbsp;／&nbsp; 파트너십</div>
 
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <span style="font-size:10px;letter-spacing:2px;color:#8fb8d0;border:1px solid #2a5a7a;padding:2px 8px;border-radius:3px">繁體中文</span>
-        </div>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:12px">歡迎廠商刊登產品資訊 &amp; 業務合作洽詢</h2>
-        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:20px">萬洋國際有限公司（Z&amp;Z STROTEC）經營一個面向國際市場的工具機知識平台，服務對象涵蓋全球工具機市場的進口商、工程師及採購人員。刊登合作<strong style="color:var(--text)">不限工具機相關產業</strong>，舉凡工具機零組件、精密零件、CNC 周邊、倉儲設備、油冷氣設備、高壓液壓系統、氣壓元件，或任何與製造業相關的產品與服務皆歡迎洽詢。</p>
-        <h3 style="font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px">合作方式</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px">
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">BANNER 廣告欄位</div><div style="color:var(--text);font-size:13px;line-height:1.7">在相關知識文章頁面刊登公司 Logo 及簡短產品說明，全站訪客可見。</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">產品專頁刊登</div><div style="color:var(--text);font-size:13px;line-height:1.7">為您的產品系列建立獨立介紹頁，包含規格、圖片及聯絡資訊。</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">最新消息刊登</div><div style="color:var(--text);font-size:13px;line-height:1.7">新品發表或公司動態，刊登於網站「最新消息（What's New）」區塊。</div></div>
-        </div>
-        <div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px">
-          <p style="color:var(--text-dim);font-size:13px;line-height:1.8;margin:0">✦ 所有刊登內容須經萬洋國際審核，確保符合平台專業定位。<br>✦ 費用及合作形式依個案洽談，歡迎先來信索取媒體資料（Media Kit）。<br>✦ 適合廠商類型（不限）：車床廠、料機廠、刀具廠、零組件供應商、CNC 控制器、倉儲設備、油冷氣設備、高壓系統、氣壓元件等工業相關產品皆可。</p>
-        </div>
-
-        <!-- Advertiser-facing, so it sells the labelling rather than laying down
-             a rule: readers trust this hub, which is what a placement here is
-             buying. The reader-facing wording stays in the site footer. -->
-        <div style="background:rgba(42,127,255,0.06);border:1px solid var(--blue-dim);border-radius:6px;padding:14px 18px;margin-top:14px">
-          <div style="font-size:11px;letter-spacing:1.5px;color:#6ab0ff;margin-bottom:8px">刊登原則</div>
-          <p style="color:var(--text-dim);font-size:13px;line-height:1.8;margin:0">贊助內容會以清楚的方式與知識庫文章區隔呈現。這是為了維持讀者對平台的信任——<strong style="color:var(--text)">讀者相信這裡的內容，您的曝光才有價值</strong>。實際的呈現形式與版位規劃相當有彈性，歡迎來信就個案討論。</p>
-        </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:26px 28px;margin-bottom:20px">
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:12px">THREE WAYS TO WORK WITH US, ONE POINT OF CONTACT</h2>
+        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:10px">Z&amp;Z STROTEC operates a professional B2B knowledge hub for the CNC machine tool industry. Our readers are importers, plant engineers and procurement teams across global machine-tool markets, together with trade and logistics professionals handling export and customs. Partnerships fall into three tiers, each with a different purpose and a different format.</p>
+        <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin:0">萬洋國際有限公司（Z&amp;Z STROTEC）經營一個面向國際市場的工具機知識平台。讀者是全球工具機市場的進口商、廠務工程師與採購人員，以及正在處理出口與通關的貿易同業。合作分成三種層級，目的與形式各不相同。<br>
+        Z&amp;Z STROTEC은 CNC 공작기계 산업을 위한 B2B 지식 허브를 운영합니다. 파트너십은 목적과 형식에 따라 세 가지 유형으로 구분됩니다.</p>
       </div>
 
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px">ENGLISH</span>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 26px;margin-bottom:16px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px">TIER 1</span>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--text);margin:0">KNOWLEDGE PARTNER</h2>
+          <span style="color:var(--text-dim);font-size:13px">知識夥伴 ・ 지식 파트너</span>
         </div>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:12px">REACH BUYERS ACROSS KOREA, BRAZIL, SWITZERLAND &amp; ARGENTINA</h2>
-        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:20px">Z&amp;Z STROTEC operates a professional B2B knowledge hub for the CNC machine tool industry, serving importers, engineers, and procurement teams across global machine-tool markets. We welcome advertising partners from <strong style="color:var(--text)">all industrial sectors</strong> — machine tool components, precision parts, bar feeders, CNC accessories, as well as warehousing equipment, oil cooling systems, high-pressure hydraulics, pneumatics, and any product relevant to manufacturing or industrial operations.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:24px">
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">22</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Markets profiled</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">196</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Technical terms indexed</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">3</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Languages: EN / 中文 / 한국어</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">B2B</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Professional audience only</div></div>
+        <div class="tier-rows" style="font-size:13px;line-height:1.7;margin-bottom:14px">
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHO<br><span style="color:var(--text-dim)">對象</span></div><div><div style="color:var(--text)">Manufacturers, controller makers, tooling, metrology and automation companies with real technical content to share.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">有技術內容能力的原廠、控制器廠、刀具廠、量測與自動化業者。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">FORMAT<br><span style="color:var(--text-dim)">形式</span></div><div><div style="color:var(--text)">Technical articles, specification and application data, training material, exhibition and product announcements.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">技術文章、規格與應用資料、教育內容、展覽與新品資訊。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHERE<br><span style="color:var(--text-dim)">呈現方式</span></div><div><div style="color:var(--text)">A partner page on this site, plus a source credit at the foot of related articles.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">本站的合作夥伴介紹頁，以及相關文章末端的資料提供標示。</div></div>
         </div>
-        <h3 style="font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px">Partnership Options</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px">
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">BANNER LISTING</div><div style="color:var(--text);font-size:13px;line-height:1.7">Logo + short description displayed on relevant knowledge pages, visible to all visitors.</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">FEATURED PRODUCT PAGE</div><div style="color:var(--text);font-size:13px;line-height:1.7">Dedicated page for your product line — specs, photos, and direct contact info.</div></div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:16px"><div style="font-size:12px;color:var(--blue);letter-spacing:1px;margin-bottom:6px">WHAT'S NEW FEATURE</div><div style="color:var(--text);font-size:13px;line-height:1.7">New product launch or company news posted in our industry update section.</div></div>
+        <div style="background:var(--surface2);border-left:3px solid var(--border);border-radius:0 6px 6px 0;padding:12px 16px">
+          <div style="color:var(--text-dim);font-size:12.5px;line-height:1.75">The knowledge library, expert columns, terminology and Incoterms guide carry no paid placement. Partner-supplied material appears separately and is labelled as such.<br>知識庫、專欄、術語表與貿易條件指南不接受付費置入。夥伴提供的內容以獨立形式呈現並清楚標示。<br>지식 콘텐츠에는 유료 게재를 받지 않으며, 파트너 제공 자료는 별도로 표시됩니다.</div>
         </div>
-        <p style="color:var(--text-dim);font-size:12px;line-height:1.7">All placements are reviewed and approved by Z&amp;Z STROTEC. Pricing and format are discussed on a case-by-case basis. Contact us to receive our media kit.</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 26px;margin-bottom:16px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px">TIER 2</span>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--text);margin:0">SOLUTION PARTNER</h2>
+          <span style="color:var(--text-dim);font-size:13px">方案夥伴 ・ 솔루션 파트너</span>
+        </div>
+        <div class="tier-rows" style="font-size:13px;line-height:1.7;margin-bottom:14px">
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHO<br><span style="color:var(--text-dim)">對象</span></div><div><div style="color:var(--text)">Automation and robotics, bar feeders, turnkey line planning, special projects and peripheral integration.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">自動化與機械手、送料機、整線規劃、特殊專案與周邊整合。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">FORMAT<br><span style="color:var(--text-dim)">形式</span></div><div><div style="color:var(--text)">We take on projects together. Z&amp;Z handles the overseas customer, selection advice, export and ongoing spare parts; the partner handles the technical solution and manufacturing.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">共同承接案件。萬洋負責海外客戶溝通、選型建議、出口與後續備品，夥伴負責技術方案與製造。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHERE<br><span style="color:var(--text-dim)">呈現方式</span></div><div><div style="color:var(--text)">A dedicated solution page with real project references.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">專屬方案介紹頁，附實際案例。</div></div>
+        </div>
+        <div style="background:var(--surface2);border-left:3px solid var(--border);border-radius:0 6px 6px 0;padding:12px 16px">
+          <div style="color:var(--text-dim);font-size:12.5px;line-height:1.75">This tier is not a listing. It is joint project work, arranged case by case.<br>這一層不是刊登，是共同接案，以個案協議進行。<br>이 단계는 게재가 아니라 프로젝트 공동 수행이며, 건별 협의로 진행합니다.</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 26px;margin-bottom:16px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px">TIER 3</span>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--text);margin:0">INDUSTRY SPONSOR</h2>
+          <span style="color:var(--text-dim);font-size:13px">產業曝光 ・ 산업 스폰서</span>
+        </div>
+        <div class="tier-rows" style="font-size:13px;line-height:1.7;margin-bottom:14px">
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHO<br><span style="color:var(--text-dim)">對象</span></div><div><div style="color:var(--text)">Plant and peripheral equipment, tooling and consumables, transmission and precision components, customs brokers, freight forwarders and carriers, cargo insurance, inspection and certification.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">廠務與周邊設備、刀具耗材、傳動與精密零組件、報關行、船務承攬與海空運業者、貨物保險、檢驗與認證。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">FORMAT<br><span style="color:var(--text-dim)">形式</span></div><div><div style="color:var(--text)">Banner placement, a product or service page, and What's New announcements.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">Banner 版位、產品或服務專頁、最新消息刊登。</div></div>
+          <div style="color:var(--blue);font-size:12px;letter-spacing:0.5px">WHERE<br><span style="color:var(--text-dim)">呈現方式</span></div><div><div style="color:var(--text)">Placed outside the knowledge content and marked as partner content. Logistics and customs partners sit alongside the Incoterms and export-practice pages, where readers are working through shipping and clearance.</div><div style="color:var(--text-dim);font-size:12px;margin-top:3px">設於知識內容以外的區塊並標示為合作夥伴內容。物流與通關類安排在貿易條件與出口實務相關的內容旁，讀者停在那裡時處理的正是運輸與報關。</div></div>
+        </div>
+        <div style="background:var(--surface2);border-left:3px solid var(--border);border-radius:0 6px 6px 0;padding:12px 16px">
+          <div style="color:var(--text-dim);font-size:12.5px;line-height:1.75">Pricing and scheduling are discussed case by case. Contact us for the media kit.<br>費用與檔期依個案洽談，歡迎來信索取媒體資料（Media Kit）。<br>비용과 일정은 건별로 협의하며, 미디어 킷은 메일로 요청해 주십시오.</div>
+        </div>
+      </div>
+      <!-- Kept off the tier list on purpose: an OEM distribution or agency deal is a
+           commercial agreement, not a placement, and putting it in the same table as
+           banner pricing misreads what those brands are being offered. -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin-bottom:16px">
+        <div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:8px">BRAND REPRESENTATION &nbsp;／&nbsp; 品牌合作關係</div>
+        <p style="color:var(--text-dim);font-size:13px;line-height:1.8;margin:0">If your company is looking for a regional distributor, an authorised dealer or an appointed service partner in Korea, Brazil, Switzerland, Argentina or elsewhere, that is a commercial agreement rather than a listing. Write to us with the market and the product line.<br>
+        若貴公司希望以區域代理、授權經銷或指定服務夥伴的形式合作，這不屬於上述刊登範圍，請直接來信說明市場與產品線。<br>
+        지역 대리점, 공식 딜러 또는 지정 서비스 파트너 형태의 협력은 게재가 아닌 상업 계약이므로, 시장과 제품군을 메일로 알려 주십시오.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">22</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Markets profiled</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">196</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Technical terms indexed</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">3</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Languages: EN / 中文 / 한국어</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px"><div style="font-size:22px;font-weight:600;color:var(--gold)">B2B</div><div style="font-size:11px;color:var(--text-dim);margin-top:3px">Professional audience only</div></div>
+      </div>
+
+      <!-- Advertiser-facing, so it sells the labelling rather than laying down
+           a rule: readers trust this hub, which is what a placement here is
+           buying. The reader-facing wording stays in the site footer. -->
+      <div style="background:rgba(42,127,255,0.06);border:1px solid var(--blue-dim);border-radius:8px;padding:20px 24px;margin-bottom:24px">
+        <div style="font-size:11px;letter-spacing:1.5px;color:#6ab0ff;margin-bottom:10px">PARTNERSHIP POLICY &nbsp;／&nbsp; 合作原則</div>
+        <p style="color:var(--text-dim);font-size:13px;line-height:1.85;margin:0 0 10px">Sponsored content is always presented separately from the knowledge library, and is labelled. Readers trust what they read here, and that trust is what your exposure is worth. Partner banners and profiles are hosted on this site, and enquiries are received and translated by Z&amp;Z STROTEC as the single point of contact before being passed on. All partner material is reviewed by Z&amp;Z STROTEC to keep the hub consistent with its professional positioning.</p>
+        <p style="color:var(--text-dim);font-size:12.5px;line-height:1.85;margin:0">贊助內容一律與知識庫文章清楚區隔並加以標示。讀者相信這裡的內容，您的曝光才有價值。合作夥伴的版位與介紹頁均設於本站內，讀者的詢問由萬洋國際以統一窗口承接、轉譯後與夥伴對接。所有合作內容須經萬洋國際審核，確保符合平台的專業定位。<br>
+        스폰서 콘텐츠는 지식 콘텐츠와 명확히 구분하여 표시하며, 문의는 Z&amp;Z STROTEC이 단일 창구로 접수한 뒤 파트너에게 전달합니다.</p>
       </div>
 
       <div style="background:var(--surface);border:1px solid var(--gold);border-radius:8px;padding:24px 28px">
         <div style="font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px">Contact / 聯絡我們</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
           <div><div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">Company / 公司</div><div style="color:var(--text);font-size:14px;font-weight:500">Z&amp;Z STROTEC CO., LTD.</div><div style="color:var(--text-dim);font-size:12px">萬洋國際有限公司</div><div style="color:var(--text-dim);font-size:12px;margin-top:2px">Tanzi District, Taichung, Taiwan</div></div>
-          <div><div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">Email / 廣告合作洽詢</div><a href="mailto:info@zz-strotec.com" style="color:var(--gold);font-size:14px;text-decoration:none;font-weight:500">info@zz-strotec.com</a><div style="color:var(--text-dim);font-size:12px;margin-top:4px">1–2 business days / 1–2 個工作日內回覆</div></div>
+          <div><div style="font-size:12px;color:var(--text-dim);margin-bottom:4px">Email / 合作洽詢</div><a href="mailto:info@zz-strotec.com" style="color:var(--gold);font-size:14px;text-decoration:none;font-weight:500">info@zz-strotec.com</a><div style="color:var(--text-dim);font-size:12px;margin-top:4px">1–2 business days / 1–2 個工作日內回覆</div></div>
         </div>
         <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
           <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 20px;font-size:13px">Use Inquiry Form / 使用詢問表單 →</button>
@@ -3595,7 +3649,7 @@
              page addresses — hence the foot of Services rather than the top nav. -->
         <div style="margin-top:28px;padding-top:18px;border-top:1px solid var(--border);text-align:center">
           <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;margin:0">
-            台灣廠商如有刊登合作需求，請見<button onclick="showPage('advertise')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.85rem;font-family:inherit;padding:0;text-decoration:underline">刊登廣告說明</button>。
+            台灣廠商如有合作需求，請見<button onclick="showPage('advertise')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.85rem;font-family:inherit;padding:0;text-decoration:underline">合作夥伴計畫</button>。
           </p>
         </div>
       </div>
@@ -15456,7 +15510,7 @@ window.addEventListener('load', () => {
     <a href="/markets/" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Markets</a>·
     <a href="/terminology/" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Terminology</a>·
     <a href="/privacy/" onclick="showPage('privacy');return false;" style="color:var(--text-dim);text-decoration:none;margin:0 10px;">Privacy Policy</a>·
-    <a href="#advertise" onclick="showPage('advertise');return false;" style="color:var(--text-muted);text-decoration:none;margin:0 10px;">刊登廣告 / Advertise</a>
+    <a href="#advertise" onclick="showPage('advertise');return false;" style="color:var(--text-muted);text-decoration:none;margin:0 10px;">合作夥伴 / Partner</a>
   </nav>
   <!-- Stated before there is any sponsor to state it about. Added once the
        first placement is sold, it reads as a defence; added now, it is the
