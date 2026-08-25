@@ -1199,6 +1199,11 @@
   .kb-chip:hover { border-color: var(--gold); color: var(--gold-light); }
   .kb-chip::after { content: " ›"; color: var(--gold); }
   @media (max-width: 768px) { .kb-quick { grid-template-columns: 1fr; gap: 10px; } }
+  /* Partner tiers: the 110px label column reads fine on desktop but squeezes the
+     value text to a sliver on a phone, so the label stacks above it instead. */
+  .tier-rows { display: grid; grid-template-columns: 110px 1fr; gap: 12px 16px; }
+  @media (max-width: 640px) { .tier-rows { grid-template-columns: 1fr; gap: 4px 0; }
+    .tier-rows > div:nth-child(odd) { margin-top: 10px; } }
 
 /* Terminology page: full-width layout */
 .terms-mode .main { margin-right: 0 !important; }
