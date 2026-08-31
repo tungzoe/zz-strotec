@@ -497,13 +497,53 @@ ${CONSENT_BANNER}
 `;
 }
 
+/* ------------------------------------------------- previous build snapshot
+ * lastmod is a claim about the content, not about when the generator last ran.
+ * Snapshot the old sitemap dates and the old page bodies BEFORE the output
+ * dirs are wiped; a page that regenerates byte-identical then keeps its
+ * existing date instead of being stamped with today's.
+ */
+const PREV_LASTMOD = {};   // absolute loc -> 'YYYY-MM-DD'
+const PREV_HTML = {};      // urlPath      -> previous file contents
+try {
+  const prev = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
+  const re = /<loc>([^<]+)<\/loc>\s*<lastmod>([0-9-]+)<\/lastmod>/g;
+  let m;
+  while ((m = re.exec(prev))) PREV_LASTMOD[m[1]] = m[2];
+} catch (_) { /* first run: no sitemap yet */ }
+for (const d of ['knowledge', 'column', 'markets', 'terminology', 'privacy']) {
+  const base = path.join(ROOT, d);
+  if (!fs.existsSync(base)) continue;
+  const walk = dir => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(full); continue; }
+      if (e.name !== 'index.html') continue;
+      const rel = path.relative(ROOT, dir).split(path.sep).join('/');
+      PREV_HTML[rel + '/'] = fs.readFileSync(full, 'utf8');
+    }
+  };
+  walk(base);
+}
+
 /* --------------------------------------------------------------- write util */
 const written = [];
+const CHANGED = {};        // urlPath -> true when the body differs from last build
 function emit(relDir, urlPath, contentHtml) {
   const dir = path.join(ROOT, relDir);
+  const key = urlPath.replace(/\/*$/, '') + '/';
+  CHANGED[key] = PREV_HTML[key] !== contentHtml;
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), contentHtml);
   written.push({ url: SITE + urlPath, loc: urlPath });
+}
+// Date to stamp a generated page with: an explicit editorial date wins; an
+// unchanged page keeps the date it already had; only real changes get TODAY.
+function stamp(url, urlPath, explicit) {
+  if (explicit) return explicit;
+  const key = urlPath.replace(/\/*$/, '') + '/';
+  if (CHANGED[key] === false && PREV_LASTMOD[url]) return PREV_LASTMOD[url];
+  return TODAY;
 }
 // clean previously generated dirs so renamed slugs don't leave orphans
 for (const d of ['knowledge', 'column', 'markets', 'terminology', 'privacy']) {
@@ -786,7 +826,7 @@ function renderEntry({ depth, url, title, seoTitle, titleZh, titleKo, desc, ogIm
   emit(url.replace(SITE, ''), url.replace(SITE, ''),
     pageShell({ depth, url, title: seoTitle || title, desc,
                 ogImage: ogImage || SITE + LOGO, ld, crumb, main, track }));
-  urls.push({ loc: url, priority: '0.8', lastmod: updated || published || TODAY });
+  urls.push({ loc: url, priority: '0.8', lastmod: stamp(url, url.replace(SITE, ''), updated || published) });
 }
 
 /* ---------------------------------------------------------------------- KB */
@@ -898,7 +938,7 @@ function hub({ dir, urlPath, title, intro, items }) {
     depth: 1, url, title, desc: intro, ogImage: SITE + LOGO, ld,
     crumb: `› ${title}`, main
   }));
-  urls.push({ loc: url, priority: '0.9', lastmod: TODAY });
+  urls.push({ loc: url, priority: '0.9', lastmod: stamp(url, urlPath) });
 }
 
 hub({
@@ -988,7 +1028,7 @@ hub({
     crumb: '› Terminology', main,
     track: { name: 'view_terminology', params: { site_language: 'en', landing: true } }
   }));
-  urls.push({ loc: url, priority: '0.9', lastmod: TODAY });
+  urls.push({ loc: url, priority: '0.9', lastmod: stamp(url, 'terminology/') });
   console.log(`Generated terminology page: ${TERMS.length} terms in ${catOrder.length} categories`);
 }
 
@@ -1018,11 +1058,12 @@ hub({
     depth: 1, url, title: 'Privacy Policy', desc, ogImage: SITE + LOGO, ld,
     crumb: '› Privacy Policy', main
   }));
-  urls.push({ loc: url, priority: '0.3', lastmod: TODAY });
+  urls.push({ loc: url, priority: '0.3', lastmod: stamp(url, 'privacy/') });
 }
 
 /* ---------------------------------------------------------------- sitemap */
-const homeEntry = `  <url>\n    <loc>${SITE}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`;
+const HOME_LASTMOD = fs.statSync(SRC).mtime.toISOString().slice(0, 10);
+const homeEntry = `  <url>\n    <loc>${SITE}</loc>\n    <lastmod>${HOME_LASTMOD}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`;
 const body = urls.map(u =>
   `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
 ).join('\n');
