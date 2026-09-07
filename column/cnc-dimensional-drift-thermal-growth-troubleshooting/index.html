@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_column", {"column_id":"col-23","item_title":"CNC Dimensional Drift After Warm-Up: Thermal Growth, Tool Wear or Clamping?","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNC Dimensional Drift: Thermal Growth, Tool Wear &amp; Clamping | Z&amp;Z STROTEC</title>
+<meta name="description" content="CNC dimensions drifting after warm-up? Separate thermal growth, tool wear and clamping effects with a practical measurement workflow and a worked expansion example.">
+<link rel="canonical" href="https://zz-strotec.com/column/cnc-dimensional-drift-thermal-growth-troubleshooting/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNC Dimensional Drift: Thermal Growth, Tool Wear &amp; Clamping">
+<meta property="og:description" content="CNC dimensions drifting after warm-up? Separate thermal growth, tool wear and clamping effects with a practical measurement workflow and a worked expansion example.">
+<meta property="og:url" content="https://zz-strotec.com/column/cnc-dimensional-drift-thermal-growth-troubleshooting/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CNC Dimensional Drift After Warm-Up: Thermal Growth, Tool Wear or Clamping?","description":"CNC dimensions drifting after warm-up? Separate thermal growth, tool wear and clamping effects with a practical measurement workflow and a worked expansion example.","inLanguage":["en","zh-Hant","ko"],"articleSection":"Process Engineering · Accuracy & Troubleshooting","datePublished":"2026-09-03","dateModified":"2026-09-03","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/column/cnc-dimensional-drift-thermal-growth-troubleshooting/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-next{margin-top:32px;padding:22px 24px;background:var(--surface2);
+  border:1px solid var(--gold);border-radius:8px}
+.kbp-next .eb{font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:9px}
+.kbp-next .hd{color:var(--text);font-size:1.02rem;font-weight:600;line-height:1.5}
+.kbp-next .sub{color:var(--text-dim);font-size:.86rem;line-height:1.6;margin-top:3px}
+.kbp-next .bd{color:var(--text-dim);font-size:.9rem;line-height:1.8;margin-top:12px}
+.kbp-next .why{margin-top:16px;padding:12px 16px;background:var(--surface);
+  border-left:3px solid var(--gold);border-radius:0 5px 5px 0}
+.kbp-next .why b{display:block;font-size:10px;letter-spacing:1.5px;color:var(--gold);
+  font-weight:600;margin-bottom:6px}
+.kbp-next .why p{color:var(--text-dim);font-size:.85rem;line-height:1.75;margin:0}
+.kbp-next .why p+p{margin-top:5px}
+.kbp-next .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.kbp-next a{display:inline-block;padding:10px 22px;border-radius:5px;font-size:12px;
+  letter-spacing:1.5px;text-decoration:none}
+.kbp-next .gold{background:var(--gold);border:1px solid var(--gold);color:#0d0d0d;font-weight:600}
+.kbp-next .blue{background:transparent;border:1px solid #5bbcff;color:#5bbcff}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/column/">Columns</a> › CNC Dimensional Drift After Warm-Up: Thermal Growth, Tool Wear or Clamping?</div>
+  
+  <a class="kbp-cta" href="/#col-23">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+<div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px"><span style="color:var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase">Process Engineering · Accuracy &amp; Troubleshooting</span><h1 style="line-height:1.4;font-size:1.35rem">CNC Dimensional Drift After Warm-Up: Thermal Growth, Tool Wear or Clamping?</h1><p lang="zh-Hant">CNC 暖機後尺寸仍漂移：如何區分熱變位、刀具磨耗與夾持變形？</p><p lang="ko">CNC 예열 후에도 치수가 변한다면: 열변위·공구 마모·클램핑 변형 구분하기</p></div><div style="font-size:0.74rem;color:var(--text-dim)">Published: 2026-09-03 · Written by Z&amp;Z STROTEC ／ 發布：2026-09-03 · 撰文：Z&amp;Z STROTEC 萬洋國際 ／ 발행: 2026-09-03 · 작성: Z&amp;Z STROTEC</div><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">The first part passes inspection, but later parts move towards a tolerance limit. Changing the tool offset helps briefly, then the dimension moves again after a break. This does not establish that the spindle is worn out. Start by separating changes in the cutting process from changes in the part and its measurement. The following workflow is an engineering diagnostic framework, not a substitute for the machine builder’s model-specific service procedure.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">首件量測合格，連續加工後尺寸卻逐漸逼近公差邊界；修正刀補後暫時恢復，午休再開機又往另一個方向跑。這種現象並不能直接證明主軸已經磨損。排查的起點，是把「加工過程的變化」與「工件及量測條件的變化」分開。以下提供現場工程判斷流程；各機型的暖機、測試與維修操作，仍以設備原廠程序為準。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">초품은 합격하지만 연속 가공 후 치수가 공차 한계에 가까워지고, 공구 보정을 하면 잠시 좋아졌다가 휴식 후 다시 달라질 수 있습니다. 이것만으로 스핀들 마모를 단정할 수는 없습니다. 먼저 가공 과정의 변화와 공작물·측정 조건의 변화를 구분하십시오. 아래 내용은 현장 진단을 위한 공학적 접근이며, 기종별 예열·시험·정비 절차는 장비 제조사 지침을 따라야 합니다.</p><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">1. Make the measurements comparable<br>1. 先確認：你比較的是同一種量測條件嗎？<br>1. 먼저 측정 조건을 통일하십시오</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Use the same datum, measuring location, instrument and measuring force. Remove chips and burrs, check the instrument against a suitable reference, and repeat a reading before interpreting a few micrometres as machine movement. Record whether the part is still clamped, its temperature, and the time between machining and inspection. A hot part beside the machine and a cooled part in the inspection room are not directly comparable. Measurement resolution alone does not establish accuracy. <a href="#col23-ref-1">[1]</a></p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">固定基準、量測位置、量具與量測力；清除切屑、毛邊，使用適當標準件確認量具，再重複量測。不要把幾微米的讀值差異直接歸因於機台。記錄工件是否仍夾持、工件溫度，以及加工完成到量測的間隔。機旁剛取下的熱工件，不能直接與檢驗室冷卻後的工件比較；量具顯示到小數點後幾位，也不等於具備相同等級的準確度。<a href="#col23-ref-1">[1]</a></p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">동일한 기준·측정 위치·측정기·측정력을 사용하십시오. 칩과 버를 제거하고 적절한 기준기로 확인한 뒤 반복 측정하십시오. 수 μm의 차이를 바로 장비 이동으로 판단해서는 안 됩니다. 클램핑 상태, 공작물 온도, 가공 종료부터 측정까지의 시간을 기록하십시오. 장비 옆의 뜨거운 공작물과 검사실에서 식은 공작물은 그대로 비교할 수 없으며, 표시 분해능이 정확도를 보장하지도 않습니다. <a href="#col23-ref-1">[1]</a></p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">2. A small temperature change can consume the tolerance<br>2. 計算範例：溫差如何吃掉公差餘裕<br>2. 작은 온도차도 공차 여유를 소모합니다</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">For an illustrative free-expansion estimate, assume a uniform steel part with a 100 mm reference length at 20 °C, a coefficient α = 11.5 × 10⁻⁶/K and a uniform rise of 5 °C. Then ΔL = α × L × ΔT = 0.00575 mm = 5.75 μm. If that dimension is 100.000 ±0.010 mm, the expansion alone is about 58% of the one-sided 10 μm tolerance allowance. This is a hypothetical calculation, not a measured customer result. Actual alloy coefficients vary. Temperature gradients and clamping invalidate a simple free-expansion assumption; this calculation must not be entered as a machine offset. <a href="#col23-ref-1">[1]</a></p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">以下為自由熱膨脹的假設計算：鋼件在 20 °C 時的基準長度為 100 mm，假設線膨脹係數 α＝11.5 × 10⁻⁶/K，且整件均勻升溫 5 °C。ΔL＝α × L × ΔT＝0.00575 mm＝5.75 μm。若尺寸要求為 100.000 ±0.010 mm，單是這個膨脹量，就相當於單側 10 μm 公差餘裕的約 58%。這是計算示例，並非客戶實測。實際係數隨鋼種而異；存在溫度梯度或夾持拘束時，不能直接套用自由膨脹模型，更不能把這個結果直接輸入刀補。<a href="#col23-ref-1">[1]</a></p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">자유 열팽창의 가상 계산으로, 20 °C에서 기준 길이가 100 mm인 균일한 강재에 α = 11.5 × 10⁻⁶/K를 가정하고 전체 온도가 5 °C 상승했다고 합시다. ΔL = α × L × ΔT = 0.00575 mm = 5.75 μm입니다. 치수가 100.000 ±0.010 mm라면 이 팽창량은 한쪽 공차 여유 10 μm의 약 58%입니다. 고객 실측 사례가 아닌 계산 예이며 실제 계수는 강종에 따라 다릅니다. 온도 구배나 클램핑 구속이 있으면 단순 자유 팽창 모델을 적용할 수 없고, 계산값을 그대로 공구 보정에 입력해서도 안 됩니다. <a href="#col23-ref-1">[1]</a></p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">3. Follow the pattern, then test the hypothesis<br>3. 先看變化型態，再用對照確認原因<br>3. 변화 패턴을 보고 가설을 검증하십시오</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Gradual drift after start-up that changes after an idle period makes thermal behaviour worth investigating. Drift tied to accumulated cutting time on one edge makes wear worth checking; a replacement edge is a useful comparison only after re-establishing its offset and holding other conditions constant. A change between clamped and released measurements points towards deformation or stress release. An abrupt jump after a tool change or reload calls for checking seating, chips, offsets and the datum first. These are clues, not diagnoses: more than one mechanism can act together. Sandvik’s hard-turning guide notes that flank wear progressively affects dimensional tolerance. <a href="#col23-ref-4">[4]</a></p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">開機後逐漸偏移、停機休息後又改變趨勢，值得優先檢查熱狀態；若偏移與同一刀刃的累積切削時間相關，則應檢查磨耗。換新刀刃可作為對照，但必須重新確認刀補，並固定其餘條件。夾持中與鬆夾後的尺寸差異，指向夾持變形或殘留應力釋放；換刀或重新裝料後突然跳值，則先查接觸面、夾屑、刀補與基準。這些都是線索，不能單憑一項就下結論，也可能有多種原因同時存在。Sandvik 的硬車削指南亦指出，後刀面磨耗會逐漸影響尺寸公差。<a href="#col23-ref-4">[4]</a></p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">기동 후 서서히 변하고 정지 후 추세가 달라지면 열 상태를 조사하십시오. 동일 절삭날의 누적 절삭 시간과 연관되면 마모를 확인하십시오. 새 절삭날 비교는 보정값을 다시 확인하고 다른 조건을 고정해야 의미가 있습니다. 클램핑 중과 해제 후 치수 차이는 변형이나 잔류응력 해방의 단서입니다. 공구 교환 또는 재장착 직후 급변하면 접촉면·칩·보정·기준을 먼저 확인하십시오. 이는 확정 진단이 아니며 여러 원인이 함께 작용할 수 있습니다. Sandvik의 경질 선삭 가이드도 여유면 마모가 치수 공차에 점진적으로 영향을 준다고 설명합니다. <a href="#col23-ref-4">[4]</a></p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">4. Warm up the process, not only the spindle<br>4. 暖機完成，不等於量產熱狀態已穩定<br>4. 스핀들 예열만으로 생산 열 상태가 안정되지는 않습니다</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Follow the builder’s warm-up routine, then establish a production baseline using a representative cycle. Record spindle duty, axis travel, coolant operation, room conditions and interruptions; a spindle-only idle run does not reproduce cutting load. Define a sampling plan for start-up, steady running and restart, keeping trial parts separate until accepted. Set the acceptable drift from the drawing and measurement capability rather than a universal warm-up duration. Haas publishes a dedicated thermal-growth test for supported mills; use the procedure only within its stated scope. <a href="#col23-ref-2">[2]</a></p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">先依原廠程序暖機，再以具代表性的加工循環建立量產基線。記錄主軸運轉負荷、軸向移動、切削液運作、室內環境與停機時間；只有主軸空轉，無法重現實際切削負荷。抽樣計畫應涵蓋開機、連續加工與停機再啟動，試加工件在判定前分開管理。可接受的漂移量，應由圖面要求與量測能力決定，不宜通用地規定「暖機幾分鐘就夠」。Haas 提供特定銑床的熱變位測試程序，採用時必須遵守其機型與測試適用範圍。<a href="#col23-ref-2">[2]</a></p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">제조사 예열 절차 후 대표 가공 사이클로 생산 기준선을 만드십시오. 스핀들 운전 부하, 축 이동, 절삭유 운전, 실내 환경, 정지 시간을 기록하십시오. 스핀들 공회전만으로 실제 절삭 부하를 재현할 수 없습니다. 기동·연속 운전·재기동을 포함해 샘플링하고 판정 전 시험품은 분리하십시오. 허용 드리프트는 도면과 측정 능력으로 정해야 하며 일률적인 예열 시간으로 정해서는 안 됩니다. Haas의 전용 열변위 시험도 명시된 기종과 적용 범위 안에서 사용해야 합니다. <a href="#col23-ref-2">[2]</a></p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">5. Check clamping before increasing pressure<br>5. 薄壁件變形，不是把壓力調高就能解決<br>5. 얇은 부품의 변형은 압력을 높여 해결할 수 없습니다</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">For thin sleeves and rings, compare the released shape at several angular positions and axial sections using a method appropriate to the drawing. A single two-point diameter reading can miss lobing. Check jaw contact, support length and the machining sequence. Hydraulic pressure is not the actual gripping force at the workpiece. Any trial reduction must retain sufficient grip at the intended speed and cutting load, within the chuck, cylinder and machine limits; ask the builder or workholding supplier to confirm the setup. Kitagawa’s PUB manual includes excessive grip as a deformation cause and limits force reduction to a range that still permits safe machining. <a href="#col23-ref-3">[3]</a></p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">薄壁套筒與環件，應依圖面需求，檢查鬆夾後不同角度及不同軸向截面的形狀。只量一個兩點直徑，可能漏掉多瓣形狀誤差。再核對夾爪接觸、支撐長度與加工順序。油壓表數字不等於工件實際承受的夾持力。若要試調壓力，必須在預定轉速及切削負荷下仍有足夠夾持能力，並符合夾頭、油壓缸及機台限制；必要時由原廠或夾治具供應商確認。Kitagawa 的 PUB 手冊將過大夾持力列為變形原因之一，降低夾持力也限於仍能安全加工的範圍。<a href="#col23-ref-3">[3]</a></p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">얇은 슬리브와 링은 도면에 맞는 방법으로 클램핑 해제 후 여러 각도와 축방향 단면을 검사하십시오. 한 번의 2점 지름 측정은 다엽 형상 오차를 놓칠 수 있습니다. 죠 접촉, 지지 길이, 가공 순서를 확인하십시오. 유압계 값은 공작물의 실제 파지력이 아닙니다. 압력을 낮추는 시험은 예정 회전수·절삭 부하에서도 충분히 파지되고 척·실린더·장비 제한을 만족해야 하며, 필요하면 제조사나 척 공급사의 확인을 받으십시오. Kitagawa PUB 매뉴얼도 과도한 파지력을 변형 원인으로 다루고, 감압은 안전한 가공이 가능한 범위로 제한합니다. <a href="#col23-ref-3">[3]</a></p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">6. Keep a traceable record before changing offsets<br>6. 修刀補前，先留下可追溯的紀錄<br>6. 보정 전에 추적 가능한 기록을 남기십시오</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Record each sample’s time and part ID; feature, nominal and limits; measured value; part and coolant temperature where available; time since cutting; gauge and clamping state; tool/edge ID and accumulated cutting time; offset before and after; speed, feed and interruptions. Change one factor at a time. Choose the sample interval to expose the observed drift, not to satisfy an arbitrary number of parts. Once a stable, repeatable trend has been established, define correction limits and first-piece checks. Confirm whether a lathe’s X wear-offset entry uses diameter or radius values before entering a correction.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">每筆抽樣至少留下：時間與工件編號、量測特徵及名義尺寸／上下限、實測值、可取得的工件與切削液溫度、加工後等待時間、量具與夾持狀態、刀號／刃口與累積切削時間、調整前後刀補、轉速進給及停機事件。一次只改一個因素；抽樣間隔應能看出實際漂移，不必硬套固定件數。確認趨勢可重複、製程穩定後，再制定補正界限與首件複驗規則。車床輸入 X 軸磨耗補正前，務必確認該控制器及設定使用直徑值還是半徑值。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">각 샘플의 시간·품번, 측정 항목·기준 치수·상하한, 실측값, 가능한 경우 공작물·절삭유 온도, 가공 후 대기 시간, 측정기·클램핑 상태, 공구·날 ID와 누적 절삭 시간, 보정 전후 값, 회전수·이송·정지 이력을 남기십시오. 한 번에 한 요소만 변경하고 실제 드리프트를 포착할 간격으로 측정하십시오. 재현 가능한 추세와 공정 안정성을 확인한 후 보정 한계와 초품 재검사 규칙을 정하십시오. 선반 X축 마모 보정은 해당 제어기·설정이 지름값인지 반지름값인지 반드시 확인해야 합니다.</p></section><section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><h3 style="line-height:1.6;font-size:1rem">7. Turn the diagnosis into a useful service inquiry<br>7. 什麼資料能讓供應商更快判斷？<br>7. 공급사 판단에 필요한 자료</h3><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">If drift persists after measurement, cutting conditions and clamping have been controlled, send the machine model and serial number, controller, affected feature and tolerance, the time-series record, tool and fixture details, and alarm history. Request a scoped inspection of the cooling system, spindle, axis positioning or workholding according to the evidence. Abnormal noise, cooling alarms or signs of part movement require stopping the affected operation and following the builder’s service instructions. Z&amp;Z STROTEC can use these records to clarify inspection or component-sourcing requirements; on-site availability and work scope must be confirmed for the destination.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">若量測、切削條件與夾持已受控，尺寸仍持續漂移，請提供機台型號與序號、控制器、異常特徵及公差、時間序列紀錄、刀具與治具資訊，以及警報歷史。再依證據安排冷卻系統、主軸、軸向定位或夾持系統的專項檢查。若伴隨異音、冷卻警報或工件滑移跡象，應停止相關加工並依原廠維修指示處理。Z&amp;Z STROTEC 可利用這些資料釐清驗機或零組件採購需求；現場服務可行性與工作範圍，須依目的地另行確認。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">측정·절삭·클램핑 조건을 관리해도 드리프트가 계속되면 장비 모델·시리얼, 제어기, 문제 치수와 공차, 시계열 기록, 공구·치구 정보, 알람 이력을 보내십시오. 근거에 따라 냉각 계통·스핀들·축 위치결정·클램핑을 점검합니다. 이상음·냉각 알람·공작물 미끄러짐 징후가 있으면 해당 가공을 중지하고 제조사 정비 지침을 따르십시오. Z&amp;Z STROTEC은 이 기록으로 검사 또는 부품 소싱 요구를 구체화할 수 있으며, 현장 서비스 가능 여부와 범위는 목적지별 확인이 필요합니다.</p></section><section style="margin-top:24px"><h3>Sample record / 抽樣紀錄表 / 샘플 기록표</h3><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr><th scope="col">Field / 欄位 / 항목</th><th scope="col">Record / 紀錄 / 기록</th></tr></thead><tbody><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Time / part ID / 時間／工件編號 / 시간／품번</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Feature / nominal / limits / 特徵／名義尺寸／上下限 / 항목／기준 치수／상하한</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Measured value / 實測值 / 실측값</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Part / coolant temperature / 工件／切削液溫度 / 공작물／절삭유 온도</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Time since cutting / 加工後等待時間 / 가공 후 대기 시간</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Gauge / clamping state / 量具／夾持狀態 / 측정기／클램핑 상태</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Tool / edge / cutting time / 刀號／刃口／切削時間 / 공구／날／절삭 시간</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Offset before / after / 調整前後刀補 / 보정 전후 값</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr><tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Speed / feed / interruptions / 轉速／進給／停機事件 / 회전수／이송／정지 이력</th><td style="padding:10px;border-bottom:1px solid var(--border)">—</td></tr></tbody></table></div></section><h3>References / 參考資料 / 참고자료</h3><ol><li id="col23-ref-1"><a href="https://www.renishaw.com/cmmsupport/knowledgebase/en/temperature-compensation--47645" target="_blank" rel="noopener noreferrer">Renishaw — Temperature compensation</a></li><li id="col23-ref-2"><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/mill---thermal-growth-test---procedure---ad0815.html" target="_blank" rel="noopener noreferrer">Haas — Mill Thermal Growth Test Procedure AD0815</a></li><li id="col23-ref-3"><a href="https://www.kitagawa.com/en/mtools/inc/data/PDF/manu_PUB_en.pdf" target="_blank" rel="noopener noreferrer">Kitagawa — PUB chuck instruction manual</a></li><li id="col23-ref-4"><a href="https://coromantstrgprod.blob.core.windows.net/files/sitecollectiondocuments%2Fdownloads%2Fglobal%2Fcatalogues%2Fen-us%2Fc-2900-24.pdf" target="_blank" rel="noopener noreferrer">Sandvik Coromant — Hard Part Turning guide</a></li></ol><p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Sources checked 2026-09-03. The diagnostic sequence and numerical example are editorial engineering synthesis; manufacturer instructions apply only to their stated equipment.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">資料查核：2026-09-03。排查順序與數字範例為本文工程整理；各原廠指示僅適用於其標示的設備範圍。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">자료 확인: 2026-09-03. 진단 순서와 수치 예는 편집 과정의 공학적 종합이며 제조사 지침은 명시된 장비에 적용됩니다.</p><h3>Related reading / 延伸閱讀 / 관련 문서</h3><ul><li><a href="/knowledge/machine-accuracy/">Machine accuracy / 機台精度 / 장비 정밀도</a></li><li><a href="/knowledge/cnc-metrology/">Metrology & QC / 量測與品管 / 측정·품질관리</a></li><li><a href="/knowledge/spindle/">Spindle / 主軸 / 스핀들</a></li><li><a href="/knowledge/collet-chuck/">Workholding / 筒夾與夾頭 / 콜릿·척</a></li></ul></div></div>
+  <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Process Engineering · Accuracy & Troubleshooting</span></div>
+  
+  <div class="kbp-next">
+    <div class="eb">Next step &nbsp;·&nbsp; 下一步 &nbsp;·&nbsp; 다음 단계</div>
+    <div class="hd">Have a specification in hand?</div>
+    <div class="sub">手上已經有規格了嗎？ &nbsp;·&nbsp; 사양이 이미 정해져 있으십니까?</div>
+    <div class="bd">Send us the machine model, the part number or a photo from the floor. We will come back on what is available and what it costs.</div>
+    <div class="bd">把機台型號、零件料號或現場照片寄給我們，我們會回覆供貨狀況與價格。<br>장비 모델명, 부품 번호 또는 현장 사진을 보내주시면 공급 가능 여부와 가격을 회신드립니다.</div>
+    <div class="why">
+      <b>WHY THROUGH Z&amp;Z &nbsp;·&nbsp; 為什麼透過萬洋 &nbsp;·&nbsp; Z&amp;Z를 통하는 이유</b>
+      <p>Multi-brand selection rather than one factory, spec and compatibility checks in writing, a test cut and inspection at the plant before the machine ships, export documentation, and the same part number still available years later. Installation and after-sales in Korea, Brazil, Switzerland and Argentina run through local agents; for other markets we supply parts and components.</p>
+      <p>不綁單一工廠的多品牌選型、白紙黑字的規格與相容性確認、出貨前在工廠端試車驗機、出口文件，以及數年後仍拿得到的同一料號。韓國、巴西、瑞士、阿根廷的安裝與售後由在地服務商執行，其他市場我們供應零件與零組件。</p>
+      <p>단일 공장에 묶이지 않는 다중 브랜드 선정, 문서로 남기는 사양·호환성 확인, 선적 전 공장 시운전과 검사, 수출 서류, 그리고 수년 뒤에도 확보 가능한 동일 품번. 한국·브라질·스위스·아르헨티나의 설치와 애프터서비스는 현지 대리점이 담당하며, 그 외 시장에는 부품을 공급합니다.</p>
+    </div>
+    <div class="row">
+      <a class="gold" href="/#inquiry" onclick="gtag('event','cta_inquiry_click',{cta_source:'column',item_key:'cnc-dimensional-drift-thermal-growth-troubleshooting',site_language:'en'})">Send an inquiry &nbsp;/&nbsp; 立即洽詢 →</a>
+      <a class="blue" href="/#subscribe" onclick="gtag('event','cta_subscribe_click',{cta_source:'column',item_key:'cnc-dimensional-drift-thermal-growth-troubleshooting',site_language:'en'})">Get new articles by email &nbsp;/&nbsp; 訂閱新文章通知</a>
+    </div>
+  </div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/chuck-replacement/">How to Identify a Replacement Chuck or Collet Chuck<span class="s">夾頭與筒夾更換辨識指南 · 교체용 척·콜릿 척 식별 가이드</span></a></li><li><a href="/knowledge/collet-chuck/">Chucks, Collets &amp; Guide Bush (夾頭 / 筒夾 / 導套)<span class="s">夾頭、筒夾與導套 · 척 · 콜릿 · 가이드 부시</span></a></li><li><a href="/knowledge/spindle/">CNC Spindle Selection, Acceptance Testing and Troubleshooting<span class="s">CNC 主軸選型、驗收與故障診斷指南 · CNC 주축 선정·검수·고장 진단 가이드</span></a></li><li><a href="/knowledge/cnc-machine-rfq/">CNC Machine RFQ Checklist: 15 Specifications to Send With an Inquiry<span class="s">CNC 機台詢價清單：RFQ 前應提供的 15 項規格 · CNC 설비 RFQ 체크리스트: 문의 시 보낼 15가지 사양</span></a></li><li><a href="/knowledge/cnc-metrology/">CNC Metrology Guide: CMM, Micrometers &amp; Surface Roughness<span class="s">CNC 量測技術指南：從三次元量測儀（CMM）到表面粗糙度 · CNC 계측 가이드: CMM·마이크로미터·표면 거칠기</span></a></li><li><a href="/knowledge/cnc-troubleshooting/">CNC Troubleshooting Guide: Chatter, Poor Finish, Tool Breakage &amp; Positioning Errors<span class="s">CNC 加工異常排除指南：震刀、表面粗糙、刀具斷裂與定位誤差 · CNC 트러블슈팅 가이드: 채터·거친 표면·공구 파손·위치 오차</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <div style="margin-top:10px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8">Sponsored placements are clearly labelled and do not influence editorial content. · 贊助刊登一律明確標示，不影響內容編輯判斷.</div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
